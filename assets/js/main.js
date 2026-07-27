@@ -248,32 +248,6 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(statsSection);
 
-// ===============================
-// Testimonial Slider
-// ===============================
-
-const track = document.querySelector(".testimonial-track");
-
-let testimonialIndex = 0;
-
-function moveTestimonials(){
-
-const cards = document.querySelectorAll(".testimonial-card");
-
-testimonialIndex++;
-
-if(testimonialIndex>=cards.length){
-
-testimonialIndex=0;
-
-}
-
-track.style.transform=`translateX(-${testimonialIndex*380}px)`;
-
-}
-
-setInterval(moveTestimonials,4000);
-
 /* Loader */
 
 window.addEventListener("load", () => {
