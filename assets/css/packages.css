@@ -103,12 +103,46 @@ ul{
     font-size:28px;
     font-weight:700;
     display:flex;
-    gap:10px;
     align-items:center;
+    gap:6px;
 }
 
-.logo i{
-    color:var(--accent);
+.logo-icon{
+    width:40px;
+    height:55px;
+}
+
+.logo-icon img{
+    width:100%;
+    height:100%;
+    object-fit:fill;
+    transition:.3s;
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    margin-top: 12px;
+}
+
+.logo-text h3{
+    font-family:  "Lucida Handwriting", "Segoe Script", cursive;
+    font-size:18px;
+    color:#fff;
+    margin:0;
+    line-height:1;
+    font-weight:700;
+}
+
+.logo-text span{
+    font-size:11px;
+    color:orangered;
+    margin-top:1px;
+    margin-left: 3px;
+}
+
+.logo:hover img{
+    transform:scale(1.05);
 }
 
 .nav-menu ul{
