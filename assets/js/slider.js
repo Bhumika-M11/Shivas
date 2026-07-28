@@ -2,184 +2,168 @@
 VEHICLE IMAGE SLIDER
 =========================================*/
 
-document.querySelectorAll(".vehicle-image-slider").forEach(slider => {
+document.querySelectorAll(".vehicle-image-slider").forEach((slider) => {
 
     const images = slider.querySelectorAll(".vehicle-slides img");
     const dots = slider.querySelectorAll(".dot");
 
     let current = 0;
 
-    function showSlide(index){
+    function showSlide(index) {
 
-        images.forEach(img => img.classList.remove("active"));
-        dots.forEach(dot => dot.classList.remove("active"));
-
-        images[index].classList.add("active");
-        dots[index].classList.add("active");
-    }
-
-    dots.forEach((dot,index)=>{
-
-        dot.addEventListener("click",()=>{
-
-            current=index;
-            showSlide(current);
-
+        images.forEach((img, i) => {
+            img.classList.toggle("active", i === index);
         });
 
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            current = index;
+            showSlide(current);
+        });
     });
 
-    setInterval(()=>{
+    setInterval(() => {
 
-        current++;
-
-        if(current>=images.length){
-            current=0;
-        }
+        current = (current + 1) % images.length;
 
         showSlide(current);
 
-    },3000);
+    }, 5000);
 
 });
-
 
 /*=========================================
 HORIZONTAL VEHICLE SLIDER
 =========================================*/
 
-document.querySelectorAll(".slider-container").forEach(container=>{
+document.querySelectorAll(".slider-container").forEach(container => {
 
     const slider = container.querySelector(".vehicle-slider");
 
-    const nextBtn = container.parentElement.querySelector(".next-btn, .out-next-btn");
+    if (!slider) return;
 
-    const prevBtn = container.parentElement.querySelector(".prev-btn, .out-prev-btn");
+    const nextBtn = container.parentElement.querySelector(".next-btn,.out-next-btn");
+    const prevBtn = container.parentElement.querySelector(".prev-btn,.out-prev-btn");
 
-    if(!slider) return;
+    let cardWidth = 0;
 
-    const card = slider.querySelector(".vehicle-card");
+    function updateCardWidth() {
 
-    const gap = 25;
+        const card = slider.querySelector(".vehicle-card");
 
-    let cardWidth = card.offsetWidth + gap;
+        if(card){
+            cardWidth = card.getBoundingClientRect().width + 25;
+        }
 
-    nextBtn?.addEventListener("click",()=>{
+    }
+
+    updateCardWidth();
+
+    window.addEventListener("resize", updateCardWidth);
+
+    nextBtn?.addEventListener("click", () => {
 
         slider.scrollBy({
-
-            left:cardWidth,
-
-            behavior:"smooth"
-
+            left: cardWidth,
+            behavior: "smooth"
         });
 
     });
 
-    prevBtn?.addEventListener("click",()=>{
+    prevBtn?.addEventListener("click", () => {
 
         slider.scrollBy({
-
-            left:-cardWidth,
-
-            behavior:"smooth"
-
+            left: -cardWidth,
+            behavior: "smooth"
         });
 
     });
 
-    let auto = setInterval(()=>{
+    let auto;
 
-        if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth-10){
+    function startAuto(){
 
-            slider.scrollTo({
+        auto = setInterval(() => {
 
-                left:0,
+            requestAnimationFrame(() => {
 
-                behavior:"smooth"
+                if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5){
+
+                    slider.scrollTo({
+                        left:0,
+                        behavior:"smooth"
+                    });
+
+                }else{
+
+                    slider.scrollBy({
+                        left:cardWidth,
+                        behavior:"smooth"
+                    });
+
+                }
 
             });
 
-        }
-        else{
+        },5000);
 
-            slider.scrollBy({
+    }
 
-                left:cardWidth,
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-    },4000);
-
-    container.addEventListener("mouseenter",()=>{
+    function stopAuto(){
 
         clearInterval(auto);
 
-    });
+    }
 
-    container.addEventListener("mouseleave",()=>{
+    startAuto();
 
-        auto = setInterval(()=>{
+    container.addEventListener("mouseenter",stopAuto);
 
-            if(slider.scrollLeft + slider.clientWidth >= slider.scrollWidth-10){
-
-                slider.scrollTo({
-
-                    left:0,
-
-                    behavior:"smooth"
-
-                });
-
-            }
-            else{
-
-                slider.scrollBy({
-
-                    left:cardWidth,
-
-                    behavior:"smooth"
-
-                });
-
-            }
-
-        },4000);
-
-    });
+    container.addEventListener("mouseleave",startAuto);
 
 });
+
+setInterval(() => {
+    document.querySelectorAll(".vehicle-slider").forEach(slider => {
+        slider.scrollBy({
+            left: 300,
+            behavior: "smooth"
+        });
+    });
+}, 5000);
 
 
 /*=========================================
 MOBILE SWIPE
 =========================================*/
 
-document.querySelectorAll(".vehicle-slider").forEach(slider=>{
+document.querySelectorAll(".vehicle-slider").forEach(slider => {
 
-    let startX=0;
+    let startX = 0;
 
     slider.addEventListener("touchstart",(e)=>{
 
-        startX=e.touches[0].clientX;
+        startX = e.touches[0].clientX;
 
-    });
+    },{passive:true});
 
     slider.addEventListener("touchend",(e)=>{
 
-        const endX=e.changedTouches[0].clientX;
+        const endX = e.changedTouches[0].clientX;
 
-        const move=startX-endX;
+        const move = startX - endX;
 
-        if(Math.abs(move)>50){
+        if(Math.abs(move) > 50){
 
             slider.scrollBy({
 
-                left:move>0?300:-300,
+                left: move > 0 ? 300 : -300,
 
                 behavior:"smooth"
 
@@ -187,6 +171,6 @@ document.querySelectorAll(".vehicle-slider").forEach(slider=>{
 
         }
 
-    });
+    },{passive:true});
 
 });
