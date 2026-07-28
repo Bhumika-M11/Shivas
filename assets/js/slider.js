@@ -129,16 +129,6 @@ document.querySelectorAll(".slider-container").forEach(container => {
 
 });
 
-setInterval(() => {
-    document.querySelectorAll(".vehicle-slider").forEach(slider => {
-        slider.scrollBy({
-            left: 300,
-            behavior: "smooth"
-        });
-    });
-}, 5000);
-
-
 /*=========================================
 MOBILE SWIPE
 =========================================*/

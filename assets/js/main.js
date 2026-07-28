@@ -22,7 +22,7 @@ const menuBtn = document.querySelector(".menu-btn");
 const navMenu = document.querySelector(".nav-menu");
 const menuIcon = document.querySelector(".menu-btn i");
 
-menuBtn.addEventListener("click", () => {
+menuBtn?.addEventListener("click", () => {
 
     navMenu.classList.toggle("active");
 
@@ -61,9 +61,11 @@ let currentSlide = 0;
 
 function showSlide(index){
 
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    slides[currentSlide].classList.add("active");
 
     slides[index].classList.add("active");
 
@@ -81,7 +83,21 @@ function nextSlide(){
 
 }
 
-setInterval(nextSlide, 5000);
+let heroInterval = setInterval(nextSlide,5000);
+
+document.addEventListener("visibilitychange",()=>{
+
+    if(document.hidden){
+
+        clearInterval(heroInterval);
+
+    }else{
+
+        heroInterval = setInterval(nextSlide,5000);
+
+    }
+
+});
 
 // ===============================
 // Smooth Scroll
@@ -208,7 +224,7 @@ const startCounter = () => {
 
                 counter.innerText = Math.ceil(count + increment);
 
-                setTimeout(update, 10);
+                requestAnimationFrame(update);
 
             } else {
 
