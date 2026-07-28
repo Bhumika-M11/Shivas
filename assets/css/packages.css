@@ -464,7 +464,7 @@ FOOTER
 
 .footer-grid{
     display:grid;
-    grid-template-columns:2fr 1fr 2fr 1.5fr;
+    grid-template-columns:2fr 1fr 2fr 1.8fr;
     gap:50px;
 }
 
@@ -494,6 +494,20 @@ FOOTER
 }
 
 .footer ul li a:hover{
+    color:#00B894;
+}
+
+.footer-contact p a{
+    color:#CBD5E1;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-contact p a:hover{
+    color:#00B894;
+}
+
+.footer-contact i{
     color:#00B894;
 }
 
