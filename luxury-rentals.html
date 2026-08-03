@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icons & Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo4.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts (Poppins, swap for performance) -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+    </noscript>
+
+    <!-- Preload Hero Image -->
+    <link rel="preload" as="image" href="assets/images/vehicles/bus1.png" fetchpriority="high">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="assets/css/luxury.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo" aria-label="Shivas Travel Guru Home">
+                <div class="logo-icon">
+                    <img src="assets/images/logo4.png" alt="Shivas Travel Guru Logo" width="80" height="55">
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About us</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#booking" class="btn btn-gold">Book Now</a>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ================= 1. HERO BANNER ================= -->
+
+        <section class="hero-lux" id="home">
+            <div class="hero-lux-bg" role="img"
+                aria-label="Premium luxury coach on a scenic highway near Bengaluru"></div>
+            <div class="hero-lux-overlay"></div>
+
+            <div class="container hero-lux-content">
+
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li aria-current="page">Luxury Rentals</li>
+                    </ol>
+                </nav>
+
+                <span class="hero-tag">
+                    <i class="fa-solid fa-crown"></i>
+                    Luxury Buses • Coaches • Chauffeured Cars
+                </span>
+
+                <h1>
+                    Luxury Vehicle Rentals in <span class="accent">Bengaluru</span>
+                </h1>
+
+                <p>
+                    Travel the way you deserve. Our premium luxury buses, executive
+                    coaches and chauffeured cars deliver five-star comfort for
+                    weddings, VIP airport transfers, corporate events and celebrity
+                    transportation — with trained chauffeurs, exquisite interiors and
+                    white-glove service, anywhere in Bengaluru.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#booking" class="btn btn-gold btn-lg">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Book Now
+                    </a>
+                    <a href="https://wa.me/919019993283" class="btn-wa btn-lg" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+919019993283" class="btn-call btn-lg">
+                        <i class="fa-solid fa-phone"></i>
+                        Call Now
+                    </a>
+                </div>
+
+                <ul class="trust-badges" aria-label="Trust badges">
+                    <li>
+                        <i class="fa-solid fa-star"></i>
+                        <span><strong>4.9</strong> Rated</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-route"></i>
+                        <span><strong>5000+</strong> Trips</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-tie"></i>
+                        <span><strong>Verified</strong> Chauffeurs</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-satellite-dish"></i>
+                        <span><strong>GPS</strong> Enabled</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-headset"></i>
+                        <span><strong>24/7</strong> Support</span>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- ================= 2. LUXURY FLEET OVERVIEW ================= -->
+
+        <section class="fleet-section" id="fleet">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">Luxury Fleet Overview</span>
+                    <h2>Our Premium Collection</h2>
+                    <p>
+                        A hand-picked fleet of luxury buses and coaches, meticulously
+                        maintained and presented to offer unmatched comfort for every
+                        prestigious occasion.
+                    </p>
+                </div>
+
+                <div class="fleet-grid">
+
+                    <!-- Luxury Coach -->
+                    <article class="fleet-card reveal">
+                        <div class="fleet-img">
+                            <img src="assets/images/vehicles/luxurybus.jpg" alt="Luxury coach rental in Bengaluru"
+                                loading="lazy" width="420" height="270">
+                            <span class="fleet-badge">Luxury Coach</span>
+                        </div>
+                        <div class="fleet-body">
+                            <h3>Premium Luxury Coach</h3>
+                            <p>
+                                A flagship touring coach with plush reclining seats,
+                                generous legroom, dual AC and an on-board entertainment
+                                system — built for long journeys in total comfort.
+                            </p>
+                            <ul class="fleet-features">
+                                <li><i class="fa-solid fa-check"></i> Up to 50 Seats</li>
+                                <li><i class="fa-solid fa-check"></i> Reclining Seats</li>
+                                <li><i class="fa-solid fa-check"></i> Dual AC</li>
+                                <li><i class="fa-solid fa-check"></i> Entertainment System</li>
+                                <li><i class="fa-solid fa-check"></i> Charging Ports</li>
+                                <li><i class="fa-solid fa-check"></i> GPS Tracking</li>
+                                <li><i class="fa-solid fa-check"></i> Large Luggage Hold</li>
+                                <li><i class="fa-solid fa-check"></i> Premium Chauffeur</li>
+                            </ul>
+                            <div class="fleet-actions">
+                                <a href="#booking" class="btn-price">Book Coach</a>
+                                <a href="#pricing" class="btn-route">View Rates</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Executive Mini Coach -->
+                    <article class="fleet-card reveal">
+                        <div class="fleet-img">
+                            <img src="assets/images/vehicles/bus2.png" alt="Executive mini coach rental in Bengaluru"
+                                loading="lazy" width="420" height="270">
+                            <span class="fleet-badge">Executive Mini Coach</span>
+                        </div>
+                        <div class="fleet-body">
+                            <h3>Executive Mini Coach</h3>
+                            <p>
+                                An intimate, elegant carrier perfect for smaller VIP
+                                groups, airport transfers and executive shuttles — with
+                                lounge-style comfort and first-class service.
+                            </p>
+                            <ul class="fleet-features">
+                                <li><i class="fa-solid fa-check"></i> Up to 20 Seats</li>
+                                <li><i class="fa-solid fa-check"></i> Reclining Seats</li>
+                                <li><i class="fa-solid fa-check"></i> Dual AC</li>
+                                <li><i class="fa-solid fa-check"></i> Reading Lights</li>
+                                <li><i class="fa-solid fa-check"></i> Charging Ports</li>
+                                <li><i class="fa-solid fa-check"></i> GPS Tracking</li>
+                                <li><i class="fa-solid fa-check"></i> Luggage Space</li>
+                                <li><i class="fa-solid fa-check"></i> Discreet Service</li>
+                            </ul>
+                            <div class="fleet-actions">
+                                <a href="#booking" class="btn-price">Book Mini Coach</a>
+                                <a href="#pricing" class="btn-route">View Rates</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. EXECUTIVE VEHICLE COLLECTION ================= -->
+
+        <section class="exec-section" id="collection">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">Executive Vehicle Collection</span>
+                    <h2>Choose Your Prestige Ride</h2>
+                    <p>
+                        From grand touring coaches to chauffeured executive cars — every
+                        vehicle in our collection is presented immaculately for your
+                        arrival.
+                    </p>
+                </div>
+
+                <div class="exec-grid">
+
+                    <article class="exec-card reveal">
+                        <div class="exec-img">
+                            <img src="assets/images/vehicles/luxurybus.jpg" alt="Volvo luxury coach for rent in Bengaluru"
+                                loading="lazy" width="360" height="170">
+                            <span class="exec-tag">Flagship</span>
+                        </div>
+                        <div class="exec-body">
+                            <h3>Volvo Luxury Coach</h3>
+                            <p>Long-haul luxury with best-in-class comfort.</p>
+                            <p class="exec-price">from ₹18,000 <span>/ day</span></p>
+                        </div>
+                    </article>
+
+                    <article class="exec-card reveal">
+                        <div class="exec-img">
+                            <img src="assets/images/vehicles/bus2.png" alt="Luxury Mercedes coach rental in Bengaluru"
+                                loading="lazy" width="360" height="170">
+                            <span class="exec-tag">Prestige</span>
+                        </div>
+                        <div class="exec-body">
+                            <h3>Luxury Mercedes Coach</h3>
+                            <p>Premium finish for events and executives.</p>
+                            <p class="exec-price">from ₹20,000 <span>/ day</span></p>
+                        </div>
+                    </article>
+
+                    <article class="exec-card reveal">
+                        <div class="exec-img">
+                            <img src="assets/images/vehicles/bus2.png" alt="Executive mini coach rental in Bengaluru"
+                                loading="lazy" width="360" height="170">
+                            <span class="exec-tag">Executive</span>
+                        </div>
+                        <div class="exec-body">
+                            <h3>Executive Mini Coach</h3>
+                            <p>Intimate luxury for small VIP groups.</p>
+                            <p class="exec-price">from ₹12,000 <span>/ day</span></p>
+                        </div>
+                    </article>
+
+                    <article class="exec-card reveal">
+                        <div class="exec-img">
+                            <img src="assets/images/vehicles/luxurybus.jpg" alt="Luxury chauffeured car rental in Bengaluru"
+                                loading="lazy" width="360" height="170">
+                            <span class="exec-tag">Chauffeur</span>
+                        </div>
+                        <div class="exec-body">
+                            <h3>Chauffeured Luxury Car</h3>
+                            <p>First-class comfort for the distinguished traveller.</p>
+                            <p class="exec-price">from ₹6,500 <span>/ day</span></p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. PREMIUM FEATURES ================= -->
+
+        <section class="feature-section" id="features">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">Premium Features</span>
+                    <h2>Luxury Is in the Details</h2>
+                    <p>
+                        Every journey is styled with the finer things — from interior
+                        ambience to the professionalism of our crew.
+                    </p>
+                </div>
+
+                <div class="feature-grid">
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chair"></i>
+                        </div>
+                        <h3>Plush Reclining Seats</h3>
+                        <p>
+                            Deep-cushioned, reclining pushback seats with generous
+                            legroom for a first-class ride on every journey.
+                        </p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3>Professional Chauffeurs</h3>
+                        <p>
+                            Courteous, background-verified chauffeurs trained in
+                            discreet, punctual and safety-first service.
+                        </p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <h3>Entertainment Onboard</h3>
+                        <p>
+                            Premium sound systems and LCD entertainment for an
+                            enjoyable and relaxed travelling experience.
+                        </p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <h3>Dual Zone AC</h3>
+                        <p>
+                            Individually controlled climate zones keep every passenger
+                            perfectly comfortable, whatever the weather.
+                        </p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-satellite-dish"></i>
+                        </div>
+                        <h3>Live GPS Tracking</h3>
+                        <p>
+                            Monitor your fleet in real time for total visibility,
+                            security and on-time arrivals.
+                        </p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-bottle-water"></i>
+                        </div>
+                        <h3>Refreshments Included</h3>
+                        <p>
+                            Complimentary water and refreshments on request — the small
+                            touches that make a big difference.
+                        </p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-spray-can-sparkles"></i>
+                        </div>
+                        <h3>Immaculate Presentation</h3>
+                        <p>
+                            Every vehicle is detailed, sanitised and presented
+                            immaculately before it reaches your doorstep.
+                        </p>
+                    </div>
+
+                    <div class="feature-card reveal">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3>White-Glove Service</h3>
+                        <p>
+                            A dedicated concierge coordinates your entire journey with
+                            complete attention to detail.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 11. PRICING ================= -->
+
+        <section class="pricing-section" id="pricing">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">Pricing</span>
+                    <h2>Transparent Luxury Rates</h2>
+                    <p>
+                        Starting prices for local and outstation luxury rentals. Final
+                        quotes depend on the vehicle, distance, duration and season —
+                        always confirm with our team.
+                    </p>
+                </div>
+
+                <div class="pricing-grid">
+
+                    <article class="price-card reveal">
+                        <h3>Executive Mini Coach</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>12,000<span class="per">/day</span>
+                        </div>
+                        <p class="price-note">8 hrs • 80 km included</p>
+                        <ul class="price-list">
+                            <li><i class="fa-solid fa-check"></i> Up to 20 seats</li>
+                            <li><i class="fa-solid fa-check"></i> Chauffeur included</li>
+                            <li><i class="fa-solid fa-check"></i> Fuel within limit</li>
+                            <li><i class="fa-solid fa-check"></i> Dual AC &amp; music system</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-gold btn-block">Book Mini Coach</a>
+                    </article>
+
+                    <article class="price-card price-best reveal">
+                        <span class="price-badge">Most Popular</span>
+                        <h3>Luxury Coach</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>18,000<span class="per">/day</span>
+                        </div>
+                        <p class="price-note">8 hrs • 80 km included</p>
+                        <ul class="price-list">
+                            <li><i class="fa-solid fa-check"></i> Up to 50 seats</li>
+                            <li><i class="fa-solid fa-check"></i> Reclining pushback seats</li>
+                            <li><i class="fa-solid fa-check"></i> Entertainment system</li>
+                            <li><i class="fa-solid fa-check"></i> Chauffeur &amp; fuel included</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-gold btn-block">Book Luxury Coach</a>
+                    </article>
+
+                    <article class="price-card reveal">
+                        <h3>Outstation Luxury</h3>
+                        <div class="price">
+                            <span class="currency">₹</span>60<span class="per">/km</span>
+                        </div>
+                        <p class="price-note">plus driver • multi-day</p>
+                        <ul class="price-list">
+                            <li><i class="fa-solid fa-check"></i> Long-distance journeys</li>
+                            <li><i class="fa-solid fa-check"></i> Fuel &amp; tolls billed actual</li>
+                            <li><i class="fa-solid fa-check"></i> Night-halt driver charges</li>
+                            <li><i class="fa-solid fa-check"></i> Custom itineraries</li>
+                        </ul>
+                        <a href="#booking" class="btn btn-gold btn-block">Get Outstation Quote</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 13. FAQ ================= -->
+
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-tag">FAQs</span>
+                    <h2>Luxury Rental Questions</h2>
+                    <p>
+                        Quick answers to the most common questions about premium
+                        vehicle rentals in Bengaluru.
+                    </p>
+                </div>
+
+                <div class="faq-list">
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            What luxury vehicles are available for rent in Bengaluru?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                We offer premium luxury buses and coaches, executive
+                                mini-coaches and chauffeured luxury cars — all with
+                                reclining pushback seats, premium interiors, dual AC,
+                                entertainment systems and verified chauffeurs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            What is the price of a luxury bus rental in Bengaluru?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Luxury bus and coach hire starts from ₹15,000 for 8
+                                hours and 80 km with chauffeur. Outstation trips start
+                                from ₹60 per km. Final quotes depend on the vehicle,
+                                distance, duration and season.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            Do you provide wedding luxury cars in Bengaluru?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Yes. We provide decorated luxury vehicles for weddings
+                                — including grand entry cars, guest coaches and
+                                coordinated convoys — with theme decoration on request.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            Can you arrange VIP airport transfers in Bengaluru?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Absolutely. Our VIP airport transfer service includes
+                                meet-and-greet at Kempegowda International Airport
+                                (BLR), flight tracking, luggage assistance and premium
+                                vehicle allocation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            Do you provide chauffeurs with the luxury vehicles?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Every luxury vehicle comes with a professional,
+                                background-verified chauffeur trained in courteous,
+                                low-profile, punctual service.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            Can I book a luxury coach for a corporate event?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Yes. We specialise in corporate executive travel,
+                                offsite shuttles, client transfers and event transport
+                                with corporate billing and GST invoices on request.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            How many passengers can a luxury coach carry?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Our luxury coaches seat up to 50 passengers, executive
+                                mini-coaches up to 20, and chauffeured luxury cars 4-6.
+                                Choose the size that fits your guest list perfectly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            Is fuel included in the quoted price?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                For local packages, fuel is included up to the agreed
+                                kilometre limit. For outstation trips, fuel is billed at
+                                actual cost or included per-km — we clarify clearly
+                                before you book.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            Do you handle celebrity or high-profile transport?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Yes. We provide discreet, NDAs-signed transport for
+                                artists, celebrities and film units, with 24/7
+                                coordination and multi-day contracts available.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            How far in advance should I book?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                For weddings and celebrity events, we recommend booking
+                                2-4 weeks ahead. For other occasions, 3-7 days is
+                                usually enough. We always try to accommodate
+                                last-minute requests too.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            Can I customise the vehicle decor or branding?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                Yes. We offer flower and theme decoration for weddings,
+                                as well as branded and livery vehicles for corporate and
+                                promotional events.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button type="button" class="faq-q" aria-expanded="false">
+                            How do I pay for my luxury rental booking?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>
+                                We accept UPI, bank transfer and cash. A small advance
+                                confirms your vehicle, with the balance due at trip
+                                completion. GST invoices and receipts are provided for
+                                all payments.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 14. BOOKING CTA ================= -->
+
+        <section class="cta-section">
+            <div class="cta-bg" role="img" aria-label="Luxury coach ready for an event"></div>
+            <div class="cta-overlay"></div>
+
+            <div class="container cta-inner">
+                <span class="cta-tag">
+                    <i class="fa-solid fa-crown"></i>
+                    Book Your Luxury Experience
+                </span>
+                <h2>Ready to Travel in Luxury?</h2>
+                <p>
+                    Get a bespoke quotation for your wedding, corporate event or VIP
+                    journey — delivered to your WhatsApp in minutes.
+                </p>
+                <div class="cta-actions">
+                    <a href="#booking" class="btn btn-gold btn-lg">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Reserve Now
+                    </a>
+                    <a href="tel:+919019993283" class="btn-call btn-lg">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 90199 93283
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= 16. FOOTER ================= -->
+
+<footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <div class="footer-about">
+                        <h2>Shivas Travel Guru</h2>
+                        <p>
+                            Unearth the most stunning destinations and travel experiences to create
+                            lifetime memories with us.
+                        </p>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="trips.html">Trips</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Urbania Rental Bangalore</h3>
+                        <ul>
+                            <li><a href="#booking">Urbania Rental</a></li>
+                            <li><a href="#uses">Corporate Travel</a></li>
+                            <li><a href="#uses">Airport Transfer</a></li>
+                            <li><a href="#uses">Wedding Transport</a></li>
+                            <li><a href="#uses">Tour Packages</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Vehicle Types</h3>
+                        <ul>
+                            <li><a href="cab-rentals.html">Cab Rentals</a></li>
+                            <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
+                            <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-contact">
+                        <h3>Contact</h3>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank" rel="noopener">
+                                325, Dwaraka Nagar Stage 2, Banashankari 5th Stage, Bengaluru – 560098
+                            </a>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919019993283">+91 90199 93283</a>
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/919019993283" target="_blank" rel="noopener">+91 90199 93283</a>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:Shivastravelguru@gmail.com">Shivastravelguru@gmail.com</a>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        © 2026 Shivas Travel Guru. All Rights Reserved.
+                        
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+    <!-- ================= FLOATING BUTTONS ================= -->
+
+    <a href="https://wa.me/919019993283" class="float-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/luxury.js"></script>
+</body>
+
+</html>
+

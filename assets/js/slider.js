@@ -34,7 +34,7 @@ document.querySelectorAll(".vehicle-image-slider").forEach((slider) => {
 
         showSlide(current);
 
-    }, 5000);
+    }, 2500);
 
 });
 
@@ -111,7 +111,7 @@ document.querySelectorAll(".slider-container").forEach(container => {
 
             });
 
-        },5000);
+        },2500);
 
     }
 
@@ -164,3 +164,90 @@ document.querySelectorAll(".vehicle-slider").forEach(slider => {
     },{passive:true});
 
 });
+/*rating*/
+
+const ratings = [
+
+    "4.8 ★",
+    "4.9 ★",
+    "5.0 ★",
+    "4.9 ★"
+
+];
+function updateLiveRating(){
+
+    document.getElementById("ratingValue").textContent =
+        ratings[Math.floor(Math.random()*ratings.length)];
+
+    document.getElementById("reviewCount").textContent =
+        reviewCounts[Math.floor(Math.random()*reviewCounts.length)] +
+        " Reviews";
+
+    document.getElementById("bookingStatus").textContent =
+        bookings[Math.floor(Math.random()*bookings.length)];
+
+}
+
+updateLiveRating();
+
+setInterval(updateLiveRating,6000);
+
+const reviews = [
+
+{
+    name:"Rahul Sharma",
+    place:"Bengaluru",
+    stars:"★★★★★",
+    image:"images/users/user1.jpg",
+    review:"Excellent cab service! Driver arrived on time and the journey to Mysore was very comfortable."
+},
+
+{
+    name:"Priya Nair",
+    place:"Mysuru",
+    stars:"★★★★★",
+    image:"images/users/user2.jpg",
+    review:"Booked an airport transfer at midnight. Very professional driver and clean vehicle."
+},
+
+{
+    name:"Arjun Kumar",
+    place:"Mangaluru",
+    stars:"★★★★★",
+    image:"images/users/user3.jpg",
+    review:"Our Coorg family trip was wonderful. Affordable pricing and friendly service."
+},
+
+{
+    name:"Sneha Reddy",
+    place:"Hyderabad",
+    stars:"★★★★★",
+    image:"images/users/user4.jpg",
+    review:"Best outstation taxi service. The driver knew all tourist places and drove safely."
+},
+
+{
+    name:"Vijay Patel",
+    place:"Hubballi",
+    stars:"★★★★★",
+    image:"images/users/user5.jpg",
+    review:"Vehicle was well maintained and booking was very easy. Highly recommended."
+}
+
+];
+
+function updateReview(){
+
+    const review = reviews[Math.floor(Math.random()*reviews.length)];
+
+    document.getElementById("reviewName").textContent = review.name;
+    document.getElementById("reviewPlace").textContent = review.place;
+    document.getElementById("reviewText").textContent = review.review;
+    document.getElementById("reviewStars").textContent = review.stars;
+    document.getElementById("reviewImage").src = review.image;
+
+}
+
+updateReview();
+
+setInterval(updateReview,5000);

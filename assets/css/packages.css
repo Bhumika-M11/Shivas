@@ -107,16 +107,18 @@ ul{
     gap:6px;
 }
 
-.logo-icon{
-    width:40px;
-    height:55px;
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:6px;
 }
 
-.logo-icon img{
-    width:100%;
-    height:100%;
-    object-fit:fill;
-    transition:.3s;
+.logo-icon{
+    width:35px;
+    height:55px;
 }
 
 .logo-text{
@@ -141,6 +143,13 @@ ul{
     margin-left: 3px;
 }
 
+.logo-icon img{
+    width:100%;
+    height:100%;
+    object-fit:fill;
+    transition:.3s;
+}
+
 .logo:hover img{
     transform:scale(1.05);
 }
@@ -148,6 +157,15 @@ ul{
 .nav-menu ul{
     display:flex;
     gap:35px;
+}
+
+.nav-menu ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 12px 20px;
+    text-decoration: none;
 }
 
 .nav-menu a{
@@ -405,51 +423,42 @@ color:#fff;
 }
 
 .price-box{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding-top:20px;
-
-border-top:1px solid #eee;
-
+    display:flex;
+    gap:12px;
 }
 
-.price-box small{
-
-color:#888;
-
-}
-
-.price-box h3{
-
-color:#00B894;
-
-margin:5px 0;
-
-}
-
-.price-box p{
-
-font-size:13px;
-
-color:#888;
-
-}
-
-.book-btn{
-    padding:14px 28px;
+.price-box .book-btn{
+    flex:1;
+    height:50px;
+    border-radius:30px;
     background:#0A3D62;
     color:#fff;
-    border-radius:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:600;
     transition:.3s;
 }
 
-.book-btn:hover{
+.price-box .book-btn:hover{
     background:#00B894;
+}
+
+.price-box .whatsapp-btn{
+    width:100px;
+    height:50px;
+    border-radius:30px;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    transition:.3s;
+}
+
+.price-box .whatsapp-btn:hover{
+    transform:scale(1.08);
 }
 
 /*==============================
@@ -459,56 +468,115 @@ FOOTER
 .footer{
     background:#081C2D;
     color:#fff;
-    padding:100px 0 30px;
+    padding: 70px 0 0;
 }
 
-.footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 2fr 1.8fr;
-    gap:50px;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 0.8fr 2fr 1fr 2.4fr;
+    gap: 40px;
+    padding-bottom: 50px;
 }
 
-.footer h2,
-.footer h3{
-    margin-bottom:20px;
+.footer-about h2 {
+    color: var(--white);
+    font-size: 22px;
+    margin-bottom: 16px;
 }
 
-.footer p{
-    line-height:1.8;
-    color:#ccc;
+.footer-about p {
+    font-size: 14.5px;
+    margin-bottom: 22px;
 }
 
-.footer ul{
-    list-style:none;
-    padding:0;
+.footer-social {
+    display: flex;
+    gap: 12px;
 }
 
-.footer ul li{
-    margin-bottom:15px;
-    color:#ccc;
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    color: var(--white);
+    font-size: 16px;
+    transition: background var(--transition), transform var(--transition);
 }
 
-.footer ul li a{
-    color:#ccc;
-    transition:.3s;
+.footer-social a:hover {
+    background: var(--secondary);
+    transform: translateY(-4px);
 }
 
-.footer ul li a:hover{
-    color:#00B894;
+.footer-col h3 {
+    color: var(--white);
+    font-size: 17px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
-.footer-contact p a{
-    color:#CBD5E1;
-    text-decoration:none;
-    transition:.3s;
+.footer-col h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 34px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--accent);
 }
 
-.footer-contact p a:hover{
-    color:#00B894;
+.footer-col ul li {
+    margin-bottom: 12px;
 }
 
-.footer-contact i{
-    color:#00B894;
+.footer-col ul a {
+    color: rgba(255, 255, 255, .75);
+    font-size: 14.5px;
+    transition: color var(--transition), padding-left var(--transition);
+}
+
+.footer-col ul a:hover {
+    color: var(--accent);
+    padding-left: 6px;
+}
+
+.footer-contact p {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 14.5px;
+}
+
+.footer-contact i {
+    color: var(--secondary);
+    margin-top: 3px;
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, .75);
+    transition: color var(--transition);
+}
+
+.footer-contact a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    padding: 22px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-sep {
+    color: var(--secondary);
+    margin: 0 8px;
 }
 
 .social-icons{

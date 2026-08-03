@@ -7,18 +7,30 @@
 
     <title>Shivas Travel Guru</title>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap">
+    </noscript>
+
+    <link rel="preload"
+      as="image"
+      href="assets/images/logo.png"
+      fetchpriority="high">
 </head>
 
 <body>
@@ -31,7 +43,7 @@
 
             <a href="index.html" class="logo">
                     <div class="logo-icon">
-                <img src="assets/images/logo1.png" alt="Logo">
+                <img src="assets/images/logo4.png" alt="Logo">
             </div>
 
             </a>
@@ -40,7 +52,7 @@
 
                 <ul>
 
-                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
 
                     <li><a href="index.html#about">About us</a></li>
 
@@ -50,7 +62,7 @@
 
                     <li><a href="index.html#services">Services</a></li>
 
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
 
                 </ul>
 
@@ -67,38 +79,60 @@
     </header>
 
     <!-- ================= HERO ================= -->
+<section class="hero">
 
-    <section class="hero">
+    <!-- Background Video -->
 
-        <!-- Background Slides -->
+    <div class="hero_vid">
 
-        <div class="slide active"
-            style="background-image:url('assets/images/hero1.jpeg');">
-        </div>
+        <video class="hero_vid__video" autoplay muted loop playsinline preload="metadata">
 
-        <div class="slide"
-            style="background-image:url('assets/images/hero2.png');">
-        </div>
+            <source src="assets/shivas-video.mp4" type="video/mp4">
 
-        <div class="slide"
-            style="background-image:url('assets/images/hero3.png');">
-        </div>
+        </video>
 
-        <div class="overlay"></div>
+        <div class="hero_vid__overlay"></div>
 
-        <div class="container hero-content">
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="container hero-wrapper">
+
+        <!-- Left Content -->
+
+        <div class="hero-content">
 
             <span class="tag">
                 Explore • Discover • Experience
             </span>
 
             <h1>
-
                 Your Destination for Car Booking,
-
                 <span>Local Travel & Outstation Journeys.</span>
-
             </h1>
+
+            <p>
+                Book reliable airport transfers, local taxis, outstation cabs,
+                Tempo Travellers, Force Urbania, and luxury vehicles with
+                professional drivers across Bengaluru.
+            </p>
+
+            <div class="hero-highlights">
+
+                <div>
+                    ⭐ <strong>4.9/5</strong> Rating
+                </div>
+
+                <div>
+                    🚖 <strong>5000+</strong> Trips
+                </div>
+
+                <div>
+                    ✔ Verified Drivers
+                </div>
+
+            </div>
 
             <div class="hero-buttons">
 
@@ -106,20 +140,89 @@
                     Explore Tours
                 </a>
 
+                <a href="https://wa.me/919999999999" class="btn btn-outline">
+                    WhatsApp
+                </a>
+
             </div>
 
         </div>
 
-        <!-- Scroll -->
+        <!-- Right Form -->
 
-        <div class="scroll-down">
+        <div class="hero-form">
 
-            <span></span>
+            <h3>Get an Instant Quote</h3>
+
+            <p>Fill in your travel details and we'll contact you within minutes.</p>
+
+            <form id="heroForm">
+
+                <input type="text" placeholder="Full Name*" required>
+
+                <input type="tel" placeholder="Mobile Number*" required>
+
+                <input type="text" placeholder="Pickup Location*" required>
+
+                <input type="text" placeholder="Drop Location">
+
+                <input type="date">
+
+                <select required>
+
+                    <option value="">Select Vehicle</option>
+
+                    <option>Sedan</option>
+
+                    <option>SUV</option>
+
+                    <option>Innova Crysta</option>
+
+                    <option>Tempo Traveller</option>
+
+                    <option>Force Urbania</option>
+
+                    <option>Luxury Vehicle</option>
+
+                </select>
+
+                <select>
+
+                    <option>Trip Type</option>
+
+                    <option>Airport Transfer</option>
+
+                    <option>Local</option>
+
+                    <option>Outstation</option>
+
+                    <option>One Way</option>
+
+                    <option>Round Trip</option>
+
+                </select>
+
+                <button type="submit" class="btn form-btn">
+                    Get Free Quote
+                </button>
+
+            </form>
+
+            <div class="hero-contact">
+
+                <span>📞 Call Now</span>
+
+                <span>💬 WhatsApp</span>
+
+                <span>⚡ 5 Min Response</span>
+
+            </div>
 
         </div>
 
-    </section>
+    </div>
 
+</section>
 <!--==============================
 OUR SERVICES
 ===============================-->
@@ -156,10 +259,6 @@ OUR SERVICES
                     cab services will reach you to your desired destination on time.
                 </p>
 
-                <div class="price">
-                    Starting from <strong>₹1,199</strong>
-                </div>
-
                 <a href="#" class="service-btn">
                     Book Now
                 </a>
@@ -181,10 +280,6 @@ OUR SERVICES
                     not everyday affair, so make it special with your beloved ones & enjoy the fun-filled package by
                     Bangalore cab services.
                 </p>
-
-                <div class="price">
-                    Starting from <strong>₹12/km</strong>
-                </div>
 
                 <a href="packages.html" class="service-btn">
                     Explore Tours
@@ -208,10 +303,6 @@ OUR SERVICES
                     The most effective way to restore it is to spend time in nature. 
                     
                 </p>
-
-                <div class="price">
-                    Starting from <strong>₹12/km</strong>
-                </div>
 
                 <a href="" class="service-btn">
                     Book Today
@@ -252,11 +343,11 @@ OUTSTATION TRIPS
 
             <div class="slider-nav">
 
-                <button class="slide-btn out-prev-btn">
+                <button class="slide-btn out-prev-btn" title="slide">
                     <i class="fas fa-angle-left"></i>
                 </button>
 
-                <button class="slide-btn out-next-btn">
+                <button class="slide-btn out-next-btn" title="slide">
                     <i class="fas fa-angle-right"></i>
                 </button>
 
@@ -276,9 +367,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/hycross71.png" alt="">
-                        <img src="assets/images/vehicles/hycross3.jpeg" alt="">
+                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="hycross1">
+                        <img src="assets/images/vehicles/hycross71.png" alt="hycross2">
+                        <img src="assets/images/vehicles/hycross3.jpeg" alt="hycross3">
 
                     </div>
 
@@ -348,9 +439,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/hycross2.jpeg" alt="">
-                        <img src="assets/images/vehicles/hycross3.jpeg" alt="">
+                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="hycross1">
+                        <img src="assets/images/vehicles/hycross2.jpeg" alt="hycross2">
+                        <img src="assets/images/vehicles/hycross3.jpeg" alt="hycross3">
 
                     </div>
 
@@ -420,9 +511,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/crysta2.jpeg" alt="">
-                        <img src="assets/images/vehicles/crysta3.jpeg" alt="">
+                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="crysta">
+                        <img src="assets/images/vehicles/crysta2.jpeg" alt="crysta1">
+                        <img src="assets/images/vehicles/crysta3.jpeg" alt="crysta2">
 
                     </div>
 
@@ -491,9 +582,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/crysta4.png" alt="">
-                        <img src="assets/images/vehicles/crysta3.jpeg" alt="">
+                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="crysta">
+                        <img src="assets/images/vehicles/crysta4.png" alt="crysta1">
+                        <img src="assets/images/vehicles/crysta3.jpeg" alt="crysta2">
 
                     </div>
 
@@ -562,8 +653,8 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/urbania.png" class="active" alt="">
-                        <img src="assets/images/vehicles/urbania10+1.png" alt="">
+                        <img src="assets/images/vehicles/urbania.png" class="active" alt="urbania">
+                        <img src="assets/images/vehicles/urbania10+1.png" alt="urbania1">
 
                     </div>
 
@@ -632,8 +723,8 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/urbania.png" class="active" alt="">
-                        <img src="assets/images/vehicles/urbania13+1.png" alt="">
+                        <img src="assets/images/vehicles/urbania.png" class="active" alt="urbania">
+                        <img src="assets/images/vehicles/urbania13+1.png" alt="urbania1">
 
                     </div>
 
@@ -702,8 +793,8 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/urbania.png" class="active" alt="">
-                        <img src="assets/images/vehicles/urbania16+1.png" alt="">
+                        <img src="assets/images/vehicles/urbania.png" class="active" alt="urbania">
+                        <img src="assets/images/vehicles/urbania16+1.png" alt="urbania1">
 
                     </div>
 
@@ -772,9 +863,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/ertiga.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/ertiga1.png" alt="">
-                        <img src="assets/images/vehicles/ertiga2.png" alt="">
+                        <img src="assets/images/vehicles/ertiga.jpg" class="active" alt="ertiga">
+                        <img src="assets/images/vehicles/ertiga1.png" alt="ertiga1">
+                        <img src="assets/images/vehicles/ertiga2.png" alt="ertiga2">
 
                     </div>
 
@@ -843,9 +934,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/Fortuner.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/fortuner1.png" alt="">
-                        <img src="assets/images/vehicles/fortuner2.png" alt="">
+                        <img src="assets/images/vehicles/Fortuner.jpg" class="active" alt="fortuner">
+                        <img src="assets/images/vehicles/fortuner1.png" alt="fortuner1">
+                        <img src="assets/images/vehicles/fortuner2.png" alt="fortuner2">
 
                     </div>
 
@@ -915,9 +1006,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/tt1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/tt2.jpeg" alt="">
-                        <img src="assets/images/vehicles/tt3.jpeg" alt="">
+                        <img src="assets/images/vehicles/tt1.jpeg" class="active" alt="tt1">
+                        <img src="assets/images/vehicles/tt2.jpeg" alt="tt2">
+                        <img src="assets/images/vehicles/tt3.jpeg" alt="tt3">
 
                     </div>
 
@@ -987,9 +1078,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/luxurybus.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/bus1.png" alt="">
-                        <img src="assets/images/vehicles/bus2.png" alt="">
+                        <img src="assets/images/vehicles/luxurybus.jpg" class="active" alt="bus1">
+                        <img src="assets/images/vehicles/bus1.png" alt="bus2">
+                        <img src="assets/images/vehicles/bus2.png" alt="bus3">
 
                     </div>
 
@@ -1058,9 +1149,9 @@ OUTSTATION TRIPS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/dzire.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/dzire1.jpeg" alt="">
-                        <img src="assets/images/vehicles/dzire2.jpeg" alt="">
+                        <img src="assets/images/vehicles/dzire.jpg" class="active" alt="dzire1">
+                        <img src="assets/images/vehicles/dzire1.jpeg" alt="dzire2">
+                        <img src="assets/images/vehicles/dzire2.jpeg" alt="dzire3">
 
                     </div>
 
@@ -1154,11 +1245,11 @@ LOCAL PACKAGES
 
             <div class="slider-nav">
 
-                <button class="slide-btn out-prev-btn">
+                <button class="slide-btn out-prev-btn" title="slide">
                     <i class="fas fa-angle-left"></i>
                 </button>
 
-                <button class="slide-btn out-next-btn">
+                <button class="slide-btn out-next-btn" title="slide">
                     <i class="fas fa-angle-right"></i>
                 </button>
 
@@ -1178,9 +1269,9 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/hycross71.png" alt="">
-                        <img src="assets/images/vehicles/hycross3.jpeg" alt="">
+                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="hycross1">
+                        <img src="assets/images/vehicles/hycross71.png" alt="hycross2">
+                        <img src="assets/images/vehicles/hycross3.jpeg" alt="hycross3">
 
                     </div>
 
@@ -1250,9 +1341,9 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/crysta2.jpeg" alt="">
-                        <img src="assets/images/vehicles/crysta4.png" alt="">
+                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="crysta">
+                        <img src="assets/images/vehicles/crysta2.jpeg" alt="crysta1">
+                        <img src="assets/images/vehicles/crysta4.png" alt="crysta2">
 
                     </div>
 
@@ -1321,9 +1412,9 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/ertiga.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/ertiga1.png" alt="">
-                        <img src="assets/images/vehicles/ertiga2.png" alt="">
+                        <img src="assets/images/vehicles/ertiga.jpg" class="active" alt="ertiga">
+                        <img src="assets/images/vehicles/ertiga1.png" alt="ertiga1">
+                        <img src="assets/images/vehicles/ertiga2.png" alt="ertiga2">
 
                     </div>
 
@@ -1393,9 +1484,9 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/tt1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/tt2.jpeg" alt="">
-                        <img src="assets/images/vehicles/tt3.jpeg" alt="">
+                        <img src="assets/images/vehicles/tt1.jpeg" class="active" alt="tt1">
+                        <img src="assets/images/vehicles/tt2.jpeg" alt="tt2">
+                        <img src="assets/images/vehicles/tt3.jpeg" alt="tt3">
 
                     </div>
 
@@ -1464,8 +1555,8 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/urbania.png" class="active" alt="">
-                        <img src="assets/images/vehicles/urbania10+1.png" alt="">
+                        <img src="assets/images/vehicles/urbania.png" class="active" alt="urbania">
+                        <img src="assets/images/vehicles/urbania10+1.png" alt="urbania1">
 
                     </div>
 
@@ -1534,8 +1625,8 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/urbania.png" class="active" alt="">
-                        <img src="assets/images/vehicles/urbania13+1.png" alt="">
+                        <img src="assets/images/vehicles/urbania.png" class="active" alt="urbania">
+                        <img src="assets/images/vehicles/urbania13+1.png" alt="urbania1">
 
                     </div>
 
@@ -1604,8 +1695,8 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/urbania.png" class="active" alt="">
-                        <img src="assets/images/vehicles/urbania16+1.png" alt="">
+                        <img src="assets/images/vehicles/urbania.png" class="active" alt="urbania">
+                        <img src="assets/images/vehicles/urbania16+1.png" alt="urbania1">
 
                     </div>
 
@@ -1674,9 +1765,9 @@ LOCAL PACKAGES
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/dzire.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/dzire1.jpeg" alt="">
-                        <img src="assets/images/vehicles/dzire2.jpeg" alt="">
+                        <img src="assets/images/vehicles/dzire.jpg" class="active" alt="dzire">
+                        <img src="assets/images/vehicles/dzire1.jpeg" alt="dzire1">
+                        <img src="assets/images/vehicles/dzire2.jpeg" alt="dzire2">
 
                     </div>
 
@@ -1774,11 +1865,11 @@ AIRPORT TRANSFERS
 
             <div class="slider-nav">
 
-                <button class="slide-btn out-prev-btn">
+                <button class="slide-btn out-prev-btn" title="slide">
                     <i class="fas fa-angle-left"></i>
                 </button>
 
-                <button class="slide-btn out-next-btn">
+                <button class="slide-btn out-next-btn" title="slide">
                     <i class="fas fa-angle-right"></i>
                 </button>
 
@@ -1798,9 +1889,9 @@ AIRPORT TRANSFERS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/hycross71.png" alt="">
-                        <img src="assets/images/vehicles/hycross3.jpeg" alt="">
+                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="hycross1">
+                        <img src="assets/images/vehicles/hycross71.png" alt="hycross2">
+                        <img src="assets/images/vehicles/hycross3.jpeg" alt="hycross3">
 
                     </div>
 
@@ -1870,9 +1961,9 @@ AIRPORT TRANSFERS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/hycross2.jpeg" alt="">
-                        <img src="assets/images/vehicles/hycross3.jpeg" alt="">
+                        <img src="assets/images/vehicles/hycross1.jpeg" class="active" alt="hycross1">
+                        <img src="assets/images/vehicles/hycross2.jpeg" alt="hycross2">
+                        <img src="assets/images/vehicles/hycross3.jpeg" alt="hycross3">
 
                     </div>
 
@@ -1942,9 +2033,9 @@ AIRPORT TRANSFERS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/crysta2.jpeg" alt="">
-                        <img src="assets/images/vehicles/crysta3.jpeg" alt="">
+                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="crysta">
+                        <img src="assets/images/vehicles/crysta2.jpeg" alt="crysta1">
+                        <img src="assets/images/vehicles/crysta3.jpeg" alt="crysta2">
 
                     </div>
 
@@ -2013,9 +2104,9 @@ AIRPORT TRANSFERS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/crysta4.png" alt="">
-                        <img src="assets/images/vehicles/crysta3.jpeg" alt="">
+                        <img src="assets/images/vehicles/Crysta.jpg" class="active" alt="crysta">
+                        <img src="assets/images/vehicles/crysta4.png" alt="crysta1">
+                        <img src="assets/images/vehicles/crysta3.jpeg" alt="crysta2">
 
                     </div>
 
@@ -2084,9 +2175,9 @@ AIRPORT TRANSFERS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/ertiga.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/ertiga1.png" alt="">
-                        <img src="assets/images/vehicles/ertiga2.png" alt="">
+                        <img src="assets/images/vehicles/ertiga.jpg" class="active" alt="ertiga">
+                        <img src="assets/images/vehicles/ertiga1.png" alt="ertiga1">
+                        <img src="assets/images/vehicles/ertiga2.png" alt="ertiga2">
 
                     </div>
 
@@ -2152,9 +2243,9 @@ AIRPORT TRANSFERS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/tt1.jpeg" class="active" alt="">
-                        <img src="assets/images/vehicles/tt2.jpeg" alt="">
-                        <img src="assets/images/vehicles/tt3.jpeg" alt="">
+                        <img src="assets/images/vehicles/tt1.jpeg" class="active" alt="tt1">
+                        <img src="assets/images/vehicles/tt2.jpeg" alt="tt2">
+                        <img src="assets/images/vehicles/tt3.jpeg" alt="tt3">
 
                     </div>
 
@@ -2223,9 +2314,9 @@ AIRPORT TRANSFERS
 
                     <div class="vehicle-slides">
 
-                        <img src="assets/images/vehicles/dzire.jpg" class="active" alt="">
-                        <img src="assets/images/vehicles/dzire1.jpeg" alt="">
-                        <img src="assets/images/vehicles/dzire2.jpeg" alt="">
+                        <img src="assets/images/vehicles/dzire.jpg" class="active" alt="dzire">
+                        <img src="assets/images/vehicles/dzire1.jpeg" alt="dzire1">
+                        <img src="assets/images/vehicles/dzire2.jpeg" alt="dzire2">
 
                     </div>
 
@@ -2920,6 +3011,43 @@ OUR FLEET
 
 </section>
 
+<section class="reviews">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>TESTIMONIALS</span>
+            <h2>What Our Customers Say</h2>
+            <p>Trusted by thousands of happy travelers across Karnataka and South India.</p>
+        </div>
+
+        <div class="review-card">
+
+            <div class="review-stars" id="reviewStars">
+                ★★★★★
+            </div>
+
+            <p class="review-text" id="reviewText">
+                Excellent cab service! Driver was punctual and the vehicle was clean.
+            </p>
+
+            <div class="review-user">
+                <img id="reviewImage"
+                     src="images/users/user1.jpg"
+                     alt="Customer">
+
+                <div>
+                    <h4 id="reviewName">Rahul Sharma</h4>
+                    <span id="reviewPlace">Bengaluru</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 <!-- ===========================
 CALL TO ACTION
 =========================== -->
@@ -2964,104 +3092,80 @@ CALL TO ACTION
 <!-- ===========================
 FOOTER
 =========================== -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
 
-<footer class="footer" id="contact">
+                    <div class="footer-about">
+                        <h2>Shivas Travel Guru</h2>
+                        <p>
+                            Unearth the most stunning destinations and travel experiences to create
+                lifetime memories with us.
+                        </p>
+                    </div>
 
-    <div class="container">
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="trips.html">Trips</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
 
-        <div class="footer-grid">
+                    <div class="footer-col">
+                        <h3>Urbania Rental Bangalore</h3>
+                        <ul>
+                            <li><a href="electronic-city.html">Urbania Rental</a></li>
+                            <li><a href="whitefield.html">Corporate Travel</a></li>
+                            <li><a href="koramangala.html">Airport Transfer</a></li>
+                            <li><a href="indiranagar.html">Wedding Transport</a></li>
+                        </ul>
+                    </div>
 
-            <div class="footer-about">
+                    <div class="footer-col">
+                        <h3>Vehicle Types</h3>
+                        <ul>
+                            <li><a href="cab-rentals.html">Cab Rentals</a></li>
+                            <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
+                            <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
+                        </ul>
+                    </div>
 
-                <h2>Shivas Travel Guru</h2>
+                    <div class="footer-col footer-contact">
+                        <h3>Contact</h3>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank" rel="noopener">
+                                325, Dwaraka Nagar Stage 2, Banashankari 5th Stage, Bengaluru – 560098
+                            </a>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919019993283">+91 90199 93283</a>
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <a href="https://wa.me/919019993283" target="_blank" rel="noopener">+91 90199 93283</a>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:Shivastravelguru@gmail.com">Shivastravelguru@gmail.com</a>
+                        </p>
+                    </div>
 
-                <p>
-                    Unearth the most stunning destinations and travel experiences to create lifetime memories with us.
-                </p>
+                </div>
 
+                <div class="footer-bottom">
+                    <p>
+                        © 2026 Shivas Travel Guru. All Rights Reserved.
+                        
+                    </p>
+                </div>
             </div>
-
-            <div>
-
-                <h3>Quick Links</h3>
-
-                <ul>
-
-                    <li><a href="index.html">Home</a></li>
-
-                    <li><a href="index.html#about">About us</a></li>
-
-                    <li><a href="trips.html">Trips</a></li>
-
-                    <li><a href="packages.html">Packages</a></li>
-
-                    <li><a href="index.html#services">Services</a></li>
-
-
-                </ul>
-
-            </div>
-
-            <div>
-
-                <h3>Map Location</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3889.13880276533!2d77.52235700000001!3d12.898795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDUzJzU1LjciTiA3N8KwMzEnMjAuNSJF!5e0!3m2!1sen!2sin!4v1785232867094!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
-
-            </div>
-
-            <div class="footer-contact">
-
-                <h3>Contact Us</h3>
-
-                <ul>
-
-                    <p> 
-                    <i class="fa-solid fa-location-dot"></i>
-                    <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank">
-                        325, Dwaraka Nagar Stage 2 Banashankari 5th stage, Bangalore-560098
-                    </a>
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:+919019993283">
-                        +91 90199 93283
-                    </a>
-                </p>
-
-                <p>
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <a href="https://wa.me/919019993283" target="_blank">
-                      +91 90199 93283
-                    </a>
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:Shivastravelguru@gmail.com">
-                        Shivastravelguru@gmail.com
-                    </a>
-                </p>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-
-            <p>
-                © 2026 Shivas Travels. All Rights Reserved.
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
+        </footer>
 
 <!-- Back to Top -->
 
@@ -3082,8 +3186,8 @@ FOOTER
     <div class="loader-circle"></div>
 
 </div>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/slider.js"defer></script>
 
 </body>
 
