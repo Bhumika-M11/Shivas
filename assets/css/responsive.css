@@ -106,15 +106,16 @@ padding:0;
 .nav-menu{
     position:fixed;
     top:80px;
-    left:-100%;
+    left:0;
     width:100%;
     background:#0A3D62;
-    transition:.4s;
+    transition:transform .4s;
     padding:30px;
+    transform:translateX(-100%);
 }
 
 .nav-menu.active{
-    left:0;
+    transform:translateX(0);
 }
 
 .nav-menu ul{

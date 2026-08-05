@@ -144,8 +144,145 @@
 
         counters.forEach(function (el) { io.observe(el); });
     }
+/* --------------------------------------------------
+        6. TESTIMONIAL SLIDER (autoplay with pause)
+    -------------------------------------------------- */
+    function initSlider() {
+        var track = document.querySelector(".t-track");
+        var slides = document.querySelectorAll(".t-track .t-card");
+        var dotsWrap = document.querySelector(".t-dots");
+        if (!track || !slides.length) return;
+
+        var index = 0;
+        var total = slides.length;
+        var timer = null;
+        var dots = [];
+
+        function makeDots() {
+            if (!dotsWrap) return;
+            dotsWrap.textContent = "";
+            for (var i = 0; i < total; i++) {
+                var d = document.createElement("button");
+                d.type = "button";
+                d.className = "t-dot" + (i === 0 ? " active" : "");
+                d.setAttribute("aria-label", "Slide " + (i + 1) + " of " + total);
+                d.setAttribute("aria-current", i === 0 ? "true" : "false");
+                (function (n) {
+                    d.addEventListener("click", function () {
+                        goTo(n);
+                        restart();
+                    });
+                })(i);
+                dotsWrap.appendChild(d);
+                dots.push(d);
+            }
+        }
+
+        function goTo(n) {
+            index = (n + total) % total;
+            var delta = -(index * (100 / total));
+            track.style.transform = "translate3d(" + delta + "%, 0, 0)";
+            track.style.width = (total * 100) + "%";
+            Array.prototype.forEach.call(slides, function (s, i) {
+                s.style.width = (100 / total) + "%";
+            });
+            dots.forEach(function (d, i) {
+                d.classList.toggle("active", i === index);
+                d.setAttribute("aria-current", i === index ? "true" : "false");
+            });
+        }
+
+        function start() {
+            stop();
+            timer = setInterval(function () { goTo(index + 1); }, 5000);
+        }
+
+        function stop() {
+            if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        function restart() {
+            if (document.hidden) return;
+            start();
+        }
+
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) { stop(); } else { restart(); }
+        });
+
+        makeDots();
+        goTo(0);
+        if (reduceMotion()) return;
+        start();
+    }
+
+    function reduceMotion() {
+        return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        );
+    }
+
     /* --------------------------------------------------
-       7. FAQ ACCORDION
+        QUICK BOOKING FORM -> WhatsApp
+    -------------------------------------------------- */
+    function handleQuickBooking() {
+        var form = document.querySelector(".quick-booking form, form#bookingForm, form.booking-form");
+        if (!form || !form.elements) return;
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var fields = form.elements;
+            function v(name) {
+                var el = fields.namedItem(name);
+                if (!el) return "";
+                return (el.value || "").toString().trim();
+            }
+            var name = v("qb-name") || v("name");
+            var phone = v("qb-phone") || v("phone");
+            var pickup = v("pickup");
+            var drop = v("drop");
+            var date = v("date");
+            var vehicle = v("vehicle") || v("qb-vehicle");
+            var pax = v("passengers") || v("qb-passengers");
+
+            var msg = "Hello Shivas Travel Guru,%0A%0A" +
+                "I'd like to book a traveller rental.%0A" +
+                "Name: " + encodeURIComponent(name) + "%0A" +
+                "Phone: " + encodeURIComponent(phone) + "%0A" +
+                "Pickup: " + encodeURIComponent(pickup) + "%0A" +
+                "Drop: " + encodeURIComponent(drop) + "%0A" +
+                "Date: " + encodeURIComponent(date) + "%0A" +
+                "Vehicle: " + encodeURIComponent(vehicle) + "%0A" +
+                "Passengers: " + encodeURIComponent(pax);
+
+            window.open(WA_PREFIX + msg, "_blank", "noopener,noreferrer");
+        });
+    }
+
+    /* --------------------------------------------------
+        ENQUIRY FORMING -> WhatsApp
+    -------------------------------------------------- */
+    function handleEnquiry() {
+        var form = document.querySelector(".enquiry-panel form, form#enquiryForm, form.enquiry-form");
+        if (!form || !form.elements) return;
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var fields = form.querySelectorAll("[name]");
+            var parts = ["Hello Shivas Travels, this is my enquiry:%0A"];
+            fields.forEach(function (el) {
+                var val = (el.value || "").toString().trim();
+                if (!val) return;
+                var label = (el.getAttribute("aria-label") || el.getAttribute("name")).replace(/enq-/g, "");
+                parts.push(encodeURIComponent(label) + ": " + encodeURIComponent(val));
+            });
+            window.open(WA_PREFIX + parts.join("%0A"), "_blank", "noopener,noreferrer");
+        });
+    }
+
+    /* --------------------------------------------------
+        7. FAQ ACCORDION
     -------------------------------------------------- */
     function initFaq() {
         var items = document.querySelectorAll(".faq-item");

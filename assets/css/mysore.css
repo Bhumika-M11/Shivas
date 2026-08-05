@@ -1,6 +1,7 @@
 /*============================================
-  SHIVAS TRAVEL GURU — TRAVELLER RENTALS BENGALURU
+  SHIVAM TRAVELS — BANGALORE ↔ MYSORE
   Premium | Mobile First | No Framework
+  Matches Shivas Travel Guru design language
 ============================================*/
 
 /* ============ 1. RESET & BASE ============ */
@@ -95,6 +96,7 @@ textarea {
     white-space: nowrap;
     border: 0;
 }
+
 
 .container {
     width: min(1200px, 90%);
@@ -282,65 +284,68 @@ section {
         transform: none;
         transition: none;
     }
+
+    .whatsapp-float::before,
+    .ripple-ink {
+        display: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
 }
 
-/*==========================
- HEADER
-===========================*/
+/* ============ 3. HEADER & NAV ============ */
 
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    transition:.4s;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: .4s;
 }
 
-.header.sticky{
-    background:rgba(10,61,98,.96);
-    backdrop-filter:blur(15px);
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+.header.sticky {
+    background: rgba(10, 61, 98, .96);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
 }
 
-/*==========================
- NAVBAR
-===========================*/
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:24px 0;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    text-decoration:none;
-    flex-shrink:0;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    flex-shrink: 0;
 }
 
-.logo-icon{
-    width:80px;
-    height:55px;
+.logo-icon {
+    width: 80px;
+    height: 55px;
 }
 
-.logo-icon img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    transition:.3s;
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: .3s;
 }
 
-.logo:hover img{
-    transform:scale(1.05);
+.logo:hover img {
+    transform: scale(1.05);
 }
 
-.nav-menu ul{
-    display:flex;
-    gap:35px;
+.nav-menu ul {
+    display: flex;
+    gap: 35px;
 }
 
 .nav-menu ul li a {
@@ -352,120 +357,87 @@ section {
     text-decoration: none;
 }
 
-.nav-menu a{
-    color:#fff;
-    font-weight:500;
-    position:relative;
-    transition:.3s;
+.nav-menu a {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
 }
 
-.nav-menu a::after{
-    content:"";
-    position:absolute;
-    bottom:-8px;
-    left:0;
-    width:0;
-    height:2px;
-    background:var(--accent);
-    transition:.4s;
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: .4s;
 }
 
-.nav-menu a:hover::after{
-    width:100%;
+.nav-menu a:hover::after {
+    width: 100%;
 }
 
-.nav-menu a:hover{
-    color:var(--accent);
+.nav-menu a:hover {
+    color: var(--accent);
 }
 
-/*==========================
- BUTTON
-===========================*/
-
-.btn{
-    background:linear-gradient(135deg,#FFB703,#FF8C00);
-    color:#fff;
-    padding:14px 30px;
-    border-radius:50px;
-    font-weight:600;
-    transition:.4s;
-    box-shadow:0 15px 35px rgba(255,183,3,.35);
+.navbar .btn {
+    background: linear-gradient(135deg, #FFB703, #FF8C00);
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: .4s;
+    box-shadow: 0 15px 35px rgba(255, 183, 3, .35);
 }
 
-.btn:hover{
-    transform:translateY(-5px);
+.navbar .btn:hover {
+    transform: translateY(-5px);
 }
 
-.menu-btn{
-    display:none;
-    color:#fff;
-    font-size:28px;
-    cursor:pointer;
+.menu-btn {
+    display: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 /* ============ 4. HERO ============ */
 
-.hero-traveller {
+.hero {
     position: relative;
-    min-height: 92vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 150px 0 90px;
+    padding: 140px 0 80px;
     overflow: hidden;
+    background: url('../images/bm.png') center / cover no-repeat;
 }
 
-.hero-traveller-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    background-image: url('../images/vehicles/traveller.png');
-}
-
-.hero-traveller-overlay {
+.hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(100deg,
             rgba(8, 28, 45, .95) 0%,
-            rgba(10, 61, 98, .88) 45%,
-            rgba(10, 61, 98, .6) 100%);
+            rgba(10, 61, 98, .88) 48%,
+            rgba(10, 61, 98, .55) 100%);
 }
 
-.hero-traveller-content {
+.hero-wrap {
     position: relative;
     z-index: 2;
+    width: min(1200px, 90%);
+    margin-inline: auto;
+    display: inline-block;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-content {
     color: var(--white);
-    max-width: 800px;
-}
-
-.breadcrumb {
-    margin-bottom: 26px;
-}
-
-.breadcrumb ol {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, .8);
-}
-
-.breadcrumb li {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.breadcrumb li:not(:last-child)::after {
-    content: "/";
-    color: rgba(255, 255, 255, .45);
-    margin-left: 6px;
-}
-
-.breadcrumb a {
-    color: var(--accent);
-    font-weight: 500;
+    text-align: center;
 }
 
 .hero-tag {
@@ -484,34 +456,34 @@ section {
     margin-bottom: 22px;
 }
 
-.hero-traveller-content h1 {
-    font-size: clamp(32px, 6vw, 56px);
-    line-height: 1.15;
+.hero-content h1 {
+    font-size: clamp(32px, 6vw, 58px);
+    line-height: 1.12;
     font-weight: 800;
     margin-bottom: 20px;
 }
 
-.hero-traveller-content h1 .accent {
+.hero-content h1 .accent {
     color: var(--accent);
 }
 
-.hero-traveller-content > p {
+.hero-content > p {
     font-size: 17px;
     color: rgba(255, 255, 255, .88);
-    max-width: 660px;
+    max-width: 840px;
+    margin-left: 150px;
     margin-bottom: 32px;
 }
 
 .hero-actions {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     gap: 14px;
     margin-bottom: 38px;
 }
 
 .trust-badges {
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-flex;
     gap: 22px;
 }
 
@@ -534,101 +506,262 @@ section {
     font-size: 15px;
 }
 
-/* ============ 6. WHY CHOOSE ============ */
+/* ============ 5. ROUTE OVERVIEW ============ */
 
-.why-section {
-    background: var(--white);
+.overview-section {
+    background: linear-gradient(135deg, var(--primary), #0d4d7e);
+    color: var(--white);
 }
 
-.why-grid {
+.overview-section .section-tag {
+    background: rgba(0, 184, 148, .2);
+}
+
+.overview-section .section-head h2 {
+    color: var(--white);
+}
+
+.overview-section .section-head p {
+    color: rgba(255, 255, 255, .8);
+}
+
+.overview-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
 }
 
-.why-card {
+.ov-stat {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: var(--radius);
+    padding: 26px 18px;
+    text-align: center;
+    transition: transform var(--transition), background var(--transition);
+}
+
+.ov-stat:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, .14);
+}
+
+.ov-stat i {
+    font-size: 26px;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.ov-stat strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+}
+
+.ov-stat span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, .75);
+}
+
+/* ============ 6. TRAVEL SERVICES ============ */
+
+.services-section {
     background: var(--bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: var(--white);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 34px 26px;
+    padding: 30px 24px;
     text-align: center;
+    box-shadow: var(--shadow-sm);
     transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
-.why-card:hover {
+.service-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
     border-color: var(--secondary);
 }
 
-.why-icon {
-    width: 66px;
-    height: 66px;
-    margin: 0 auto 18px;
+.service-card i {
+    width: 62px;
+    height: 62px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
+    margin: 0 auto 16px;
+    border-radius: 16px;
     background: linear-gradient(135deg, var(--primary), #125a8f);
     color: var(--accent);
-    font-size: 26px;
-    box-shadow: 0 12px 25px rgba(10, 61, 98, .25);
+    font-size: 24px;
+    box-shadow: 0 12px 25px rgba(10, 61, 98, .22);
 }
 
-.why-card h3 {
+.service-card h3 {
     color: var(--primary);
-    font-size: 19px;
-    margin-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: 8px;
 }
 
-.why-card p {
+.service-card p {
     color: var(--muted);
-    font-size: 15px;
+    font-size: 13.5px;
 }
 
-/* ============ 7. VEHICLE OVERVIEW ============ */
+/* ============ 7. DIRECTION SECTIONS ============ */
 
-.overview-section {
+.direction-section {
+    background: var(--white);
+}
+
+.direction-alt {
     background: var(--bg);
 }
 
-.overview-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+.direction-head {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 44px;
 }
 
-.overview-card {
+.direction-head h2 {
+    color: var(--primary);
+    font-size: clamp(26px, 4vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.direction-head p {
+    color: var(--muted);
+}
+
+.direction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    margin-bottom: 34px;
+}
+
+.direction-block {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px 28px;
+}
+
+.direction-alt .direction-block {
     background: var(--white);
+}
+
+.direction-block h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+.direction-block h3 i {
+    color: var(--secondary);
+}
+
+.point-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.point-chips li {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: border-color var(--transition), background var(--transition), color var(--transition);
+}
+
+.direction-alt .point-chips li {
+    background: var(--bg);
+}
+
+.point-chips li:hover {
+    border-color: var(--secondary);
+    background: rgba(0, 184, 148, .08);
+}
+
+.direction-img {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.direction-img img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+/* ============ 8. VEHICLE FLEET ============ */
+
+.fleet-section {
+    background: var(--white);
+}
+
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.fleet-card {
+    background: var(--white);
+    border: 1px solid var(--line);
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
     overflow: hidden;
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.overview-card:hover {
-    transform: translateY(-8px);
+.fleet-card:hover {
+    transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
 }
 
-.overview-img {
+.fleet-img {
     position: relative;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
 }
 
-.overview-img img {
+.fleet-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform .6s ease;
 }
 
-.overview-card:hover .overview-img img {
-    transform: scale(1.07);
+.fleet-card:hover .fleet-img img {
+    transform: scale(1.08);
 }
 
-.overview-badge {
+.fleet-badge {
     position: absolute;
     top: 14px;
     left: 14px;
@@ -643,30 +776,25 @@ section {
     box-shadow: 0 8px 20px rgba(255, 183, 3, .4);
 }
 
-.overview-body {
-    padding: 26px;
+.fleet-body {
+    padding: 24px;
 }
 
-.overview-body h3 {
+.fleet-body h3 {
     color: var(--primary);
     font-size: 21px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+    text-align: center;
 }
 
-.overview-body > p {
-    color: var(--muted);
-    font-size: 14.5px;
-    margin-bottom: 18px;
-}
-
-.overview-features {
+.fleet-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px 14px;
+    gap: 9px 14px;
     margin-bottom: 22px;
 }
 
-.overview-features li {
+.fleet-features li {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -674,327 +802,12 @@ section {
     color: var(--text);
 }
 
-.overview-features i {
+.fleet-features i {
     color: var(--secondary);
     font-size: 14px;
 }
 
-.overview-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.overview-actions .btn-price,
-.overview-actions .btn-route {
-    flex: 1;
-}
-
-/* ============ 8. COMPARE TABLE ============ */
-
-.compare-section {
-    background: var(--white);
-}
-
-.compare-wrap {
-    overflow-x: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-}
-
-.compare-table {
-    width: 100%;
-    min-width: 680px;
-    border-collapse: collapse;
-    background: var(--white);
-    font-size: 15px;
-}
-
-.compare-table th,
-.compare-table td {
-    padding: 18px 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--line);
-}
-
-.compare-table thead th {
-    background: var(--primary);
-    color: var(--white);
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.compare-table thead th:first-child {
-    text-align: left;
-    background: var(--primary-dark);
-}
-
-.compare-table tbody th {
-    text-align: left;
-    color: var(--primary);
-    font-weight: 600;
-    background: var(--bg);
-}
-
-.compare-table tbody tr:hover td {
-    background: #f0fdfa;
-}
-
-.compare-table td i {
-    color: var(--secondary);
-}
-
-/* ============ 9. SEATING CONFIGURATIONS ============ */
-
-.seating-section {
-    background: var(--bg);
-}
-
-.seating-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
-}
-
-.seating-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 34px 26px;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-
-.seating-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--secondary);
-}
-
-.seating-icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(0, 184, 148, .12);
-    color: var(--secondary);
-    font-size: 30px;
-}
-
-.seating-card h3 {
-    color: var(--primary);
-    font-size: 20px;
-    margin-bottom: 6px;
-}
-
-.seating-sub {
-    color: var(--secondary);
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.seating-card ul {
-    text-align: left;
-}
-
-.seating-card ul li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 0;
-    font-size: 14px;
-    color: var(--text);
-    border-bottom: 1px dashed var(--line);
-}
-
-.seating-card ul li:last-child {
-    border-bottom: none;
-}
-
-.seating-card ul i {
-    color: var(--secondary);
-}
-
-/* ============ 10. USE-CASE SECTIONS (Corporate/Airport/Wedding/etc.) ============ */
-
-.use-section {
-    background: var(--bg);
-}
-
-.use-alt {
-    background: var(--white);
-}
-
-.use-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.use-content h2 {
-    color: var(--primary);
-    font-size: clamp(26px, 4vw, 38px);
-    line-height: 1.2;
-    margin-bottom: 16px;
-}
-
-.use-content > p {
-    color: var(--muted);
-    margin-bottom: 26px;
-}
-
-.use-points {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 30px;
-}
-
-.use-points li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 14px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--primary);
-    transition: border-color var(--transition), transform var(--transition);
-}
-
-.use-alt .use-points li {
-    background: var(--bg);
-}
-
-.use-points li:hover {
-    border-color: var(--secondary);
-    transform: translateX(4px);
-}
-
-.use-points i {
-    color: var(--secondary);
-    font-size: 18px;
-}
-
-.use-img {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-}
-
-.use-img img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
-.use-cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-/* ============ 11. DESTINATIONS ============ */
-
-.dest-section {
-    background: var(--white);
-}
-
-.dest-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.dest-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    border: 1px solid var(--line);
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.dest-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-}
-
-.dest-img {
-    position: relative;
-    height: 150px;
-    overflow: hidden;
-}
-
-.dest-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .6s ease;
-}
-
-.dest-card:hover .dest-img img {
-    transform: scale(1.08);
-}
-
-.dest-distance {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(8, 28, 45, .8);
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 700;
-    padding: 5px 12px;
-    border-radius: 20px;
-}
-
-.dest-body {
-    padding: 20px;
-}
-
-.dest-body h3 {
-    color: var(--primary);
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-.dest-duration {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--muted);
-    font-size: 13.5px;
-    margin-bottom: 8px;
-}
-
-.dest-duration i {
-    color: var(--secondary);
-}
-
-.dest-price {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.dest-price strong {
-    color: var(--secondary);
-    font-size: 18px;
-}
-
-.dest-body .btn-route {
-    width: 100%;
-}
-
-/* ============ 12. PRICING ============ */
+/* ============ 9. PRICING ============ */
 
 .pricing-section {
     background: var(--bg);
@@ -1123,6 +936,10 @@ section {
     color: var(--accent);
 }
 
+.price-card .btn-price {
+    justify-content: center;
+}
+
 .pricing-note {
     text-align: center;
     color: var(--muted);
@@ -1135,17 +952,242 @@ section {
     font-weight: 600;
 }
 
+/* ============ 10. WHY CHOOSE ============ */
+
+.why-section {
+    background: var(--white);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.why-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary);
+}
+
+.why-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary), #125a8f);
+    color: var(--accent);
+    font-size: 24px;
+    box-shadow: 0 12px 25px rgba(10, 61, 98, .25);
+}
+
+.why-card h3 {
+    color: var(--primary);
+    font-size: 15.5px;
+    margin-bottom: 8px;
+}
+
+.why-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ============ 11. POPULAR STOPS ============ */
+
+.stops-section {
+    background: var(--bg);
+}
+
+.stops-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.stop-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.stop-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stop-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.stop-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.stop-card:hover .stop-img img {
+    transform: scale(1.08);
+}
+
+.stop-dist {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(8, 28, 45, .8);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 30px;
+    backdrop-filter: blur(4px);
+}
+
+.stop-body {
+    padding: 22px 22px 26px;
+}
+
+.stop-body h3 {
+    color: var(--primary);
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.stop-body p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ============ 12. TOUR PACKAGES ============ */
+
+.packages-section {
+    background: var(--white);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.package-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.package-img {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+}
+
+.package-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.package-card:hover .package-img img {
+    transform: scale(1.08);
+}
+
+.package-days {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(255, 183, 3, .4);
+}
+
+.package-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.package-body h3 {
+    color: var(--primary);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.package-body p {
+    color: var(--muted);
+    font-size: 14px;
+    flex: 1;
+    margin-bottom: 18px;
+}
+
+.package-custom {
+    justify-content: center;
+    text-align: center;
+    background: var(--bg);
+    border: 2px dashed var(--secondary);
+    box-shadow: none;
+}
+
+.package-custom:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.package-custom-icon {
+    width: 70px;
+    height: 70px;
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 184, 148, .12);
+    color: var(--secondary);
+    font-size: 28px;
+}
+
 /* ============ 13. TESTIMONIALS ============ */
 
 .testimonial-section {
-    background: var(--white);
+    background: var(--bg);
 }
 
 .t-slider {
     overflow: hidden;
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
-    background: var(--bg);
+    background: var(--white);
 }
 
 .t-track {
@@ -1198,11 +1240,14 @@ section {
 .t-user h4 {
     color: var(--primary);
     font-size: 16px;
+    text-align: left;
 }
 
 .t-user span {
     color: var(--muted);
     font-size: 13px;
+    display: block;
+    text-align: left;
 }
 
 .t-dots {
@@ -1228,7 +1273,7 @@ section {
 /* ============ 14. FAQ ============ */
 
 .faq-section {
-    background: var(--bg);
+    background: var(--white);
 }
 
 .faq-list {
@@ -1241,7 +1286,7 @@ section {
     border-radius: 14px;
     margin-bottom: 14px;
     overflow: hidden;
-    background: var(--white);
+    background: var(--bg);
     transition: border-color var(--transition), box-shadow var(--transition);
 }
 
@@ -1284,8 +1329,7 @@ section {
     color: var(--muted);
     font-size: 15px;
 }
-
-/* ============ 15. FINAL CTA ============ */
+/* ============ 16. FINAL CTA ============ */
 
 .final-cta {
     position: relative;
@@ -1299,7 +1343,7 @@ section {
     inset: 0;
     background-size: cover;
     background-position: center;
-    background-image: url('../images/vehicles/tt2.jpeg');
+    background-image: url('../images/mysuru.jpg');
 }
 
 .final-cta-overlay {
@@ -1344,106 +1388,7 @@ section {
     gap: 14px;
 }
 
-/* ============ 16. CONTACT ============ */
-
-.contact-section {
-    background: var(--white);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: stretch;
-}
-
-.contact-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.contact-card {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px 24px;
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-}
-
-.contact-card:hover {
-    transform: translateX(6px);
-    box-shadow: var(--shadow-sm);
-    border-color: var(--secondary);
-}
-
-.contact-icon {
-    width: 52px;
-    height: 52px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    background: rgba(0, 184, 148, .12);
-    color: var(--secondary);
-    font-size: 20px;
-}
-
-.contact-card h3 {
-    color: var(--primary);
-    font-size: 15px;
-}
-
-.contact-card p {
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.contact-social {
-    display: flex;
-    gap: 12px;
-}
-
-.contact-social a {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--primary);
-    color: var(--white);
-    font-size: 18px;
-    transition: transform var(--transition), background var(--transition);
-}
-
-.contact-social a:hover {
-    transform: translateY(-4px);
-    background: var(--secondary);
-}
-
-.contact-map .map-wrap,
-.map-wrap {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    height: 100%;
-    min-height: 360px;
-}
-
-.map-wrap iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 360px;
-    border: 0;
-    display: block;
-}
-
-/* ============ 18. FOOTER ============ */
+/* ============ 17. FOOTER ============ */
 
 .footer {
     background: var(--primary-dark);
@@ -1536,7 +1481,14 @@ section {
     margin: 0 8px;
 }
 
-/* ============ 19. FLOATING BUTTONS ============ */
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:50px;
+    padding-top:20px;
+    text-align:center;
+    color:#bbb;
+}
+/* ============ 18. FLOATING BUTTONS ============ */
 
 .back-top {
     position: fixed;
@@ -1582,68 +1534,66 @@ section {
     z-index: 900;
 }
 
-.whatsapp-float::after {
+.whatsapp-float::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 50%;
-    background: #25D366;
-    opacity: .45;
     z-index: -1;
-    transform: scale(1);
-    animation: wa-pulse 2s ease-out infinite;
-    will-change: transform, opacity;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, .45);
+    animation: pulse 2s ease-out infinite;
 }
 
-@keyframes wa-pulse {
-    0% {
+@keyframes pulse {
+    from {
         transform: scale(1);
-        opacity: .45;
+        opacity: .5;
     }
-    70% {
-        transform: scale(1.55);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1.55);
+    to {
+        transform: scale(1.75);
         opacity: 0;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .whatsapp-float::after {
-        animation: none;
-    }
-}
-
-/* ============ 20. RESPONSIVE ============ */
+/* ============ 19. RESPONSIVE ============ */
 
 @media (max-width: 1024px) {
-    .dest-grid {
+    .overview-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .fleet-grid,
+    .stops-grid,
+    .package-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
-
-    .overview-grid,
-    .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .booking-panel {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .seating-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 991px) {
     .menu-btn {
         display: flex;
+    }
+
+    .hero-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-quote {
+        justify-self: stretch;
+        max-width: none;
+        margin-top: 12px;
     }
 
     .navbar .btn {
@@ -1653,18 +1603,16 @@ section {
     .nav-menu {
         position: fixed;
         top: 74px;
-        left: 0;
+        left: -100%;
         width: 100%;
         background: var(--primary);
         padding: 30px 5%;
-        transform: translateX(-105%);
-        transition: transform .4s ease;
+        transition: left .4s ease;
         box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
-        will-change: transform;
     }
 
     .nav-menu.open {
-        transform: translateX(0);
+        left: 0;
     }
 
     .nav-menu ul {
@@ -1673,27 +1621,41 @@ section {
         gap: 22px;
     }
 
-    .use-grid,
-    .contact-grid {
+    .hero {
+        padding-top: 150px;
+    }
+
+    .direction-grid {
         grid-template-columns: 1fr;
     }
 
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin-inline: auto;
     }
 }
 
 @media (max-width: 640px) {
-    .overview-grid,
-    .pricing-grid,
-    .seating-grid,
-    .dest-grid {
+    .overview-stats,
+    .services-grid,
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fleet-grid,
+    .stops-grid,
+    .package-grid {
         grid-template-columns: 1fr;
     }
 
-    .why-grid,
-    .use-points {
+    .quote-row,
+    .b-row {
         grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
     }
 
     .hero-actions .btn-lg,
@@ -1705,16 +1667,12 @@ section {
         gap: 14px;
     }
 
-    .overview-actions {
-        flex-direction: column;
-    }
-
     .t-card {
         padding: 34px 22px;
     }
 
-    .booking-panel {
-        padding: 22px;
+    .booking-wrap {
+        padding: 24px 20px;
     }
 
     .footer-grid {
@@ -1722,22 +1680,22 @@ section {
         gap: 30px;
     }
 
-    .use-points li {
-        padding: 12px;
+    .direction-block {
+        padding: 24px 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-traveller-content h1 {
-        font-size: 30px;
+    .hero-quote {
+        margin-top: 36px;
     }
 
-    .dest-body .btn-route {
-        width: 100%;
+    .quote-card {
+        padding: 24px 20px;
     }
 
-    .compare-table th,
-    .compare-table td {
-        padding: 14px;
+    .point-chips li {
+        font-size: 12.5px;
+        padding: 7px 13px;
     }
 }

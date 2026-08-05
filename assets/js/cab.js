@@ -205,6 +205,10 @@
             start();
         }, { passive: true });
 
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) { stop(); } else { start(); }
+        });
+
         start();
     }
 
@@ -322,8 +326,12 @@
         form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            var name = document.getElementById("qb-name").value.trim();
-            var phone = document.getElementById("qb-phone").value.trim();
+            var nameEl = document.getElementById("qb-name");
+            var phoneEl = document.getElementById("qb-phone");
+            if (!nameEl || !phoneEl) return;
+
+            var name = nameEl.value.trim();
+            var phone = phoneEl.value.trim();
 
             if (!name || !phone) {
                 alert("Please enter your name and phone number.");
@@ -359,11 +367,18 @@
         form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            var name = document.getElementById("enq-name").value.trim();
-            var phone = document.getElementById("enq-phone").value.trim();
-            var pickup = document.getElementById("enq-pickup").value.trim();
-            var drop = document.getElementById("enq-drop").value.trim();
-            var date = document.getElementById("enq-date").value.trim();
+            var nameEl = document.getElementById("enq-name");
+            var phoneEl = document.getElementById("enq-phone");
+            var pickupEl = document.getElementById("enq-pickup");
+            var dropEl = document.getElementById("enq-drop");
+            var dateEl = document.getElementById("enq-date");
+            if (!nameEl || !phoneEl || !pickupEl || !dropEl || !dateEl) return;
+
+            var name = nameEl.value.trim();
+            var phone = phoneEl.value.trim();
+            var pickup = pickupEl.value.trim();
+            var drop = dropEl.value.trim();
+            var date = dateEl.value.trim();
 
             if (!name || !phone || !pickup || !drop || !date) {
                 setStatus("Please fill in all required fields.", "error");
@@ -371,6 +386,7 @@
             }
 
             var btn = document.getElementById("enqSubmitBtn");
+            if (!btn) return;
             var original = btn.innerHTML;
             btn.innerHTML = "Sending...";
             btn.disabled = true;

@@ -58,42 +58,52 @@ document.querySelectorAll(".nav-menu a").forEach(link => {
 const slides = document.querySelectorAll(".slide");
 
 let currentSlide = 0;
+let heroInterval = null;
 
 function showSlide(index){
 
-    slides[currentSlide].classList.remove("active");
+    if (!slides.length) return;
 
-    currentSlide = (currentSlide + 1) % slides.length;
+    const i = (index + slides.length) % slides.length;
 
-    slides[currentSlide].classList.add("active");
+    slides.forEach((s, j) => s.classList.toggle("active", j === i));
 
-    slides[index].classList.add("active");
+    currentSlide = i;
 
 }
 
 function nextSlide(){
 
-    currentSlide++;
-
-    if(currentSlide >= slides.length){
-        currentSlide = 0;
-    }
-
-    showSlide(currentSlide);
+    if (!slides.length) return;
+    showSlide(currentSlide + 1);
 
 }
 
-let heroInterval = setInterval(nextSlide,5000);
+function startHeroSlider(){
+
+    stopHeroSlider();
+
+    if (slides.length) heroInterval = setInterval(nextSlide, 5000);
+
+}
+
+function stopHeroSlider(){
+
+    if (heroInterval) { clearInterval(heroInterval); heroInterval = null; }
+
+}
+
+startHeroSlider();
 
 document.addEventListener("visibilitychange",()=>{
 
     if(document.hidden){
 
-        clearInterval(heroInterval);
+        stopHeroSlider();
 
     }else{
 
-        heroInterval = setInterval(nextSlide,5000);
+        startHeroSlider();
 
     }
 
@@ -107,7 +117,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
     anchor.addEventListener("click",function(e){
 
-        const target = document.querySelector(this.getAttribute("href"));
+        const href = this.getAttribute("href");
+
+        if (!href || href === "#") return;
+
+        const target = document.querySelector(href);
 
         if(target){
 
@@ -164,7 +178,8 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("load",()=>{
 
-    document.querySelector(".hero-content").classList.add("loaded");
+    var heroContent = document.querySelector(".hero-content");
+    if (heroContent) heroContent.classList.add("loaded");
 
 });
 
@@ -268,7 +283,8 @@ observer.observe(statsSection);
 
 window.addEventListener("load", () => {
 
-    document.querySelector(".loader").classList.add("hide");
+    var loader = document.querySelector(".loader");
+    if (loader) loader.classList.add("hide");
 
 });
 
@@ -291,4 +307,37 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+/* Hero Form — WhatsApp Hand-off */
+
+const heroForm = document.getElementById("heroForm");
+
+if (heroForm) {
+
+    heroForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        var fd = new FormData(heroForm);
+
+        var lines = [
+            "Hello Shivas Travel Guru!",
+            "I would like to get a quote for my trip.",
+            "",
+            "Name: " + (fd.get("name") || ""),
+            "Phone: " + (fd.get("phone") || ""),
+            "Pickup: " + (fd.get("pickup") || ""),
+            "Drop: " + (fd.get("drop") || ""),
+            "Date: " + (fd.get("date") || ""),
+            "Vehicle: " + (fd.get("vehicle") || ""),
+            "Trip Type: " + (fd.get("triptype") || "")
+        ];
+
+        var url = "https://wa.me/919019993283?text=" + encodeURIComponent(lines.join("\n"));
+        window.open(url, "_blank");
+        heroForm.reset();
+
+    });
+
+}
 

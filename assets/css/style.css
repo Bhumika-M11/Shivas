@@ -14,6 +14,7 @@
 
 html{
     scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
 body{
@@ -25,6 +26,7 @@ body{
 
 img{
     max-width:100%;
+    height:auto;
     display:block;
 }
 
@@ -691,6 +693,81 @@ SERVICES
     background:#00B894;
 }
 
+
+/*==============================
+POPULAR ROUTES
+==============================*/
+
+.popular-routes{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.routes-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:50px;
+}
+
+.route-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.route-card:hover{
+    transform:translateY(-8px);
+}
+
+.route-image img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.route-content{
+    padding:30px;
+}
+
+.route-badge{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:50px;
+    background:#00b894;
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.route-content h3{
+    margin-bottom:15px;
+    color:#0A3D62;
+}
+
+.route-content p{
+    color:#666;
+    line-height:1.8;
+}
+
+.route-content ul{
+    margin:20px 0;
+}
+
+.route-content ul li{
+    margin-bottom:10px;
+}
+
+@media(max-width:991px){
+
+.routes-grid{
+grid-template-columns:1fr;
+}
+
+}
 /*==============================
 DESTINATIONS
 ==============================*/
@@ -1270,6 +1347,20 @@ OUR FLEET
     gap:15px;
 }
 
+.review-avatar{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#0A3D62;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:600;
+    flex-shrink:0;
+}
+
 .review-user img{
     width:70px;
     height:70px;
@@ -1427,9 +1518,9 @@ FOOTER
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 0.8fr 2fr 1fr 2.4fr;
-    gap: 40px;
-    padding-bottom: 50px;
+    grid-template-columns:2fr repeat(5,1fr);
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .footer-about h2 {
@@ -1441,29 +1532,6 @@ FOOTER
 .footer-about p {
     font-size: 14.5px;
     margin-bottom: 22px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 12px;
-}
-
-.footer-social a {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .08);
-    color: var(--white);
-    font-size: 16px;
-    transition: background var(--transition), transform var(--transition);
-}
-
-.footer-social a:hover {
-    background: var(--secondary);
-    transform: translateY(-4px);
 }
 
 .footer-col h3 {
@@ -1486,7 +1554,7 @@ FOOTER
 }
 
 .footer-col ul li {
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .footer-col ul a {
@@ -1531,28 +1599,6 @@ FOOTER
 .footer-sep {
     color: var(--secondary);
     margin: 0 8px;
-}
-
-.social-icons{
-    display:flex;
-    gap:15px;
-}
-
-.social-icons a{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#00B894;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    transition:.3s;
-}
-
-.social-icons a:hover{
-    background:#FFB703;
-    transform:translateY(-5px);
 }
 
 .footer-bottom{

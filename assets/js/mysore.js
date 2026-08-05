@@ -1,5 +1,5 @@
 /* ============================================
-   SHIVAS TRAVEL GURU — WHITEFIELD LANDING PAGE
+   SHIVAM TRAVELS — BANGALORE ↔ MYSORE
    Vanilla JS | No Dependencies
 ============================================ */
 (function () {
@@ -9,9 +9,8 @@
        0. CONFIG
        Paste your Google Apps Script web-app URL below to
        save enquiry/booking leads to a Google Sheet.
-       Keep "" to send enquiries directly to WhatsApp only.
     -------------------------------------------------- */
-    var SHEETS_URL = ""; // e.g. "https://script.google.com/macros/s/XXXX/exec"
+    var SHEETS_URL = "";
 
     var WA_NUMBER = "919019993283";
     var WA_PREFIX = "https://wa.me/" + WA_NUMBER + "/?text=";
@@ -39,7 +38,24 @@
     }
 
     /* --------------------------------------------------
-       2. MOBILE NAVIGATION
+       2. SCROLL PROGRESS BAR
+    -------------------------------------------------- */
+    function initProgressBar() {
+        var bar = document.getElementById("scrollProgress");
+        if (!bar) return;
+
+        var onScroll = function () {
+            var h = document.documentElement;
+            var max = h.scrollHeight - h.clientHeight;
+            var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+            bar.style.width = pct + "%";
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+    }
+
+    /* --------------------------------------------------
+       3. MOBILE NAVIGATION
     -------------------------------------------------- */
     function initMobileNav() {
         var menuBtn = document.getElementById("menuBtn");
@@ -63,7 +79,7 @@
     }
 
     /* --------------------------------------------------
-       3. SCROLL REVEAL (Fade Up) — IntersectionObserver
+       4. SCROLL REVEAL (Fade Up) — IntersectionObserver
     -------------------------------------------------- */
     function initReveal() {
         var items = document.querySelectorAll(".reveal");
@@ -84,52 +100,6 @@
         }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
 
         items.forEach(function (el) { io.observe(el); });
-    }
-
-    /* --------------------------------------------------
-       4. COUNTER ANIMATION
-    -------------------------------------------------- */
-    function initCounters() {
-        var counters = document.querySelectorAll(".counter");
-        if (!counters.length) return;
-
-        var animate = function (el) {
-            var target = parseFloat(el.getAttribute("data-target")) || 0;
-            var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
-            var suffix = el.getAttribute("data-suffix") || "";
-            var duration = 1600;
-            var start = null;
-
-            var step = function (timestamp) {
-                if (!start) start = timestamp;
-                var progress = Math.min((timestamp - start) / duration, 1);
-                var eased = 1 - Math.pow(1 - progress, 3);
-                var value = target * eased;
-                el.textContent = value.toFixed(decimals) + suffix;
-                if (progress < 1) {
-                    requestAnimationFrame(step);
-                } else {
-                    el.textContent = target.toFixed(decimals) + suffix;
-                }
-            };
-            requestAnimationFrame(step);
-        };
-
-        if (!("IntersectionObserver" in window)) {
-            counters.forEach(animate);
-            return;
-        }
-
-        var io = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    animate(entry.target);
-                    io.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(function (el) { io.observe(el); });
     }
 
     /* --------------------------------------------------
@@ -189,11 +159,13 @@
             start();
         }, { passive: true });
 
-        start();
-
         document.addEventListener("visibilitychange", function () {
             if (document.hidden) { stop(); } else { start(); }
         });
+
+        // Mark first card + dot active
+        go(0);
+        start();
     }
 
     /* --------------------------------------------------
@@ -269,29 +241,12 @@
     }
 
     /* --------------------------------------------------
-       9. SCROLL PROGRESS BAR
+       9. FORMS — Google Sheet + WhatsApp Ready
     -------------------------------------------------- */
-    function initProgressBar() {
-        var bar = document.querySelector(".scroll-progress");
-        if (!bar) return;
-
-        var onScroll = function () {
-            var h = document.documentElement;
-            var max = h.scrollHeight - h.clientHeight;
-            var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-            bar.style.width = pct + "%";
-        };
-        window.addEventListener("scroll", onScroll, { passive: true });
-        onScroll();
-    }
-
-    /* --------------------------------------------------
-       10. FORMS — Google Sheet + WhatsApp Ready
-    -------------------------------------------------- */    function buildWhatsAppLink(fields) {
+    function buildWhatsAppLink(title, fields) {
         var lines = [
-            "Hello Shivas Travel Guru!",
-            "I would like to book a vehicle.",
-            ""
+            "Hello Shivam Travels!",
+            title
         ];
         Object.keys(fields).forEach(function (key) {
             lines.push(key + ": " + fields[key]);
@@ -319,100 +274,113 @@
         }).then(function () { return true; }).catch(function () { return false; });
     }
 
-    function handleQuickBooking() {
-        var form = document.getElementById("quickBookingForm");
+    function openWhatsApp(url) {
+        var wa = window.open(url, "_blank");
+        if (!wa) { window.location.href = url; }
+    }
+
+    /* ---- Instant Quote form (hero) ---- */
+    function handleQuoteForm() {
+        var form = document.getElementById("quoteForm");
         if (!form) return;
 
         form.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            var name = document.getElementById("qb-name").value.trim();
-            var phone = document.getElementById("qb-phone").value.trim();
+            var data = collectForm(form);
 
-            if (!name || !phone) {
-                alert("Please enter your name and phone number.");
+            if (!data.pickup || !data.drop || !data.date) {
+                alert("Please fill in pickup, drop and travel date for an instant quote.");
                 return;
             }
 
-            var data = collectForm(form);
-            var wa = window.open(buildWhatsAppLink({
-                "Name": data.name,
-                "Phone": data.phone,
+            var url = buildWhatsAppLink("I need an instant quote for a Bangalore ↔ Mysore cab.", {
+                "Route": data.route,
                 "Pickup": data.pickup,
                 "Drop": data.drop,
                 "Travel Date": data.date,
-                "Vehicle": data.vehicle,
-                "Passengers": data.passengers
-            }), "_blank");
+                "Vehicle": data.vehicle
+            });
 
-            if (!wa) {
-                window.location.href = buildWhatsAppLink(data);
-            }
-
-            submitToSheet(Object.assign({ type: "Quick Booking" }, data));
+            openWhatsApp(url);
+            submitToSheet(Object.assign({ type: "Instant Quote" }, data));
             form.reset();
         });
     }
 
-    function handleEnquiry() {
-        var form = document.getElementById("enquiryForm");
-        var status = document.getElementById("formStatus");
+    /* ---- Full Booking form ---- */
+    function handleBookingForm() {
+        var form = document.getElementById("bookingForm");
+        var status = document.getElementById("bookingStatus");
         if (!form) return;
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var name = document.getElementById("enq-name").value.trim();
-            var phone = document.getElementById("enq-phone").value.trim();
-            var pickup = document.getElementById("enq-pickup").value.trim();
-            var drop = document.getElementById("enq-drop").value.trim();
-            var date = document.getElementById("enq-date").value.trim();
-
-            if (!name || !phone || !pickup || !drop || !date) {
-                setStatus("Please fill in all required fields.", "error");
-                return;
-            }
-
-            var btn = document.getElementById("enqSubmitBtn");
-            var original = btn ? btn.innerHTML : "";
-            if (btn) {
-                btn.innerHTML = "Sending...";
-                btn.disabled = true;
-            }
-
-            var data = collectForm(form);
-
-            submitToSheet(Object.assign({ type: "Enquiry" }, data)).then(function () {
-                var message = buildWhatsAppLink({
-                    "Name": data.name,
-                    "Phone": data.phone,
-                    "Email": data.email || "-",
-                    "Pickup": data.pickup,
-                    "Drop": data.drop,
-                    "Travel Date": data.date,
-                    "Passengers": data.passengers,
-                    "Vehicle": data.vehicle,
-                    "Message": data.message || "-"
-                });
-
-                var wa = window.open(message, "_blank");
-                if (!wa) { window.location.href = message; }
-
-                setStatus("Thank you, " + data.name + "! We have opened WhatsApp to send your enquiry. Our team will reply shortly.", "success");
-                form.reset();
-            }).finally(function () {
-                if (btn) {
-                    btn.innerHTML = original;
-                    btn.disabled = false;
-                }
-            });
-        });
 
         function setStatus(msg, type) {
             if (!status) return;
             status.textContent = msg;
             status.className = "form-status " + type;
         }
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var data = collectForm(form);
+            var required = ["name", "phone", "pickup", "drop", "date", "vehicle", "passengers"];
+
+            for (var i = 0; i < required.length; i++) {
+                if (!data[required[i]]) {
+                    setStatus("Please fill in all required fields.", "error");
+                    return;
+                }
+            }
+
+            var btn = document.getElementById("bSubmitBtn");
+            if (!btn) return;
+            var original = btn.innerHTML;
+            btn.innerHTML = "Sending...";
+            btn.disabled = true;
+
+            submitToSheet(Object.assign({ type: "Booking" }, data)).then(function () {
+                var url = buildWhatsAppLink("I would like to book a cab between Bangalore and Mysore.", {
+                    "Name": data.name,
+                    "Phone": data.phone,
+                    "Email": data.email || "-",
+                    "Service": data.service,
+                    "Pickup": data.pickup,
+                    "Drop": data.drop,
+                    "Travel Date": data.date,
+                    "Return Date": data.return_date || "-",
+                    "Vehicle": data.vehicle,
+                    "Passengers": data.passengers,
+                    "Message": data.message || "-"
+                });
+
+                openWhatsApp(url);
+                setStatus("Thank you, " + data.name + "! We've opened WhatsApp with your booking details. Our team will confirm shortly.", "success");
+                form.reset();
+            }).finally(function () {
+                btn.innerHTML = original;
+                btn.disabled = false;
+            });
+        });
+    }
+
+    /* --------------------------------------------------
+       10. MINIMUM DATE (today) for date inputs
+    -------------------------------------------------- */
+    function initMinDates() {
+        var today = new Date().toISOString().split("T")[0];
+        var fields = document.querySelectorAll('input[type="date"]');
+        fields.forEach(function (field) {
+            if (!field.value) field.min = today;
+        });
+    }
+
+    /* --------------------------------------------------
+       11. YEAR
+    -------------------------------------------------- */
+    function initYear() {
+        var el = document.getElementById("year");
+        if (el) el.textContent = new Date().getFullYear();
     }
 
     /* --------------------------------------------------
@@ -420,15 +388,17 @@
     -------------------------------------------------- */
     onReady(function () {
         initStickyHeader();
+        initProgressBar();
         initMobileNav();
         initReveal();
-        initCounters();
         initSlider();
         initFaq();
         initRipple();
         initBackTop();
-        handleQuickBooking();
-        handleEnquiry();
+        handleQuoteForm();
+        handleBookingForm();
+        initMinDates();
+        initYear();
     });
 
 })();

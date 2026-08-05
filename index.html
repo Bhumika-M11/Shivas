@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shivas Travel Guru</title>
+    <title>Shivas Travel Guru | Cab Rental, Airport Taxi &amp; Outstation Cabs in Bengaluru</title>
+
+    <link rel="canonical" href="https://shivastravelguru.com/">
+    <link rel="icon" type="image/png" href="assets/images/logo4.png">
+    <link rel="apple-touch-icon" href="assets/images/logo4.png">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
@@ -29,7 +33,7 @@
 
     <link rel="preload"
       as="image"
-      href="assets/images/logo.png"
+      href="assets/images/logo4.png"
       fetchpriority="high">
 </head>
 
@@ -43,7 +47,7 @@
 
             <a href="index.html" class="logo">
                     <div class="logo-icon">
-                <img src="assets/images/logo4.png" alt="Logo">
+                <img src="assets/images/logo4.png" alt="Shivas Travel Guru" width="80" height="55" decoding="async">
             </div>
 
             </a>
@@ -79,7 +83,7 @@
     </header>
 
     <!-- ================= HERO ================= -->
-<section class="hero">
+<section class="hero" id="main">
 
     <!-- Background Video -->
 
@@ -158,17 +162,17 @@
 
             <form id="heroForm">
 
-                <input type="text" placeholder="Full Name*" required>
+                <input type="text" name="name" aria-label="Full Name" placeholder="Full Name*" required>
 
-                <input type="tel" placeholder="Mobile Number*" required>
+                <input type="tel" name="phone" aria-label="Mobile Number" placeholder="Mobile Number*" required>
 
-                <input type="text" placeholder="Pickup Location*" required>
+                <input type="text" name="pickup" aria-label="Pickup Location" placeholder="Pickup Location*" required>
 
-                <input type="text" placeholder="Drop Location">
+                <input type="text" name="drop" aria-label="Drop Location" placeholder="Drop Location">
 
-                <input type="date">
+                <input type="date" name="date" aria-label="Travel Date">
 
-                <select required>
+                <select name="vehicle" aria-label="Select Vehicle" required>
 
                     <option value="">Select Vehicle</option>
 
@@ -186,9 +190,9 @@
 
                 </select>
 
-                <select>
+                <select name="triptype" aria-label="Trip Type">
 
-                    <option>Trip Type</option>
+                    <option value="">Trip Type</option>
 
                     <option>Airport Transfer</option>
 
@@ -304,7 +308,7 @@ OUR SERVICES
                     
                 </p>
 
-                <a href="" class="service-btn">
+                <a href="" target="_blank" rel="noopener" class="service-btn">
                     Book Today
                 </a>
 
@@ -1841,7 +1845,7 @@ LOCAL PACKAGES
 AIRPORT TRANSFERS
 ======================================-->
 
-<section class="airport-transfer outstation-section">
+<section class="airport-transfer outstation-section" id="airport">
 
     <div class="container">
 
@@ -2382,6 +2386,120 @@ AIRPORT TRANSFERS
 
 </section>
 
+<!--=========================================
+POPULAR ROUTES
+==========================================-->
+
+<section class="popular-routes section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="tag">Popular Routes</span>
+
+            <h2>Bangalore ↔ Mysore Services</h2>
+
+            <p>
+                Book one-way, round-trip, airport transfers, and outstation taxi
+                services between Bengaluru and Mysuru with professional drivers
+                and transparent pricing.
+            </p>
+
+        </div>
+
+        <div class="routes-grid">
+
+            <!-- Bangalore to Mysore -->
+
+            <div class="route-card">
+
+                <div class="route-content">
+
+                    <span class="route-badge">
+                        Most Booked
+                    </span>
+
+                    <h3>Bangalore to Mysore Cab</h3>
+
+                    <p>
+
+                        Comfortable one-way and round-trip taxi service from
+                        Bangalore to Mysore with experienced drivers,
+                        doorstep pickup, and 24/7 availability.
+
+                    </p>
+
+                    <ul>
+
+                        <li>✔ One Way & Round Trip</li>
+
+                        <li>✔ Airport Pickup Available</li>
+
+                        <li>✔ Sedan, SUV, Crysta & Urbania</li>
+
+                    </ul>
+
+                    <a href="bangalore-to-mysore-cab.html"
+                        class="btn">
+
+                        View Details
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Mysore to Bangalore -->
+
+            <div class="route-card">
+
+                <div class="route-content">
+
+                    <span class="route-badge">
+                        Popular Route
+                    </span>
+
+                    <h3>Mysore to Bangalore Cab</h3>
+
+                    <p>
+
+                        Reliable taxi service from Mysore to Bangalore for
+                        airport transfers, business travel, family trips,
+                        and one-way bookings.
+
+                    </p>
+
+                    <ul>
+
+                        <li>✔ Doorstep Pickup</li>
+
+                        <li>✔ Toll Included on Request</li>
+
+                        <li>✔ Verified Drivers</li>
+
+                        <li>✔ 24/7 Customer Support</li>
+
+                    </ul>
+
+                    <a href="mysore-to-bangalore-cab.html"
+                        class="btn">
+
+                        View Details
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
     <!-- ===============================
 POPULAR DESTINATIONS
 =============================== -->
@@ -2409,7 +2527,7 @@ POPULAR DESTINATIONS
 
                 <div class="destination-image">
 
-                    <img src="assets/images/coorg.png" alt="Coorg">
+                    <img src="assets/images/coorg.png" alt="Coorg - Cloudy hills, coffee estates and waterfalls in Karnataka" width="400" height="260" loading="lazy" decoding="async">
 
                 </div>
 
@@ -2437,7 +2555,7 @@ POPULAR DESTINATIONS
 
                 <div class="destination-image">
 
-                    <img src="assets/images/ooty.jpg" alt="Ooty">
+                    <img src="assets/images/ooty.jpg" alt="Ooty - Tea estates, lake and botanical gardens in Tamil Nadu" width="400" height="260" loading="lazy" decoding="async">
 
                 </div>
 
@@ -2465,7 +2583,7 @@ POPULAR DESTINATIONS
 
                 <div class="destination-image">
 
-                    <img src="assets/images/mysuru.jpg" alt="Mysuru">
+                    <img src="assets/images/mysuru.jpg" alt="Mysuru - Heritage Palaces, history and zoo gardens in Karnataka" width="400" height="260" loading="lazy" decoding="async">
 
                 </div>
 
@@ -2493,7 +2611,7 @@ POPULAR DESTINATIONS
 
                 <div class="destination-image">
 
-                    <img src="assets/images/kerala.jpg" alt="Kerala">
+                    <img src="assets/images/kerala.jpg" alt="Kerala - Mesmerizing backwaters, houseboats and hills" width="400" height="260" loading="lazy" decoding="async">
 
                 </div>
 
@@ -2521,7 +2639,7 @@ POPULAR DESTINATIONS
 
                 <div class="destination-image">
 
-                    <img src="assets/images/goa.jpg" alt="Goa">
+                    <img src="assets/images/goa.jpg" alt="Goa - Sunny beaches, old churches and nightlife" width="400" height="260" loading="lazy" decoding="async">
 
                 </div>
 
@@ -2549,7 +2667,7 @@ POPULAR DESTINATIONS
 
                 <div class="destination-image">
 
-                    <img src="assets/images/dk.jpg" alt="dk">
+                    <img src="assets/images/dk.jpg" alt="Dakshina Kannada - Sun, Sand, and Soul in Tulunadu" width="400" height="260" loading="lazy" decoding="async">
 
                 </div>
 
@@ -2663,13 +2781,13 @@ WHY CHOOSE US
 =============================== -->
 <section class="packages" id="packages">
 
-<div class="why-us" id="about">
+<div class="why-us" id="why-us">
 
     <div class="container why-grid">
 
         <div class="why-image">
 
-            <img src="assets/images/about.png" alt="Travel Experience">
+            <img src="assets/images/about.png" alt="Travel Experience" width="500" height="600" loading="lazy" decoding="async">
 
             <div class="experience-card">
 
@@ -2844,7 +2962,7 @@ OUR FLEET
 
                 <!-- 1 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/dzire.jpg" alt="Swift Dzire">
+                    <img src="assets/images/vehicles/dzire.jpg" alt="Swift Dzire" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Swift Dzire</h3>
                         <p>4 Seater • AC • Local & Outstation</p>
@@ -2853,7 +2971,7 @@ OUR FLEET
 
                 <!-- 2 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/ertiga.jpg" alt="Ertiga">
+                    <img src="assets/images/vehicles/ertiga.jpg" alt="Ertiga" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Maruti Ertiga</h3>
                         <p>7 Seater • AC • Family Trips</p>
@@ -2862,7 +2980,7 @@ OUR FLEET
 
                 <!-- 3 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/innova.jpg" alt="Innova">
+                    <img src="assets/images/vehicles/innova.jpg" alt="Innova" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Toyota Innova</h3>
                         <p>7 Seater • Comfortable Travel</p>
@@ -2871,7 +2989,7 @@ OUR FLEET
 
                 <!-- 4 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/Crysta.jpg" alt="Crysta">
+                    <img src="assets/images/vehicles/Crysta.jpg" alt="Crysta" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Innova Crysta</h3>
                         <p>Premium • AC • Luxury Ride</p>
@@ -2880,7 +2998,7 @@ OUR FLEET
 
                 <!-- 5 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/Creta.jpg" alt="Creta">
+                    <img src="assets/images/vehicles/Creta.jpg" alt="Creta" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Hyundai Creta</h3>
                         <p>Premium SUV • Comfortable</p>
@@ -2889,7 +3007,7 @@ OUR FLEET
 
                 <!-- 6 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/traveller12.jpg" alt="Traveller">
+                    <img src="assets/images/vehicles/traveller12.jpg" alt="Traveller" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Tempo Traveller</h3>
                         <p>12 Seater • Group Tours</p>
@@ -2898,7 +3016,7 @@ OUR FLEET
 
                 <!-- 7 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/traveller17.jpg" alt="Traveller">
+                    <img src="assets/images/vehicles/traveller17.jpg" alt="Traveller" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Tempo Traveller</h3>
                         <p>17 Seater • Outstation</p>
@@ -2907,7 +3025,7 @@ OUR FLEET
 
                 <!-- 8 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/minibus.jpg" alt="Mini Bus">
+                    <img src="assets/images/vehicles/minibus.jpg" alt="Mini Bus" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Mini Bus</h3>
                         <p>21 Seater • Tourist Travel</p>
@@ -2916,7 +3034,7 @@ OUR FLEET
 
                 <!-- 9 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/luxurybus.jpg" alt="Luxury Bus">
+                    <img src="assets/images/vehicles/luxurybus.jpg" alt="Luxury Bus" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Luxury Bus</h3>
                         <p>40+ Seater • Tours & Events</p>
@@ -2924,7 +3042,7 @@ OUR FLEET
                 </div>
                 <!-- 1 -->
                 <div class="fleet-card">
-                 <img src="assets/images/vehicles/dzire.jpg" alt="Swift Dzire">
+                 <img src="assets/images/vehicles/dzire.jpg" alt="Swift Dzire" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Swift Dzire</h3>
                         <p>4 Seater • AC • Local & Outstation</p>
@@ -2933,7 +3051,7 @@ OUR FLEET
 
                 <!-- 2 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/ertiga.jpg" alt="Ertiga">
+                    <img src="assets/images/vehicles/ertiga.jpg" alt="Ertiga" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Maruti Ertiga</h3>
                         <p>7 Seater • AC • Family Trips</p>
@@ -2942,7 +3060,7 @@ OUR FLEET
 
                 <!-- 3 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/innova.jpg" alt="Innova">
+                    <img src="assets/images/vehicles/innova.jpg" alt="Innova" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Toyota Innova</h3>
                         <p>7 Seater • Comfortable Travel</p>
@@ -2951,7 +3069,7 @@ OUR FLEET
 
                 <!-- 4 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/crysta.jpg" alt="Crysta">
+                    <img src="assets/images/vehicles/crysta.jpg" alt="Crysta" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Innova Crysta</h3>
                         <p>Premium • AC • Luxury Ride</p>
@@ -2960,7 +3078,7 @@ OUR FLEET
 
                 <!-- 5 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/creta.jpg" alt="Creta">
+                    <img src="assets/images/vehicles/creta.jpg" alt="Creta" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Hyundai Creta</h3>
                         <p>Premium SUV • Comfortable</p>
@@ -2969,7 +3087,7 @@ OUR FLEET
 
                 <!-- 6 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/traveller12.jpg" alt="Traveller">
+                    <img src="assets/images/vehicles/traveller12.jpg" alt="Traveller" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Tempo Traveller</h3>
                         <p>12 Seater • Group Tours</p>
@@ -2978,7 +3096,7 @@ OUR FLEET
 
                 <!-- 7 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/traveller17.jpg" alt="Traveller">
+                    <img src="assets/images/vehicles/traveller17.jpg" alt="Traveller" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Tempo Traveller</h3>
                         <p>17 Seater • Outstation</p>
@@ -2987,7 +3105,7 @@ OUR FLEET
 
                 <!-- 8 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/minibus.jpg" alt="Mini Bus">
+                    <img src="assets/images/vehicles/minibus.jpg" alt="Mini Bus" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Mini Bus</h3>
                         <p>21 Seater • Tourist Travel</p>
@@ -2996,7 +3114,7 @@ OUR FLEET
 
                 <!-- 9 -->
                 <div class="fleet-card">
-                    <img src="assets/images/vehicles/luxurybus.jpg" alt="Luxury Bus">
+                    <img src="assets/images/vehicles/luxurybus.jpg" alt="Luxury Bus" width="400" height="260" loading="lazy" decoding="async">
                     <div class="fleet-content">
                         <h3>Luxury Bus</h3>
                         <p>40+ Seater • Tours & Events</p>
@@ -3030,11 +3148,9 @@ OUR FLEET
             <p class="review-text" id="reviewText">
                 Excellent cab service! Driver was punctual and the vehicle was clean.
             </p>
-
             <div class="review-user">
-                <img id="reviewImage"
-                     src="images/users/user1.jpg"
-                     alt="Customer">
+
+                <div class="review-avatar" aria-hidden="true">ST</div>
 
                 <div>
                     <h4 id="reviewName">Rahul Sharma</h4>
@@ -3092,80 +3208,140 @@ CALL TO ACTION
 <!-- ===========================
 FOOTER
 =========================== -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-grid">
+<footer class="footer">
+    <div class="container">
 
-                    <div class="footer-about">
-                        <h2>Shivas Travel Guru</h2>
-                        <p>
-                            Unearth the most stunning destinations and travel experiences to create
-                lifetime memories with us.
-                        </p>
-                    </div>
+        <div class="footer-grid">
 
-                    <div class="footer-col">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="index.html#about">About Us</a></li>
-                            <li><a href="trips.html">Trips</a></li>
-                            <li><a href="packages.html">Packages</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
+            <!-- About -->
 
-                    <div class="footer-col">
-                        <h3>Urbania Rental Bangalore</h3>
-                        <ul>
-                            <li><a href="electronic-city.html">Electronic City Urbania</a></li>
-                            <li><a href="whitefield.html">Whitefield Urbania</a></li>
-                            <li><a href="koramangala.html">Koramangala Urbania</a></li>
-                            <li><a href="indiranagar.html">Indiranagar Urbania</a></li>
-                        </ul>
-                    </div>
+            <div class="footer-about">
+                <h2>Shivas Travel Guru</h2>
 
-                    <div class="footer-col">
-                        <h3>Vehicle Types</h3>
-                        <ul>
-                            <li><a href="cab-rentals.html">Cab Rentals</a></li>
-                            <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
-                            <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col footer-contact">
-                        <h3>Contact</h3>
-                        <p>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank" rel="noopener">
-                                325, Dwaraka Nagar Stage 2, Banashankari 5th Stage, Bengaluru – 560098
-                            </a>
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919019993283">+91 90199 93283</a>
-                        </p>
-                        <p>
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <a href="https://wa.me/919019993283" target="_blank" rel="noopener">+91 90199 93283</a>
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:Shivastravelguru@gmail.com">Shivastravelguru@gmail.com</a>
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="footer-bottom">
-                    <p>
-                        © 2026 Shivas Travel Guru. All Rights Reserved.
-                        
-                    </p>
-                </div>
+                <p>
+                    Unearth the most stunning destinations and travel experiences
+                    to create lifetime memories with us.
+                </p>
             </div>
-        </footer>
+
+            <!-- Quick Links -->
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Popular Routes -->
+
+            <div class="footer-col">
+                <h3>Popular Routes</h3>
+
+                <ul>
+                    <li>
+                        <a href="bangalore-mysore.html">
+                            Bangalore <br>to Mysore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="bangalore-mysore.html">
+                            Mysore to Bangalore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#airport">
+                            Bangalore<br> Airport Taxi
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Urbania -->
+
+            <div class="footer-col">
+                <h3>Urbania Rental Bangalore</h3>
+
+                <ul>
+                    <li><a href="electronic-city.html">Electronic City Urbania</a></li>
+                    <li><a href="whitefield.html">Whitefield Urbania</a></li>
+                    <li><a href="koramangala.html">Koramangala Urbania</a></li>
+                    <li><a href="indiranagar.html">Indiranagar Urbania</a></li>
+                </ul>
+            </div>
+
+            <!-- Vehicles -->
+
+            <div class="footer-col">
+                <h3>Vehicle <br>Types</h3>
+
+                <ul>
+                    <li><a href="cab-rentals.html">Cab Rentals</a></li>
+                    <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
+                    <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+
+            <div class="footer-col footer-contact">
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank">
+                        325, Dwaraka Nagar Stage 2,
+                        Banashankari 5th Stage,
+                        Bengaluru – 560098
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919019993283">
+                        +91 90199 93283
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    <a href="https://wa.me/919019993283" target="_blank">
+                        +91 90199 93283
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <a href="mailto:Shivastravelguru@gmail.com">
+                        Shivastravelguru@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Shivas Travel Guru. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+</footer>
 
 <!-- Back to Top -->
 

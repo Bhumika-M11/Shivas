@@ -290,7 +290,10 @@
             ""
         ];
         Object.keys(fields).forEach(function (key) {
-            lines.push(key + ": " + fields[key]);
+            var value = String(fields[key] || "").trim();
+            if (value) {
+                lines.push(key + ": " + value);
+            }
         });
         return WA_PREFIX + encodeURIComponent(lines.join("\n"));
     }

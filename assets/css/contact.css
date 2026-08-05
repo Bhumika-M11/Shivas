@@ -107,36 +107,14 @@ ul{
 }
 
 .logo-icon{
-    width:35px;
+    width:80px;
     height:55px;
-}
-
-.logo-text{
-    display:flex;
-    flex-direction:column;
-    margin-top: 12px;
-}
-
-.logo-text h3{
-    font-family:  "Lucida Handwriting", "Segoe Script", cursive;
-    font-size:18px;
-    color:#fff;
-    margin:0;
-    line-height:1;
-    font-weight:700;
-}
-
-.logo-text span{
-    font-size:11px;
-    color:orangered;
-    margin-top:1px;
-    margin-left: 3px;
 }
 
 .logo-icon img{
     width:100%;
     height:100%;
-    object-fit:fill;
+    object-fit:contain;
     transition:.3s;
 }
 
@@ -753,9 +731,9 @@ FOOTER
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 0.8fr 2fr 1fr 2.4fr;
-    gap: 40px;
-    padding-bottom: 50px;
+    grid-template-columns:2fr repeat(5,1fr);
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .footer-about h2 {
@@ -767,29 +745,6 @@ FOOTER
 .footer-about p {
     font-size: 14.5px;
     margin-bottom: 22px;
-}
-
-.footer-social {
-    display: flex;
-    gap: 12px;
-}
-
-.footer-social a {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .08);
-    color: var(--white);
-    font-size: 16px;
-    transition: background var(--transition), transform var(--transition);
-}
-
-.footer-social a:hover {
-    background: var(--secondary);
-    transform: translateY(-4px);
 }
 
 .footer-col h3 {
@@ -812,7 +767,7 @@ FOOTER
 }
 
 .footer-col ul li {
-    margin-bottom: 12px;
+    margin-bottom: 6px;
 }
 
 .footer-col ul a {
@@ -857,6 +812,14 @@ FOOTER
 .footer-sep {
     color: var(--secondary);
     margin: 0 8px;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:50px;
+    padding-top:20px;
+    text-align:center;
+    color:#bbb;
 }
 
 @media (max-width: 991px) {

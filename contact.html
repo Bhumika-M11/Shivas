@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shivas Travel Guru</title>
+    <title>Contact Us | Shivas Travel Guru – Cab &amp; Traveller Rentals Bengaluru</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo4.png">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
@@ -28,7 +31,7 @@
 
     <link rel="preload"
       as="image"
-      href="assets/images/logo.png"
+      href="assets/images/logo4.png"
       fetchpriority="high">
 </head>
 
@@ -42,16 +45,11 @@
 
             <a href="index.html" class="logo">
                     <div class="logo-icon">
-                <img src="assets/images/logo.png" alt="Logo">
-            </div>
-
-            <div class="logo-text">
-                <h3>SHIVAS</h3>
-                <span>Travel Guru</span>
+                <img src="assets/images/logo4.png" alt="Shivas Travel Guru – home" width="35" height="55" decoding="async">
             </div>
             </a>
 
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="nav-menu" aria-label="Primary navigation">
 
                 <ul>
 
@@ -65,17 +63,17 @@
 
                     <li><a href="index.html#services">Services</a></li>
 
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
 
                 </ul>
 
             </nav>
 
-            <a href="#" class="btn">Book Now</a>
+            <a href="" class="btn" target="_blank" rel="noopener">Book Now</a>
 
-            <div class="menu-btn">
+            <button type="button" class="menu-btn" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
 
         </div>
 
@@ -120,8 +118,7 @@ CONTACT & ENQUIRY
 
                         <h3>Call Us</h3>
 
-                        <p>+91 98765 43210</p>
-                        <p>+91 98765 43211</p>
+                        <p><a href="tel:+919019993283">+91 90199 93283</a></p>
 
                     </div>
 
@@ -141,7 +138,7 @@ CONTACT & ENQUIRY
 
                         <p>Available 24×7</p>
 
-                        <a href="https://wa.me/919876543210">
+                        <a href="https://wa.me/919019993283" target="_blank" rel="noopener">
 
                             Chat Now
 
@@ -163,7 +160,7 @@ CONTACT & ENQUIRY
 
                         <h3>Email</h3>
 
-                        <p>info@shivastravelguru.com</p>
+                        <p><a href="mailto:Shivastravelguru@gmail.com">Shivastravelguru@gmail.com</a></p>
 
                     </div>
 
@@ -182,11 +179,9 @@ CONTACT & ENQUIRY
                         <h3>Office Address</h3>
 
                         <p>
-
-                            Whitefield,
-                            Bengaluru,
-                            Karnataka - 560066
-
+                            <a href="https://maps.apple.com/?address=325,Dwaraka+Nagar+Stage+2,Banashankari+5th+Stage,Bengaluru+560098" target="_blank" rel="noopener">
+                                325, Dwaraka Nagar Stage 2, Banashankari 5th Stage, Bengaluru – 560098
+                            </a>
                         </p>
 
                     </div>
@@ -217,7 +212,7 @@ CONTACT & ENQUIRY
 
             <!-- Right Side -->
 
-            <div class="contact-form-box">
+            <div class="contact-form-box" aria-live="polite">
 
                 <h3>
 
@@ -225,24 +220,32 @@ CONTACT & ENQUIRY
 
                 </h3>
 
-                <form id="contactForm">
+                <form id="contactForm" novalidate>
 
                     <div class="form-row">
 
                         <div class="form-group">
 
+                            <label class="sr-only" for="name">Full Name</label>
                             <input
+                                id="name"
                                 type="text"
+                                name="name"
                                 placeholder="Full Name"
+                                autocomplete="name"
                                 required>
 
                         </div>
 
                         <div class="form-group">
 
+                            <label class="sr-only" for="phone">Mobile Number</label>
                             <input
+                                id="phone"
                                 type="tel"
+                                name="phone"
                                 placeholder="Mobile Number"
+                                autocomplete="tel"
                                 required>
 
                         </div>
@@ -253,17 +256,22 @@ CONTACT & ENQUIRY
 
                         <div class="form-group">
 
+                            <label class="sr-only" for="email">Email Address</label>
                             <input
+                                id="email"
                                 type="email"
-                                placeholder="Email Address">
+                                name="email"
+                                placeholder="Email Address"
+                                autocomplete="email">
 
                         </div>
 
                         <div class="form-group">
 
-                            <select required>
+                            <label class="sr-only" for="service">Select Service</label>
+                            <select id="service" name="service" required>
 
-                                <option>Select Service</option>
+                                <option value="" disabled selected>Select Service</option>
 
                                 <option>Airport Transfer</option>
 
@@ -287,8 +295,11 @@ CONTACT & ENQUIRY
 
                         <div class="form-group">
 
+                            <label class="sr-only" for="pickup">Pickup Location</label>
                             <input
+                                id="pickup"
                                 type="text"
+                                name="pickup"
                                 placeholder="Pickup Location"
                                 required>
 
@@ -296,8 +307,11 @@ CONTACT & ENQUIRY
 
                         <div class="form-group">
 
+                            <label class="sr-only" for="drop">Drop Location</label>
                             <input
+                                id="drop"
                                 type="text"
+                                name="drop"
                                 placeholder="Drop Location"
                                 required>
 
@@ -309,16 +323,22 @@ CONTACT & ENQUIRY
 
                         <div class="form-group">
 
+                            <label class="sr-only" for="date">Date</label>
                             <input
+                                id="date"
                                 type="date"
+                                name="date"
                                 required>
 
                         </div>
 
                         <div class="form-group">
 
+                            <label class="sr-only" for="time">Time</label>
                             <input
+                                id="time"
                                 type="time"
+                                name="time"
                                 required>
 
                         </div>
@@ -329,9 +349,10 @@ CONTACT & ENQUIRY
 
                         <div class="form-group">
 
-                            <select>
+                            <label class="sr-only" for="passengers">Passengers</label>
+                            <select id="passengers" name="passengers">
 
-                                <option>Passengers</option>
+                                <option value="" disabled selected>Passengers</option>
 
                                 <option>1 - 4</option>
 
@@ -347,9 +368,10 @@ CONTACT & ENQUIRY
 
                         <div class="form-group">
 
-                            <select>
+                            <label class="sr-only" for="vehicle">Vehicle</label>
+                            <select id="vehicle" name="vehicle">
 
-                                <option>Vehicle</option>
+                                <option value="" disabled selected>Vehicle</option>
 
                                 <option>Force Urbania</option>
 
@@ -365,7 +387,10 @@ CONTACT & ENQUIRY
 
                     <div class="form-group">
 
+                        <label class="sr-only" for="message">Tell us about your travel requirements</label>
                         <textarea
+                            id="message"
+                            name="message"
                             rows="6"
                             placeholder="Tell us about your travel requirements..."></textarea>
 
@@ -381,6 +406,8 @@ CONTACT & ENQUIRY
 
                 </form>
 
+                <p class="form-status" role="status" aria-live="polite"></p>
+
             </div>
 
         </div>
@@ -390,6 +417,7 @@ CONTACT & ENQUIRY
         <div class="map-section">
 
             <iframe
+                title="Shivas Travel Guru location on Google Maps"
                 src="https://www.google.com/maps/embed?pb="
                 loading="lazy"
                 allowfullscreen
@@ -401,109 +429,166 @@ CONTACT & ENQUIRY
     </div>
 
 </section>
+<!-- ===========================
+FOOTER
+=========================== -->
 <footer class="footer">
-            <div class="container">
-                <div class="footer-grid">
+    <div class="container">
 
-                    <div class="footer-about">
-                        <h2>Shivas Travel Guru</h2>
-                        <p>
-                            Unearth the most stunning destinations and travel experiences to create
-                            lifetime memories with us.
-                        </p>
-                    </div>
+        <div class="footer-grid">
 
-                    <div class="footer-col">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="index.html#about">About Us</a></li>
-                            <li><a href="trips.html">Trips</a></li>
-                            <li><a href="packages.html">Packages</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
+            <!-- About -->
 
-                    <div class="footer-col">
-                        <h3>Urbania Rental Bangalore</h3>
-                        <ul>
-                            <li><a href="#booking">Urbania Rental</a></li>
-                            <li><a href="#uses">Corporate Travel</a></li>
-                            <li><a href="#uses">Airport Transfer</a></li>
-                            <li><a href="#uses">Wedding Transport</a></li>
-                            <li><a href="#uses">Tour Packages</a></li>
-                        </ul>
-                    </div>
+            <div class="footer-about">
+                <h2>Shivas Travel Guru</h2>
 
-                    <div class="footer-col">
-                        <h3>Vehicle Types</h3>
-                        <ul>
-                            <li><a href="cab-rentals.html">Cab Rentals</a></li>
-                            <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
-                            <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col footer-contact">
-                        <h3>Contact</h3>
-                        <p>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank" rel="noopener">
-                                325, Dwaraka Nagar Stage 2, Banashankari 5th Stage, Bengaluru – 560098
-                            </a>
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919019993283">+91 90199 93283</a>
-                        </p>
-                        <p>
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <a href="https://wa.me/919019993283" target="_blank" rel="noopener">+91 90199 93283</a>
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:Shivastravelguru@gmail.com">Shivastravelguru@gmail.com</a>
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="footer-bottom">
-                    <p>
-                        © 2026 Shivas Travel Guru. All Rights Reserved.
-                        
-                    </p>
-                </div>
+                <p>
+                    Unearth the most stunning destinations and travel experiences
+                    to create lifetime memories with us.
+                </p>
             </div>
-        </footer>
+
+            <!-- Quick Links -->
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Popular Routes -->
+
+            <div class="footer-col">
+                <h3>Popular Routes</h3>
+
+                <ul>
+                    <li>
+                        <a href="bangalore-mysore.html">
+                            Bangalore <br>to Mysore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="bangalore-mysore.html">
+                            Mysore to Bangalore
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#airport">
+                            Bangalore<br> Airport Taxi
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Urbania -->
+
+            <div class="footer-col">
+                <h3>Urbania Rental Bangalore</h3>
+
+                <ul>
+                    <li><a href="electronic-city.html">Electronic City Urbania</a></li>
+                    <li><a href="whitefield.html">Whitefield Urbania</a></li>
+                    <li><a href="koramangala.html">Koramangala Urbania</a></li>
+                    <li><a href="indiranagar.html">Indiranagar Urbania</a></li>
+                </ul>
+            </div>
+
+            <!-- Vehicles -->
+
+            <div class="footer-col">
+                <h3>Vehicle <br>Types</h3>
+
+                <ul>
+                    <li><a href="cab-rentals.html">Cab Rentals</a></li>
+                    <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
+                    <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+
+            <div class="footer-col footer-contact">
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank">
+                        325, Dwaraka Nagar Stage 2,
+                        Banashankari 5th Stage,
+                        Bengaluru – 560098
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919019993283">
+                        +91 90199 93283
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    <a href="https://wa.me/919019993283" target="_blank">
+                        +91 90199 93283
+                    </a>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <a href="mailto:Shivastravelguru@gmail.com">
+                        Shivastravelguru@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Shivas Travel Guru. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+</footer>
 
 <script>
-    const hamburger = document.getElementById("hamburger");
+    const menuBtn = document.getElementById("hamburger");
     const navMenu = document.getElementById("nav-menu");
 
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    });
-
-    document.querySelectorAll("#nav-menu a").forEach(link => {
-        link.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
+    if (menuBtn && navMenu) {
+        menuBtn.addEventListener("click", () => {
+            const isActive = navMenu.classList.toggle("active");
+            menuBtn.classList.toggle("active", isActive);
+            menuBtn.setAttribute("aria-expanded", String(isActive));
         });
-    });
+
+        document.querySelectorAll("#nav-menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+                menuBtn.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
 </script>
 
-<script src="assets/js/contact.js"></script>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init({
-    duration:1000,
-    once:true
-});
-</script>
+<script src="assets/js/contact.js" defer></script>
 
 </body>
 </html>
