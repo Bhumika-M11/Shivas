@@ -251,7 +251,7 @@ HERO SECTION
 }
 
 /*=========================================
-LEFT CONTENT
+CONTENT
 =========================================*/
 
 .hero-content{
@@ -424,6 +424,10 @@ FORM CARD
     font-size:.9rem;
     color:#fff;
     font-weight:600;
+}
+
+.hero-contact a{
+    color: #fff;
 }
 
 /*=========================================
@@ -765,6 +769,151 @@ POPULAR ROUTES
 
 .routes-grid{
 grid-template-columns:1fr;
+}
+
+}
+
+/*==================================
+CAB SERVICE AREAS
+==================================*/
+
+.service-areas{
+    padding:90px 0;
+    background:#fff;
+}
+
+.service-areas .section-title{
+    text-align:center;
+}
+
+.service-areas .section-title h2{
+    font-size:38px;
+    font-weight:700;
+    color:#123b73;
+}
+
+.area-list{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:22px;
+    max-width:1500px;
+    margin:auto;
+}
+
+.area-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:185px;
+    height:46px;
+    padding:0 35px;
+    border-radius:50px;
+    border:1.5px solid #8ecbff;
+    background:#eaf6ff;
+    color:#111;
+    font-size:18px;
+    font-weight:500;
+    text-decoration:none;
+    transition:.35s;
+}
+
+.area-btn:hover{
+    background:#0a4b8c;
+    color:#fff;
+    border-color:#0a4b8c;
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(10,75,140,.18);
+}
+
+.area-text{
+    text-align:center;
+    margin-top:25px;
+    font-size:15px;
+    color:#666;
+}
+
+/*=========================
+Laptop
+=========================*/
+
+@media(max-width:1200px){
+
+.service-areas .section-title h2{
+    font-size:40px;
+}
+
+.area-btn{
+    min-width:170px;
+    font-size:17px;
+}
+
+.area-text{
+    font-size:20px;
+}
+
+}
+
+/*=========================
+Tablet
+=========================*/
+
+@media(max-width:992px){
+
+.service-areas{
+    padding:70px 0;
+}
+
+.service-areas .section-title h2{
+    font-size:34px;
+}
+
+.area-list{
+    gap:18px;
+}
+
+.area-btn{
+    min-width:160px;
+    height:60px;
+    font-size:16px;
+}
+
+.area-text{
+    font-size:18px;
+}
+
+}
+
+/*=========================
+Mobile
+=========================*/
+
+@media(max-width:576px){
+
+.service-areas{
+    padding:60px 0;
+}
+
+.service-areas .section-title h2{
+    font-size:28px;
+    line-height:1.4;
+}
+
+.area-list{
+    gap:15px;
+}
+
+.area-btn{
+    width:100%;
+    max-width:320px;
+    min-width:unset;
+    height:56px;
+    font-size:16px;
+}
+
+.area-text{
+    margin-top:35px;
+    font-size:16px;
 }
 
 }

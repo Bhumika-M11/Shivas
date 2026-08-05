@@ -1,7 +1,3 @@
-/* ============================================
-   SHIVAS TRAVEL GURU — CONTACT FORM
-   Vanilla JS | No Dependencies
-============================================ */
 (function () {
     'use strict';
 

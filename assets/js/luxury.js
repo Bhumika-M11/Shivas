@@ -1,19 +1,5 @@
-/* ============================================
-   SHIVAS TRAVEL GURU — LUXURY RENTALS BENGALURU
-   Vanilla JS | No Dependencies
-============================================ */
 (function () {
     'use strict';
-
-    /* --------------------------------------------------
-       0. CONFIG
-       Paste your Google Apps Script web-app URL below to
-       save enquiry/booking leads to a Google Sheet.
-    -------------------------------------------------- */
-    var SHEETS_URL = "";
-
-    var WA_NUMBER = "919019993283";
-    var WA_PREFIX = "https://wa.me/" + WA_NUMBER + "/?text=";
 
     function onReady(fn) {
         if (document.readyState === "loading") {
@@ -281,138 +267,6 @@
     }
 
     /* --------------------------------------------------
-       10. FORMS — Google Sheet + WhatsApp Ready
-    -------------------------------------------------- */
-    function buildWhatsAppLink(fields) {
-        var lines = [
-            "Hello Shivas Travel Guru!",
-            "I would like to book a luxury vehicle.",
-            ""
-        ];
-        Object.keys(fields).forEach(function (key) {
-            var value = String(fields[key] || "").trim();
-            if (value) {
-                lines.push(key + ": " + value);
-            }
-        });
-        return WA_PREFIX + encodeURIComponent(lines.join("\n"));
-    }
-
-    function collectForm(form) {
-        var data = {};
-        form.querySelectorAll("input, select, textarea").forEach(function (el) {
-            if (el.name && el.type !== "submit") {
-                data[el.name] = el.value.trim();
-            }
-        });
-        return data;
-    }
-
-    function submitToSheet(data) {
-        if (!SHEETS_URL) return Promise.resolve(false);
-        return fetch(SHEETS_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
-            body: JSON.stringify(data)
-        }).then(function () { return true; }).catch(function () { return false; });
-    }
-
-    function handleQuickBooking() {
-        var form = document.getElementById("quickBookingForm");
-        if (!form) return;
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var name = document.getElementById("qb-name").value.trim();
-            var phone = document.getElementById("qb-phone").value.trim();
-
-            if (!name || !phone) {
-                alert("Please enter your name and phone number.");
-                return;
-            }
-
-            var data = collectForm(form);
-            var wa = window.open(buildWhatsAppLink({
-                "Name": data.name,
-                "Phone": data.phone,
-                "Pickup": data.pickup,
-                "Drop": data.drop,
-                "Travel Date": data.date,
-                "Vehicle": data.vehicle,
-                "Passengers": data.passengers,
-                "Trip Type": data.triptype
-            }), "_blank");
-
-            if (!wa) {
-                window.location.href = buildWhatsAppLink(data);
-            }
-
-            submitToSheet(Object.assign({ type: "Quick Booking" }, data));
-            form.reset();
-        });
-    }
-
-    function handleEnquiry() {
-        var form = document.getElementById("enquiryForm");
-        var status = document.getElementById("formStatus");
-        if (!form) return;
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var name = document.getElementById("enq-name").value.trim();
-            var phone = document.getElementById("enq-phone").value.trim();
-            var pickup = document.getElementById("enq-pickup").value.trim();
-            var drop = document.getElementById("enq-drop").value.trim();
-            var date = document.getElementById("enq-date").value.trim();
-
-            if (!name || !phone || !pickup || !drop || !date) {
-                setStatus("Please fill in all required fields.", "error");
-                return;
-            }
-
-            var btn = document.getElementById("enqSubmitBtn");
-            var original = btn.innerHTML;
-            btn.innerHTML = "Sending...";
-            btn.disabled = true;
-
-            var data = collectForm(form);
-
-            submitToSheet(Object.assign({ type: "Enquiry" }, data)).then(function () {
-                var message = buildWhatsAppLink({
-                    "Name": data.name,
-                    "Phone": data.phone,
-                    "Email": data.email || "-",
-                    "Pickup": data.pickup,
-                    "Drop": data.drop,
-                    "Travel Date": data.date,
-                    "Passengers": data.passengers,
-                    "Vehicle": data.vehicle,
-                    "Trip Type": data.triptype || "-",
-                    "Message": data.message || "-"
-                });
-
-                var wa = window.open(message, "_blank");
-                if (!wa) { window.location.href = message; }
-
-                setStatus("Thank you, " + data.name + "! We have opened WhatsApp to send your enquiry. Our team will reply shortly.", "success");
-                form.reset();
-            }).finally(function () {
-                btn.innerHTML = original;
-                btn.disabled = false;
-            });
-        });
-
-        function setStatus(msg, type) {
-            if (!status) return;
-            status.textContent = msg;
-            status.className = "form-status " + type;
-        }
-    }
-
-    /* --------------------------------------------------
        11. YEAR
     -------------------------------------------------- */
     function initYear() {
@@ -433,8 +287,6 @@
         initFaq();
         initRipple();
         initBackTop();
-        handleQuickBooking();
-        handleEnquiry();
         initYear();
     });
 

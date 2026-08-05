@@ -1,16 +1,5 @@
-
 (function () {
     'use strict';
-
-    /* --------------------------------------------------
-       0. CONFIG
-       Paste your Google Apps Script web-app URL below to
-       save enquiry/booking leads to a Google Sheet.
-    -------------------------------------------------- */
-    var SHEETS_URL = "";
-
-    var WA_NUMBER = "919019993283";
-    var WA_PREFIX = "https://wa.me/" + WA_NUMBER + "/?text=";
 
     function onReady(fn) {
         if (document.readyState === "loading") {
@@ -222,65 +211,6 @@
             window.matchMedia("(prefers-reduced-motion: reduce)").matches
         );
     }
-
-    /* --------------------------------------------------
-        QUICK BOOKING FORM -> WhatsApp
-    -------------------------------------------------- */
-    function handleQuickBooking() {
-        var form = document.querySelector(".quick-booking form, form#bookingForm, form.booking-form");
-        if (!form || !form.elements) return;
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            var fields = form.elements;
-            function v(name) {
-                var el = fields.namedItem(name);
-                if (!el) return "";
-                return (el.value || "").toString().trim();
-            }
-            var name = v("qb-name") || v("name");
-            var phone = v("qb-phone") || v("phone");
-            var pickup = v("pickup");
-            var drop = v("drop");
-            var date = v("date");
-            var vehicle = v("vehicle") || v("qb-vehicle");
-            var pax = v("passengers") || v("qb-passengers");
-
-            var msg = "Hello Shivas Travel Guru,%0A%0A" +
-                "I'd like to book a traveller rental.%0A" +
-                "Name: " + encodeURIComponent(name) + "%0A" +
-                "Phone: " + encodeURIComponent(phone) + "%0A" +
-                "Pickup: " + encodeURIComponent(pickup) + "%0A" +
-                "Drop: " + encodeURIComponent(drop) + "%0A" +
-                "Date: " + encodeURIComponent(date) + "%0A" +
-                "Vehicle: " + encodeURIComponent(vehicle) + "%0A" +
-                "Passengers: " + encodeURIComponent(pax);
-
-            window.open(WA_PREFIX + msg, "_blank", "noopener,noreferrer");
-        });
-    }
-
-    /* --------------------------------------------------
-        ENQUIRY FORMING -> WhatsApp
-    -------------------------------------------------- */
-    function handleEnquiry() {
-        var form = document.querySelector(".enquiry-panel form, form#enquiryForm, form.enquiry-form");
-        if (!form || !form.elements) return;
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            var fields = form.querySelectorAll("[name]");
-            var parts = ["Hello Shivas Travels, this is my enquiry:%0A"];
-            fields.forEach(function (el) {
-                var val = (el.value || "").toString().trim();
-                if (!val) return;
-                var label = (el.getAttribute("aria-label") || el.getAttribute("name")).replace(/enq-/g, "");
-                parts.push(encodeURIComponent(label) + ": " + encodeURIComponent(val));
-            });
-            window.open(WA_PREFIX + parts.join("%0A"), "_blank", "noopener,noreferrer");
-        });
-    }
-
     /* --------------------------------------------------
         7. FAQ ACCORDION
     -------------------------------------------------- */
@@ -374,8 +304,6 @@
         initFaq();
         initRipple();
         initBackTop();
-        handleQuickBooking();
-        handleEnquiry();
         initYear();
     });
 

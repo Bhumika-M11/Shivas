@@ -69,7 +69,7 @@
 
             </nav>
 
-            <a href="" class="btn" target="_blank" rel="noopener">Book Now</a>
+            <a href="form.html" class="btn" target="_blank" rel="noopener">Book Now</a>
 
             <button type="button" class="menu-btn" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <i class="fa-solid fa-bars"></i>
@@ -216,9 +216,10 @@ CONTACT & ENQUIRY
 
                 <h3>
 
-                    Request a Free Quote
+                    Get an Instant Quote
 
                 </h3>
+                <p>Fill in your travel details and we'll contact you within minutes.</p>
 
                 <form id="contactForm" novalidate>
 
@@ -227,65 +228,14 @@ CONTACT & ENQUIRY
                         <div class="form-group">
 
                             <label class="sr-only" for="name">Full Name</label>
-                            <input
-                                id="name"
-                                type="text"
-                                name="name"
-                                placeholder="Full Name"
-                                autocomplete="name"
-                                required>
+                            <input type="text" name="name" aria-label="Full Name" placeholder="Full Name*" required>
 
                         </div>
 
                         <div class="form-group">
 
                             <label class="sr-only" for="phone">Mobile Number</label>
-                            <input
-                                id="phone"
-                                type="tel"
-                                name="phone"
-                                placeholder="Mobile Number"
-                                autocomplete="tel"
-                                required>
-
-                        </div>
-
-                    </div>
-
-                    <div class="form-row">
-
-                        <div class="form-group">
-
-                            <label class="sr-only" for="email">Email Address</label>
-                            <input
-                                id="email"
-                                type="email"
-                                name="email"
-                                placeholder="Email Address"
-                                autocomplete="email">
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label class="sr-only" for="service">Select Service</label>
-                            <select id="service" name="service" required>
-
-                                <option value="" disabled selected>Select Service</option>
-
-                                <option>Airport Transfer</option>
-
-                                <option>Corporate Travel</option>
-
-                                <option>Wedding Transport</option>
-
-                                <option>Outstation Trip</option>
-
-                                <option>Local Package</option>
-
-                                <option>Pilgrimage Tour</option>
-
-                            </select>
+                            <input type="tel" name="phone" aria-label="Mobile Number" placeholder="Mobile Number*" required>
 
                         </div>
 
@@ -296,30 +246,19 @@ CONTACT & ENQUIRY
                         <div class="form-group">
 
                             <label class="sr-only" for="pickup">Pickup Location</label>
-                            <input
-                                id="pickup"
-                                type="text"
-                                name="pickup"
-                                placeholder="Pickup Location"
-                                required>
+                            <input type="text" name="pickup" aria-label="Pickup Location" placeholder="Pickup Location*" required>
 
                         </div>
 
                         <div class="form-group">
 
                             <label class="sr-only" for="drop">Drop Location</label>
-                            <input
-                                id="drop"
-                                type="text"
-                                name="drop"
-                                placeholder="Drop Location"
-                                required>
-
+                            <input type="text" name="drop" aria-label="Drop Location" placeholder="Drop Location">
                         </div>
 
                     </div>
 
-                    <div class="form-row">
+                    <div class="form-column">
 
                         <div class="form-group">
 
@@ -332,54 +271,51 @@ CONTACT & ENQUIRY
 
                         </div>
 
-                        <div class="form-group">
-
-                            <label class="sr-only" for="time">Time</label>
-                            <input
-                                id="time"
-                                type="time"
-                                name="time"
-                                required>
-
-                        </div>
-
                     </div>
 
                     <div class="form-row">
 
                         <div class="form-group">
 
-                            <label class="sr-only" for="passengers">Passengers</label>
-                            <select id="passengers" name="passengers">
+                            <label class="sr-only" for="select vehicle">Select Vehicle</label>
+                            <select name="vehicle" aria-label="Select Vehicle" required>
 
-                                <option value="" disabled selected>Passengers</option>
+                    <option value="">Select Vehicle</option>
 
-                                <option>1 - 4</option>
+                    <option>Sedan</option>
 
-                                <option>5 - 8</option>
+                    <option>SUV</option>
 
-                                <option>9 - 13</option>
+                    <option>Innova Crysta</option>
 
-                                <option>14 - 17</option>
+                    <option>Tempo Traveller</option>
 
-                            </select>
+                    <option>Force Urbania</option>
+
+                    <option>Luxury Vehicle</option>
+
+                </select>
 
                         </div>
 
                         <div class="form-group">
 
-                            <label class="sr-only" for="vehicle">Vehicle</label>
-                            <select id="vehicle" name="vehicle">
+                            <label class="sr-only" for="triptype">Trip Type</label>
+                            <select name="triptype" aria-label="Trip Type">
 
-                                <option value="" disabled selected>Vehicle</option>
+                    <option value="">Trip Type</option>
 
-                                <option>Force Urbania</option>
+                    <option>Airport Transfer</option>
 
-                                <option>Tempo Traveller</option>
+                    <option>Local</option>
 
-                                <option>Mini Bus</option>
+                    <option>Outstation</option>
 
-                            </select>
+                    <option>One Way</option>
+
+                    <option>Round Trip</option>
+
+                </select>
 
                         </div>
 
@@ -400,7 +336,7 @@ CONTACT & ENQUIRY
                         type="submit"
                         class="btn full-btn">
 
-                        Get Instant Quote
+                        Get Free Quote
 
                     </button>
 
@@ -416,9 +352,9 @@ CONTACT & ENQUIRY
 
         <div class="map-section">
 
-            <iframe
+            <iframe 
                 title="Shivas Travel Guru location on Google Maps"
-                src="https://www.google.com/maps/embed?pb="
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3889.13880276533!2d77.52235700000001!3d12.898795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDUzJzU1LjciTiA3N8KwMzEnMjAuNSJF!5e0!3m2!1sen!2sin!4v1785923909810!5m2!1sen!2sin"
                 loading="lazy"
                 allowfullscreen
                 referrerpolicy="no-referrer-when-downgrade">

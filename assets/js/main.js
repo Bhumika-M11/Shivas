@@ -307,37 +307,3 @@ window.addEventListener("scroll", () => {
     }
 
 });
-
-/* Hero Form — WhatsApp Hand-off */
-
-const heroForm = document.getElementById("heroForm");
-
-if (heroForm) {
-
-    heroForm.addEventListener("submit", function(e) {
-
-        e.preventDefault();
-
-        var fd = new FormData(heroForm);
-
-        var lines = [
-            "Hello Shivas Travel Guru!",
-            "I would like to get a quote for my trip.",
-            "",
-            "Name: " + (fd.get("name") || ""),
-            "Phone: " + (fd.get("phone") || ""),
-            "Pickup: " + (fd.get("pickup") || ""),
-            "Drop: " + (fd.get("drop") || ""),
-            "Date: " + (fd.get("date") || ""),
-            "Vehicle: " + (fd.get("vehicle") || ""),
-            "Trip Type: " + (fd.get("triptype") || "")
-        ];
-
-        var url = "https://wa.me/919019993283?text=" + encodeURIComponent(lines.join("\n"));
-        window.open(url, "_blank");
-        heroForm.reset();
-
-    });
-
-}
-

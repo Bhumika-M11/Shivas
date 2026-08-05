@@ -1,19 +1,5 @@
-/* ============================================
-   SHIVAM TRAVELS — BANGALORE ↔ MYSORE
-   Vanilla JS | No Dependencies
-============================================ */
 (function () {
     'use strict';
-
-    /* --------------------------------------------------
-       0. CONFIG
-       Paste your Google Apps Script web-app URL below to
-       save enquiry/booking leads to a Google Sheet.
-    -------------------------------------------------- */
-    var SHEETS_URL = "";
-
-    var WA_NUMBER = "919019993283";
-    var WA_PREFIX = "https://wa.me/" + WA_NUMBER + "/?text=";
 
     function onReady(fn) {
         if (document.readyState === "loading") {
@@ -241,130 +227,6 @@
     }
 
     /* --------------------------------------------------
-       9. FORMS — Google Sheet + WhatsApp Ready
-    -------------------------------------------------- */
-    function buildWhatsAppLink(title, fields) {
-        var lines = [
-            "Hello Shivam Travels!",
-            title
-        ];
-        Object.keys(fields).forEach(function (key) {
-            lines.push(key + ": " + fields[key]);
-        });
-        return WA_PREFIX + encodeURIComponent(lines.join("\n"));
-    }
-
-    function collectForm(form) {
-        var data = {};
-        form.querySelectorAll("input, select, textarea").forEach(function (el) {
-            if (el.name && el.type !== "submit") {
-                data[el.name] = el.value.trim();
-            }
-        });
-        return data;
-    }
-
-    function submitToSheet(data) {
-        if (!SHEETS_URL) return Promise.resolve(false);
-        return fetch(SHEETS_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
-            body: JSON.stringify(data)
-        }).then(function () { return true; }).catch(function () { return false; });
-    }
-
-    function openWhatsApp(url) {
-        var wa = window.open(url, "_blank");
-        if (!wa) { window.location.href = url; }
-    }
-
-    /* ---- Instant Quote form (hero) ---- */
-    function handleQuoteForm() {
-        var form = document.getElementById("quoteForm");
-        if (!form) return;
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var data = collectForm(form);
-
-            if (!data.pickup || !data.drop || !data.date) {
-                alert("Please fill in pickup, drop and travel date for an instant quote.");
-                return;
-            }
-
-            var url = buildWhatsAppLink("I need an instant quote for a Bangalore ↔ Mysore cab.", {
-                "Route": data.route,
-                "Pickup": data.pickup,
-                "Drop": data.drop,
-                "Travel Date": data.date,
-                "Vehicle": data.vehicle
-            });
-
-            openWhatsApp(url);
-            submitToSheet(Object.assign({ type: "Instant Quote" }, data));
-            form.reset();
-        });
-    }
-
-    /* ---- Full Booking form ---- */
-    function handleBookingForm() {
-        var form = document.getElementById("bookingForm");
-        var status = document.getElementById("bookingStatus");
-        if (!form) return;
-
-        function setStatus(msg, type) {
-            if (!status) return;
-            status.textContent = msg;
-            status.className = "form-status " + type;
-        }
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            var data = collectForm(form);
-            var required = ["name", "phone", "pickup", "drop", "date", "vehicle", "passengers"];
-
-            for (var i = 0; i < required.length; i++) {
-                if (!data[required[i]]) {
-                    setStatus("Please fill in all required fields.", "error");
-                    return;
-                }
-            }
-
-            var btn = document.getElementById("bSubmitBtn");
-            if (!btn) return;
-            var original = btn.innerHTML;
-            btn.innerHTML = "Sending...";
-            btn.disabled = true;
-
-            submitToSheet(Object.assign({ type: "Booking" }, data)).then(function () {
-                var url = buildWhatsAppLink("I would like to book a cab between Bangalore and Mysore.", {
-                    "Name": data.name,
-                    "Phone": data.phone,
-                    "Email": data.email || "-",
-                    "Service": data.service,
-                    "Pickup": data.pickup,
-                    "Drop": data.drop,
-                    "Travel Date": data.date,
-                    "Return Date": data.return_date || "-",
-                    "Vehicle": data.vehicle,
-                    "Passengers": data.passengers,
-                    "Message": data.message || "-"
-                });
-
-                openWhatsApp(url);
-                setStatus("Thank you, " + data.name + "! We've opened WhatsApp with your booking details. Our team will confirm shortly.", "success");
-                form.reset();
-            }).finally(function () {
-                btn.innerHTML = original;
-                btn.disabled = false;
-            });
-        });
-    }
-
-    /* --------------------------------------------------
        10. MINIMUM DATE (today) for date inputs
     -------------------------------------------------- */
     function initMinDates() {
@@ -395,8 +257,6 @@
         initFaq();
         initRipple();
         initBackTop();
-        handleQuoteForm();
-        handleBookingForm();
         initMinDates();
         initYear();
     });

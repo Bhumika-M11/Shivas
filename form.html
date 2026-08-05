@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+    <style>
+        .hero-form{
+            width:420px;
+            margin:40px auto;
+            padding:25px;
+            background:#fff;
+            border-radius:12px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .hero-form h3{
+            text-align:center;
+            margin-bottom:10px;
+        }
+
+        .hero-form p{
+            text-align:center;
+            color:#666;
+            margin-bottom:20px;
+        }
+
+        .hero-form input,
+        .hero-form select,
+        .hero-form textarea{
+            width:100%;
+            padding:12px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:6px;
+            box-sizing:border-box;
+            font-size:16px;
+        }
+
+        .form-btn{
+            width:100%;
+            padding:12px;
+            background:rgba(10,61,98,.96);
+            color:#fff;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .form-btn:hover{
+            background:rgba(10,61,98,.96);
+        }
+        .home-btn{
+            display:inline-block;
+            margin:20px;
+            padding:10px 20px;
+            background:rgba(10,61,98,.96);
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+        }
+
+        .home-btn:hover{
+            background:#0b5ed7;
+        }
+    </style>
+    <a href="index.html" class="home-btn">← Back to Home</a>
+</head>
+<body>
+
+<div class="hero-form">
+    <h3>Get an Instant Quote</h3>
+    <p>Fill in your travel details and we'll contact you within minutes.</p>
+
+    <form id="heroForm">
+
+        <input type="text" id="name" name="name" placeholder="Full Name*" required>
+
+        <input type="tel" id="phone" name="phone" placeholder="Mobile Number*" required>
+
+        <input type="text" id="pickup" name="pickup" placeholder="Pickup Location*" required>
+
+        <input type="text" id="drop" name="drop" placeholder="Drop Location">
+
+        <input type="date" id="date" name="date">
+
+        <select id="vehicle" name="vehicle" required>
+            <option value="">Select Vehicle</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Innova Crysta</option>
+            <option>Tempo Traveller</option>
+            <option>Force Urbania</option>
+            <option>Luxury Vehicle</option>
+        </select>
+
+        <select id="triptype" name="triptype">
+            <option value="">Trip Type</option>
+            <option>Airport Transfer</option>
+            <option>Local</option>
+            <option>Outstation</option>
+            <option>One Way</option>
+            <option>Round Trip</option>
+        </select>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Tell us about your travel requirements..."></textarea>
+
+        <button type="submit" class="btn form-btn">
+            Get Free Quote
+        </button>
+
+    </form>
+
+    <p id="result"></p>
+</div>
+
+<p id="result"></p>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+
+    document.getElementById("result").innerHTML =
+        "Thank you, " + name + "! Your message has been received.";
+
+    console.log(name, email, phone, message);
+
+    document.getElementById("contactForm").reset();
+});
+</script>
+</body>
+</html>
