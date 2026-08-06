@@ -394,6 +394,12 @@ FORM CARD
     background:#fff;
 }
 
+.form-row{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
 .hero-form input:focus,
 .hero-form select:focus{
     border-color:#FFB703;

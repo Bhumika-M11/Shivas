@@ -162,11 +162,48 @@
 
                 <input type="tel" name="phone" aria-label="Mobile Number" placeholder="Mobile Number*" required>
 
-                <input type="text" name="pickup" aria-label="Pickup Location" placeholder="Pickup Location*" required>
+                <div class="form-row">
 
-                <input type="text" name="drop" aria-label="Drop Location" placeholder="Drop Location">
+                        <div class="form-group">
 
-                <input type="date" name="date" aria-label="Travel Date">
+                            <label class="sr-only" for="pickup">Pickup Location</label>
+                            <input type="text" name="pickup" aria-label="Pickup Location" placeholder="Pickup Location*" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="sr-only" for="drop">Drop Location</label>
+                            <input type="text" name="drop" aria-label="Drop Location" placeholder="Drop Location" required>
+                        </div>
+
+                    </div>
+                <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label class="sr-only" for="date">Date</label>
+                            <input
+                                id="date"
+                                type="date"
+                                name="date"
+                                required>
+
+                        </div>
+                        
+                        <div class="form-group">
+
+                            <label class="sr-only" for="time">Time</label>
+                            <input
+                                id="time"
+                                type="time"
+                                name="time"
+                                required>
+
+                        </div>
+
+
+                    </div>
 
                 <select name="vehicle" aria-label="Select Vehicle" required>
 
@@ -417,7 +454,7 @@ OUTSTATION TRIPS
 
                         <div class="vehicle-buttons">
 
-                            <a href="book.html" class="book-btn">
+                            <a href="form.html" class="book-btn">
                                 Book Now
                             </a>
 
