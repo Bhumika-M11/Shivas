@@ -364,7 +364,7 @@ FORM CARD
 }
 
 .hero-form h3{
-    font-size:2rem;
+    font-size:1.5rem;
     color:#FFB703;
     margin-bottom:10px;
 }
@@ -378,7 +378,7 @@ FORM CARD
 .hero-form form{
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:5px;
 }
 
 .hero-form input,
@@ -392,6 +392,11 @@ FORM CARD
     transition:.3s;
     outline:none;
     background:#fff;
+}
+
+.hero-form label{
+    font-size: 0.8rem;
+    color: #fff;
 }
 
 .form-row{
@@ -732,12 +737,6 @@ POPULAR ROUTES
     transform:translateY(-8px);
 }
 
-.route-image img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-}
-
 .route-content{
     padding:30px;
 }
@@ -771,12 +770,30 @@ POPULAR ROUTES
     margin-bottom:10px;
 }
 
+.b-btn{
+    background:linear-gradient(135deg,#FFB703,#FF8C00);
+    color:#fff;
+    padding:14px 30px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.4s;
+    box-shadow:0 15px 35px rgba(255,183,3,.35);
+}
+
+.b-btn:hover{
+    transform:translateY(-5px);
+}
+
 @media(max-width:991px){
 
 .routes-grid{
 grid-template-columns:1fr;
 }
 
+.b-btn{
+    min-width:170px;
+    font-size:17px;
+}
 }
 
 /*==================================
@@ -1763,12 +1780,177 @@ FOOTER
     text-align:center;
     color:#bbb;
 }
+/*=====================================
+Large Laptop (1400px)
+=====================================*/
 
-@media(max-width:991px){
-    .footer-grid{grid-template-columns:1fr 1fr}
+@media (max-width:1400px){
+
+.footer-grid{
+    grid-template-columns:2fr repeat(5,1fr);
+    gap:18px;
 }
-@media(max-width:640px){
-    .footer-grid{grid-template-columns:1fr;gap:30px}
+
+}
+
+/*=====================================
+Laptop (1200px)
+=====================================*/
+
+@media (max-width:1200px){
+
+.footer{
+    padding:60px 0 0;
+}
+
+.footer-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.footer-about{
+    grid-column:1/-1;
+}
+
+.footer-about p{
+    max-width:650px;
+}
+
+.footer-col h3{
+    font-size:18px;
+}
+
+}
+
+/*=====================================
+Tablet (992px)
+=====================================*/
+
+@media (max-width:992px){
+
+.footer{
+    padding:55px 0 0;
+}
+
+.footer-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.footer-about{
+    grid-column:1/-1;
+}
+
+.footer-about h2{
+    font-size:24px;
+}
+
+.footer-about p{
+    max-width:100%;
+}
+
+.footer-col h3{
+    font-size:18px;
+}
+
+.footer-col ul a{
+    font-size:15px;
+}
+
+.footer-contact p{
+    font-size:15px;
+}
+
+}
+
+/*=====================================
+Mobile (768px)
+=====================================*/
+
+@media (max-width:768px){
+
+.footer{
+    padding:50px 0 0;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+}
+
+.footer-about,
+.footer-col,
+.footer-contact{
+    text-align:left;
+}
+
+.footer-about h2{
+    font-size:22px;
+}
+
+.footer-col h3{
+    font-size:18px;
+}
+
+.footer-contact p{
+    align-items:flex-start;
+}
+
+.footer-bottom{
+    margin-top:35px;
+    padding:18px 0;
+    font-size:13px;
+}
+
+}
+
+/*=====================================
+Small Mobile (576px)
+=====================================*/
+
+@media (max-width:576px){
+
+.footer{
+    padding:40px 0 0;
+}
+
+.footer-about h2{
+    font-size:20px;
+}
+
+.footer-about p{
+    font-size:14px;
+    line-height:1.8;
+}
+
+.footer-col h3{
+    font-size:17px;
+    margin-bottom:16px;
+}
+
+.footer-col ul li{
+    margin-bottom:10px;
+}
+
+.footer-col ul a{
+    font-size:14px;
+}
+
+.footer-contact p{
+    font-size:14px;
+    gap:10px;
+}
+
+.footer-contact i{
+    margin-top:4px;
+}
+
+.footer-bottom{
+    margin-top:30px;
+    padding:16px 0;
+    font-size:12px;
+}
+
 }
 
 /* Floating Buttons */
@@ -1848,26 +2030,6 @@ AIRPORT TRANSFER SLIDER
     overflow:hidden;
 }
 
-.section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-    margin-bottom:50px;
-    gap:30px;
-}
-
-.section-header h2{
-    font-size:42px;
-    color:#0A3D62;
-    margin:15px 0;
-}
-
-.section-header p{
-    max-width:600px;
-    color:#666;
-    line-height:1.8;
-}
-
 .section-tag{
     display:inline-block;
     background:#E8F8F4;
@@ -1877,54 +2039,22 @@ AIRPORT TRANSFER SLIDER
     font-weight:600;
 }
 
-.slider-nav{
-    display:flex;
-    gap:15px;
-}
-
-.slide-btn{
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:#fff;
-    color:#0A3D62;
-    font-size:22px;
-    cursor:pointer;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.35s;
-}
-
-.slide-btn:hover{
-    background:#00B894;
-    color:#fff;
-}
-
 .slider-container{
     overflow:hidden;
     position:relative;
 }
 
 .vehicle-slider{
-    display:flex;
-    gap:25px;
-    transition:transform .5s ease;
-    scroll-behavior:smooth;
-}
-
-.vehicle-slider::-webkit-scrollbar{
-    display:none;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
 }
 
 .vehicle-card{
-    min-width:320px;
-    max-width:320px;
     background:#fff;
-    border-radius:22px;
+    padding:40px 30px;
+    transition:.4s;
+    position:relative;
     overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-    transition:.35s;
-    flex-shrink:0;
 }
 
 .vehicle-card:hover{
@@ -2079,21 +2209,24 @@ AIRPORT TRANSFER SLIDER
 Responsive
 ===========================*/
 
-@media(max-width:1200px){
+/*====================================
+Laptop (1200px)
+====================================*/
+
+@media (max-width:1200px){
+
+.vehicle-slider{
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
 
 .vehicle-card{
-    min-width:300px;
-    max-width:300px;
+    padding:32px 25px;
 }
 
 }
 
 @media(max-width:992px){
-
-.section-header{
-    flex-direction:column;
-    align-items:flex-start;
-}
 
 .slider-nav{
     margin-top:20px;
@@ -2111,15 +2244,6 @@ Responsive
     padding:80px 0;
 }
 
-.section-header h2{
-    font-size:34px;
-}
-
-.vehicle-card{
-    min-width:280px;
-    max-width:280px;
-}
-
 .vehicle-image{
     height:200px;
 }
@@ -2131,11 +2255,6 @@ Responsive
 }
 
 @media(max-width:576px){
-
-.vehicle-card{
-    min-width:100%;
-    max-width:100%;
-}
 
 .vehicle-buttons{
     display: flex;
@@ -2153,11 +2272,6 @@ Responsive
     height: 44px;
     font-size: 18px;
     flex-shrink: 0;
-}
-
-.slide-btn{
-    width:45px;
-    height:45px;
 }
 
 }

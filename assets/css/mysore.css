@@ -1621,10 +1621,6 @@ section {
         gap: 22px;
     }
 
-    .hero {
-        padding-top: 150px;
-    }
-
     .direction-grid {
         grid-template-columns: 1fr;
     }
@@ -1634,6 +1630,41 @@ section {
         max-width: 520px;
         margin-inline: auto;
     }
+
+    .hero{
+        min-height:auto;
+        padding:110px 0 70px;
+    }
+
+    .hero-wrap{
+        width:94%;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .hero-content>p{
+        max-width:650px;
+        margin:0 auto 28px;
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .trust-badges{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:18px;
+    }
+
+    .trust-badges li{
+        font-size:14px;
+    }
+
 }
 
 @media (max-width: 640px) {
