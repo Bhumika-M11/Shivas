@@ -200,51 +200,6 @@ HERO SECTION
     color:#fff;
 }
 
-/* Smooth transition to next section */
-
-.hero_vid::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 180px;
-    background: linear-gradient( transparent, #020817);
-}
-
-.hero_vid{
-    position:absolute;
-    inset:0;
-    z-index:-3;
-}
-
-.hero_vid__video{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center;
-    will-change:transform;
-}
-
-.hero_vid__overlay{
-    position:absolute;
-    inset:0;
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        90deg,
-        rgba(10,61,98,.75),
-        rgba(10,61,98,.45),
-        rgba(0,0,0,.35)
-    );
-    z-index:-2;
-}
-
 .hero-wrapper{
     display:grid;
     grid-template-columns:1.2fr .8fr;
@@ -254,124 +209,85 @@ HERO SECTION
     padding:140px 0 80px;
 }
 
-/*=====================================
-Large Laptop (1400px)
-=====================================*/
-
-@media (max-width:1400px){
-
-.hero-wrapper{
-    grid-template-columns:1.1fr .9fr;
-    gap:50px;
-    padding:130px 0 70px;
+.hero_vid::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(transparent, #020817);
 }
 
-.hero_vid::after{
-    height:160px;
+.hero_vid {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
 }
 
+.hero_vid__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    will-change: transform;
 }
 
-/*=====================================
-Laptop (1200px)
-=====================================*/
-
-@media (max-width:1200px){
-
-.hero-wrapper{
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    padding:120px 0 70px;
+.hero_vid__overlay {
+    position: absolute;
+    inset: 0;
 }
 
-.hero_vid::after{
-    height:140px;
-}
-
-.overlay{
-    background:linear-gradient(
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
         90deg,
-        rgba(10,61,98,.82),
-        rgba(10,61,98,.55),
-        rgba(0,0,0,.40)
+        rgba(10, 61, 98, .75),
+        rgba(10, 61, 98, .45),
+        rgba(0, 0, 0, .35)
     );
+    z-index: -2;
 }
 
+/* ---------- Tablets / small laptops ---------- */
+@media (max-width: 1024px) {
+    .hero_vid::after {
+        height: 140px;
+    }
+
+    .overlay {
+        background: linear-gradient(
+            135deg,
+            rgba(10, 61, 98, .8),
+            rgba(10, 61, 98, .5),
+            rgba(0, 0, 0, .4)
+        );
+    }
 }
 
-/*=====================================
-Tablet (992px)
-=====================================*/
+/* ---------- Mobile / portrait ---------- */
+@media (max-width: 640px) {
+    .hero_vid::after {
+        height: 100px;
+    }
 
-@media (max-width:992px){
+    .hero_vid__video {
+        object-position: center 30%;
+    }
 
-.hero-wrapper{
-    grid-template-columns:1fr;
-    text-align:center;
-    gap:45px;
-    padding:110px 0 60px;
+    .overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(10, 61, 98, .85),
+            rgba(10, 61, 98, .55),
+            rgba(0, 0, 0, .4)
+        );
+    }
 }
 
-.hero_vid::after{
-    height:120px;
-}
-
-.overlay{
-    background:rgba(8,28,45,.65);
-}
-
-}
-
-/*=====================================
-Mobile (768px)
-=====================================*/
-
-@media (max-width:768px){
-
-.hero-wrapper{
-    grid-template-columns:1fr;
-    gap:35px;
-    padding:100px 0 50px;
-}
-
-.hero_vid::after{
-    height:100px;
-}
-
-.hero_vid__video{
-    object-position:center;
-}
-
-.overlay{
-    background:rgba(8,28,45,.72);
-}
-
-}
-
-/*=====================================
-Small Mobile (576px)
-=====================================*/
-
-@media (max-width:576px){
-
-.hero-wrapper{
-    gap:30px;
-    padding:90px 0 40px;
-}
-
-.hero_vid::after{
-    height:80px;
-}
-
-.hero_vid__video{
-    object-position:center center;
-}
-
-.overlay{
-    background:rgba(8,28,45,.78);
-}
-
-}
 /*=========================================
 CONTENT
 =========================================*/
@@ -590,15 +506,25 @@ ANIMATION
 RESPONSIVE
 =========================================*/
 
-@media(max-width:1200px){
+@media(max-width:992px){
 
-    .hero-content h1{
-        font-size:3.2rem;
+    .vehicle-image-slider{
+        height:200px;
     }
 
-}
+    .slider-dots{
+        gap:7px;
+        bottom:12px;
+    }
 
-@media(max-width:992px){
+    .slider-dots .dot{
+        width:9px;
+        height:9px;
+    }
+
+    .slider-dots .dot.active{
+        width:24px;
+    }
 
     .hero{
         min-height:auto;
@@ -629,51 +555,67 @@ RESPONSIVE
         margin:auto;
     }
 
-}
-
-@media(max-width:768px){
-
-    .hero-content h1{
-        font-size:2.5rem;
+    .service-areas{
+        padding:70px 0;
     }
 
-    .hero-content p{
-        font-size:1rem;
+    .service-areas .section-title h2{
+        font-size:34px;
     }
 
-    .hero-form{
-        padding:28px;
+    .area-list{
+        gap:18px;
     }
 
-}
-
-@media(max-width:576px){
-
-    .hero-wrapper{
-        padding:110px 0 50px;
+    .area-btn{
+        min-width:160px;
+        height:60px;
+        font-size:16px;
     }
 
-    .hero-content h1{
-        font-size:2rem;
+    .area-text{
+        font-size:18px;
     }
 
-    .hero-highlights{
-        flex-direction:column;
-        align-items:center;
+    .footer{
+        padding:55px 0 0;
     }
 
-    .hero-buttons{
-        flex-direction:column;
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:30px;
     }
 
-    .hero-buttons .btn{
-        width:100%;
+    .footer-about{
+        grid-column:1/-1;
     }
 
-    .hero-contact{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
+    .footer-about h2{
+        font-size:24px;
+    }
+
+    .footer-about p{
+        max-width:100%;
+    }
+
+    .footer-col h3{
+        font-size:18px;
+    }
+
+    .footer-col ul a{
+        font-size:15px;
+    }
+
+    .footer-contact p{
+        font-size:15px;
+    }
+
+    .slider-nav{
+        margin-top:20px;
+    }
+
+    .vehicle-card{
+        min-width:320px;
     }
 
 }
@@ -906,18 +848,6 @@ POPULAR ROUTES
     transform:translateY(-5px);
 }
 
-@media(max-width:991px){
-
-.routes-grid{
-grid-template-columns:1fr;
-}
-
-.b-btn{
-    min-width:170px;
-    font-size:17px;
-}
-}
-
 /*==================================
 CAB SERVICE AREAS
 ==================================*/
@@ -978,90 +908,6 @@ CAB SERVICE AREAS
     color:#666;
 }
 
-/*=========================
-Laptop
-=========================*/
-
-@media(max-width:1200px){
-
-.service-areas .section-title h2{
-    font-size:40px;
-}
-
-.area-btn{
-    min-width:170px;
-    font-size:17px;
-}
-
-.area-text{
-    font-size:20px;
-}
-
-}
-
-/*=========================
-Tablet
-=========================*/
-
-@media(max-width:992px){
-
-.service-areas{
-    padding:70px 0;
-}
-
-.service-areas .section-title h2{
-    font-size:34px;
-}
-
-.area-list{
-    gap:18px;
-}
-
-.area-btn{
-    min-width:160px;
-    height:60px;
-    font-size:16px;
-}
-
-.area-text{
-    font-size:18px;
-}
-
-}
-
-/*=========================
-Mobile
-=========================*/
-
-@media(max-width:576px){
-
-.service-areas{
-    padding:60px 0;
-}
-
-.service-areas .section-title h2{
-    font-size:28px;
-    line-height:1.4;
-}
-
-.area-list{
-    gap:15px;
-}
-
-.area-btn{
-    width:100%;
-    max-width:320px;
-    min-width:unset;
-    height:56px;
-    font-size:16px;
-}
-
-.area-text{
-    margin-top:35px;
-    font-size:16px;
-}
-
-}
 /*==============================
 DESTINATIONS
 ==============================*/
@@ -1554,52 +1400,21 @@ OUR FLEET
 
 @media(max-width:991px){
 
+.routes-grid{
+grid-template-columns:1fr;
+}
+
+.b-btn{
+    min-width:170px;
+    font-size:17px;
+}
+
 .fleet-card{
     width:280px;
 }
 
 .fleet-card img{
     height:200px;
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.fleet-section{
-    padding:80px 0;
-}
-
-.fleet-track{
-    gap:20px;
-    animation-duration:28s;
-}
-
-.fleet-card{
-    width:240px;
-}
-
-.fleet-card img{
-    height:170px;
-}
-
-.fleet-content{
-    padding:18px;
-}
-
-.fleet-content h3{
-    font-size:20px;
-}
-
-.fleet-content p{
-    font-size:14px;
-}
-
-.fleet-btn{
-    padding:10px 22px;
-    font-size:14px;
 }
 
 }
@@ -1669,18 +1484,6 @@ OUR FLEET
 
 .review-user span{
     color:#777;
-}
-
-@media(max-width:768px){
-
-.review-card{
-    padding:30px 20px;
-}
-
-.review-text{
-    font-size:16px;
-}
-
 }
 
 /*==============================
@@ -1764,39 +1567,290 @@ CTA SECTION
 
 @media(max-width:768px){
 
-.cta{
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .hero-form{
+        padding:28px;
+    }
+
+        .vehicle-image-slider{
+        height:190px;
+        border-radius:18px 18px 0 0;
+    }
+
+    .slider-dots{
+        gap:6px;
+        bottom:10px;
+    }
+
+    .slider-dots .dot{
+        width:8px;
+        height:8px;
+    }
+
+    .slider-dots .dot.active{
+        width:22px;
+        height:8px;
+    }
+
+    .airport-transfer{
     padding:80px 0;
 }
 
-.cta-box{
-    padding:40px 25px;
-}
+    .vehicle-image{
+        height:200px;
+    }
 
-.cta-box h2{
-    font-size:32px;
-}
+    .vehicle-content{
+        padding:20px;
+    }
 
-.cta-buttons{
-    flex-direction:column;
-}
+    .footer{
+        padding:50px 0 0;
+    }
 
-.cta-buttons .btn,
-.outline-btn{
-    width:100%;
-    text-align:center;
-}
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:28px;
+    }
+
+    .footer-about,
+    .footer-col,
+    .footer-contact{
+        text-align:left;
+    }
+
+    .footer-about h2{
+        font-size:22px;
+    }
+
+    .footer-col h3{
+        font-size:18px;
+    }
+
+    .footer-contact p{
+        align-items:flex-start;
+    }
+
+    .footer-bottom{
+        margin-top:35px;
+        padding:18px 0;
+        font-size:13px;
+    }
+
+    .review-card{
+        padding:30px 20px;
+    }
+
+    .review-text{
+        font-size:16px;
+    }
+
+    .fleet-section{
+        padding:80px 0;
+    }
+
+    .fleet-track{
+        gap:20px;
+        animation-duration:28s;
+    }
+
+    .fleet-card{
+        width:240px;
+    }
+
+    .fleet-card img{
+        height:170px;
+    }
+
+    .fleet-content{
+        padding:18px;
+    }
+
+    .fleet-content h3{
+        font-size:20px;
+    }
+
+    .fleet-content p{
+        font-size:14px;
+    }
+
+    .fleet-btn{
+        padding:10px 22px;
+        font-size:14px;
+    }
+
+    .cta{
+        padding:80px 0;
+    }
+
+    .cta-box{
+        padding:40px 25px;
+    }
+
+    .cta-box h2{
+        font-size:32px;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+    }
+
+    .cta-buttons .btn,
+    .outline-btn{
+        width:100%;
+        text-align:center;
+    }
 
 }
 
 @media(max-width:576px){
 
-.cta-box h2{
-    font-size:28px;
-}
+        .hero-wrapper{
+        padding:110px 0 50px;
+    }
 
-.cta-box p{
-    font-size:15px;
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+    .hero-highlights{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .hero-contact{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .service-areas{
+        padding:60px 0;
+    }
+
+    .service-areas .section-title h2{
+        font-size:28px;
+        line-height:1.4;
+    }
+
+    .area-list{
+        gap:15px;
+    }
+
+    .area-btn{
+        width:100%;
+        max-width:320px;
+        min-width:unset;
+        height:56px;
+        font-size:16px;
+    }
+
+.area-text{
+    margin-top:35px;
+    font-size:16px;
 }
+    
+    .vehicle-buttons{
+        display: flex;
+        gap: 8px;
+    }
+
+    .vehicle-buttons .book-btn{
+        flex: 1;
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .vehicle-buttons .whatsapp-btn{
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .footer{
+        padding:40px 0 0;
+    }
+
+    .footer-about h2{
+        font-size:20px;
+    }
+
+    .footer-about p{
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    .footer-col h3{
+        font-size:17px;
+        margin-bottom:16px;
+    }
+
+    .footer-col ul li{
+        margin-bottom:10px;
+    }
+
+    .footer-col ul a{
+        font-size:14px;
+    }
+
+    .footer-contact p{
+        font-size:14px;
+        gap:10px;
+    }
+
+    .footer-contact i{
+        margin-top:4px;
+    }
+
+    .footer-bottom{
+        margin-top:30px;
+        padding:16px 0;
+        font-size:12px;
+    }
+
+    .vehicle-image-slider{
+        height:180px;
+        border-radius:16px 16px 0 0;
+    }
+
+    .slider-dots{
+        bottom:8px;
+        gap:5px;
+    }
+
+    .slider-dots .dot{
+        width:7px;
+        height:7px;
+    }
+
+    .slider-dots .dot.active{
+        width:20px;
+        height:7px;
+    }
+
+    .cta-box h2{
+        font-size:28px;
+    }
+
+    .cta-box p{
+        font-size:15px;
+    }
 
 }
 
@@ -1921,157 +1975,61 @@ Laptop (1200px)
 
 @media (max-width:1200px){
 
-.footer{
-    padding:60px 0 0;
-}
+    .hero-content h1{
+        font-size:3.2rem;
+    }
 
-.footer-grid{
-    grid-template-columns:repeat(3,1fr);
-    gap:35px;
-}
+    
+    .vehicle-image-slider{
+        height:210px;
+    }
 
-.footer-about{
-    grid-column:1/-1;
-}
+    .slider-dots{
+        bottom:12px;
+    }
 
-.footer-about p{
-    max-width:650px;
-}
-
-.footer-col h3{
-    font-size:18px;
-}
-
-}
-
-/*=====================================
-Tablet (992px)
-=====================================*/
-
-@media (max-width:992px){
-
-.footer{
-    padding:55px 0 0;
-}
-
-.footer-grid{
+    .vehicle-slider{
     grid-template-columns:repeat(2,1fr);
-    gap:30px;
-}
+    gap:25px;
+    }
 
-.footer-about{
-    grid-column:1/-1;
-}
+    .vehicle-card{
+        padding:32px 25px;
+    }
 
-.footer-about h2{
-    font-size:24px;
-}
+    .service-areas .section-title h2{
+        font-size:40px;
+    }
 
-.footer-about p{
-    max-width:100%;
-}
+    .area-btn{
+        min-width:170px;
+        font-size:17px;
+    }
 
-.footer-col h3{
-    font-size:18px;
-}
+    .area-text{
+        font-size:20px;
+    }
 
-.footer-col ul a{
-    font-size:15px;
-}
+    .footer{
+        padding:60px 0 0;
+    }
 
-.footer-contact p{
-    font-size:15px;
-}
+    .footer-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:35px;
+    }
 
-}
+    .footer-about{
+        grid-column:1/-1;
+    }
 
-/*=====================================
-Mobile (768px)
-=====================================*/
+    .footer-about p{
+        max-width:650px;
+    }
 
-@media (max-width:768px){
-
-.footer{
-    padding:50px 0 0;
-}
-
-.footer-grid{
-    grid-template-columns:1fr;
-    gap:28px;
-}
-
-.footer-about,
-.footer-col,
-.footer-contact{
-    text-align:left;
-}
-
-.footer-about h2{
-    font-size:22px;
-}
-
-.footer-col h3{
-    font-size:18px;
-}
-
-.footer-contact p{
-    align-items:flex-start;
-}
-
-.footer-bottom{
-    margin-top:35px;
-    padding:18px 0;
-    font-size:13px;
-}
-
-}
-
-/*=====================================
-Small Mobile (576px)
-=====================================*/
-
-@media (max-width:576px){
-
-.footer{
-    padding:40px 0 0;
-}
-
-.footer-about h2{
-    font-size:20px;
-}
-
-.footer-about p{
-    font-size:14px;
-    line-height:1.8;
-}
-
-.footer-col h3{
-    font-size:17px;
-    margin-bottom:16px;
-}
-
-.footer-col ul li{
-    margin-bottom:10px;
-}
-
-.footer-col ul a{
-    font-size:14px;
-}
-
-.footer-contact p{
-    font-size:14px;
-    gap:10px;
-}
-
-.footer-contact i{
-    margin-top:4px;
-}
-
-.footer-bottom{
-    margin-top:30px;
-    padding:16px 0;
-    font-size:12px;
-}
+    .footer-col h3{
+        font-size:18px;
+    }
 
 }
 
@@ -2327,76 +2285,6 @@ AIRPORT TRANSFER SLIDER
 .outstation-slider.dragging{
     cursor:grabbing;
 }
-/*===========================
-Responsive
-===========================*/
-
-/*====================================
-Laptop (1200px)
-====================================*/
-
-@media (max-width:1200px){
-
-.vehicle-slider{
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.vehicle-card{
-    padding:32px 25px;
-}
-
-}
-
-@media(max-width:992px){
-
-.slider-nav{
-    margin-top:20px;
-}
-
-.vehicle-card{
-    min-width:320px;
-}
-
-}
-
-@media(max-width:768px){
-
-.airport-transfer{
-    padding:80px 0;
-}
-
-.vehicle-image{
-    height:200px;
-}
-
-.vehicle-content{
-    padding:20px;
-}
-
-}
-
-@media(max-width:576px){
-
-.vehicle-buttons{
-    display: flex;
-    gap: 8px;
-}
-
-.vehicle-buttons .book-btn{
-    flex: 1;
-    height: 44px;
-    font-size: 14px;
-}
-
-.vehicle-buttons .whatsapp-btn{
-    width: 44px;
-    height: 44px;
-    font-size: 18px;
-    flex-shrink: 0;
-}
-
-}
 
 .vehicle-image-slider{
     position:relative;
@@ -2450,98 +2338,13 @@ Laptop (1200px)
     background:#fff;
 }
 
-/*=========================================
-VEHICLE IMAGE SLIDER RESPONSIVE
-=========================================*/
-
-/* Laptop */
-@media (max-width:1200px){
-
-    .vehicle-image-slider{
-        height:210px;
-    }
-
-    .slider-dots{
-        bottom:12px;
-    }
-
-}
-
-/* Tablet */
-@media (max-width:992px){
-
-    .vehicle-image-slider{
-        height:200px;
-    }
-
-    .slider-dots{
-        gap:7px;
-        bottom:12px;
-    }
-
-    .slider-dots .dot{
-        width:9px;
-        height:9px;
-    }
-
-    .slider-dots .dot.active{
-        width:24px;
-    }
-
-}
-
-/* Mobile */
-@media (max-width:768px){
-
-    .vehicle-image-slider{
-        height:190px;
-        border-radius:18px 18px 0 0;
-    }
-
-    .slider-dots{
-        gap:6px;
-        bottom:10px;
-    }
-
-    .slider-dots .dot{
-        width:8px;
-        height:8px;
-    }
-
-    .slider-dots .dot.active{
-        width:22px;
-        height:8px;
-    }
-
-}
-
-/* Small Mobile */
-@media (max-width:576px){
-
-    .vehicle-image-slider{
-        height:180px;
-        border-radius:16px 16px 0 0;
-    }
-
-    .slider-dots{
-        bottom:8px;
-        gap:5px;
-    }
-
-    .slider-dots .dot{
-        width:7px;
-        height:7px;
-    }
-
-    .slider-dots .dot.active{
-        width:20px;
-        height:7px;
-    }
-
-}
 
 /* Extra Small Devices */
 @media (max-width:400px){
+
+    .hero_vid::after {
+        height: 80px;
+    }
 
     .vehicle-image-slider{
         height:165px;
