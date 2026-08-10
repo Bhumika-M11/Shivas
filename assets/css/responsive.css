@@ -2,798 +2,1219 @@
 RESPONSIVE DESIGN
 ========================================== */
 
-/* Laptop */
-
-@media (max-width:1200px){
-
-.services{
-    padding:100px 0;
-}
-
-.services-grid{
-    gap:25px;
-}
-
-.service-card{
-    padding:35px 25px;
-}
-
-.service-card h3{
-    font-size:22px;
-}
-
-.about{
-    padding:100px 0;
-}
-
-.about-grid{
-    gap:40px;
-}
-
-.about-content h2{
-    font-size:42px;
-}
-
-.about-card h3{
-    font-size:32px;
-}
-
-.hero-content h1{
-font-size:60px;
-}
-
-.booking-box{
-grid-template-columns:repeat(2,1fr);
-bottom:30px;
-}
-
-.search-btn{
-height:55px;
-}
-
-}
-
 /* Large Desktop */
 
-@media(min-width:1400px){
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
 
-.container{
+  .hero-content h1 {
+    font-size: 82px;
+  }
 
-max-width:1320px;
+  .hero-content p {
+    font-size: 20px;
+  }
 
+  .booking-box {
+    max-width: 1250px;
+  }
 }
 
-.hero-content h1{
+/* Laptop */
 
-font-size:82px;
+@media (max-width: 1200px) {
+  .services {
+    padding: 100px 0;
+  }
 
-}
+  .services-grid {
+    gap: 25px;
+  }
 
-.hero-content p{
+  .service-card {
+    padding: 35px 25px;
+  }
 
-font-size:20px;
+  .service-card h3 {
+    font-size: 22px;
+  }
 
-}
+  .about {
+    padding: 100px 0;
+  }
 
-.booking-box{
+  .about-grid {
+    gap: 40px;
+  }
 
-max-width:1250px;
+  .about-content h2 {
+    font-size: 42px;
+  }
 
-}
+  .about-card h3 {
+    font-size: 32px;
+  }
 
+  .hero-content h1 {
+    font-size: 60px;
+  }
+
+  .booking-box {
+    grid-template-columns: repeat(2, 1fr);
+    bottom: 30px;
+  }
+
+  .search-btn {
+    height: 55px;
+  }
+
+  .vehicle-image-slider {
+    height: 210px;
+  }
+
+  .slider-dots {
+    bottom: 12px;
+  }
+
+  .vehicle-slider {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .vehicle-card {
+    padding: 32px 25px;
+  }
+
+  .service-areas .section-title h2 {
+    font-size: 40px;
+  }
+
+  .area-btn {
+    min-width: 170px;
+    font-size: 17px;
+  }
+
+  .area-text {
+    font-size: 20px;
+  }
+
+  .footer {
+    padding: 60px 0 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .footer-about p {
+    max-width: 650px;
+  }
+
+  .footer-col h3 {
+    font-size: 18px;
+  }
 }
 
 /* Tablet */
 
-@media (max-width:992px){
+@media (max-width: 992px) {
+  .header {
+    padding: 0;
+  }
+
+  .navbar {
+    padding: 18px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #0a3d62;
+    transition: transform 0.4s;
+    padding: 30px;
+    transform: translateX(-100%);
+  }
+
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .hero {
+    padding: 120px 0;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    text-align: center;
+    margin: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 50px;
+  }
+
+  .hero-content p {
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Hero wrapper – single column on tablet */
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    padding: 110px 0 60px;
+    gap: 40px;
+  }
+
+  .hero-form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .hero-contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .booking-box {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: 60px auto 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.header{
-padding:0;
-}
-
-.navbar{
-    padding:18px 0;
-}
-
-.logo{
-    font-size:24px;
-}
-
-.menu-btn{
-    display:block;
-}
-
-.nav-menu{
-    position:fixed;
-    top:80px;
-    left:0;
-    width:100%;
-    background:#0A3D62;
-    transition:transform .4s;
-    padding:30px;
-    transform:translateX(-100%);
-}
-
-.nav-menu.active{
-    transform:translateX(0);
-}
-
-.nav-menu ul{
-    flex-direction:column;
-    gap:25px;
-}
-
-.btn{
-    display:none;
-}
-
-.hero{
-
-padding:120px 0;
-
-height:auto;
-
-min-height:100vh;
-
-}
-
-.hero-content{
-
-text-align:center;
-
-margin:auto;
-
-}
-
-.hero-content h1{
-
-font-size:50px;
-
-}
-
-.hero-content p{
-
-margin:auto;
-
-margin-bottom:30px;
-
-}
-
-.hero-buttons{
-
-justify-content:center;
-
-}
-
-.booking-box{
-
-position:relative;
-
-left:auto;
-
-bottom:auto;
-
-transform:none;
-
-margin:60px auto 0;
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.destination-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.package-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.why-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.feature-box{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-.experience-card{
-
-right:20px;
-
-}
-
-.stats-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.gallery-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.gallery-item.wide{
-
-grid-column:span 2;
-
-}
-
-.blog-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.footer-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.about{
-    padding:90px 0;
-}
-
-.about-grid{
-    grid-template-columns:1fr;
-    gap:50px;
-}
-
-.about-content{
-    text-align:center;
-}
-
-.about-content h2{
-    font-size:38px;
-}
-
-.about-content p{
-    font-size:16px;
-}
-
-.about-buttons{
-    justify-content:center;
-}
-
-.about-right{
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.about-card{
-    padding:30px 20px;
-}
-
-.services{
-    padding:90px 0;
-}
-
-.services-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.service-card{
-    padding:30px 25px;
-}
-
-.service-icon{
-    width:70px;
-    height:70px;
-    font-size:30px;
-}
-
-.service-card h3{
-    font-size:22px;
-}
-
-.service-card p{
-    font-size:15px;
-}
-
-.price{
-    font-size:17px;
-}
-
-.price strong{
-    font-size:20px;
-}
-
-.service-btn{
-    padding:13px 26px;
-}
-
-}
-
-
-/* Small Mobile */
-
-@media (max-width:576px){
-
-.container{
-
-width:92%;
-
-}
-
-.hero{
-
-padding-top:100px;
-
-}
-
-.hero-content h1{
-
-font-size:34px;
-
-}
-
-.hero-content p{
-
-font-size:15px;
-
-line-height:1.7;
-
-}
-
-.logo{
-
-font-size:22px;
-
-}
-
-.nav-menu{
-
-width:100%;
-
-}
-
-.booking-box{
-
-padding:18px;
-
-border-radius:18px;
-
-}
-
-.field label{
-
-font-size:13px;
-
-}
-
-.btn{
-
-padding:14px 26px;
-
-font-size:15px;
-
-}
-
-.video-btn i{
-
-width:55px;
-
-height:55px;
-
-font-size:18px;
-
-}
-
-.about{
-    padding:60px 0;
-}
-
-.about-content h2{
-    font-size:28px;
-}
-
-.about-content p{
-    font-size:14px;
-}
-
-.section-tag{
-    font-size:12px;
-}
-
-.about-card{
-    padding:25px 18px;
-}
-
-.about-card i{
-    font-size:32px;
-}
-
-.about-card h3{
-    font-size:26px;
-}
-
-.btn-primary,
-.btn-outline{
-    padding:14px 20px;
-    font-size:15px;
-}
-
-.services{
-    padding:60px 0;
-}
-
-.service-card{
-    padding:25px 20px;
-    border-radius:18px;
-}
-
-.service-icon{
-    width:60px;
-    height:60px;
-    font-size:26px;
-    border-radius:16px;
-}
-
-.service-card h3{
-    font-size:20px;
-}
-
-.service-card p{
-    font-size:14px;
-}
-
-.price{
-    font-size:15px;
-}
-
-.price strong{
-    font-size:20px;
-}
-
-.service-btn{
-    font-size:15px;
-}
-
+  .package-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-box {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .experience-card {
+    right: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .footer-about h2 {
+    font-size: 24px;
+  }
+
+  .footer-about p {
+    max-width: 100%;
+  }
+
+  .footer-col h3 {
+    font-size: 18px;
+  }
+
+  .footer-col ul a {
+    font-size: 15px;
+  }
+
+  .footer-contact p {
+    font-size: 15px;
+  }
+
+  .about {
+    padding: 90px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-content h2 {
+    font-size: 38px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .about-right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .about-card {
+    padding: 30px 20px;
+  }
+
+  .services {
+    padding: 90px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .service-card {
+    padding: 30px 25px;
+  }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 17px;
+  }
+
+  .price strong {
+    font-size: 20px;
+  }
+
+  .service-btn {
+    padding: 13px 26px;
+  }
+
+  .service-areas {
+    padding: 70px 0;
+  }
+
+  .service-areas .section-title h2 {
+    font-size: 34px;
+  }
+
+  .area-list {
+    gap: 18px;
+  }
+
+  .area-btn {
+    min-width: 160px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .area-text {
+    font-size: 18px;
+  }
+
+  .footer {
+    padding: 55px 0 0;
+  }
+
+  .slider-nav {
+    margin-top: 20px;
+  }
+
+  .vehicle-card {
+    min-width: 320px;
+  }
+
+  .vehicle-image-slider {
+    height: 200px;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .slider-dots {
+    gap: 7px;
+    bottom: 12px;
+  }
+
+  .slider-dots .dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .slider-dots .dot.active {
+    width: 24px;
+  }
+
+  .routes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .b-btn {
+    min-width: 170px;
+    font-size: 17px;
+  }
+
+  .fleet-card {
+    width: 280px;
+  }
+
+  .fleet-card img {
+    height: 200px;
+  }
 }
 
 /* Mobile */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .logo {
+    font-size: 24px;
+  }
 
-.logo{
+  .hero-content h1 {
+    font-size: 42px;
+    line-height: 1.2;
+  }
 
-font-size:24px;
+  .hero-content p {
+    font-size: 16px;
+  }
 
+  .tag {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-highlights {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .video-btn {
+    justify-content: center;
+  }
+
+  .booking-box {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .field input,
+  .field select {
+    height: 50px;
+  }
+
+  .search-btn {
+    height: 52px;
+  }
+
+  .scroll-down {
+    display: none;
+  }
+
+  .destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h2 {
+    font-size: 34px;
+  }
+
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-box {
+    grid-template-columns: 1fr;
+  }
+
+  .why-content h2 {
+    font-size: 34px;
+  }
+
+  .experience-card {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin-top: 20px;
+    display: inline-block;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    min-width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+
+  .gallery-item.large,
+  .gallery-item.wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta h2 {
+    font-size: 38px;
+  }
+
+  .about {
+    padding: 70px 0;
+  }
+
+  .about-grid {
+    gap: 40px;
+  }
+
+  .section-tag {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+
+  .about-content h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .about-right {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 30px 20px;
+  }
+
+  .about-card i {
+    font-size: 36px;
+  }
+
+  .about-card h3 {
+    font-size: 30px;
+  }
+
+  .services {
+    padding: 70px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .service-card {
+    padding: 28px 22px;
+  }
+
+  .service-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .service-card h3 {
+    font-size: 22px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .price strong {
+    font-size: 22px;
+  }
+
+  .service-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* Vehicle cards */
+  .vehicle-image-slider {
+    height: 190px;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .slider-dots {
+    gap: 6px;
+    bottom: 10px;
+  }
+
+  .slider-dots .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slider-dots .dot.active {
+    width: 22px;
+    height: 8px;
+  }
+
+  .airport-transfer {
+    padding: 80px 0;
+  }
+
+  .vehicle-image {
+    height: 200px;
+  }
+
+  .vehicle-content {
+    padding: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 50px 0 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-about,
+  .footer-col,
+  .footer-contact {
+    text-align: left;
+  }
+
+  .footer-about h2 {
+    font-size: 22px;
+  }
+
+  .footer-col h3 {
+    font-size: 18px;
+  }
+
+  .footer-contact p {
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    margin-top: 35px;
+    padding: 18px 0;
+    font-size: 13px;
+  }
+
+  /* Reviews */
+  .review-card {
+    padding: 30px 20px;
+  }
+
+  .review-text {
+    font-size: 16px;
+  }
+
+  /* Fleet */
+  .fleet-section {
+    padding: 80px 0;
+  }
+
+  .fleet-track {
+    gap: 20px;
+    animation-duration: 28s;
+  }
+
+  .fleet-card {
+    width: 240px;
+  }
+
+  .fleet-card img {
+    height: 170px;
+  }
+
+  .fleet-content {
+    padding: 18px;
+  }
+
+  .fleet-content h3 {
+    font-size: 20px;
+  }
+
+  .fleet-content p {
+    font-size: 14px;
+  }
+
+  .fleet-btn {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 80px 0;
+  }
+
+  .cta-box {
+    padding: 40px 25px;
+  }
+
+  .cta-box h2 {
+    font-size: 32px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn,
+  .outline-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Vehicle buttons */
+  .vehicle-buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .vehicle-buttons .book-btn {
+    flex: 1;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .vehicle-buttons .whatsapp-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
 }
 
-.hero-content h1{
+/* Small Mobile */
 
-font-size:42px;
+@media (max-width: 576px) {
+  .container {
+    width: 92%;
+  }
 
-line-height:1.2;
+  /* ── HERO ── */
+  .hero-wrapper {
+    padding: 100px 16px 50px;
+    gap: 30px;
+  }
 
+  .hero-content h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .hero-highlights {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .hero-highlights div {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ── FORM CARD ── */
+  .hero-form {
+    padding: 24px 18px 28px;
+    border-radius: 18px;
+  }
+
+  .hero-form h3 {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+  }
+
+  .hero-form p {
+    font-size: 0.88rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-form label {
+    font-size: 0.78rem;
+  }
+
+  .hero-form input,
+  .hero-form select {
+    height: 48px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  /* Stack pickup/drop and date/time into full-width rows */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-btn {
+    height: 50px;
+    font-size: 15px;
+    margin-top: 4px;
+  }
+
+  .hero-contact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 14px;
+    font-size: 0.82rem;
+  }
+
+  /* ── GENERAL ── */
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .booking-box {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .field label {
+    font-size: 13px;
+  }
+
+  .btn {
+    padding: 14px 26px;
+    font-size: 15px;
+  }
+
+  .video-btn i {
+    width: 55px;
+    height: 55px;
+    font-size: 18px;
+  }
+
+  /* About */
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-content h2 {
+    font-size: 28px;
+  }
+
+  .about-content p {
+    font-size: 14px;
+  }
+
+  .section-tag {
+    font-size: 12px;
+  }
+
+  .about-card {
+    padding: 25px 18px;
+  }
+
+  .about-card i {
+    font-size: 32px;
+  }
+
+  .about-card h3 {
+    font-size: 26px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  /* Services */
+  .services {
+    padding: 60px 0;
+  }
+
+  .service-card {
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+    border-radius: 16px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .price strong {
+    font-size: 20px;
+  }
+
+  .service-btn {
+    font-size: 15px;
+  }
+
+  /* Service areas */
+  .service-areas {
+    padding: 60px 0;
+  }
+
+  .service-areas .section-title h2 {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .area-list {
+    gap: 15px;
+  }
+
+  .area-btn {
+    width: 100%;
+    max-width: 320px;
+    min-width: unset;
+    height: 56px;
+    font-size: 16px;
+  }
+
+  .area-text {
+    margin-top: 35px;
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0 0;
+  }
+
+  .footer-about h2 {
+    font-size: 20px;
+  }
+
+  .footer-about p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .footer-col h3 {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul a {
+    font-size: 14px;
+  }
+
+  .footer-contact p {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .footer-contact i {
+    margin-top: 4px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    padding: 16px 0;
+    font-size: 12px;
+  }
+
+  /* Vehicle image slider */
+  .vehicle-image-slider {
+    height: 180px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .slider-dots {
+    bottom: 8px;
+    gap: 5px;
+  }
+
+  .slider-dots .dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .slider-dots .dot.active {
+    width: 20px;
+    height: 7px;
+  }
+
+  /* CTA */
+  .cta-box h2 {
+    font-size: 28px;
+  }
+
+  .cta-box p {
+    font-size: 15px;
+  }
 }
-
-.hero-content p{
-
-font-size:16px;
-
-}
-
-.tag{
-
-font-size:12px;
-
-padding:8px 18px;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-gap:18px;
-
-}
-
-.video-btn{
-
-justify-content:center;
-
-}
-
-.booking-box{
-
-grid-template-columns:1fr;
-
-padding:20px;
-
-gap:15px;
-
-}
-
-.field input,
-.field select{
-
-height:50px;
-
-}
-
-.search-btn{
-
-height:52px;
-
-}
-
-.scroll-down{
-
-display:none;
-
-}
-
-.destination-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.section-title h2{
-
-font-size:34px;
-
-}
-
-.package-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.feature-box{
-
-grid-template-columns:1fr;
-
-}
-
-.why-content h2{
-
-font-size:34px;
-
-}
-
-.experience-card{
-
-position:relative;
-
-right:0;
-
-bottom:0;
-
-margin-top:20px;
-
-display:inline-block;
-
-}
-
-.stats-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.testimonial-card{
-
-min-width:100%;
-
-}
-
-.gallery-grid{
-
-grid-template-columns:1fr;
-
-grid-auto-rows:250px;
-
-}
-
-.gallery-item.large,
-.gallery-item.wide{
-
-grid-column:span 1;
-
-grid-row:span 1;
-
-}
-
-.blog-grid{
-
-grid-template-columns:1fr;
-
-}
-
-.cta h2{
-
-font-size:38px;
-
-}
-
-.about{
-    padding:70px 0;
-}
-
-.about-grid{
-    gap:40px;
-}
-
-.section-tag{
-    font-size:13px;
-    padding:8px 18px;
-}
-
-.about-content h2{
-    font-size:32px;
-    line-height:1.3;
-}
-
-.about-content p{
-    font-size:15px;
-    line-height:1.8;
-}
-
-.about-buttons{
-    flex-direction:column;
-    align-items:center;
-    gap:15px;
-}
-
-.btn-primary,
-.btn-outline{
-    width:100%;
-    max-width:300px;
-    text-align:center;
-}
-
-.about-right{
-    grid-template-columns:1fr;
-}
-
-.about-card{
-    padding:30px 20px;
-}
-
-.about-card i{
-    font-size:36px;
-}
-
-.about-card h3{
-    font-size:30px;
-}
-
-.services{
-    padding:70px 0;
-}
-
-.services-grid{
-    grid-template-columns:1fr;
-    gap:25px;
-    margin-top:40px;
-}
-
-.service-card{
-    padding:28px 22px;
-}
-
-.service-icon{
-    width:65px;
-    height:65px;
-    font-size:28px;
-    margin-bottom:20px;
-}
-
-.service-card h3{
-    font-size:22px;
-}
-
-.service-card p{
-    font-size:15px;
-    line-height:1.7;
-}
-
-.price{
-    font-size:16px;
-}
-
-.price strong{
-    font-size:22px;
-}
-
-.service-btn{
-    width:100%;
-    text-align:center;
-    padding:14px;
-}
-
-.footer-grid{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-.social-icons{
-
-justify-content:center;
-
-}
-
-}
-
 
 /* Extra Small Devices */
 
-@media (max-width:400px){
+@media (max-width: 400px) {
+  /* Hero */
+  .hero-wrapper {
+    padding: 90px 12px 40px;
+  }
 
-.about-content h2{
-    font-size:24px;
-}
+  .hero-content h1 {
+    font-size: 1.65rem;
+  }
 
-.about-content p{
-    font-size:13px;
-}
+  .hero-highlights div {
+    font-size: 0.75rem;
+    padding: 7px 11px;
+  }
 
-.about-card{
-    padding:20px 15px;
-}
+  .hero-form {
+    padding: 20px 14px 22px;
+  }
 
-.about-card i{
-    font-size:28px;
-}
+  .hero-form input,
+  .hero-form select {
+    height: 46px;
+    font-size: 13px;
+  }
 
-.about-card h3{
-    font-size:22px;
-}
+  /* Video */
+  .hero_vid::after {
+    height: 80px;
+  }
 
-.btn-primary,
-.btn-outline{
-    font-size:14px;
-}
+  /* About */
+  .about-content h2 {
+    font-size: 24px;
+  }
 
-.service-card{
-    padding:20px 18px;
-}
+  .about-content p {
+    font-size: 13px;
+  }
 
-.service-icon{
-    width:55px;
-    height:55px;
-    font-size:22px;
-}
+  .about-card {
+    padding: 20px 15px;
+  }
 
-.service-card h3{
-    font-size:18px;
-}
+  .about-card i {
+    font-size: 28px;
+  }
 
-.service-card p{
-    font-size:13px;
-}
+  .about-card h3 {
+    font-size: 22px;
+  }
 
-.price{
-    font-size:14px;
-}
+  .btn-primary,
+  .btn-outline {
+    font-size: 14px;
+  }
 
-.price strong{
-    font-size:18px;
-}
+  /* Services */
+  .service-card {
+    padding: 20px 18px;
+  }
 
-.service-btn{
-    font-size:14px;
-    padding:12px;
-}
+  .service-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
 
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .price strong {
+    font-size: 18px;
+  }
+
+  .service-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* Vehicle slider dots */
+  .vehicle-image-slider {
+    height: 165px;
+  }
+
+  .slider-dots {
+    bottom: 8px;
+  }
+
+  .slider-dots .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .slider-dots .dot.active {
+    width: 18px;
+    height: 6px;
+  }
 }
