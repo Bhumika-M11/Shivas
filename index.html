@@ -158,13 +158,13 @@
 
                 <label for="name">Full Name <span>*</span></label>
                 <input type="text" name="name" aria-label="Full Name" placeholder="Full Name*" required>
-                <label for="name">Mobile Number <span>*</span></label>
+                <label for="phone">Mobile Number <span>*</span></label>
                 <input type="tel" name="phone" aria-label="Mobile Number" placeholder="Mobile Number*" required>
 
                 <div class="form-row">
 
                         <div class="form-group">
-                <label for="name">Pickup <span>*</span></label>
+                <label for="pickup">Pickup <span>*</span></label>
 
                             <label class="sr-only" for="pickup">Pickup Location</label>
                             <input type="text" name="pickup" aria-label="Pickup Location" placeholder="Pickup Location*" required>
@@ -172,7 +172,7 @@
                         </div>
 
                         <div class="form-group">
-                <label for="name">Drop <span>*</span></label>
+                <label for="drop">Drop <span>*</span></label>
 
                             <label class="sr-only" for="drop">Drop Location</label>
                             <input type="text" name="drop" aria-label="Drop Location" placeholder="Drop Location" required>
@@ -182,7 +182,7 @@
                 <div class="form-row">
 
                         <div class="form-group">
-                <label for="name">Date <span>*</span></label>
+                <label for="date">Date <span>*</span></label>
 
                             <label class="sr-only" for="date">Date</label>
                             <input
@@ -194,7 +194,7 @@
                         </div>
                         
                         <div class="form-group">
-                <label for="name">Time<span>*</span></label>
+                <label for="time">Time<span>*</span></label>
 
                             <label class="sr-only" for="time">Time</label>
                             <input
@@ -207,7 +207,7 @@
 
 
                     </div>
-                <label for="name">Select Vehicle <span>*</span></label>
+                <label for="vehicle">Select Vehicle <span>*</span></label>
 
                 <select name="vehicle" aria-label="Select Vehicle" required>
 
@@ -228,7 +228,7 @@
                     <option>Luxury Vehicle</option>
 
                 </select>
-                <label for="name">Trip Type <span>*</span></label>
+                <label for="triptype">Trip Type <span>*</span></label>
 
                 <select name="triptype" aria-label="Trip Type">
 
@@ -249,6 +249,8 @@
                 <button type="submit" class="btn form-btn">
                     Get Free Quote
                 </button>
+
+                <div id="result"></div>
 
             </form>
 
@@ -3429,6 +3431,35 @@ FOOTER
 </div>
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/slider.js"defer></script>
+
+    <script>
+
+const scriptURL="https://script.google.com/macros/s/AKfycbwPUOKRHEEibFGUDzMpO86cnJtaevdNpQvM-r6zjyBgAEjIhMYrlEAD_XFD-kQMo1Xw/exec";
+
+const form = document.getElementById("heroForm");
+const status = document.getElementById("result");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    status.innerHTML = "Submitting...";
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+    })
+    .then(() => {
+        status.innerHTML = "✅ Enquiry Submitted Successfully";
+        form.reset();
+    })
+    .catch(error => {
+        console.error(error);
+        status.innerHTML = "❌ " + error.message;
+    });
+});
+
+</script>
 
 </body>
 

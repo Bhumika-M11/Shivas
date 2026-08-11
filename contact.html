@@ -208,7 +208,7 @@ CONTACT & ENQUIRY
 
             <!-- Right Side -->
 
-            <div class="contact-form-box" aria-live="polite">
+            <div class="hero-form" aria-live="polite">
 
                 <h3>
 
@@ -217,7 +217,7 @@ CONTACT & ENQUIRY
                 </h3>
                 <p>Fill in your travel details and we'll contact you within minutes.</p>
 
-                <form id="contactForm" novalidate>
+                <form id="heroForm" novalidate>
 
                     <div class="form-row">
 
@@ -360,9 +360,9 @@ CONTACT & ENQUIRY
 
                     </button>
 
-                </form>
+                        <p id="result"></p>
 
-                <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
 
             </div>
 
@@ -531,24 +531,32 @@ FOOTER
 </footer>
 
 <script>
-    const menuBtn = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
 
-    if (menuBtn && navMenu) {
-        menuBtn.addEventListener("click", () => {
-            const isActive = navMenu.classList.toggle("active");
-            menuBtn.classList.toggle("active", isActive);
-            menuBtn.setAttribute("aria-expanded", String(isActive));
-        });
+const scriptURL="https://script.google.com/macros/s/AKfycbwPUOKRHEEibFGUDzMpO86cnJtaevdNpQvM-r6zjyBgAEjIhMYrlEAD_XFD-kQMo1Xw/exec";
 
-        document.querySelectorAll("#nav-menu a").forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-                menuBtn.classList.remove("active");
-                menuBtn.setAttribute("aria-expanded", "false");
-            });
-        });
-    }
+const form = document.getElementById("heroForm");
+const status = document.getElementById("result");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    status.innerHTML = "Submitting...";
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+    })
+    .then(() => {
+        status.innerHTML = "✅ Enquiry Submitted Successfully";
+        form.reset();
+    })
+    .catch(error => {
+        console.error(error);
+        status.innerHTML = "❌ " + error.message;
+    });
+});
+
 </script>
 
 <script src="assets/js/contact.js" defer></script>

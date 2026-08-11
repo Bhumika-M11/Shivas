@@ -124,29 +124,40 @@
             Get Free Quote
         </button>
 
-    </form>
+            <p id="result"></p>
 
-    <p id="result"></p>
+    </form>
 </div>
 
 <p id="result"></p>
 
 <script>
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let phone = document.getElementById("phone").value;
-    let message = document.getElementById("message").value;
+const scriptURL="https://script.google.com/macros/s/AKfycbwPUOKRHEEibFGUDzMpO86cnJtaevdNpQvM-r6zjyBgAEjIhMYrlEAD_XFD-kQMo1Xw/exec";
 
-    document.getElementById("result").innerHTML =
-        "Thank you, " + name + "! Your message has been received.";
+const form = document.getElementById("heroForm");
+const status = document.getElementById("result");
 
-    console.log(name, email, phone, message);
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    document.getElementById("contactForm").reset();
+    status.innerHTML = "Submitting...";
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+    })
+    .then(() => {
+        status.innerHTML = "✅ Enquiry Submitted Successfully";
+        form.reset();
+    })
+    .catch(error => {
+        console.error(error);
+        status.innerHTML = "❌ " + error.message;
+    });
 });
+
 </script>
 </body>
 </html>

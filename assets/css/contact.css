@@ -293,21 +293,21 @@ CONTACT
 
 /* FORM */
 
-.contact-form-box{
+.hero-form{
     background:#fff;
     border-radius:25px;
     padding:40px;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-.contact-form-box h3{
+.hero-form h3{
     color:#0A3D62;
     font-size:30px;
     margin-bottom:30px;
     text-align: center;
 }
 
-.contact-form-box p{
+.hero-form p{
     margin-bottom:30px;
     text-align: center;
 }
