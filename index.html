@@ -14,7 +14,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -33,6 +35,295 @@
       as="image"
       href="assets/images/logo4.png"
       fetchpriority="high">
+      <style>
+/* =========================================
+   BOOKING BOX
+========================================= */
+
+.booking-box {
+    width: min(100%, 1050px);
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 8px;
+    box-shadow: 0 25px 70px rgba(17, 23, 59, 0.22);
+}
+
+
+/* =========================================
+   BOOKING TABS
+========================================= */
+
+.booking-tabs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    background: #f4f7f9;
+    border-radius: 13px;
+    margin-bottom: 18px;
+}
+
+.booking-tab {
+    flex: 1;
+    border: 0;
+    background: transparent;
+    color: #52606d;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 15px;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.booking-tab:hover {
+    color: #11173B;
+}
+
+.booking-tab.active {
+    background: #11173B;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(17, 23, 59, .18);
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+#bookingForm {
+    padding: 12px 18px 18px;
+}
+
+.booking-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+/* =========================================
+   FIELD
+========================================= */
+
+.booking-field {
+    position: relative;
+}
+
+.booking-field label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+
+    color: #11173B;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.booking-field label i {
+    color: #C69537;
+    font-size: 13px;
+}
+
+.booking-field input,
+.booking-field select {
+    width: 100%;
+    height: 48px;
+
+    border: 1px solid #dce4ea;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    padding: 0 14px;
+
+    color: #11173B;
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .25s ease;
+}
+
+.booking-field input::placeholder {
+    color: #9aa6b2;
+}
+
+.booking-field input:focus,
+.booking-field select:focus {
+    border-color: #C69537;
+    box-shadow: 0 0 0 3px rgba(198, 149, 55, .12);
+}
+
+
+/* =========================================
+   RETURN FIELDS
+========================================= */
+
+.return-fields {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.return-fields.show {
+    display: grid;
+}
+
+
+/* =========================================
+   CUSTOMER
+========================================= */
+
+.customer-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.booking-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.booking-submit,
+.booking-whatsapp {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition: .25s ease;
+}
+
+.booking-submit {
+    flex: 1;
+    border: none;
+    background: #11173B;
+    color: #ffffff;
+}
+
+.booking-submit:hover {
+    background: #10163A;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(17, 23, 59, .20);
+}
+
+.booking-whatsapp {
+    padding: 0 25px;
+
+    background: #398D6B;
+    color: #ffffff;
+}
+
+.booking-whatsapp:hover {
+    background: #327c5e;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.booking-status {
+    margin: 12px 0 0;
+
+    text-align: center;
+
+    color: #398D6B;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .booking-box {
+        border-radius: 14px;
+        padding: 6px;
+    }
+
+    .booking-tabs {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .booking-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .booking-tab {
+        min-width: 115px;
+        white-space: nowrap;
+        font-size: 12px;
+        padding: 12px 10px;
+    }
+
+    #bookingForm {
+        padding: 10px 10px 15px;
+    }
+
+    .booking-fields,
+    .customer-fields,
+    .return-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-actions {
+        flex-direction: column;
+    }
+
+    .booking-submit,
+    .booking-whatsapp {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .booking-field input,
+    .booking-field select {
+        height: 46px;
+        font-size: 13px;
+    }
+
+    .booking-field label {
+        font-size: 12px;
+    }
+
+}
+
+      </style>
 </head>
 
 <body>
@@ -40,46 +331,265 @@
     <!-- ================= HEADER ================= -->
 
     <header class="header">
+    <div class="container navbar">
 
-        <div class="container navbar">
+        <!-- LOGO -->
+        <a href="index.html" class="logo" aria-label="Shivas Travel Guru Home">
+            <img src="assets/images/logo4.png"
+                 alt="Shivas Travel Guru"
+                 width="80"
+                 height="55"
+                 decoding="async">
+        </a>
 
-            <a href="index.html" class="logo">
-                    <div class="logo-icon">
-                <img src="assets/images/logo4.png" alt="Shivas Travel Guru" width="80" height="55" decoding="async">
-            </div>
+        <!-- NAVIGATION -->
+        <nav class="nav-menu" id="navMenu">
+            <ul>
 
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="index.html#about">About Us</a>
+                </li>
+
+                <li>
+                    <a href="trips.html">Trips</a>
+                </li>
+
+                <li>
+                    <a href="packages.html">Packages</a>
+                </li>
+
+                <!-- VEHICLES DROPDOWN -->
+                <li class="dropdown">
+                    <a href="vehicle-categories.html" class="dropdown-toggle">
+                        Vehicles
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="vehicle-categories.html">
+                                <i class="fa-solid fa-car-side"></i>
+                                Vehicle Categories
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="tempo-traveller.html">
+                                <i class="fa-solid fa-van-shuttle"></i>
+                                Tempo Traveller
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="urbania-rental-bangalore.html">
+                                <i class="fa-solid fa-bus"></i>
+                                Force Urbania
+                            </a>
+                        </li>
+
+                       <li class="dropdown-sub">
+    <a href="javascript:void(0);" class="dropdown-sub-toggle">
+        <i class="fa-solid fa-car"></i>
+        Car Rental
+        <i class="fa-solid fa-chevron-right sub-arrow"></i>
+    </a>
+
+    <ul class="dropdown-sub-menu">
+
+        <li>
+            <a href="innova-cabs.html">
+                <i class="fa-solid fa-car"></i>
+                Innova-cabs
             </a>
+        </li>
 
-            <nav class="nav-menu">
+        <li>
+            <a href="suv-cabs.html">
+                <i class="fa-solid fa-car-side"></i>
+                SUV-cabs
+            </a>
+        </li>
 
-                <ul>
+        <li>
+            <a href="hycross-cabs.html">
+                <i class="fa-solid fa-car"></i>
+                Hycross-cabs
+            </a>
+        </li>
 
-                    <li><a href="index.html">Home</a></li>
+        <li>
+            <a href="hycross-rental.html">
+                <i class="fa-solid fa-car-side"></i>
+               Hycross-rental
+            </a>
+        </li>
 
-                    <li><a href="index.html#about">About us</a></li>
+         <li>
+            <a href="sedan.html">
+                <i class="fa-solid fa-car"></i>
+               Sedan
+            </a>
+        </li>
 
-                    <li><a href="trips.html">Trips</a></li>
+    </ul>
+</li>
 
-                    <li><a href="packages.html">Packages</a></li>
+                        <li>
+                            <a href="bus-booking-bangalore.html">
+                                <i class="fa-solid fa-bus-simple"></i>
+                                Bus Booking
+                            </a>
+                        </li>
 
-                    <li><a href="index.html#services">Services</a></li>
+                    </ul>
+                </li>
 
-                    <li><a href="contact.html">Contact</a></li>
+                <!-- SERVICES DROPDOWN -->
+                <li class="dropdown">
 
-                </ul>
+    <a href="index.html#services" class="dropdown-toggle">
+        Services
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
 
-            </nav>
+    <ul class="dropdown-menu services-menu">
 
-            <a href="form.html" class="btn">Book Now</a>
+        <li>
+            <a href="koramangala.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Koramangala</span>
+            </a>
+        </li>
 
-            <div class="menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
+        <li>
+            <a href="indiranagar.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Indiranagar</span>
+            </a>
+        </li>
 
-        </div>
+        <li>
+            <a href="whitefield.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Whitefield</span>
+            </a>
+        </li>
 
-    </header>
+        <li>
+            <a href="electronic-city.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Electronic City</span>
+            </a>
+        </li>
 
+        <li>
+            <a href="hsr-layout.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>HSR Layout</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="bellandur.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Bellandur</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="btm-layout.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>BTM Layout</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="mg-road.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>MG Road</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="jayanagar.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Jayanagar</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="jp-nagar.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>JP Nagar</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="marathahalli.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Marathahalli</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="yelahanka.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Yelahanka</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="banashankari.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Banashankari</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="malleshwaram.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Malleshwaram</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="hebbal.html#services">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Hebbal</span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- BOOK NOW -->
+        <a href="form.html" class="header-book">
+            Book Now
+        </a>
+
+        <!-- MOBILE MENU -->
+        <button class="menu-btn"
+                id="menuBtn"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+</header>
     <!-- ================= HERO ================= -->
 <section class="hero" id="main">
 
@@ -148,111 +658,284 @@
 
         <!-- Right Form -->
 
-        <div class="hero-form">
+        <section class="booking-box">
 
-            <h3>Get an Instant Quote</h3>
+    <div class="booking-tabs">
+        <button class="booking-tab active" data-trip="oneway">
+            One Way
+        </button>
 
-            <p>Fill in your travel details and we'll contact you within minutes.</p>
+        <button class="booking-tab" data-trip="roundtrip">
+            Round Trip
+        </button>
 
-            <form id="heroForm">
+        <button class="booking-tab" data-trip="local">
+            Local
+        </button>
 
-                <label for="name">Full Name <span>*</span></label>
-                <input type="text" name="name" aria-label="Full Name" placeholder="Full Name*" required>
-                <label for="phone">Mobile Number <span>*</span></label>
-                <input type="tel" name="phone" aria-label="Mobile Number" placeholder="Mobile Number*" required>
+        <button class="booking-tab" data-trip="airport">
+            Airport Transfer
+        </button>
+    </div>
 
-                <div class="form-row">
+    <form id="bookingForm">
 
-                        <div class="form-group">
-                <label for="pickup">Pickup <span>*</span></label>
+        <input type="hidden" id="tripType" name="tripType" value="One Way">
 
-                            <label class="sr-only" for="pickup">Pickup Location</label>
-                            <input type="text" name="pickup" aria-label="Pickup Location" placeholder="Pickup Location*" required>
+        <div class="booking-fields">
 
-                        </div>
+            <!-- PICKUP -->
+            <div class="booking-field">
+                <label for="pickupLocation">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Pickup Location
+                </label>
 
-                        <div class="form-group">
-                <label for="drop">Drop <span>*</span></label>
+                <input
+                    type="text"
+                    id="pickupLocation"
+                    name="pickupLocation"
+                    placeholder="Enter pickup location"
+                    required
+                >
+            </div>
 
-                            <label class="sr-only" for="drop">Drop Location</label>
-                            <input type="text" name="drop" aria-label="Drop Location" placeholder="Drop Location" required>
-                        </div>
+            <!-- DROP -->
+            <div class="booking-field">
+                <label for="dropLocation">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    Drop Location
+                </label>
 
-                    </div>
-                <div class="form-row">
+                <input
+                    type="text"
+                    id="dropLocation"
+                    name="dropLocation"
+                    placeholder="Enter drop location"
+                    required
+                >
+            </div>
 
-                        <div class="form-group">
-                <label for="date">Date <span>*</span></label>
+            <!-- DATE -->
+            <div class="booking-field">
+                <label for="travelDate">
+                    <i class="fa-regular fa-calendar"></i>
+                    Travel Date
+                </label>
 
-                            <label class="sr-only" for="date">Date</label>
-                            <input
-                                id="date"
-                                type="date"
-                                name="date"
-                                required>
+                <input
+                    type="date"
+                    id="travelDate"
+                    name="travelDate"
+                    required
+                >
+            </div>
 
-                        </div>
-                        
-                        <div class="form-group">
-                <label for="time">Time<span>*</span></label>
+            <!-- TIME -->
+            <div class="booking-field">
+                <label for="travelTime">
+                    <i class="fa-regular fa-clock"></i>
+                    Pickup Time
+                </label>
 
-                            <label class="sr-only" for="time">Time</label>
-                            <input
-                                id="time"
-                                type="time"
-                                name="time"
-                                required>
+                <input
+                    type="time"
+                    id="travelTime"
+                    name="travelTime"
+                    required
+                >
+            </div>
 
-                        </div>
+            <!-- PASSENGERS -->
+            <div class="booking-field">
+                <label for="passengers">
+                    <i class="fa-solid fa-users"></i>
+                    Passengers
+                </label>
 
+                <select id="passengers" name="passengers" required>
+                    <option value="">Passengers</option>
+                    <option value="1">1 Passenger</option>
+                    <option value="2">2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4 Passengers</option>
+                    <option value="5">5 Passengers</option>
+                    <option value="6">6 Passengers</option>
+                    <option value="7">7 Passengers</option>
+                    <option value="8">8 Passengers</option>
+                    <option value="9">9 Passengers</option>
+                    <option value="10">10 Passengers</option>
+                    <option value="11">11 Passengers</option>
+                    <option value="12">12 Passengers</option>
+                    <option value="13">13 Passengers</option>
+                    <option value="14">14 Passengers</option>
+                    <option value="15">15 Passengers</option>
+                    <option value="16">16 Passengers</option>
+                    <option value="17">17 Passengers</option>
+                </select>
+            </div>
 
-                    </div>
-                <label for="vehicle">Select Vehicle <span>*</span></label>
+            <!-- VEHICLE -->
+            <div class="booking-field">
+                <label for="vehicleType">
+                    <i class="fa-solid fa-car"></i>
+                    Vehicle
+                </label>
 
-                <select name="vehicle" aria-label="Select Vehicle" required>
+                <select id="vehicleType" name="vehicleType" required>
 
-                    <option value="">Select Vehicle</option>
+                    <option value="">
+                        Select Vehicle
+                    </option>
 
-                    <option>Sedan</option>
+                    <option value="Sedan">
+                        Sedan
+                    </option>
 
-                    <option>SUV</option>
+                    <option value="SUV">
+                        SUV
+                    </option>
 
-                    <option>Ertiga</option>
+                    <option value="Innova">
+                        Toyota Innova
+                    </option>
 
-                    <option>Innova Crysta</option>
+                    <option value="Innova Crysta">
+                        Innova Crysta
+                    </option>
 
-                    <option>Tempo Traveller</option>
+                    <option value="Tempo Traveller">
+                        Tempo Traveller
+                    </option>
 
-                    <option>Force Urbania</option>
+                    <option value="Force Urbania">
+                        Force Urbania
+                    </option>
 
-                    <option>Luxury Vehicle</option>
+                    <option value="Luxury Vehicle">
+                        Luxury Vehicle
+                    </option>
 
                 </select>
-                <label for="triptype">Trip Type <span>*</span></label>
+            </div>
 
-                <select name="triptype" aria-label="Trip Type">
+        </div>
 
-                    <option value="">Trip Type</option>
 
-                    <option>Airport Transfer</option>
+        <!-- ROUND TRIP FIELDS -->
 
-                    <option>Local</option>
+        <div class="return-fields" id="returnFields">
 
-                    <option>Outstation</option>
+            <div class="booking-field">
 
-                    <option>One Way</option>
+                <label for="returnDate">
+                    <i class="fa-regular fa-calendar"></i>
+                    Return Date
+                </label>
 
-                    <option>Round Trip</option>
+                <input
+                    type="date"
+                    id="returnDate"
+                    name="returnDate"
+                >
 
-                </select>
+            </div>
 
-                <button type="submit" class="btn form-btn">
-                    Get Free Quote
-                </button>
+            <div class="booking-field">
 
-                <div id="result"></div>
+                <label for="returnTime">
+                    <i class="fa-regular fa-clock"></i>
+                    Return Time
+                </label>
 
-            </form>
+                <input
+                    type="time"
+                    id="returnTime"
+                    name="returnTime"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="customer-fields">
+
+            <div class="booking-field">
+
+                <label for="customerName">
+                    <i class="fa-regular fa-user"></i>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+            <div class="booking-field">
+
+                <label for="customerPhone">
+                    <i class="fa-solid fa-phone"></i>
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    name="customerPhone"
+                    placeholder="+91 XXXXX XXXXX"
+                    autocomplete="tel"
+                    pattern="[0-9]{10}"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="booking-actions">
+
+            <button
+                type="submit"
+                class="booking-submit"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search Cabs
+            </button>
+
+            <a
+                href="https://wa.me/919019993283"
+                target="_blank"
+                rel="noopener"
+                class="booking-whatsapp"
+            >
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp
+            </a>
+
+        </div>
+
+
+        <p
+            class="booking-status"
+            id="bookingStatus"
+            aria-live="polite"
+        ></p>
+
+    </form>
 
             <div class="hero-contact">
 
@@ -263,6 +946,7 @@
                 <span>⚡ 5 Min Response</span>
 
             </div>
+    </section>
 
         </div>
 
@@ -273,7 +957,7 @@
 OUR SERVICES
 ===============================-->
 
-<section class="services" id="services">
+<!--section class="services" id="services">
 
     <div class="container">
 
@@ -291,7 +975,7 @@ OUR SERVICES
 
         <div class="services-grid">
 
-            <!-- Hourly -->
+            <!- Hourly ->
 
             <div class="service-card">
 
@@ -311,7 +995,7 @@ OUR SERVICES
 
             </div>
 
-            <!-- Tour Packages -->
+            <!- Tour Packages ->
 
             <div class="service-card">
 
@@ -333,7 +1017,7 @@ OUR SERVICES
 
             </div>
 
-            <!-- One Day -->
+            <!- One Day ->
 
             <div class="service-card">
 
@@ -360,7 +1044,7 @@ OUR SERVICES
 
     </div>
 
-</section>
+</section-->
 
 <!--=====================================
 OUTSTATION TRIPS
@@ -3269,145 +3953,123 @@ CALL TO ACTION
 <!-- ===========================
 FOOTER
 =========================== -->
+
 <footer class="footer">
-    <div class="container">
 
-        <div class="footer-grid">
+    <div class="footer-container">
 
-            <!-- About -->
-
-            <div class="footer-about">
-                <h2>Shivas Travel Guru</h2>
-
-                <p>
-                    Unearth the most stunning destinations and travel experiences
-                    to create lifetime memories with us.
-                </p>
-            </div>
-
-            <!-- Quick Links -->
-
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="trips.html">Trips</a></li>
-                    <li><a href="packages.html">Packages</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Popular Routes -->
-
-            <div class="footer-col">
-                <h3>Popular Routes</h3>
-
-                <ul>
-                    <li>
-                        <a href="bangalore-mysore.html">
-                            Bangalore <br>to Mysore
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="bangalore-mysore.html">
-                            Mysore to Bangalore
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="index.html#airport">
-                            Bangalore<br> Airport Taxi
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Urbania -->
-
-            <div class="footer-col">
-                <h3>Urbania Rental Bangalore</h3>
-
-                <ul>
-                    <li><a href="electronic-city.html">Electronic City Urbania</a></li>
-                    <li><a href="whitefield.html">Whitefield Urbania</a></li>
-                    <li><a href="koramangala.html">Koramangala Urbania</a></li>
-                    <li><a href="indiranagar.html">Indiranagar Urbania</a></li>
-                </ul>
-            </div>
-
-            <!-- Vehicles -->
-
-            <div class="footer-col">
-                <h3>Vehicle <br>Types</h3>
-
-                <ul>
-                    <li><a href="cab-rentals.html">Cab Rentals</a></li>
-                    <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
-                    <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact -->
-
-            <div class="footer-col footer-contact">
-                <h3>Contact</h3>
-
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>
-
-                    <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank">
-                        325, Dwaraka Nagar Stage 2,
-                        Banashankari 5th Stage,
-                        Bengaluru – 560098
-                    </a>
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-
-                    <a href="tel:+919019993283">
-                        +91 90199 93283
-                    </a>
-                </p>
-                <p>
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:+917080780999">
-                        +91 70807 80999
-                    </a>
-                </p>
-
-                <p>
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    <a href="https://wa.me/919019993283" target="_blank">
-                        +91 90199 93283
-                    </a>
-                </p>
-
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-
-                    <a href="mailto:Shivastravelguru@gmail.com">
-                        Shivastravelguru@gmail.com
-                    </a>
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
+        <div class="footer-brand">
+            <img src="assets/images/logo4.png" alt="Shivas Travel Guru">
 
             <p>
-                © 2026 Shivas Travel Guru. All Rights Reserved.
+                Unearth the most stunning destinations and travel experiences
+                to create lifetime memories with us.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Popular Routes</h3>
+
+            <ul>
+                <li><a href="bangalore-mysore.html">Bangalore to Mysore</a></li>
+                <li><a href="bangalore-mysore.html">Mysore to Bangalore</a></li>
+                <li><a href="index.html#airport">Bangalore Airport Taxi</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Vehicle Types</h3>
+
+            <ul>
+                <li><a href="vehicle-categories.html">Vehicle Categories</a></li>
+                <li><a href=".html">Cab Rentals</a></li>
+                <li><a href=".html">Traveller Rentals</a></li>
+                <li><a href=".html">Luxury Rentals</a></li>
+            </ul>
+        </div>
+        
+<div class="footer-column locations-column">
+    <h3>Locations</h3>
+
+    <ul>
+        <li><a href="banashankari.html">Banashankari</a></li>
+        <li><a href="whitefield.html">Whitefield</a></li>
+        <li><a href="hsr-layout.html">HSR Layout</a></li>
+        <li><a href="bellandur.html">Bellandur</a></li>
+        <li><a href="btm-layout.html">BTM Layout</a></li>
+        <li><a href="mg-road.html">MG Road</a></li>
+        <li><a href="yelahanka.html">Yelahanka</a></li>
+        <li><a href="hebbal.html">Hebbal</a></li>
+
+        <li><a href="electronic-city.html">Electronic-City</a></li>
+        <li><a href="jayanagar.html">Jayanagar</a></li>
+        <li><a href="jp-nagar.html">JP Nagar</a></li>
+        <li><a href="indiranagar.html">Indiranagar</a></li>
+        <li><a href="malleshwaram.html">Malleshwaram</a></li>
+        <li><a href="marathahalli.html">Marathahalli</a></li>
+        <li><a href="koramangala.html">Koramangala</a></li>
+    </ul>
+</div>
+
+
+        <div class="footer-column footer-contact">
+            <h3>Contact Us</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank">
+                    325, Dwaraka Nagar Stage 2, Banashankari 5th Stage,
+                    Bengaluru – 560098
+                </a>
             </p>
 
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+919019993283">
+                    +91 90199 93283
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:+917080780999">
+                    +91 70807 80999
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-brands fa-whatsapp"></i>
+                <a href="https://wa.me/919019993283" target="_blank">
+                    +91 90199 93283
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:Shivastravelguru@gmail.com">
+                    Shivastravelguru@gmail.com
+                </a>
+            </p>
         </div>
 
     </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Shivas Travel Guru. All Rights Reserved.</p>
+    </div>
+
 </footer>
 
 <!-- Back to Top -->
@@ -3431,6 +4093,241 @@ FOOTER
 </div>
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/slider.js"defer></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+    const bookingForm = document.getElementById("bookingForm");
+    const tripType = document.getElementById("tripType");
+    const returnFields = document.getElementById("returnFields");
+    const returnDate = document.getElementById("returnDate");
+    const returnTime = document.getElementById("returnTime");
+    const bookingStatus = document.getElementById("bookingStatus");
+
+    const tabs = document.querySelectorAll(".booking-tab");
+
+
+    /* =========================================
+       TRIP TYPE TABS
+    ========================================= */
+
+    tabs.forEach(tab => {
+
+        tab.addEventListener("click", () => {
+
+            tabs.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            tab.classList.add("active");
+
+            const type = tab.dataset.trip;
+
+            if (type === "oneway") {
+
+                tripType.value = "One Way";
+
+                returnFields.classList.remove("show");
+
+                returnDate.required = false;
+                returnTime.required = false;
+
+            }
+
+            else if (type === "roundtrip") {
+
+                tripType.value = "Round Trip";
+
+                returnFields.classList.add("show");
+
+                returnDate.required = true;
+                returnTime.required = true;
+
+            }
+
+            else if (type === "local") {
+
+                tripType.value = "Local";
+
+                returnFields.classList.remove("show");
+
+                returnDate.required = false;
+                returnTime.required = false;
+
+            }
+
+            else if (type === "airport") {
+
+                tripType.value = "Airport Transfer";
+
+                returnFields.classList.remove("show");
+
+                returnDate.required = false;
+                returnTime.required = false;
+
+            }
+
+        });
+
+    });
+
+
+    /* =========================================
+       MINIMUM DATE
+    ========================================= */
+
+    const travelDate = document.getElementById("travelDate");
+
+    if (travelDate) {
+
+        const today = new Date();
+
+        const year = today.getFullYear();
+
+        const month = String(
+            today.getMonth() + 1
+        ).padStart(2, "0");
+
+        const day = String(
+            today.getDate()
+        ).padStart(2, "0");
+
+        travelDate.min = `${year}-${month}-${day}`;
+
+    }
+
+
+    /* =========================================
+       PHONE VALIDATION
+    ========================================= */
+
+    const phoneInput =
+        document.getElementById("customerPhone");
+
+    if (phoneInput) {
+
+        phoneInput.addEventListener("input", () => {
+
+            phoneInput.value =
+                phoneInput.value.replace(/\D/g, "").slice(0, 10);
+
+        });
+
+    }
+
+
+    /* =========================================
+       FORM SUBMIT
+    ========================================= */
+
+    if (bookingForm) {
+
+        bookingForm.addEventListener("submit", event => {
+
+            event.preventDefault();
+
+            const formData =
+                new FormData(bookingForm);
+
+            const name =
+                formData.get("customerName");
+
+            const phone =
+                formData.get("customerPhone");
+
+            const pickup =
+                formData.get("pickupLocation");
+
+            const drop =
+                formData.get("dropLocation");
+
+            const date =
+                formData.get("travelDate");
+
+            const time =
+                formData.get("travelTime");
+
+            const passengers =
+                formData.get("passengers");
+
+            const vehicle =
+                formData.get("vehicleType");
+
+            const type =
+                formData.get("tripType");
+
+            if (!name ||
+                !phone ||
+                !pickup ||
+                !drop ||
+                !date ||
+                !time ||
+                !passengers ||
+                !vehicle) {
+
+                bookingStatus.textContent =
+                    "Please fill in all required fields.";
+
+                return;
+            }
+
+
+            if (phone.length !== 10) {
+
+                bookingStatus.textContent =
+                    "Please enter a valid 10-digit mobile number.";
+
+                return;
+            }
+
+
+            /* =====================================
+               WHATSAPP MESSAGE
+            ===================================== */
+
+            const message =
+`Hello Shivas Travel Guru,
+
+I would like to book a vehicle.
+
+Trip Type: ${type}
+
+Name: ${name}
+
+Mobile: ${phone}
+
+Pickup: ${pickup}
+
+Drop: ${drop}
+
+Travel Date: ${date}
+
+Pickup Time: ${time}
+
+Passengers: ${passengers}
+
+Vehicle: ${vehicle}`;
+
+            const whatsappURL =
+                "https://wa.me/919019993283?text=" +
+                encodeURIComponent(message);
+
+
+            bookingStatus.textContent =
+                "Opening WhatsApp...";
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        });
+
+    }
+
+});
+    </script>
 
     <script>
 
@@ -3457,6 +4354,36 @@ form.addEventListener("submit", function(e) {
         console.error(error);
         status.innerHTML = "❌ " + error.message;
     });
+});
+
+</script>
+
+<!-- ===========================
+CAR RENTAL SUBMENU
+=========================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const carRentalToggle =
+        document.querySelector(".dropdown-sub-toggle");
+
+    const carRentalMenu =
+        document.querySelector(".dropdown-sub-menu");
+
+    if (carRentalToggle && carRentalMenu) {
+
+        carRentalToggle.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            carRentalMenu.classList.toggle("show");
+
+        });
+
+    }
+
 });
 
 </script>

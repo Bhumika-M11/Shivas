@@ -1,0 +1,130 @@
+.footer {
+    background: #081c2d;
+    color: #ffffff;
+    padding: 55px 0 0;
+    width: 100%;
+}
+
+.footer-container {
+    width: 92%;
+    max-width: 1500px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        2.5fr
+        1fr
+        1.25fr
+        1.25fr
+        1.6fr
+        1.6fr;
+
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-brand img {
+    width: 90px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-brand h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+    margin: 5px 0 12px;
+}
+
+.footer-brand p {
+    color: #d6dce3;
+    line-height: 1.7;
+    font-size: 14px;
+    max-width: 280px;
+}
+
+.footer-column h3 {
+    color: #d4af37;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 11px;
+}
+
+.footer-column ul li a {
+    color: #d6dce3;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #d4af37;
+}
+
+.locations-column ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 35px;
+    row-gap: 8px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.locations-column ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.locations-column ul li a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.footer-contact p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 0 13px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-contact i {
+    color: #398d6b;
+    min-width: 18px;
+    margin-top: 3px;
+}
+
+.footer-contact a {
+    color: #d6dce3;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: #d4af37;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding: 18px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #bfc7d1;
+    font-size: 13px;
+}

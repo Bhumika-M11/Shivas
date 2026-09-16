@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rentals in Bangalore | Cab, Traveller, Urbania & Bus | Shivas Travel Guru</title>
+    <meta name="description"
+        content="Complete rental solutions in Bangalore — Cabs, Travellers, Force Urbania, Luxury Buses & Mini Buses. Airport transfers, corporate travel, weddings & outstation trips. Call +91 90199 93283.">
+    <meta name="keywords"
+        content="rentals in Bangalore, cab rental Bangalore, traveller hire, Urbania rental, bus booking, mini bus hire, airport transfer, corporate travel, wedding car rental Bangalore">
+
+    <!-- Icons & Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo4.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+    </noscript>
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="assets/css/cab.css">
+
+    <style>
+        /* HERO */
+.hero{
+min-height:600px;color:#fff;display:flex;align-items:center;
+background:
+linear-gradient(90deg,rgba(5,10,18,.96),rgba(5,10,18,.72),rgba(5,10,18,.30)),
+url("assets/images/vehicles/Crysta.jpg") center/cover no-repeat;
+}
+.hero-content{padding:70px 0;max-width:800px}
+.breadcrumb{display:flex;gap:9px;font-size:12px;color:#d8dde5;margin-bottom:25px}
+.badge{display:inline-block;background:#C695371a;border:1px solid #C6953755;color:#ffd45a;border-radius:50px;padding:8px 15px;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font:800 clamp(40px,6vw,66px)/1.07 Poppins;letter-spacing:-2px;margin-bottom:20px}
+.hero h1 span{color:#C69537}
+.hero p{font-size:16px;color:#e0e5ec;max-width:700px;margin-bottom:28px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.yellow{background:#C69537;color:#111}.white{background:#fff;color:#111827}.green{background:#20ae59;color:#fff}.dark{background:#111827;color:#fff}
+.stats{display:flex;gap:9px;flex-wrap:wrap;margin-top:32px}
+.stat{border:1px solid #ffffff25;background:#ffffff10;border-radius:8px;padding:9px 13px;font-size:11px}
+.stat i{color:#C69537;margin-right:6px}
+
+/* QUOTE */
+.quote-wrap{margin-top:-48px;position:relative;z-index:5}
+.quote-box{background:#fff;border:1px solid #e4e8ee;border-radius:16px;padding:23px;box-shadow:0 18px 55px #0f172a18}
+.quote-box h3{font:700 17px Poppins;margin-bottom:15px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr .8fr .9fr auto;gap:10px}
+.field{height:50px;border:1px solid #e4e8ee;border-radius:8px;display:flex;align-items:center;gap:8px;padding:0 12px}
+.field i{color:#9aa2ae}.field input,.field select{width:100%;border:0;outline:0;background:transparent;font-size:12px}
+
+/* COMMON */
+section{padding:85px 0}
+.eyebrow{font-size:11px;color:#b47c00;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.section-title{font:700 clamp(29px,4vw,43px)/1.15 Poppins;margin:8px 0 15px}
+.section-text{font-size:14px;color:#697486}
+.center{text-align:center;max-width:740px;margin:0 auto 40px}
+
+/* INTRO */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.image-box{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 18px 50px #0f172a18}
+.image-box img{width:100%;height:440px;object-fit:cover}
+.image-badge{position:absolute;left:20px;bottom:20px;background:#fff;padding:14px 17px;border-radius:10px;box-shadow:0 8px 25px #0002}
+.image-badge strong{display:block;font:700 19px Poppins}
+.image-badge small{color:#697486}
+.checks{list-style:none;margin:20px 0}
+.checks li{font-size:13px;font-weight:700;margin:10px 0}
+.checks i{color:#b98000;margin-right:8px}
+
+/* VEHICLES */
+.grey{background:#f6f7f9}
+.vehicle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.vehicle-card{background:#fff;border:1px solid #e4e8ee;border-radius:16px;overflow:hidden;transition:.25s;box-shadow:0 7px 24px #0f172a08}
+.vehicle-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px #0f172a18}
+.vehicle-img{height:235px;position:relative;overflow:hidden}
+.vehicle-img img{height:100%;width:100%;object-fit:cover}
+.vehicle-label{position:absolute;top:14px;left:14px;background:#C69537;border-radius:6px;padding:7px 11px;font-size:10px;font-weight:900}
+.vehicle-seats{position:absolute;right:14px;bottom:14px;background:#111c;color:#fff;border-radius:6px;padding:7px 10px;font-size:10px}
+.vehicle-body{padding:21px}
+.vehicle-body h3{font:700 20px Poppins}
+.vehicle-body>p{font-size:12px;color:#697486;margin:6px 0 15px}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-block:1px solid #e4e8ee;padding:14px 0}
+.features span{font-size:11px;color:#5e6878}.features i{color:#b98000;margin-right:5px}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:15px}
+.price strong{font:700 17px Poppins;display:block}.price small{font-size:9px;color:#8a93a0}
+.small-btn{height:40px;padding:0 13px;border-radius:7px;display:inline-flex;align-items:center;font-size:10px;font-weight:900}
+
+/* SERVICES */
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.service-card{border:1px solid #e4e8ee;background:#fff;border-radius:14px;padding:24px}
+.icon{width:45px;height:45px;background:#fff7dc;color:#b98000;border-radius:10px;display:grid;place-items:center;margin-bottom:14px}
+.service-card h3{font:700 16px Poppins;margin-bottom:6px}.service-card p{font-size:12px;color:#697486}
+
+/* FEATURES */
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.benefit{background:#fff;border:1px solid #e4e8ee;border-radius:14px;padding:24px}
+.benefit h3{font:700 16px Poppins;margin-bottom:5px}.benefit p{font-size:12px;color:#697486}
+
+/* ROUTES */
+.route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.route{background:#fff;border:1px solid #e4e8ee;border-radius:10px;padding:17px;font-size:12px;font-weight:700}
+.route i{color:#b98000;margin-right:7px}
+
+/* FAQ */
+.faq{max-width:850px;margin:auto}.faq-item{border-bottom:1px solid #e4e8ee}
+.faq-q{width:100%;border:0;background:#fff;padding:18px 0;text-align:left;display:flex;justify-content:space-between;cursor:pointer;font-weight:800}
+.faq-a{display:none;color:#697486;font-size:13px;padding:0 30px 18px 0}
+.faq-item.open .faq-a{display:block}.faq-item.open .faq-q i{transform:rotate(45deg)}
+
+/* CTA */
+.cta{
+background:linear-gradient(100deg,#111827ee,#111827c9),
+url("assets/images/vehicles/innova.png") center/cover;
+border-radius:20px;color:#fff;padding:55px;display:flex;justify-content:space-between;align-items:center;gap:25px
+}
+.cta h2{font:700 clamp(28px,4vw,40px)/1.15 Poppins}.cta p{font-size:13px;color:#d4d9e1;margin-top:8px}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+.form-grid{grid-template-columns:1fr 1fr 1fr}.form-grid .btn{grid-column:span 1}
+.vehicle-grid{grid-template-columns:1fr 1fr}.service-grid{grid-template-columns:1fr 1fr}
+.footer-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:800px){
+.book-btn{display:none}.menu{display:block}.two-col{grid-template-columns:1fr}
+.benefit-grid{grid-template-columns:1fr 1fr}.route-grid{grid-template-columns:1fr 1fr}.cta{flex-direction:column;align-items:flex-start;padding:40px 30px}
+}
+@media(max-width:560px){
+.container{width:calc(100% - 28px)}.hero h1{font-size:42px}.hero p{font-size:14px}
+.actions .btn{width:100%}.stats{display:grid;grid-template-columns:1fr 1fr}
+.form-grid{grid-template-columns:1fr}.form-grid .btn{grid-column:auto;width:100%}
+.image-box img{height:340px}.vehicle-grid,.service-grid,.benefit-grid,.route-grid{grid-template-columns:1fr}
+.vehicle-img{height:230px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:span 2}
+.cta .actions,.cta .btn{width:100%}
+}
+    </style>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+            <header class="header">
+        <div class="container navbar">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo" aria-label="Shivas Travel Guru Home">
+                <img src="assets/images/logo4.png"
+                     alt="Shivas Travel Guru"
+                     width="80"
+                     height="55"
+                     decoding="async">
+            </a>
+
+            <!-- NAVIGATION -->
+            <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li class="dropdown">
+                        <a href="vehicle-categories.html" class="dropdown-toggle">
+                            Vehicles <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="vehicle-categories.html"><i class="fa-solid fa-car-side"></i> Vehicle Categories</a></li>
+                            <li><a href="tempo-traveller.html"><i class="fa-solid fa-van-shuttle"></i> Tempo Traveller</a></li>
+                            <li><a href="urbania-rental-bangalore.html"><i class="fa-solid fa-bus"></i> Force Urbania</a></li>
+                            <li><a href="car-rental-bangalore.html"><i class="fa-solid fa-car"></i> Car Rental</a></li>
+                            <li><a href="bus-booking-bangalore.html"><i class="fa-solid fa-bus-simple"></i> Bus Booking</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html#services" class="dropdown-toggle">
+                            Services <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="koramangala.html"><i class="fa-solid fa-location-dot"></i> Koramangala </a></li>
+                            <li><a href="indiranagar.html"><i class="fa-solid fa-location-dot"></i> Indiranagar </a></li>
+                            <li><a href="whitefield.html"><i class="fa-solid fa-location-dot"></i> Whitefield </a></li>
+                            <li><a href="electronic-city.html"><i class="fa-solid fa-location-dot"></i> Electronic City </a></li>
+                            <li><a href="hsr-layout.html"><i class="fa-solid fa-location-dot"></i> HSR Layout </a></li>
+                            <li><a href="bellandur.html"><i class="fa-solid fa-location-dot"></i> Bellandur </a></li>
+                            <li><a href="btm-layout.html"><i class="fa-solid fa-location-dot"></i> BTM Layout </a></li>
+                            <li><a href="mg-road.html"><i class="fa-solid fa-location-dot"></i> MG Road </a></li>
+                            <li><a href="jayanagar.html"><i class="fa-solid fa-location-dot"></i> Jayanagar </a></li>
+                            <li><a href="jp-nagar.html"><i class="fa-solid fa-location-dot"></i> JP Nagar </a></li>
+                            <li><a href="marathahalli.html"><i class="fa-solid fa-location-dot"></i> Marathahalli </a></li>
+                            <li><a href="yelahanka.html"><i class="fa-solid fa-location-dot"></i> Yelahanka </a></li>
+                            <li><a href="banashankari.html"><i class="fa-solid fa-location-dot"></i> Banashankari </a></li>
+                            <li><a href="malleshwaram.html"><i class="fa-solid fa-location-dot"></i> Malleshwaram </a></li>
+                            <li><a href="hebbal.html#services"><i class="fa-solid fa-location-dot"></i> Hebbal </a></li>
+                    </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- BOOK NOW -->
+            <a href="form.html" class="header-book">Book Now</a>
+
+            <!-- MOBILE MENU -->
+            <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+    </header>
+
+
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-content">
+<div class="breadcrumb">
+<a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i>
+<a href="vehicle-categories.html">Vehicles</a><i class="fa-solid fa-chevron-right"></i>
+<span>Car Rental Bangalore</span>
+</div>
+<span class="badge"><i class="fa-solid fa-car"></i> Premium Car Rental • Bangalore</span>
+<h1>Car Rental in <span>Bangalore</span></h1>
+<p>Book comfortable cars with professional drivers for airport transfers, local sightseeing, corporate travel, weddings, family trips and outstation journeys. Choose from Innova Hycross, Innova Crysta, Force Urbania and other travel options.</p>
+<div class="actions">
+<a href="form.html" class="btn yellow"><i class="fa-solid fa-calendar-check"></i> Book a Car</a>
+<a href="https://wa.me/919019993283?text=Hi%20Shivas%20Travel%20Guru,%20I%20want%20to%20book%20a%20car%20in%20Bangalore." class="btn green" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+919019993283" class="btn white"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+<div class="stats">
+<div class="stat"><i class="fa-solid fa-car"></i><b>Premium</b> Cars</div>
+<div class="stat"><i class="fa-solid fa-user-tie"></i><b>Driver</b> Included</div>
+<div class="stat"><i class="fa-solid fa-snowflake"></i><b>AC</b> Vehicles</div>
+<div class="stat"><i class="fa-solid fa-route"></i><b>Local</b> & Outstation</div>
+</div>
+</div>
+</section>
+
+<!-- QUICK QUOTE -->
+<section class="quote-wrap">
+<div class="container">
+<form class="quote-box" action="form.html">
+<h3><i class="fa-solid fa-calendar-days"></i> Get a Car Rental Quote</h3>
+<div class="form-grid">
+<label class="field"><i class="fa-solid fa-location-dot"></i><input name="pickup" placeholder="Pickup location" required></label>
+<label class="field"><i class="fa-solid fa-map-pin"></i><input name="destination" placeholder="Destination" required></label>
+<label class="field"><i class="fa-regular fa-calendar"></i><input type="date" name="date"></label>
+<label class="field"><i class="fa-solid fa-car"></i><select name="vehicle"><option>Select Vehicle</option><option>Innova Hycross</option><option>Innova Crysta</option><option>Force Urbania</option><option>Other Car</option></select></label>
+<button type="submit" class="btn yellow">Get Quote <i class="fa-solid fa-arrow-right"></i></button>
+</div>
+</form>
+</div>
+</section>
+
+<!-- INTRO -->
+<section>
+<div class="container two-col">
+<div class="image-box">
+<img src="assets/images/vehicles/innova.png" alt="Car rental in Bangalore with driver" loading="lazy">
+<div class="image-badge">
+<strong>Premium Car Rentals</strong>
+<small>Comfortable vehicles with driver</small>
+</div>
+</div>
+<div>
+<span class="eyebrow">Car Rental Bangalore</span>
+<h2 class="section-title">Comfortable Cars for Every Journey</h2>
+<p class="section-text">Looking for a reliable car rental in Bangalore? Shivas Travel Guru provides comfortable vehicles with professional drivers for city travel, airport transfers, corporate requirements, family outings, events and outstation trips.</p>
+<p class="section-text" style="margin-top:12px">Select a vehicle based on your group size and travel requirements. From premium 7-seater SUVs to larger group vehicles, we help make your journey comfortable and convenient.</p>
+<ul class="checks">
+<li><i class="fa-solid fa-circle-check"></i>Innova Hycross for premium family travel</li>
+<li><i class="fa-solid fa-circle-check"></i>Innova Crysta for comfortable long journeys</li>
+<li><i class="fa-solid fa-circle-check"></i>Force Urbania for larger groups</li>
+<li><i class="fa-solid fa-circle-check"></i>Professional drivers</li>
+<li><i class="fa-solid fa-circle-check"></i>Local, airport and outstation bookings</li>
+</ul>
+<div class="actions">
+<a href="form.html" class="btn yellow">Book Your Car</a>
+<a href="tel:+919019993283" class="btn dark"><i class="fa-solid fa-phone"></i> Talk to Us</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VEHICLES -->
+<section class="grey">
+<div class="container">
+<div class="center">
+<span class="eyebrow">Our Vehicles</span>
+<h2 class="section-title">Choose the Right Car for Your Trip</h2>
+<p class="section-text">Comfortable and practical options for individuals, families, corporate groups and larger travel parties.</p>
+</div>
+
+<div class="vehicle-grid">
+
+<article class="vehicle-card">
+<div class="vehicle-img">
+<img src="assets/images/vehicles/innova.png" alt="Toyota Innova Hycross rental Bangalore" loading="lazy">
+<span class="vehicle-label">PREMIUM SUV</span>
+<span class="vehicle-seats"><i class="fa-solid fa-user"></i> 6–7 Passengers</span>
+</div>
+<div class="vehicle-body">
+<h3>Innova Hycross</h3>
+<p>A premium and spacious choice for family trips, airport transfers, business travel and comfortable outstation journeys.</p>
+<div class="features">
+<span><i class="fa-solid fa-check"></i>AC</span>
+<span><i class="fa-solid fa-check"></i>Premium Interior</span>
+<span><i class="fa-solid fa-check"></i>Spacious Cabin</span>
+<span><i class="fa-solid fa-check"></i>Driver</span>
+<span><i class="fa-solid fa-check"></i>Airport</span>
+<span><i class="fa-solid fa-check"></i>Outstation</span>
+</div>
+<div class="card-bottom">
+<div class="price"><strong>Get Quote</strong><small>Route based fare</small></div>
+<a href="form.html" class="small-btn yellow">Book Now</a>
+</div>
+</div>
+</article>
+
+<article class="vehicle-card">
+<div class="vehicle-img">
+<img src="assets/images/vehicles/innova.png" alt="Toyota Innova Crysta rental Bangalore" loading="lazy">
+<span class="vehicle-label">7 SEATER</span>
+<span class="vehicle-seats"><i class="fa-solid fa-user"></i> Up to 7 Passengers</span>
+</div>
+<div class="vehicle-body">
+<h3>Innova Crysta</h3>
+<p>A dependable option for family holidays, corporate travel, airport transfers and long-distance journeys.</p>
+<div class="features">
+<span><i class="fa-solid fa-check"></i>Full AC</span>
+<span><i class="fa-solid fa-check"></i>Comfort Seats</span>
+<span><i class="fa-solid fa-check"></i>Luggage Space</span>
+<span><i class="fa-solid fa-check"></i>Driver</span>
+<span><i class="fa-solid fa-check"></i>Local</span>
+<span><i class="fa-solid fa-check"></i>Outstation</span>
+</div>
+<div class="card-bottom">
+<div class="price"><strong>Get Quote</strong><small>Route based fare</small></div>
+<a href="form.html" class="small-btn yellow">Book Now</a>
+</div>
+</div>
+</article>
+
+<article class="vehicle-card">
+<div class="vehicle-img">
+<img src="assets/images/vehicles/urbania.png" alt="Force Urbania rental Bangalore" loading="lazy">
+<span class="vehicle-label">GROUP TRAVEL</span>
+<span class="vehicle-seats"><i class="fa-solid fa-user"></i> 13–17 Passengers</span>
+</div>
+<div class="vehicle-body">
+<h3>Force Urbania</h3>
+<p>Premium group travel solution for weddings, corporate trips, family tours, pilgrimages and outstation travel.</p>
+<div class="features">
+<span><i class="fa-solid fa-check"></i>Full AC</span>
+<span><i class="fa-solid fa-check"></i>Push-back Seats</span>
+<span><i class="fa-solid fa-check"></i>Luggage Space</span>
+<span><i class="fa-solid fa-check"></i>Driver</span>
+<span><i class="fa-solid fa-check"></i>Local</span>
+<span><i class="fa-solid fa-check"></i>Outstation</span>
+</div>
+<div class="card-bottom">
+<div class="price"><strong>Get Quote</strong><small>Route based fare</small></div>
+<a href="urbania-rental-bangalore.html" class="small-btn yellow">View Urbania</a>
+</div>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section>
+<div class="container">
+<div class="center">
+<span class="eyebrow">Car Rental Services</span>
+<h2 class="section-title">One Car Rental for Every Requirement</h2>
+<p class="section-text">Book a vehicle according to your destination, group size and purpose.</p>
+</div>
+
+<div class="service-grid">
+<div class="service-card"><div class="icon"><i class="fa-solid fa-plane-departure"></i></div><h3>Airport Transfers</h3><p>Reliable pickup and drop services to and from Kempegowda International Airport.</p></div>
+<div class="service-card"><div class="icon"><i class="fa-solid fa-city"></i></div><h3>Local Bangalore</h3><p>Hire a car for meetings, shopping, sightseeing and full-day city travel.</p></div>
+<div class="service-card"><div class="icon"><i class="fa-solid fa-building"></i></div><h3>Corporate Travel</h3><p>Comfortable transportation for meetings, conferences, employee travel and events.</p></div>
+<div class="service-card"><div class="icon"><i class="fa-solid fa-road"></i></div><h3>Outstation Trips</h3><p>Travel from Bangalore to Mysore, Coorg, Ooty, Kerala and other destinations.</p></div>
+<div class="service-card"><div class="icon"><i class="fa-solid fa-ring"></i></div><h3>Wedding Cars</h3><p>Guest transportation between hotels, venues, airports and wedding functions.</p></div>
+<div class="service-card"><div class="icon"><i class="fa-solid fa-users"></i></div><h3>Family Trips</h3><p>Spacious and comfortable vehicles for family holidays and weekend getaways.</p></div>
+<div class="service-card"><div class="icon"><i class="fa-solid fa-person-hiking"></i></div><h3>Tour Packages</h3><p>Combine your vehicle booking with sightseeing and multi-day travel plans.</p></div>
+<div class="service-card"><div class="icon"><i class="fa-solid fa-location-dot"></i></div><h3>One-Way Trips</h3><p>Convenient one-way transfers between Bangalore and nearby cities.</p></div>
+</div>
+</div>
+</section>
+
+<!-- WHY US -->
+<section class="grey">
+<div class="container">
+<div class="center">
+<span class="eyebrow">Why Shivas Travel Guru</span>
+<h2 class="section-title">A Better Way to Travel</h2>
+<p class="section-text">We focus on comfort, convenience and clear communication from booking to drop-off.</p>
+</div>
+<div class="benefit-grid">
+<div class="benefit"><div class="icon"><i class="fa-solid fa-user-tie"></i></div><h3>Professional Drivers</h3><p>Experienced drivers who understand Bangalore and major routes across Karnataka and South India.</p></div>
+<div class="benefit"><div class="icon"><i class="fa-solid fa-snowflake"></i></div><h3>Comfortable AC Vehicles</h3><p>Choose comfortable air-conditioned vehicles for both city and long-distance travel.</p></div>
+<div class="benefit"><div class="icon"><i class="fa-solid fa-indian-rupee-sign"></i></div><h3>Clear Quotations</h3><p>Get a route-based quotation according to vehicle, duration and trip requirements.</p></div>
+<div class="benefit"><div class="icon"><i class="fa-solid fa-clock"></i></div><h3>Planned Pickup</h3><p>Pickup details are coordinated in advance to help your trip start smoothly.</p></div>
+<div class="benefit"><div class="icon"><i class="fa-solid fa-suitcase"></i></div><h3>Luggage Friendly</h3><p>Select vehicles with sufficient cabin and luggage space for your travel group.</p></div>
+<div class="benefit"><div class="icon"><i class="fa-solid fa-headset"></i></div><h3>Booking Assistance</h3><p>Contact us for vehicle availability, trip planning and booking assistance.</p></div>
+</div>
+</div>
+</section>
+
+<!-- POPULAR ROUTES -->
+<section>
+<div class="container">
+<div class="center">
+<span class="eyebrow">Popular Routes</span>
+<h2 class="section-title">Car Rental From Bangalore to Popular Destinations</h2>
+<p class="section-text">Book a comfortable car with driver for popular Karnataka and South India routes.</p>
+</div>
+<div class="route-grid">
+<a class="route" href="bangalore-mysore.html"><i class="fa-solid fa-route"></i>Bangalore to Mysore</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore to Coorg</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore to Ooty</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore to Chikmagalur</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore to Hampi</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore to Wayanad</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore to Kerala</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore Airport Transfer</a>
+<a class="route" href="#"><i class="fa-solid fa-route"></i>Bangalore Local Sightseeing</a>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="grey">
+<div class="container">
+<div class="center">
+<span class="eyebrow">FAQ</span>
+<h2 class="section-title">Car Rental FAQs</h2>
+<p class="section-text">Answers to common questions before booking a car in Bangalore.</p>
+</div>
+<div class="faq">
+<div class="faq-item">
+<button class="faq-q">Do you provide car rental with a driver in Bangalore?<i class="fa-solid fa-plus"></i></button>
+<div class="faq-a">Yes. We provide car rental services with professional drivers for local travel, airport transfers, corporate trips and outstation journeys.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Which cars can I rent in Bangalore?<i class="fa-solid fa-plus"></i></button>
+<div class="faq-a">Depending on availability, you can choose from options such as Innova Hycross, Innova Crysta, Force Urbania and other suitable vehicles.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Can I book an Innova for an outstation trip?<i class="fa-solid fa-plus"></i></button>
+<div class="faq-a">Yes. Innova vehicles are suitable for family trips, business travel and long-distance journeys from Bangalore.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Can I hire a car for Bangalore airport pickup?<i class="fa-solid fa-plus"></i></button>
+<div class="faq-a">Yes. Airport pickup and drop services can be arranged based on your flight and pickup requirements.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">How is the car rental price calculated?<i class="fa-solid fa-plus"></i></button>
+<div class="faq-a">Pricing depends on the vehicle, route, distance, duration and trip type. Contact us with your travel details for a quotation.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<div class="container">
+<div class="cta">
+<div>
+<h2>Ready to Book Your Car?</h2>
+<p>Tell us your pickup location, destination, date and number of passengers. We'll help you choose the right vehicle.</p>
+</div>
+<div class="actions">
+<a href="form.html" class="btn yellow"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
+<a href="tel:+919019993283" class="btn white"><i class="fa-solid fa-phone"></i> Call Now</a>
+</div>
+</div>
+</div>
+</section>
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <!-- About -->
+
+                <div class="footer-about">
+                    <h2>Shivas Travel Guru</h2>
+
+                    <p>
+                        Unearth the most stunning destinations and travel experiences
+                        to create lifetime memories with us.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="trips.html">Trips</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Routes -->
+
+                <div class="footer-col">
+                    <h3>Popular Routes</h3>
+
+                    <ul>
+                        <li>
+                            <a href="bangalore-mysore.html">
+                                Bangalore <br>to Mysore
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="bangalore-mysore.html">
+                                Mysore to Bangalore
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="index.html#airport">
+                                Bangalore<br> Airport Taxi
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Urbania -->
+
+                <div class="footer-col">
+                    <h3>Urbania Rental Bangalore</h3>
+
+                    <ul>
+                        <li><a href="electronic-city.html">Electronic City Urbania</a></li>
+                        <li><a href="whitefield.html">Whitefield Urbania</a></li>
+                        <li><a href="koramangala.html">Koramangala Urbania</a></li>
+                        <li><a href="indiranagar.html">Indiranagar Urbania</a></li>
+                    </ul>
+                </div>
+
+                <!-- Vehicles -->
+
+                <div class="footer-col">
+                    <h3>Vehicle Types</h3>
+
+                    <ul>
+                        <li><a href="vehicle-categories.html">Vehicle Categories</a></li>
+                        <li><a href="cab-rentals.html">Cab Rentals</a></li>
+                        <li><a href="traveller-rentals.html">Traveller Rentals</a></li>
+                        <li><a href="luxury-rentals.html">Luxury Rentals</a></li>
+                    </ul>
+                </div>
+
+                <!-- Location Pages -->
+
+                <div class="footer-col">
+                    <h3>Location Pages</h3>
+
+                    <ul>
+<li><a href="banashankari.html">Banashankari</a></li>
+<li><a href="koramangala.html">Koramangala</a></li>
+<li><a href="indiranagar.html">Indiranagar</a></li>
+<li><a href="whitefield.html">Whitefield</a></li>
+<li><a href="electronic-city.html">Electronic City</a></li>
+<li><a href="hsr-layout.html">HSR Layout</a></li>
+<li><a href="bellandur.html">Bellandur</a></li>
+<li><a href="btm-layout.html">BTM Layout</a></li>
+<li><a href="mg-road.html">MG Road</a></li>
+<li><a href="jayanagar.html">Jayanagar</a></li>
+<li><a href="jp-nagar.html">JP Nagar</a></li>
+<li><a href="marathahalli.html">Marathahalli</a></li>
+<li><a href="yelahanka.html">Yelahanka</a></li>
+<li><a href="malleshwaram.html">Malleshwaram</a></li>
+<li><a href="hebbal.html">Hebbal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+
+                <div class="footer-col footer-contact">
+                    <h3>Contact</h3>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <a href="https://maps.apple/p/1f1mH_KuVGKsCN" target="_blank">
+                            325, Dwaraka Nagar Stage 2,
+                            Banashankari 5th Stage,
+                            Bengaluru – 560098
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+
+                        <a href="tel:+919019993283">
+                            +91 90199 93283
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        <a href="https://wa.me/919019993283" target="_blank">
+                            +91 90199 93283
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <a href="mailto:Shivastravelguru@gmail.com">
+                            Shivastravelguru@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Shivas Travel Guru. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    </main>
+
+    <!-- Floating: Back to Top -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating: WhatsApp -->
+    <a href="https://wa.me/919019993283" class="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Page Scripts -->
+    <script src="assets/js/cab.js" defer></script>
+</body>
+
+</html>

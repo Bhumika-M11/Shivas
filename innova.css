@@ -1,0 +1,2088 @@
+/* =========================================
+   NAVACABS - ROYAL BLUE + GOLD
+========================================= */
+:root {
+    --navy: #11173B;
+    --dark-navy: #10163A;
+
+    --gold: #C69537;
+    --gold-light: #D4C4A0;
+
+    --teal: #398D6B;
+
+    --bg: #EEF1FA;
+    --light-bg: #F6F7FB;
+
+    --white: #FFFFFF;
+
+    --text: #11173B;
+    --muted: #718096;
+
+    --primary: #11173B;
+    --secondary: #398D6B;
+    --accent: #C69537;
+
+    --gray: #718096;
+
+    --glass: rgba(17, 23, 59, 0.15);
+
+    --shadow: 0 20px 50px rgba(17, 23, 59, 0.15);
+
+    --radius: 18px;
+
+    --transition: 0.4s;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav {
+  background: linear-gradient(
+    105deg,
+    #061633 0%,
+    #0D2F6B 55%,
+    #174A9E 100%
+  );
+
+  border-bottom: 2px solid var(--gold);
+}
+
+.nav .brand {
+  color: var(--white);
+}
+
+.nav a {
+  color: #EAF0FF;
+  transition: color .25s ease;
+}
+
+.nav a:hover {
+  color: var(--gold-light);
+}
+
+
+/* =========================================
+   ACCOUNT BUTTONS
+========================================= */
+
+.account button {
+  border: 1px solid #D4AF3790;
+  color: var(--gold-light);
+  background: transparent;
+}
+
+.account .blue {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light)
+  );
+
+  color: var(--navy);
+  border-color: var(--gold);
+  font-weight: 800;
+}
+
+.account .blue:hover {
+  background: var(--white);
+  color: var(--royal);
+}
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.menu {
+  color: var(--gold);
+}
+
+.nav.open nav {
+  background: var(--navy);
+  border-top: 2px solid var(--gold);
+}
+
+.nav.open nav a {
+  color: var(--white);
+}
+
+.nav.open nav a:hover {
+  color: var(--gold-light);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  color: var(--white);
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      #D4AF3725,
+      transparent 30%
+    ),
+    linear-gradient(
+      120deg,
+      #061633 0%,
+      #0D2F6B 55%,
+      #174A9E 100%
+    );
+}
+
+.hero h1 {
+  color: var(--white);
+}
+
+.hero h1 em {
+  color: var(--gold-light);
+}
+
+.hero-copy > p {
+  color: #E8EEF9;
+}
+
+
+/* =========================================
+   HERO PILL
+========================================= */
+
+.pill {
+  background: #D4AF3725;
+  color: var(--gold-light);
+
+  border: 1px solid #D4AF3770;
+}
+
+
+/* =========================================
+   QUICK SPECS
+========================================= */
+
+.quick-specs div {
+  background: #FFFFFF12;
+  border: 1px solid #D4AF3735;
+
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
+}
+
+.quick-specs div:hover {
+  background: #D4AF3720;
+  border-color: #D4AF3780;
+  transform: translateY(-3px);
+}
+
+.quick-specs b {
+  color: var(--gold-light);
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero .primary {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light)
+  );
+
+  color: var(--navy);
+  border: 1px solid var(--gold);
+  font-weight: 800;
+}
+
+.hero .primary:hover {
+  background: var(--white);
+  color: var(--royal);
+}
+
+.hero .whatsapp {
+  background: #08AB51;
+  color: var(--white);
+}
+
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.hero-image img {
+  border: 3px solid var(--gold);
+
+  box-shadow:
+    0 20px 45px #00000055;
+}
+
+
+/* =========================================
+   TRUST BAR
+========================================= */
+
+.trust {
+  background: var(--white);
+}
+
+.trust span::first-letter {
+  color: var(--gold);
+}
+
+
+/* =========================================
+   VEHICLE CARD
+========================================= */
+
+.vehicle {
+  background: var(--white);
+
+  border: 1px solid #D4AF3750;
+
+  box-shadow:
+    0 10px 35px #071A3B18;
+}
+
+
+/* =========================================
+   VEHICLE GALLERY
+========================================= */
+
+.gallery {
+  background:
+    linear-gradient(
+      145deg,
+      #061633,
+      #0D2F6B
+    );
+}
+
+.main-photo img {
+  border-radius: 5px;
+}
+
+.main-photo span {
+  background: #061633DD;
+  color: var(--gold-light);
+  border: 1px solid #D4AF3770;
+}
+
+.thumbs button {
+  border-color: transparent;
+}
+
+.thumbs button.active {
+  border-color: var(--gold);
+}
+
+
+/* =========================================
+   VEHICLE INFORMATION
+========================================= */
+
+.title-row h2 {
+  color: var(--navy);
+}
+
+.title-row button {
+  color: var(--gold);
+}
+
+.vehicle h3 {
+  color: var(--royal);
+}
+
+
+/* =========================================
+   VEHICLE SPECIFICATIONS
+========================================= */
+
+.spec-grid div {
+  background: #F7F9FC;
+  border-left: 4px solid var(--gold);
+}
+
+.spec-grid small {
+  color: var(--muted);
+}
+
+.spec-grid b {
+  color: var(--navy);
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features span {
+  background: var(--gold-soft);
+  color: var(--royal);
+
+  border: 1px solid #D4AF3755;
+}
+
+
+/* =========================================
+   VEHICLE BUTTONS
+========================================= */
+
+.vehicle .primary {
+  background: linear-gradient(
+    90deg,
+    #0D2F6B,
+    #174A9E
+  );
+
+  color: var(--white);
+  border: 1px solid var(--gold);
+}
+
+.vehicle .primary:hover {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light)
+  );
+
+  color: var(--navy);
+}
+
+.vehicle .secondary {
+  color: var(--royal);
+  border-color: #CBD4E2;
+}
+
+.vehicle .secondary:hover {
+  border-color: var(--gold);
+  color: var(--royal);
+}
+
+
+/* =========================================
+   AREAS
+========================================= */
+
+.areas {
+  background: var(--white);
+  border: 1px solid #D4AF3750;
+
+  box-shadow:
+    0 8px 30px #071A3B12;
+}
+
+.areas h2 {
+  color: var(--navy);
+}
+
+.area-grid span {
+  background: #F5F7FB;
+  color: #314159;
+  border: 1px solid #D4AF3725;
+
+  transition: .25s ease;
+}
+
+.area-grid span:hover {
+  background: var(--gold-soft);
+  color: var(--royal);
+  border-color: var(--gold);
+}
+
+
+/* =========================================
+   ROUTES
+========================================= */
+
+.routes {
+  background:
+    linear-gradient(
+      115deg,
+      #EEF4FC 0%,
+      #FFF9E6 100%
+    );
+
+  border: 1px solid #D4AF3745;
+}
+
+.routes h2 {
+  color: var(--navy);
+}
+
+.route-grid article {
+  background: var(--white);
+  border-top: 3px solid var(--gold);
+
+  box-shadow:
+    0 6px 18px #071A3B18;
+}
+
+.route-grid button {
+  background: linear-gradient(
+    90deg,
+    #0D2F6B,
+    #174A9E
+  );
+
+  color: var(--white);
+  border: 1px solid var(--gold);
+}
+
+.route-grid button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light)
+  );
+
+  color: var(--navy);
+}
+
+
+/* =========================================
+   COMFORT
+========================================= */
+
+.comfort > div,
+.content {
+  background: var(--white);
+  border: 1px solid #D4AF3750;
+
+  box-shadow:
+    0 8px 30px #071A3B12;
+}
+
+.comfort h2 {
+  color: var(--navy);
+}
+
+.comfort p {
+  background: #F6F8FC;
+  color: #587087;
+  border-left: 3px solid var(--gold);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+  color: #4E596B;
+}
+
+.content h2,
+.content h3 {
+  color: var(--navy);
+}
+
+
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.why p {
+  color: var(--royal);
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+details {
+  background: #F4F7FC;
+  border-left: 4px solid var(--gold);
+}
+
+details[open] {
+  background: var(--gold-soft);
+}
+
+summary {
+  color: var(--navy);
+}
+
+details p {
+  color: #59677A;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #D4AF3740,
+      transparent 45%
+    ),
+    linear-gradient(
+      105deg,
+      #061633,
+      #0D2F6B 60%,
+      #174A9E
+    );
+
+  border: 1px solid #D4AF3750;
+  border-top: 4px solid var(--gold);
+}
+
+.cta h2 {
+  color: var(--white);
+}
+
+.cta p {
+  color: #E7EDF8;
+}
+
+.cta .primary {
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--gold-light)
+  );
+
+  color: var(--navy);
+}
+
+
+
+
+/* =========================================
+   BOOKING POPUP
+========================================= */
+
+dialog {
+  background: var(--white);
+  border: 2px solid var(--gold);
+
+  box-shadow:
+    0 25px 70px #00000045;
+}
+
+dialog h2 {
+  color: var(--navy);
+}
+
+.close {
+  color: var(--royal);
+}
+
+input {
+  color: var(--ink);
+  background: var(--white);
+}
+
+input:focus {
+  border-color: var(--gold);
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px #D4AF3725;
+}
+
+form .primary {
+  background: linear-gradient(
+    90deg,
+    #0D2F6B,
+    #174A9E
+  );
+
+  color: var(--white);
+  border: 1px solid var(--gold);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:760px) {
+
+  .nav {
+    background: linear-gradient(
+      105deg,
+      #061633,
+      #0D2F6B
+    );
+  }
+
+  .hero {
+    background:
+      linear-gradient(
+        145deg,
+        #061633,
+        #0D2F6B
+      );
+  }
+
+  .hero-image img {
+    border-width: 2px;
+  }
+
+  .vehicle {
+    border-color: #D4AF3760;
+  }
+
+  .gallery {
+    background: #061633;
+  }
+
+  .areas,
+  .comfort > div,
+  .content {
+    border-color: #D4AF3745;
+  }
+
+  .cta {
+    border-top-width: 3px;
+  }
+}
+
+/* =========================================================
+   NAVACABS - FINAL ROYAL BLUE + GOLD SECTION FIX
+========================================================= */
+
+:root {
+    --royal-blue: #0B2A63;
+    --royal-blue-light: #174A9E;
+    --gold: #D4AF37;
+    --gold-light: #F3D36A;
+    --gold-bg: #FFF9E6;
+    --dark: #071A3B;
+}
+
+
+/* =========================================================
+   TRAVEL SOLUTIONS
+========================================================= */
+
+.routes {
+    position: relative !important;
+
+    margin: 55px auto 60px !important;
+    padding: 45px 35px !important;
+
+    max-width: 1110px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F4F7FC 0%,
+            #FFFFFF 55%,
+            #FFF9E8 100%
+        ) !important;
+
+    border: 1px solid #D4AF3755 !important;
+    border-radius: 16px !important;
+
+    text-align: left !important;
+
+    box-shadow:
+        0 12px 35px rgba(7, 26, 59, 0.10) !important;
+}
+
+
+/* Small gold heading */
+
+.routes::before {
+    content: "";
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        var(--gold),
+        var(--gold-light)
+    );
+
+    border-radius: 10px;
+}
+
+
+.routes h2 {
+    margin: 0 0 10px !important;
+
+    color: var(--dark) !important;
+
+    font-family: "Outfit", sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 800 !important;
+}
+
+
+.routes > p {
+    margin: 0 0 30px !important;
+
+    color: #65738A !important;
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   TRAVEL SOLUTION CARDS
+========================================================= */
+
+.route-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 20px !important;
+
+    width: 100% !important;
+}
+
+
+.route-grid article {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-height: 245px !important;
+
+    padding: 26px !important;
+
+    background: #FFFFFF !important;
+
+    border: 1px solid #DCE3EF !important;
+    border-top: 4px solid var(--gold) !important;
+
+    border-radius: 12px !important;
+
+    box-shadow:
+        0 8px 25px rgba(7, 26, 59, 0.08) !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease !important;
+}
+
+
+.route-grid article:hover {
+    transform: translateY(-6px) !important;
+
+    border-color: var(--gold) !important;
+
+    box-shadow:
+        0 15px 35px rgba(7, 26, 59, 0.14) !important;
+}
+
+
+/* Number */
+
+.route-grid article::before {
+    content: "";
+
+    width: 42px;
+    height: 3px;
+
+    margin-bottom: 15px;
+
+    background: var(--gold);
+
+    border-radius: 5px;
+}
+
+
+.route-grid article span {
+    color: var(--gold) !important;
+
+    font-size: 11px !important;
+    font-weight: 800 !important;
+}
+
+
+.route-grid article h3 {
+    margin: 8px 0 10px !important;
+
+    color: var(--dark) !important;
+
+    font-family: "Outfit", sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+}
+
+
+.route-grid article p {
+    margin: 0 0 20px !important;
+
+    color: #66748A !important;
+
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+}
+
+
+.route-grid article i {
+    margin-top: auto !important;
+
+    color: #78859A !important;
+
+    font-size: 11px !important;
+}
+
+
+/* Travel solution buttons */
+
+.route-grid button {
+    width: fit-content !important;
+
+    margin-top: auto !important;
+
+    padding: 11px 18px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--royal-blue),
+            var(--royal-blue-light)
+        ) !important;
+
+    color: #FFFFFF !important;
+
+    border: 1px solid var(--gold) !important;
+    border-radius: 6px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    transition: .25s ease !important;
+}
+
+
+.route-grid button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        ) !important;
+
+    color: var(--dark) !important;
+}
+
+
+/* =========================================================
+   INNOVA CAB PRICES - GRID
+========================================================= */
+
+.price-panel {
+    width: 100%;
+    max-width: 1110px;
+    margin: 55px auto;
+    padding: 40px 35px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #10163A,
+            #11173B
+        ) !important;
+
+    color: #FFFFFF;
+    border: 1px solid #C69537 !important;
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(17,23,59,.18);
+}
+
+
+/* Heading */
+
+.price-panel > div:first-child {
+    margin-bottom: 30px;
+}
+
+.price-panel > div:first-child > span {
+    color: #C69537 !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.price-panel h2 {
+    margin: 8px 0 0;
+    color: #FFFFFF !important;
+    font-family: "Outfit", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PRICE GRID
+========================================================= */
+
+.price-grid {
+    display: grid !important;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 18px !important;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   PRICE CARD
+========================================================= */
+
+.price-grid article {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 150px;
+
+    padding: 24px 20px;
+
+    background: #18214A !important;
+
+    border: 1px solid rgba(198,149,55,.4) !important;
+
+    border-left: 4px solid #C69537 !important;
+
+    border-radius: 12px;
+
+    transition: all .25s ease;
+}
+
+
+/* Hover */
+
+.price-grid article:hover {
+    transform: translateY(-5px);
+
+    background: #202A59 !important;
+
+    border-color: #C69537 !important;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.18);
+}
+
+
+/* Price */
+
+.price-grid article b {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #C69537 !important;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+/* Small text */
+
+.price-grid article small {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #E6E8EF !important;
+
+    font-size: 12px;
+}
+
+
+/* Description */
+
+.price-grid article p {
+    margin: 0;
+
+    color: #D4D9E5 !important;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PRICE NOTE
+========================================================= */
+
+.price-note {
+    margin: 28px 0 0;
+
+    padding-top: 20px;
+
+    color: #D4D9E5 !important;
+
+    border-top: 1px solid rgba(198,149,55,.4) !important;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .price-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .price-panel {
+        margin: 35px 17px;
+        padding: 30px 20px;
+        width: auto;
+    }
+
+    .price-panel h2 {
+        font-size: 24px;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .price-grid article {
+        min-height: auto;
+    }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    background:
+        linear-gradient(
+            115deg,
+            rgba(16,22,58,.98),
+            rgba(17,23,59,.94) 55%,
+            rgba(57,141,107,.82)
+        ) !important;
+}
+
+.hero h1 {
+    color: #FFFFFF;
+}
+
+.hero h1 em {
+    color: #C69537 !important;
+}
+
+.hero-copy > p {
+    color: #E8EAF2 !important;
+}
+
+
+/* =========================================================
+   HERO PILL
+========================================================= */
+
+.pill {
+    background: rgba(198,149,55,.15) !important;
+    color: #D4C4A0 !important;
+    border: 1px solid rgba(198,149,55,.6);
+}
+
+
+/* =========================================================
+   QUICK SPECIFICATIONS
+========================================================= */
+
+.quick-specs div {
+    background: rgba(255,255,255,.08) !important;
+    border: 1px solid rgba(198,149,55,.3) !important;
+}
+
+.quick-specs div:hover {
+    background: rgba(198,149,55,.13) !important;
+    border-color: #C69537 !important;
+}
+
+.quick-specs b {
+    color: #C69537 !important;
+}
+
+.quick-specs small {
+    color: #D4D9E5 !important;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero .primary {
+    background: linear-gradient(
+        135deg,
+        #C69537,
+        #D4C4A0
+    ) !important;
+
+    color: #11173B !important;
+
+    border: 1px solid #C69537 !important;
+}
+
+.hero .primary:hover {
+    background: #FFFFFF !important;
+}
+
+.hero .whatsapp {
+    background: #398D6B !important;
+    color: #FFFFFF !important;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image img {
+    border: 2px solid #C69537 !important;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35);
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.trust {
+    color: #11173B !important;
+}
+
+.trust span::first-letter {
+    color: #C69537 !important;
+}
+
+
+/* =========================================================
+   INNOVA VEHICLE
+========================================================= */
+
+.vehicle {
+    background: #FFFFFF;
+
+    border: 1px solid rgba(198,149,55,.35) !important;
+
+    box-shadow:
+        0 15px 45px rgba(17,23,59,.12) !important;
+}
+
+
+/* =========================================================
+   VEHICLE GALLERY
+========================================================= */
+
+.gallery {
+    background:
+        linear-gradient(
+            145deg,
+            #10163A,
+            #11173B
+        ) !important;
+}
+
+.main-photo span {
+    background: rgba(16,22,58,.92) !important;
+    border: 1px solid #C69537 !important;
+}
+
+.thumbs button.active {
+    border-color: #C69537 !important;
+}
+
+
+/* =========================================================
+   VEHICLE INFORMATION
+========================================================= */
+
+.title-row h2 {
+    color: #11173B !important;
+}
+
+.title-row button {
+    color: #C69537 !important;
+}
+
+.vehicle h3 {
+    color: #11173B !important;
+}
+
+
+/* =========================================================
+   SPECIFICATION BOXES
+========================================================= */
+
+.spec-grid div {
+    background: #F6F7FB !important;
+    border-left: 4px solid #C69537 !important;
+}
+
+.spec-grid small {
+    color: #718096 !important;
+}
+
+.spec-grid b {
+    color: #11173B !important;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features span {
+    background: #EDF7F1 !important;
+    color: #398D6B !important;
+
+    border: 1px solid rgba(57,141,107,.3);
+}
+
+
+/* =========================================================
+   VEHICLE BUTTON
+========================================================= */
+
+.vehicle .primary {
+    background:
+        linear-gradient(
+            90deg,
+            #11173B,
+            #20275A
+        ) !important;
+
+    color: #FFFFFF !important;
+
+    border: 1px solid #C69537 !important;
+}
+
+.vehicle .primary:hover {
+    background:
+        linear-gradient(
+            90deg,
+            #C69537,
+            #D4C4A0
+        ) !important;
+
+    color: #11173B !important;
+}
+
+.vehicle .secondary {
+    color: #11173B !important;
+    border-color: #D8DCE5 !important;
+}
+
+
+/* =========================================================
+   AREAS
+========================================================= */
+
+.areas {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(198,149,55,.35) !important;
+}
+
+.area-grid span {
+    background: #F6F7FB !important;
+    color: #11173B !important;
+    border: 1px solid rgba(198,149,55,.2);
+}
+
+.area-grid span:hover {
+    background: #FFF8E8 !important;
+    color: #11173B !important;
+    border-color: #C69537 !important;
+}
+
+
+/* =========================================================
+   INNOVA CAB PRICES
+========================================================= */
+
+.price-panel {
+    background:
+        linear-gradient(
+            120deg,
+            #10163A,
+            #11173B
+        ) !important;
+
+    color: #FFFFFF !important;
+
+    border: 1px solid #C69537 !important;
+
+    box-shadow:
+        0 20px 50px rgba(17,23,59,.18) !important;
+}
+
+.price-panel h2 {
+    color: #FFFFFF !important;
+}
+
+.price-panel > div:first-child > span {
+    color: #C69537 !important;
+}
+
+.price-grid article {
+    background: #18214A !important;
+
+    border: 1px solid rgba(198,149,55,.4) !important;
+
+    border-left: 4px solid #C69537 !important;
+}
+
+.price-grid article:hover {
+    background: #202A59 !important;
+    border-color: #C69537 !important;
+}
+
+.price-grid article b {
+    color: #C69537 !important;
+}
+
+.price-grid article small,
+.price-grid article p {
+    color: #E6E8EF !important;
+}
+
+.price-note {
+    color: #D4D9E5 !important;
+    border-top: 1px solid rgba(198,149,55,.4) !important;
+}
+
+
+/* =========================================================
+   TRAVEL SOLUTIONS - GRID
+========================================================= */
+
+.use-cases {
+    width: 100%;
+    max-width: 1110px;
+    margin: 60px auto;
+    padding: 0;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading > span {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #C69537 !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-heading h2 {
+    margin: 0 0 10px;
+    color: #11173B !important;
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #718096 !important;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TRAVEL SOLUTION GRID
+========================================================= */
+
+.use-grid {
+    display: grid !important;
+
+    /* 3 cards in first row + 1 card in second row */
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+
+    gap: 22px !important;
+    width: 100% !important;
+}
+
+
+/* =========================================================
+   TRAVEL SOLUTION CARD
+========================================================= */
+
+.use-grid article {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 250px;
+
+    padding: 26px;
+
+    background: #FFFFFF !important;
+
+    border: 1px solid #DCE1EA !important;
+    border-top: 4px solid #C69537 !important;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(17, 23, 59, 0.09);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Hover */
+
+.use-grid article:hover {
+    transform: translateY(-6px);
+
+    border-color: #C69537 !important;
+
+    box-shadow:
+        0 18px 40px rgba(17, 23, 59, 0.14);
+}
+
+
+/* Number */
+
+.use-grid article > span {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: #C69537 !important;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+/* Card heading */
+
+.use-grid article h3 {
+    margin: 0 0 12px;
+
+    color: #11173B !important;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+/* Card paragraph */
+
+.use-grid article p {
+    margin: 0 0 22px;
+
+    color: #718096 !important;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* Card button */
+
+.use-grid article button {
+    width: fit-content;
+
+    margin-top: auto;
+
+    padding: 11px 18px;
+
+    background: #11173B !important;
+
+    color: #FFFFFF !important;
+
+    border: 1px solid #C69537 !important;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+/* Button hover */
+
+.use-grid article button:hover {
+    background: #C69537 !important;
+
+    color: #11173B !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .use-cases {
+        margin: 45px 17px;
+        width: auto;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .use-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .use-grid article {
+        min-height: auto;
+        padding: 22px;
+    }
+}
+/* =========================================================
+   ROUTES
+========================================================= */
+
+.routes {
+    background:
+        linear-gradient(
+            110deg,
+            #EEF1FA,
+            #F8F3E8
+        ) !important;
+
+    border: 1px solid rgba(198,149,55,.35) !important;
+}
+
+.routes h2 {
+    color: #11173B !important;
+}
+
+.route-grid article {
+    border-top: 4px solid #C69537 !important;
+}
+
+.route-grid button {
+    background: #11173B !important;
+    color: #FFFFFF !important;
+    border: 1px solid #C69537 !important;
+}
+
+.route-grid button:hover {
+    background: #C69537 !important;
+    color: #11173B !important;
+}
+
+
+/* =========================================================
+   COMFORT
+========================================================= */
+
+.comfort > div,
+.content {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(198,149,55,.3) !important;
+}
+
+.comfort h2 {
+    color: #11173B !important;
+}
+
+.comfort p {
+    background: #F6F7FB !important;
+    border-left: 3px solid #C69537 !important;
+    color: #718096 !important;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content h2,
+.content h3 {
+    color: #11173B !important;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+details {
+    background: #F6F7FB !important;
+    border-left: 3px solid #C69537 !important;
+}
+
+details[open] {
+    background: #FFF8E8 !important;
+}
+
+summary {
+    color: #11173B !important;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(198,149,55,.25),
+            transparent 45%
+        ),
+        linear-gradient(
+            105deg,
+            #10163A,
+            #11173B
+        ) !important;
+
+    border-top: 3px solid #C69537 !important;
+}
+
+.cta h2 {
+    color: #FFFFFF !important;
+}
+
+.cta p {
+    color: #DDE1EB !important;
+}
+
+.cta .primary {
+    background:
+        linear-gradient(
+            135deg,
+            #C69537,
+            #D4C4A0
+        ) !important;
+
+    color: #11173B !important;
+}
+
+
+
+
+/* =========================================================
+   BOOKING POPUP
+========================================================= */
+
+dialog {
+    border: 2px solid #C69537 !important;
+}
+
+dialog h2 {
+    color: #11173B !important;
+}
+
+.close {
+    color: #11173B !important;
+}
+
+input:focus {
+    border-color: #C69537 !important;
+
+    box-shadow:
+        0 0 0 3px rgba(198,149,55,.18) !important;
+}
+
+form .primary {
+    background: #11173B !important;
+    color: #FFFFFF !important;
+    border: 1px solid #C69537 !important;
+}
+
+form .primary:hover {
+    background: #C69537 !important;
+    color: #11173B !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .nav {
+        background: #10163A !important;
+    }
+
+    .hero {
+        background:
+            linear-gradient(
+                145deg,
+                #10163A,
+                #11173B,
+                #275D49
+            ) !important;
+    }
+
+    .price-panel {
+        margin-left: 17px;
+        margin-right: 17px;
+    }
+
+    .price-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .use-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .use-cases {
+        margin-left: 17px;
+        margin-right: 17px;
+    }
+}
+
+/* =========================================================
+   INNOVA PAGE - SHIVAS TRAVEL GURU NAVBAR
+   Keep navbar same as index.html
+========================================================= */
+
+.innova-page .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    z-index: 1000;
+    background: transparent;
+}
+
+.innova-page .header .container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+.innova-page .navbar {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+/* LOGO */
+.innova-page .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+.innova-page .logo img {
+    width: 80px;
+    height: 55px;
+    object-fit: contain;
+    display: block;
+}
+
+/* NAVIGATION */
+.innova-page .nav-menu {
+    margin-left: auto;
+}
+
+.innova-page .nav-menu > ul {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.innova-page .nav-menu > ul > li {
+    position: relative;
+}
+
+/* MAIN NAV LINKS */
+.innova-page .nav-menu > ul > li > a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 76px;
+    padding: 0;
+    color: #ffffff !important;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.innova-page .nav-menu > ul > li > a:hover,
+.innova-page .nav-menu > ul > li > a.active {
+    color: #C69537 !important;
+}
+
+/* DROPDOWN ARROW */
+.innova-page .nav-menu .dropdown-toggle i {
+    color: #ffffff;
+    font-size: 11px;
+    transition: transform 0.2s ease;
+}
+
+.innova-page .nav-menu .dropdown-toggle:hover i {
+    color: #C69537;
+}
+
+/* DROPDOWN */
+.innova-page .dropdown-menu {
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 50%;
+    min-width: 245px;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, 12px);
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease,
+        visibility 0.22s ease;
+    z-index: 1100;
+}
+
+.innova-page .dropdown-menu li {
+    display: block;
+    width: 100%;
+}
+
+.innova-page .dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    color: #374151 !important;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.innova-page .dropdown-menu li a i {
+    width: 18px;
+    min-width: 18px;
+    text-align: center;
+    color: #bd8300;
+    font-size: 13px;
+}
+
+.innova-page .dropdown-menu li a:hover {
+    background: rgba(198, 149, 55, 0.1);
+    color: #C69537 !important;
+}
+
+/* DESKTOP DROPDOWN */
+@media (min-width: 801px) {
+    .innova-page .dropdown:hover > .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* BOOK NOW */
+.innova-page .header-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    padding: 0 28px;
+    flex-shrink: 0;
+    background: #C69537;
+    color: #111111 !important;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.innova-page .header-book:hover {
+    background: #D4AF37;
+    color: #111111 !important;
+    transform: translateY(-1px);
+}
+
+/* MOBILE BUTTON */
+.innova-page .menu-btn {
+    display: none;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .innova-page .header {
+        height: 70px;
+    }
+
+    .innova-page .navbar {
+        height: 70px;
+        width: calc(100% - 28px);
+        gap: 12px;
+    }
+
+    .innova-page .logo img {
+        width: 72px;
+        height: 52px;
+    }
+
+    .innova-page .header-book {
+        display: none;
+    }
+
+    .innova-page .menu-btn {
+        display: flex;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 50%;
+        background: #f5f5f5;
+        color: #202733;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .innova-page .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: 0;
+        background: #ffffff;
+        border-top: 1px solid #eeeeee;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        display: none;
+    }
+
+    .innova-page .nav-menu.active {
+        display: block;
+    }
+
+    .innova-page .nav-menu > ul {
+        display: block;
+        width: 100%;
+        padding: 8px 20px 15px;
+        margin: 0;
+    }
+
+    .innova-page .nav-menu > ul > li {
+        width: 100%;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .innova-page .nav-menu > ul > li > a {
+        width: 100%;
+        height: auto;
+        min-height: 48px;
+        padding: 12px 5px;
+        justify-content: space-between;
+        color: #202733 !important;
+        font-size: 13px;
+    }
+
+    .innova-page .dropdown-menu {
+        position: static;
+        width: 100%;
+        min-width: 0;
+        transform: none !important;
+        margin: 0;
+        padding: 0 0 8px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: #fafafa;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        display: none;
+    }
+
+    .innova-page .dropdown.open > .dropdown-menu {
+        display: block;
+    }
+
+    .innova-page .dropdown-menu li a {
+        min-height: 42px;
+        padding: 10px 15px;
+        color: #374151 !important;
+        font-size: 12px;
+    }
+
+    .innova-page .dropdown.open > .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+}

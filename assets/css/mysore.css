@@ -15,20 +15,35 @@
 }
 
 :root {
-    --primary: #0A3D62;
-    --primary-dark: #081C2D;
-    --secondary: #00B894;
-    --accent: #FFB703;
-    --accent-2: #FF8C00;
-    --bg: #F8FAFC;
-    --white: #ffffff;
-    --text: #334155;
-    --muted: #64748B;
-    --line: #E2E8F0;
-    --shadow-sm: 0 8px 24px rgba(10, 61, 98, .08);
-    --shadow-lg: 0 24px 55px rgba(10, 61, 98, .16);
+    --navy: #11173B;
+    --dark-navy: #10163A;
+
+    --gold: #C69537;
+    --gold-light: #D4C4A0;
+
+    --teal: #398D6B;
+
+    --bg: #EEF1FA;
+    --light-bg: #F6F7FB;
+
+    --white: #FFFFFF;
+
+    --text: #11173B;
+    --muted: #718096;
+
+    --primary: #11173B;
+    --secondary: #398D6B;
+    --accent: #C69537;
+
+    --gray: #718096;
+
+    --glass: rgba(17, 23, 59, 0.15);
+
+    --shadow: 0 20px 50px rgba(17, 23, 59, 0.15);
+
     --radius: 18px;
-    --transition: .35s cubic-bezier(.4, 0, .2, 1);
+
+    --transition: 0.4s;
 }
 
 html {
@@ -76,12 +91,12 @@ textarea {
 }
 
 :focus-visible {
-    outline: 3px solid rgba(255, 183, 3, .7);
+    outline: 3px solid rgba(198, 149, 55, .7);
     outline-offset: 2px;
 }
 
 ::selection {
-    background: var(--secondary);
+    background: var(--teal);
     color: var(--white);
 }
 
@@ -97,7 +112,6 @@ textarea {
     border: 0;
 }
 
-
 .container {
     width: min(1200px, 90%);
     margin-inline: auto;
@@ -106,6 +120,7 @@ textarea {
 main {
     overflow: clip;
 }
+
 
 /* ============ 2. SHARED ELEMENTS ============ */
 
@@ -123,8 +138,8 @@ main {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--secondary);
-    background: rgba(0, 184, 148, .1);
+    color: var(--teal);
+    background: rgba(57, 141, 107, .10);
     padding: 8px 18px;
     border-radius: 40px;
     margin-bottom: 16px;
@@ -135,13 +150,13 @@ main {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--secondary);
+    background: var(--teal);
 }
 
 .section-head h2 {
     font-size: clamp(28px, 4.5vw, 42px);
     line-height: 1.2;
-    color: var(--primary);
+    color: var(--navy);
     font-weight: 700;
     margin-bottom: 16px;
 }
@@ -155,7 +170,9 @@ section {
     padding: 80px 0;
 }
 
-/* Buttons */
+
+/* ============ BUTTONS ============ */
+
 .btn,
 .btn-wa,
 .btn-call {
@@ -169,41 +186,48 @@ section {
     font-size: 15px;
     position: relative;
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
     white-space: nowrap;
 }
 
 .btn {
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        #B17F2E
+    );
     color: var(--white);
-    box-shadow: 0 15px 35px rgba(255, 183, 3, .35);
+    box-shadow: 0 15px 35px rgba(198, 149, 55, .30);
 }
 
 .btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(255, 183, 3, .45);
+    box-shadow: 0 20px 40px rgba(198, 149, 55, .40);
 }
 
 .btn-wa {
-    background: #25D366;
+    background: var(--teal);
     color: var(--white);
-    box-shadow: 0 15px 35px rgba(37, 211, 102, .35);
+    box-shadow: 0 15px 35px rgba(57, 141, 107, .30);
 }
 
 .btn-wa:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(37, 211, 102, .45);
+    box-shadow: 0 20px 40px rgba(57, 141, 107, .40);
 }
 
 .btn-call {
     background: var(--white);
-    color: var(--primary);
-    box-shadow: 0 15px 35px rgba(10, 61, 98, .2);
+    color: var(--navy);
+    box-shadow: 0 15px 35px rgba(17, 23, 59, .20);
 }
 
 .btn-call:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(10, 61, 98, .28);
+    box-shadow: 0 20px 40px rgba(17, 23, 59, .28);
 }
 
 .btn-lg {
@@ -227,27 +251,29 @@ section {
     font-size: 14px;
     position: relative;
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .btn-price {
-    background: var(--primary);
+    background: var(--navy);
     color: var(--white);
 }
 
 .btn-price:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(10, 61, 98, .35);
+    box-shadow: 0 15px 30px rgba(17, 23, 59, .30);
 }
 
 .btn-route {
-    background: var(--secondary);
+    background: var(--teal);
     color: var(--white);
 }
 
 .btn-route:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 184, 148, .35);
+    box-shadow: 0 15px 30px rgba(57, 141, 107, .30);
 }
 
 .ripple-ink {
@@ -266,7 +292,9 @@ section {
     }
 }
 
-/* Scroll reveal */
+
+/* ============ SCROLL REVEAL ============ */
+
 .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -295,6 +323,7 @@ section {
     }
 }
 
+
 /* ============ 3. HEADER & NAV ============ */
 
 .header {
@@ -307,9 +336,9 @@ section {
 }
 
 .header.sticky {
-    background: rgba(10, 61, 98, .96);
+    background: rgba(17, 23, 59, .96);
     backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+    box-shadow: 0 10px 30px rgba(17, 23, 59, .20);
 }
 
 .navbar {
@@ -358,7 +387,7 @@ section {
 }
 
 .nav-menu a {
-    color: #fff;
+    color: var(--white);
     font-weight: 500;
     position: relative;
     transition: .3s;
@@ -371,7 +400,7 @@ section {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
+    background: var(--gold);
     transition: .4s;
 }
 
@@ -380,17 +409,21 @@ section {
 }
 
 .nav-menu a:hover {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .navbar .btn {
-    background: linear-gradient(135deg, #FFB703, #FF8C00);
-    color: #fff;
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        #B17F2E
+    );
+    color: var(--white);
     padding: 14px 30px;
     border-radius: 50px;
     font-weight: 600;
     transition: .4s;
-    box-shadow: 0 15px 35px rgba(255, 183, 3, .35);
+    box-shadow: 0 15px 35px rgba(198, 149, 55, .30);
 }
 
 .navbar .btn:hover {
@@ -399,10 +432,11 @@ section {
 
 .menu-btn {
     display: none;
-    color: #fff;
+    color: var(--white);
     font-size: 28px;
     cursor: pointer;
 }
+
 
 /* ============ 4. HERO ============ */
 
@@ -411,6 +445,7 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 140px 0 80px;
     overflow: hidden;
     background: url('../images/bm.png') center / cover no-repeat;
@@ -419,10 +454,12 @@ section {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(100deg,
-            rgba(8, 28, 45, .95) 0%,
-            rgba(10, 61, 98, .88) 48%,
-            rgba(10, 61, 98, .55) 100%);
+    background: linear-gradient(
+        100deg,
+        rgba(16, 22, 58, .95) 0%,
+        rgba(17, 23, 59, .88) 48%,
+        rgba(17, 23, 59, .55) 100%
+    );
 }
 
 .hero-wrap {
@@ -430,12 +467,13 @@ section {
     z-index: 2;
     width: min(1200px, 90%);
     margin-inline: auto;
-    display: inline-block;
-    gap: 48px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .hero-content {
+    width: 100%;
     color: var(--white);
     text-align: center;
 }
@@ -443,14 +481,18 @@ section {
 .hero-tag {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    background: rgba(0, 184, 148, .18);
-    border: 1px solid rgba(0, 184, 148, .4);
-    color: #7fffd4;
+
+    background: rgba(198, 149, 55, .18);
+    border: 1px solid rgba(198, 149, 55, .45);
+    color: var(--gold-light);
+
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+
     padding: 8px 18px;
     border-radius: 40px;
     margin-bottom: 22px;
@@ -460,31 +502,42 @@ section {
     font-size: clamp(32px, 6vw, 58px);
     line-height: 1.12;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 }
 
 .hero-content h1 .accent {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .hero-content > p {
     font-size: 17px;
+    line-height: 1.7;
     color: rgba(255, 255, 255, .88);
+
+    width: 100%;
     max-width: 840px;
-    margin-left: 150px;
-    margin-bottom: 32px;
+
+    margin: 0 auto 32px;
 }
 
 .hero-actions {
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 14px;
     margin-bottom: 38px;
 }
 
 .trust-badges {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 22px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .trust-badges li {
@@ -496,25 +549,30 @@ section {
 }
 
 .trust-badges i {
-    color: var(--accent);
+    color: var(--gold);
     font-size: 18px;
 }
 
 .trust-badges strong {
-    display: block;
     color: var(--white);
     font-size: 15px;
 }
 
+
 /* ============ 5. ROUTE OVERVIEW ============ */
 
 .overview-section {
-    background: linear-gradient(135deg, var(--primary), #0d4d7e);
+    background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--dark-navy)
+    );
     color: var(--white);
 }
 
 .overview-section .section-tag {
-    background: rgba(0, 184, 148, .2);
+    background: rgba(57, 141, 107, .18);
+    color: var(--teal);
 }
 
 .overview-section .section-head h2 {
@@ -532,22 +590,24 @@ section {
 }
 
 .ov-stat {
-    background: rgba(255, 255, 255, .08);
-    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(212, 196, 160, .18);
     border-radius: var(--radius);
     padding: 26px 18px;
     text-align: center;
-    transition: transform var(--transition), background var(--transition);
+    transition:
+        transform var(--transition),
+        background var(--transition);
 }
 
 .ov-stat:hover {
     transform: translateY(-6px);
-    background: rgba(255, 255, 255, .14);
+    background: rgba(255, 255, 255, .12);
 }
 
 .ov-stat i {
     font-size: 26px;
-    color: var(--accent);
+    color: var(--gold);
     margin-bottom: 12px;
 }
 
@@ -566,10 +626,11 @@ section {
     color: rgba(255, 255, 255, .75);
 }
 
+
 /* ============ 6. TRAVEL SERVICES ============ */
 
 .services-section {
-    background: var(--bg);
+    background: var(--light-bg);
 }
 
 .services-grid {
@@ -580,18 +641,21 @@ section {
 
 .service-card {
     background: var(--white);
-    border: 1px solid var(--line);
+    border: 1px solid var(--line, #E2E8F0);
     border-radius: var(--radius);
     padding: 30px 24px;
     text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    box-shadow: var(--shadow);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+    border-color: var(--teal);
 }
 
 .service-card i {
@@ -602,14 +666,18 @@ section {
     justify-content: center;
     margin: 0 auto 16px;
     border-radius: 16px;
-    background: linear-gradient(135deg, var(--primary), #125a8f);
-    color: var(--accent);
+    background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--dark-navy)
+    );
+    color: var(--gold);
     font-size: 24px;
-    box-shadow: 0 12px 25px rgba(10, 61, 98, .22);
+    box-shadow: 0 12px 25px rgba(17, 23, 59, .22);
 }
 
 .service-card h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 17px;
     margin-bottom: 8px;
 }
@@ -619,6 +687,7 @@ section {
     font-size: 13.5px;
 }
 
+
 /* ============ 7. DIRECTION SECTIONS ============ */
 
 .direction-section {
@@ -626,7 +695,7 @@ section {
 }
 
 .direction-alt {
-    background: var(--bg);
+    background: var(--light-bg);
 }
 
 .direction-head {
@@ -636,7 +705,7 @@ section {
 }
 
 .direction-head h2 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: clamp(26px, 4vw, 38px);
     line-height: 1.2;
     margin-bottom: 14px;
@@ -654,8 +723,8 @@ section {
 }
 
 .direction-block {
-    background: var(--bg);
-    border: 1px solid var(--line);
+    background: var(--light-bg);
+    border: 1px solid var(--line, #E2E8F0);
     border-radius: var(--radius);
     padding: 30px 28px;
 }
@@ -668,13 +737,13 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: var(--primary);
+    color: var(--navy);
     font-size: 19px;
     margin-bottom: 18px;
 }
 
 .direction-block h3 i {
-    color: var(--secondary);
+    color: var(--teal);
 }
 
 .point-chips {
@@ -685,7 +754,7 @@ section {
 
 .point-chips li {
     background: var(--white);
-    border: 1px solid var(--line);
+    border: 1px solid var(--line, #E2E8F0);
     border-radius: 30px;
     padding: 8px 16px;
     font-size: 13.5px;
@@ -694,22 +763,25 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: border-color var(--transition), background var(--transition), color var(--transition);
+    transition:
+        border-color var(--transition),
+        background var(--transition),
+        color var(--transition);
 }
 
 .direction-alt .point-chips li {
-    background: var(--bg);
+    background: var(--light-bg);
 }
 
 .point-chips li:hover {
-    border-color: var(--secondary);
-    background: rgba(0, 184, 148, .08);
+    border-color: var(--teal);
+    background: rgba(57, 141, 107, .08);
 }
 
 .direction-img {
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .direction-img img {
@@ -717,6 +789,7 @@ section {
     height: 380px;
     object-fit: cover;
 }
+
 
 /* ============ 8. VEHICLE FLEET ============ */
 
@@ -732,16 +805,18 @@ section {
 
 .fleet-card {
     background: var(--white);
-    border: 1px solid var(--line);
+    border: 1px solid var(--line, #E2E8F0);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow);
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .fleet-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .fleet-img {
@@ -765,7 +840,11 @@ section {
     position: absolute;
     top: 14px;
     left: 14px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        #B17F2E
+    );
     color: var(--white);
     font-size: 12px;
     font-weight: 700;
@@ -773,7 +852,7 @@ section {
     letter-spacing: 1px;
     padding: 6px 14px;
     border-radius: 30px;
-    box-shadow: 0 8px 20px rgba(255, 183, 3, .4);
+    box-shadow: 0 8px 20px rgba(198, 149, 55, .35);
 }
 
 .fleet-body {
@@ -781,7 +860,7 @@ section {
 }
 
 .fleet-body h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 21px;
     margin-bottom: 16px;
     text-align: center;
@@ -803,14 +882,15 @@ section {
 }
 
 .fleet-features i {
-    color: var(--secondary);
+    color: var(--teal);
     font-size: 14px;
 }
+
 
 /* ============ 9. PRICING ============ */
 
 .pricing-section {
-    background: var(--bg);
+    background: var(--light-bg);
 }
 
 .pricing-grid {
@@ -823,22 +903,28 @@ section {
 .price-card {
     background: var(--white);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow);
     padding: 38px 30px;
     display: flex;
     flex-direction: column;
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .price-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .price-card.price-featured {
-    background: linear-gradient(160deg, var(--primary), #0d4d7e);
+    background: linear-gradient(
+        160deg,
+        var(--navy),
+        var(--dark-navy)
+    );
     color: var(--white);
-    border: 3px solid var(--accent);
+    border: 3px solid var(--gold);
     position: relative;
 }
 
@@ -853,20 +939,20 @@ section {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--secondary);
-    background: rgba(0, 184, 148, .1);
+    color: var(--teal);
+    background: rgba(57, 141, 107, .10);
     padding: 6px 16px;
     border-radius: 30px;
     margin-bottom: 14px;
 }
 
 .price-best {
-    background: var(--accent);
+    background: var(--gold);
     color: var(--white);
 }
 
 .price-featured .price-tag {
-    background: var(--accent);
+    background: var(--gold);
     color: var(--white);
 }
 
@@ -878,11 +964,11 @@ section {
 .price-amount {
     font-size: 38px;
     font-weight: 800;
-    color: var(--primary);
+    color: var(--navy);
 }
 
 .price-featured .price-amount {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .price-amount small {
@@ -916,7 +1002,7 @@ section {
     gap: 10px;
     padding: 9px 0;
     font-size: 14.5px;
-    border-bottom: 1px dashed var(--line);
+    border-bottom: 1px dashed #D9DEEA;
 }
 
 .price-featured .price-features li {
@@ -928,12 +1014,12 @@ section {
 }
 
 .price-features i {
-    color: var(--secondary);
+    color: var(--teal);
     margin-top: 3px;
 }
 
 .price-featured .price-features i {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .price-card .btn-price {
@@ -948,9 +1034,10 @@ section {
 }
 
 .pricing-note a {
-    color: var(--secondary);
+    color: var(--teal);
     font-weight: 600;
 }
+
 
 /* ============ 10. WHY CHOOSE ============ */
 
@@ -965,18 +1052,21 @@ section {
 }
 
 .why-card {
-    background: var(--bg);
-    border: 1px solid var(--line);
+    background: var(--light-bg);
+    border: 1px solid #D9DEEA;
     border-radius: var(--radius);
     padding: 28px 20px;
     text-align: center;
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
 }
 
 .why-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+    border-color: var(--teal);
 }
 
 .why-icon {
@@ -987,14 +1077,18 @@ section {
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    background: linear-gradient(135deg, var(--primary), #125a8f);
-    color: var(--accent);
+    background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--dark-navy)
+    );
+    color: var(--gold);
     font-size: 24px;
-    box-shadow: 0 12px 25px rgba(10, 61, 98, .25);
+    box-shadow: 0 12px 25px rgba(17, 23, 59, .25);
 }
 
 .why-card h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 15.5px;
     margin-bottom: 8px;
 }
@@ -1004,10 +1098,11 @@ section {
     font-size: 13px;
 }
 
+
 /* ============ 11. POPULAR STOPS ============ */
 
 .stops-section {
-    background: var(--bg);
+    background: var(--light-bg);
 }
 
 .stops-grid {
@@ -1019,14 +1114,16 @@ section {
 .stop-card {
     background: var(--white);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow);
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .stop-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .stop-img {
@@ -1050,8 +1147,8 @@ section {
     position: absolute;
     bottom: 12px;
     left: 12px;
-    background: rgba(8, 28, 45, .8);
-    color: var(--accent);
+    background: rgba(16, 22, 58, .85);
+    color: var(--gold-light);
     font-size: 12px;
     font-weight: 600;
     padding: 6px 14px;
@@ -1064,7 +1161,7 @@ section {
 }
 
 .stop-body h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 19px;
     margin-bottom: 8px;
 }
@@ -1073,6 +1170,7 @@ section {
     color: var(--muted);
     font-size: 14px;
 }
+
 
 /* ============ 12. TOUR PACKAGES ============ */
 
@@ -1088,18 +1186,20 @@ section {
 
 .package-card {
     background: var(--white);
-    border: 1px solid var(--line);
+    border: 1px solid #D9DEEA;
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .package-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .package-img {
@@ -1123,13 +1223,17 @@ section {
     position: absolute;
     top: 14px;
     right: 14px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        #B17F2E
+    );
     color: var(--white);
     font-size: 12px;
     font-weight: 700;
     padding: 6px 14px;
     border-radius: 30px;
-    box-shadow: 0 8px 20px rgba(255, 183, 3, .4);
+    box-shadow: 0 8px 20px rgba(198, 149, 55, .35);
 }
 
 .package-body {
@@ -1140,7 +1244,7 @@ section {
 }
 
 .package-body h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 18px;
     margin-bottom: 8px;
 }
@@ -1155,13 +1259,13 @@ section {
 .package-custom {
     justify-content: center;
     text-align: center;
-    background: var(--bg);
-    border: 2px dashed var(--secondary);
+    background: var(--light-bg);
+    border: 2px dashed var(--teal);
     box-shadow: none;
 }
 
 .package-custom:hover {
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .package-custom-icon {
@@ -1172,21 +1276,22 @@ section {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(0, 184, 148, .12);
-    color: var(--secondary);
+    background: rgba(57, 141, 107, .12);
+    color: var(--teal);
     font-size: 28px;
 }
+
 
 /* ============ 13. TESTIMONIALS ============ */
 
 .testimonial-section {
-    background: var(--bg);
+    background: var(--light-bg);
 }
 
 .t-slider {
     overflow: hidden;
     border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow);
     background: var(--white);
 }
 
@@ -1202,7 +1307,7 @@ section {
 }
 
 .t-stars {
-    color: var(--accent);
+    color: var(--gold);
     font-size: 22px;
     letter-spacing: 4px;
     margin-bottom: 20px;
@@ -1228,7 +1333,11 @@ section {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(
+        135deg,
+        var(--navy),
+        var(--teal)
+    );
     color: var(--white);
     display: flex;
     align-items: center;
@@ -1238,7 +1347,7 @@ section {
 }
 
 .t-user h4 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 16px;
     text-align: left;
 }
@@ -1261,14 +1370,17 @@ section {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--line);
-    transition: background var(--transition), transform var(--transition);
+    background: #D9DEEA;
+    transition:
+        background var(--transition),
+        transform var(--transition);
 }
 
 .t-dot.active {
-    background: var(--secondary);
+    background: var(--teal);
     transform: scale(1.3);
 }
+
 
 /* ============ 14. FAQ ============ */
 
@@ -1282,17 +1394,19 @@ section {
 }
 
 .faq-item {
-    border: 1px solid var(--line);
+    border: 1px solid #D9DEEA;
     border-radius: 14px;
     margin-bottom: 14px;
     overflow: hidden;
-    background: var(--bg);
-    transition: border-color var(--transition), box-shadow var(--transition);
+    background: var(--light-bg);
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
 }
 
 .faq-item.open {
-    border-color: var(--secondary);
-    box-shadow: var(--shadow-sm);
+    border-color: var(--teal);
+    box-shadow: var(--shadow);
 }
 
 .faq-q {
@@ -1304,12 +1418,12 @@ section {
     padding: 20px 24px;
     font-size: 16px;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--navy);
     text-align: left;
 }
 
 .faq-q i {
-    color: var(--secondary);
+    color: var(--teal);
     transition: transform var(--transition);
     flex-shrink: 0;
 }
@@ -1329,6 +1443,8 @@ section {
     color: var(--muted);
     font-size: 15px;
 }
+
+
 /* ============ 16. FINAL CTA ============ */
 
 .final-cta {
@@ -1349,7 +1465,11 @@ section {
 .final-cta-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(8, 28, 45, .94), rgba(10, 61, 98, .88));
+    background: linear-gradient(
+        135deg,
+        rgba(16, 22, 58, .94),
+        rgba(17, 23, 59, .88)
+    );
 }
 
 .final-cta-content {
@@ -1362,7 +1482,7 @@ section {
 
 .final-tag {
     display: inline-block;
-    color: var(--accent);
+    color: var(--gold);
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1388,17 +1508,18 @@ section {
     gap: 14px;
 }
 
+
 /* ============ 17. FOOTER ============ */
 
 .footer {
-    background: var(--primary-dark);
+    background: var(--dark-navy);
     color: rgba(255, 255, 255, .8);
     padding: 70px 0 0;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns:2fr repeat(5,1fr);
+    grid-template-columns: 2fr repeat(5, 1fr);
     gap: 20px;
     align-items: flex-start;
 }
@@ -1430,7 +1551,7 @@ section {
     width: 34px;
     height: 3px;
     border-radius: 3px;
-    background: var(--accent);
+    background: var(--gold);
 }
 
 .footer-col ul li {
@@ -1440,11 +1561,13 @@ section {
 .footer-col ul a {
     color: rgba(255, 255, 255, .75);
     font-size: 14.5px;
-    transition: color var(--transition), padding-left var(--transition);
+    transition:
+        color var(--transition),
+        padding-left var(--transition);
 }
 
 .footer-col ul a:hover {
-    color: var(--accent);
+    color: var(--gold);
     padding-left: 6px;
 }
 
@@ -1456,7 +1579,7 @@ section {
 }
 
 .footer-contact i {
-    color: var(--secondary);
+    color: var(--teal);
     margin-top: 3px;
 }
 
@@ -1466,28 +1589,24 @@ section {
 }
 
 .footer-contact a:hover {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, .1);
+    margin-top: 50px;
     padding: 22px 0;
     text-align: center;
+    color: rgba(255, 255, 255, .65);
     font-size: 14px;
 }
 
 .footer-sep {
-    color: var(--secondary);
+    color: var(--teal);
     margin: 0 8px;
 }
 
-.footer-bottom{
-    border-top:1px solid rgba(255,255,255,.1);
-    margin-top:50px;
-    padding-top:20px;
-    text-align:center;
-    color:#bbb;
-}
+
 /* ============ 18. FLOATING BUTTONS ============ */
 
 .back-top {
@@ -1497,17 +1616,20 @@ section {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--primary);
+    background: var(--navy);
     color: var(--white);
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 12px 30px rgba(10, 61, 98, .35);
+    box-shadow: 0 12px 30px rgba(17, 23, 59, .35);
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+    transition:
+        opacity var(--transition),
+        transform var(--transition),
+        visibility var(--transition);
     z-index: 900;
 }
 
@@ -1524,13 +1646,13 @@ section {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #25D366;
+    background: var(--teal);
     color: var(--white);
     font-size: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 12px 30px rgba(37, 211, 102, .4);
+    box-shadow: 0 12px 30px rgba(57, 141, 107, .40);
     z-index: 900;
 }
 
@@ -1540,7 +1662,7 @@ section {
     inset: 0;
     z-index: -1;
     border-radius: 50%;
-    background: rgba(37, 211, 102, .45);
+    background: rgba(57, 141, 107, .40);
     animation: pulse 2s ease-out infinite;
 }
 
@@ -1549,15 +1671,18 @@ section {
         transform: scale(1);
         opacity: .5;
     }
+
     to {
         transform: scale(1.75);
         opacity: 0;
     }
 }
 
+
 /* ============ 19. RESPONSIVE ============ */
 
 @media (max-width: 1024px) {
+
     .overview-stats {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1581,7 +1706,9 @@ section {
     }
 }
 
+
 @media (max-width: 991px) {
+
     .menu-btn {
         display: flex;
     }
@@ -1605,10 +1732,10 @@ section {
         top: 74px;
         left: -100%;
         width: 100%;
-        background: var(--primary);
+        background: var(--navy);
         padding: 30px 5%;
         transition: left .4s ease;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+        box-shadow: 0 20px 40px rgba(17, 23, 59, .25);
     }
 
     .nav-menu.open {
@@ -1631,43 +1758,44 @@ section {
         margin-inline: auto;
     }
 
-    .hero{
-        min-height:auto;
-        padding:110px 0 70px;
+    .hero {
+        min-height: auto;
+        padding: 110px 0 70px;
     }
 
-    .hero-wrap{
-        width:94%;
+    .hero-wrap {
+        width: 94%;
     }
 
-    .hero-content h1{
-        font-size:42px;
+    .hero-content h1 {
+        font-size: 42px;
     }
 
-    .hero-content>p{
-        max-width:650px;
-        margin:0 auto 28px;
-        font-size:16px;
-        line-height:1.8;
+    .hero-content > p {
+        max-width: 650px;
+        margin: 0 auto 28px;
+        font-size: 16px;
+        line-height: 1.8;
     }
 
-    .hero-actions{
-        justify-content:center;
+    .hero-actions {
+        justify-content: center;
     }
 
-    .trust-badges{
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:18px;
+    .trust-badges {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
     }
 
-    .trust-badges li{
-        font-size:14px;
+    .trust-badges li {
+        font-size: 14px;
     }
-
 }
 
+
 @media (max-width: 640px) {
+
     .overview-stats,
     .services-grid,
     .why-grid {
@@ -1716,7 +1844,9 @@ section {
     }
 }
 
+
 @media (max-width: 480px) {
+
     .hero-quote {
         margin-top: 36px;
     }

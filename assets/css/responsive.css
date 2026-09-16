@@ -146,7 +146,7 @@ RESPONSIVE DESIGN
     top: 80px;
     left: 0;
     width: 100%;
-    background: #0a3d62;
+    background: var(--navy);
     transition: transform 0.4s;
     padding: 30px;
     transform: translateX(-100%);

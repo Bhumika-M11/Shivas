@@ -1,0 +1,1049 @@
+/* =========================================================
+   NAVACABS - ROYAL BLUE + GOLD IDENTITY
+   ========================================================= */
+
+:root {
+    --navy: #11173B;
+    --dark-navy: #10163A;
+
+    --gold: #C69537;
+    --gold-light: #D4C4A0;
+
+    --teal: #398D6B;
+
+    --bg: #EEF1FA;
+    --light-bg: #F6F7FB;
+
+    --white: #FFFFFF;
+
+    --text: #11173B;
+    --muted: #718096;
+
+    --primary: #11173B;
+    --secondary: #398D6B;
+    --accent: #C69537;
+
+    --gray: #718096;
+
+    --glass: rgba(17, 23, 59, 0.15);
+
+    --shadow: 0 20px 50px rgba(17, 23, 59, 0.15);
+
+    --radius: 18px;
+
+    --transition: 0.4s;
+}
+
+.dropdown-sub {
+    position: relative;
+}
+
+.dropdown-sub-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 220px;
+    background: #fff;
+    padding: 10px 0;
+    margin-left: 5px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    display: none;
+    z-index: 9999;
+}
+
+.dropdown-sub-menu.show {
+    display: block;
+}
+
+.dropdown-sub-menu li {
+    list-style: none;
+}
+
+.dropdown-sub-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dropdown-sub-menu li a:hover {
+    background: #f5f5f5;
+}
+
+.sub-arrow {
+    margin-left: auto;
+    font-size: 11px;
+}
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.suv-page {
+    background: #FFFFFF;
+    color: var(--text-dark);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.suv-page .nav {
+    background: rgba(7, 26, 59, 0.98) !important;
+
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+
+    box-shadow:
+        0 5px 25px rgba(7, 26, 59, 0.20);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.suv-page .brand {
+    color: #FFFFFF !important;
+}
+
+
+.suv-page .brand span {
+    color: var(--gold-light) !important;
+}
+
+
+.suv-page .nav nav a {
+    color: #FFFFFF !important;
+
+    transition: all 0.3s ease;
+}
+
+
+.suv-page .nav nav a:hover {
+    color: var(--gold) !important;
+}
+
+
+.suv-page .account button:first-child {
+    color: #FFFFFF;
+
+    background: transparent;
+
+    border: 1px solid rgba(212, 175, 55, 0.55);
+
+    border-radius: 25px;
+
+    transition: 0.3s ease;
+}
+
+
+.suv-page .account button:first-child:hover {
+    color: var(--gold);
+
+    border-color: var(--gold);
+}
+
+
+/* BOOK NOW */
+
+.suv-page .account .blue {
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        ) !important;
+
+    color: var(--royal-blue-dark) !important;
+
+    border: 1px solid var(--gold) !important;
+
+    border-radius: 25px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 7px 20px rgba(212,175,55,0.25);
+}
+
+
+.suv-page .account .blue:hover {
+    background: #FFFFFF !important;
+
+    color: var(--royal-blue-dark) !important;
+}
+
+
+/* MOBILE MENU */
+
+.suv-page .menu {
+    color: var(--gold) !important;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.suv-page .hero {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(212,175,55,0.22),
+            transparent 30%
+        ),
+        linear-gradient(
+            125deg,
+            #071A3B 0%,
+            #123B7A 55%,
+            #1E55A0 100%
+        ) !important;
+
+    color: #FFFFFF;
+}
+
+
+.suv-page .hero-copy {
+    color: #FFFFFF;
+}
+
+
+.suv-page .pill {
+    background: rgba(212,175,55,0.13) !important;
+
+    border: 1px solid rgba(212,175,55,0.45) !important;
+
+    color: #FFFFFF !important;
+}
+
+
+.suv-page .hero h1 {
+    color: #FFFFFF !important;
+}
+
+
+.suv-page .hero h1 em {
+    color: var(--gold-light) !important;
+
+    font-style: normal;
+}
+
+
+.suv-page .hero-copy > p {
+    color: #E3EBF7 !important;
+}
+
+
+/* =========================================================
+   QUICK SPECS
+   ========================================================= */
+
+.suv-page .quick-specs div {
+    background: rgba(255,255,255,0.08) !important;
+
+    border: 1px solid rgba(212,175,55,0.25) !important;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+}
+
+
+.suv-page .quick-specs b {
+    color: var(--gold-light) !important;
+}
+
+
+.suv-page .quick-specs strong {
+    color: #FFFFFF !important;
+}
+
+
+.suv-page .quick-specs small {
+    color: #CBD8EA !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.suv-page .primary {
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        ) !important;
+
+    color: var(--royal-blue-dark) !important;
+
+    border: 1px solid var(--gold) !important;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 22px rgba(212,175,55,0.25);
+}
+
+
+.suv-page .primary:hover {
+    background: #FFFFFF !important;
+
+    color: var(--royal-blue-dark) !important;
+
+    transform: translateY(-2px);
+}
+
+
+.suv-page .whatsapp {
+    background: #25D366 !important;
+
+    color: #FFFFFF !important;
+
+    border: none !important;
+}
+
+
+.suv-page .secondary {
+    background: #FFFFFF !important;
+
+    color: var(--royal-blue) !important;
+
+    border: 1px solid var(--gold) !important;
+}
+
+
+.suv-page .secondary:hover {
+    background: var(--gold-soft) !important;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.suv-page .hero-image {
+    position: relative;
+}
+
+
+.suv-page .hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -10px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(212,175,55,0.55);
+
+    pointer-events: none;
+}
+
+
+.suv-page .hero-image img {
+    position: relative;
+
+    width: 100%;
+
+    border: 3px solid var(--gold) !important;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.38);
+
+    object-fit: cover;
+}
+
+
+.suv-page .quote-copy {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,26,59,0.95),
+            rgba(18,59,122,0.95)
+        ) !important;
+
+    border: 1px solid rgba(212,175,55,0.4);
+}
+
+
+.suv-page .quote-copy h2 {
+    color: var(--gold-light) !important;
+}
+
+
+/* =========================================================
+   TRUST SECTION
+   ========================================================= */
+
+.suv-page .trust {
+    color: var(--royal-blue) !important;
+}
+
+
+.suv-page .trust span {
+    font-weight: 600;
+}
+
+
+.suv-page .trust span::first-letter {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   VEHICLE SECTION
+   ========================================================= */
+
+.suv-page .vehicle {
+    border: 1px solid #E9DFC0 !important;
+
+    box-shadow:
+        0 15px 40px rgba(7,26,59,0.10);
+}
+
+
+/* GALLERY */
+
+.suv-page .gallery {
+    background:
+        linear-gradient(
+            145deg,
+            #071A3B,
+            #123B7A
+        ) !important;
+}
+
+
+.suv-page .main-photo {
+    overflow: hidden;
+
+    border-radius: 9px;
+}
+
+
+.suv-page .main-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.suv-page .main-photo span {
+    background: rgba(7,26,59,0.88) !important;
+
+    color: #FFFFFF;
+
+    border: 1px solid rgba(212,175,55,0.5);
+}
+
+
+.suv-page .thumbs button.active {
+    border-color: var(--gold) !important;
+}
+
+
+/* =========================================================
+   VEHICLE INFORMATION
+   ========================================================= */
+
+.suv-page .vehicle-info h2 {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page .vehicle-info h3 {
+    color: var(--royal-blue) !important;
+}
+
+
+.suv-page .title-row button {
+    color: var(--gold-dark) !important;
+}
+
+
+.suv-page .spec-grid div {
+    background: #F7F9FC !important;
+
+    border-left: 3px solid var(--gold) !important;
+}
+
+
+.suv-page .spec-grid small {
+    color: var(--text-muted);
+}
+
+
+.suv-page .spec-grid b {
+    color: var(--royal-blue-dark);
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.suv-page .features span {
+    background: var(--gold-soft) !important;
+
+    color: var(--royal-blue) !important;
+
+    border: 1px solid #E9DDAF !important;
+}
+
+
+.suv-page .features span::first-letter {
+    color: var(--gold-dark);
+}
+
+
+/* =========================================================
+   ROUTES
+   ========================================================= */
+
+.suv-page .routes {
+    background:
+        linear-gradient(
+            135deg,
+            #F7F9FD,
+            #FFF9E7
+        ) !important;
+
+    border: 1px solid #E9DFC0 !important;
+}
+
+
+.suv-page .routes h2 {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page .routes > p {
+    color: var(--text-muted);
+}
+
+
+.suv-page .route-grid article {
+    background: #FFFFFF !important;
+
+    border: 1px solid #E5E9F0 !important;
+
+    border-top: 3px solid var(--gold) !important;
+
+    box-shadow:
+        0 8px 25px rgba(7,26,59,0.08);
+}
+
+
+.suv-page .route-grid article b {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page .route-grid article i {
+    color: var(--text-muted);
+}
+
+
+.suv-page .route-grid button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--royal-blue),
+            var(--royal-blue-light)
+        ) !important;
+
+    color: #FFFFFF !important;
+
+    border: 1px solid var(--gold) !important;
+
+    border-radius: 6px;
+}
+
+
+.suv-page .route-grid button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        ) !important;
+
+    color: var(--royal-blue-dark) !important;
+}
+
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+.suv-page .destinations {
+    padding-top: 45px;
+
+    padding-bottom: 45px;
+}
+
+
+.suv-page .section-heading span {
+    color: var(--gold-dark) !important;
+
+    font-weight: 700;
+}
+
+
+.suv-page .section-heading h2 {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page .destination-grid article {
+    border: 1px solid #E5E9F0 !important;
+
+    border-top: 3px solid var(--gold) !important;
+
+    transition: 0.3s ease;
+}
+
+
+.suv-page .destination-grid article:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(7,26,59,0.12);
+}
+
+
+.suv-page .destination-grid article span {
+    color: var(--gold-dark) !important;
+}
+
+
+.suv-page .destination-grid article h3 {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.suv-page .faq-section h3 {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page .faq-section details {
+    background: #F7F9FD !important;
+
+    border: 1px solid #E4E8EF !important;
+
+    border-left: 3px solid var(--gold) !important;
+}
+
+
+.suv-page .faq-section details[open] {
+    background: var(--gold-soft) !important;
+}
+
+
+.suv-page .faq-section summary {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page .faq-section details p {
+    color: var(--text-muted);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.suv-page .cta {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(212,175,55,0.22),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            #071A3B,
+            #123B7A
+        ) !important;
+
+    color: #FFFFFF !important;
+
+    border-top: 3px solid var(--gold);
+
+    border-bottom: 3px solid var(--gold);
+}
+
+
+.suv-page .cta h2 {
+    color: #FFFFFF !important;
+}
+
+
+.suv-page .cta p {
+    color: #DDE6F3 !important;
+}
+
+
+.suv-page .cta small {
+    color: #C7D3E5 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.suv-page footer {
+    background: #06162F !important;
+
+    color: #FFFFFF !important;
+
+    border-top: 1px solid rgba(212,175,55,0.35);
+}
+
+
+.suv-page footer .brand span {
+    color: var(--gold-light) !important;
+}
+
+
+.suv-page footer h3 {
+    color: #FFFFFF !important;
+}
+
+
+.suv-page footer h3::after {
+    background: var(--gold) !important;
+}
+
+
+.suv-page footer a {
+    color: #CBD5E3 !important;
+
+    transition: 0.3s ease;
+}
+
+
+.suv-page footer a:hover {
+    color: var(--gold) !important;
+}
+
+
+.suv-page footer p {
+    color: #CBD5E3 !important;
+}
+
+
+.suv-page footer > small {
+    color: #AAB7C9 !important;
+
+    border-top-color: rgba(212,175,55,0.2) !important;
+}
+
+
+/* =========================================================
+   BOOKING DIALOG
+   ========================================================= */
+
+.suv-page dialog {
+    border: 2px solid var(--gold) !important;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 25px 70px rgba(7,26,59,0.35);
+}
+
+
+.suv-page dialog h2 {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page dialog p {
+    color: var(--text-muted);
+}
+
+
+.suv-page dialog label {
+    color: var(--royal-blue-dark);
+
+    font-weight: 600;
+}
+
+
+.suv-page dialog input {
+    border: 1px solid #D8DEE8;
+
+    border-radius: 7px;
+
+    padding: 12px;
+
+    outline: none;
+}
+
+
+.suv-page dialog input:focus {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,0.15);
+}
+
+
+.suv-page dialog .close {
+    color: var(--royal-blue-dark) !important;
+}
+
+
+.suv-page dialog .close:hover {
+    color: var(--gold-dark) !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .suv-page .nav nav {
+        background: var(--royal-blue-dark) !important;
+
+        border-top: 1px solid rgba(212,175,55,0.25);
+    }
+
+
+    .suv-page .nav nav a {
+        color: #FFFFFF !important;
+    }
+
+
+    .suv-page .nav nav a:hover {
+        color: var(--gold) !important;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .suv-page .hero h1 {
+        font-size: 40px;
+    }
+
+
+    .suv-page .hero-image img {
+        min-height: 260px;
+    }
+
+
+    .suv-page .quick-specs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .suv-page .route-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .suv-page .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   OUTSTATION TRIPS
+   TOP HILL STATION DESTINATIONS
+========================================= */
+
+.destinations {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* Section Heading */
+
+.destinations .section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.destinations .section-heading > span {
+    display: inline-block;
+
+    color: #C69537;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.destinations .section-heading h2 {
+    color: #11173B;
+
+    font-family: Outfit, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+
+    margin: 0 0 10px;
+}
+
+.destinations .section-heading p {
+    color: #718096;
+
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* =========================================
+   DESTINATION CARDS - 3 COLUMNS
+========================================= */
+
+.destination-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+
+/* Individual Cards */
+
+.destination-grid article {
+    background: #FFFFFF;
+
+    padding: 25px;
+
+    min-height: 150px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(198, 149, 55, 0.30);
+
+    border-top: 4px solid #C69537;
+
+    box-shadow:
+        0 10px 30px rgba(17, 23, 59, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover */
+
+.destination-grid article:hover {
+    transform: translateY(-5px);
+
+    border-color: #C69537;
+
+    box-shadow:
+        0 18px 40px rgba(17, 23, 59, 0.14);
+}
+
+
+/* Small Category */
+
+.destination-grid article > span {
+    display: block;
+
+    color: #C69537;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Destination Name */
+
+.destination-grid article h3 {
+    color: #11173B;
+
+    font-family: Outfit, sans-serif;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    margin: 0 0 8px;
+}
+
+
+/* Best For */
+
+.destination-grid article p {
+    color: #718096;
+
+    font-size: 12px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   2 COLUMNS
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   1 COLUMN
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .destinations {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .destinations .section-heading h2 {
+        font-size: 24px;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .destination-grid article {
+        padding: 20px;
+    }
+
+}
