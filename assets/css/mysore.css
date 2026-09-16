@@ -886,6 +886,269 @@ section {
     font-size: 14px;
 }
 
+/* ==========================================
+   VEHICLE FLEET - RESPONSIVE
+========================================== */
+
+
+/* ==========================================
+   LARGE LAPTOP
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .fleet-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .fleet-card {
+        width: 100%;
+    }
+
+    .fleet-img {
+        height: 190px;
+    }
+
+    .fleet-body {
+        padding: 22px;
+    }
+
+    .fleet-body h3 {
+        font-size: 20px;
+    }
+
+    .fleet-features {
+        gap: 8px 12px;
+    }
+
+    .fleet-features li {
+        font-size: 13px;
+    }
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .fleet-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .fleet-card {
+        width: 100%;
+    }
+
+    .fleet-img {
+        height: 200px;
+    }
+
+    .fleet-body {
+        padding: 22px;
+    }
+
+    .fleet-body h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .fleet-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px 12px;
+        margin-bottom: 20px;
+    }
+
+    .fleet-features li {
+        font-size: 13px;
+        gap: 7px;
+    }
+
+    .fleet-features i {
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    .fleet-badge {
+        top: 12px;
+        left: 12px;
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .fleet-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+
+        width: 100%;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .fleet-card {
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .fleet-img {
+        height: 220px;
+    }
+
+    .fleet-body {
+        padding: 22px 20px;
+    }
+
+    .fleet-body h3 {
+        font-size: 21px;
+        margin-bottom: 16px;
+    }
+
+    .fleet-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 15px;
+        margin-bottom: 20px;
+    }
+
+    .fleet-features li {
+        font-size: 13px;
+        gap: 7px;
+    }
+
+    .fleet-features i {
+        font-size: 13px;
+    }
+
+    .fleet-badge {
+        top: 12px;
+        left: 12px;
+
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .fleet-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .fleet-card {
+        width: 100%;
+        border-radius: 18px;
+    }
+
+    .fleet-img {
+        height: 200px;
+    }
+
+    .fleet-body {
+        padding: 20px 18px;
+    }
+
+    .fleet-body h3 {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+
+    .fleet-features {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px 10px;
+        margin-bottom: 18px;
+    }
+
+    .fleet-features li {
+        font-size: 12.5px;
+        gap: 6px;
+        line-height: 1.4;
+    }
+
+    .fleet-features i {
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    .fleet-badge {
+        top: 10px;
+        left: 10px;
+
+        font-size: 10px;
+        letter-spacing: .8px;
+        padding: 5px 10px;
+    }
+}
+
+
+/* ==========================================
+   EXTRA SMALL PHONES
+========================================== */
+
+@media (max-width: 400px) {
+
+    .fleet-grid {
+        gap: 18px;
+    }
+
+    .fleet-card {
+        border-radius: 16px;
+    }
+
+    .fleet-img {
+        height: 175px;
+    }
+
+    .fleet-body {
+        padding: 18px 15px;
+    }
+
+    .fleet-body h3 {
+        font-size: 18px;
+        margin-bottom: 13px;
+    }
+
+    .fleet-features {
+        gap: 8px 7px;
+        margin-bottom: 16px;
+    }
+
+    .fleet-features li {
+        font-size: 11.5px;
+        gap: 5px;
+    }
+
+    .fleet-features i {
+        font-size: 11px;
+    }
+
+    .fleet-badge {
+        top: 9px;
+        left: 9px;
+        font-size: 9px;
+        padding: 5px 9px;
+    }
+}
 
 /* ============ 9. PRICING ============ */
 

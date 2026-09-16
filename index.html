@@ -43,10 +43,17 @@
 .booking-box {
     width: min(100%, 1050px);
     margin: 0 auto;
-    background: #ffffff;
+    background: #fff;
     border-radius: 18px;
     padding: 8px;
     box-shadow: 0 25px 70px rgba(17, 23, 59, 0.22);
+    box-sizing: border-box;
+}
+
+.booking-box *,
+.booking-box *::before,
+.booking-box *::after {
+    box-sizing: border-box;
 }
 
 
@@ -65,7 +72,8 @@
 }
 
 .booking-tab {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
     border: 0;
     background: transparent;
     color: #52606d;
@@ -74,7 +82,8 @@
     padding: 13px 15px;
     border-radius: 9px;
     cursor: pointer;
-    transition: .25s ease;
+    white-space: nowrap;
+    transition: 0.25s ease;
 }
 
 .booking-tab:hover {
@@ -83,8 +92,8 @@
 
 .booking-tab.active {
     background: #11173B;
-    color: #ffffff;
-    box-shadow: 0 5px 15px rgba(17, 23, 59, .18);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(17, 23, 59, 0.18);
 }
 
 
@@ -93,12 +102,13 @@
 ========================================= */
 
 #bookingForm {
+    width: 100%;
     padding: 12px 18px 18px;
 }
 
 .booking-fields {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
 }
 
@@ -109,6 +119,7 @@
 
 .booking-field {
     position: relative;
+    min-width: 0;
 }
 
 .booking-field label {
@@ -129,13 +140,15 @@
 
 .booking-field input,
 .booking-field select {
+    display: block;
     width: 100%;
+    max-width: 100%;
     height: 48px;
 
     border: 1px solid #dce4ea;
     border-radius: 9px;
 
-    background: #ffffff;
+    background: #fff;
 
     padding: 0 14px;
 
@@ -145,7 +158,7 @@
 
     outline: none;
 
-    transition: .25s ease;
+    transition: 0.25s ease;
 }
 
 .booking-field input::placeholder {
@@ -155,7 +168,7 @@
 .booking-field input:focus,
 .booking-field select:focus {
     border-color: #C69537;
-    box-shadow: 0 0 0 3px rgba(198, 149, 55, .12);
+    box-shadow: 0 0 0 3px rgba(198, 149, 55, 0.12);
 }
 
 
@@ -165,7 +178,7 @@
 
 .return-fields {
     display: none;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
     margin-top: 15px;
 }
@@ -176,12 +189,12 @@
 
 
 /* =========================================
-   CUSTOMER
+   CUSTOMER FIELDS
 ========================================= */
 
 .customer-fields {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
     margin-top: 15px;
 }
@@ -193,6 +206,7 @@
 
 .booking-actions {
     display: flex;
+    width: 100%;
     gap: 12px;
     margin-top: 20px;
 }
@@ -213,30 +227,32 @@
     font-weight: 700;
 
     cursor: pointer;
-
     text-decoration: none;
 
-    transition: .25s ease;
+    transition: 0.25s ease;
 }
 
 .booking-submit {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+
     border: none;
     background: #11173B;
-    color: #ffffff;
+    color: #fff;
 }
 
 .booking-submit:hover {
     background: #10163A;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(17, 23, 59, .20);
+    box-shadow: 0 10px 25px rgba(17, 23, 59, 0.20);
 }
 
 .booking-whatsapp {
+    flex: 0 0 auto;
     padding: 0 25px;
 
     background: #398D6B;
-    color: #ffffff;
+    color: #fff;
 }
 
 .booking-whatsapp:hover {
@@ -262,19 +278,52 @@
 
 
 /* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .booking-box {
+        width: calc(100% - 24px);
+    }
+
+    #bookingForm {
+        padding: 10px 14px 16px;
+    }
+
+    .booking-fields,
+    .customer-fields,
+    .return-fields {
+        gap: 12px;
+    }
+
+    .booking-whatsapp {
+        padding: 0 20px;
+    }
+}
+
+
+/* =========================================
    MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
 
     .booking-box {
+        width: calc(100% - 20px);
         border-radius: 14px;
         padding: 6px;
     }
 
     .booking-tabs {
+        display: flex;
         overflow-x: auto;
+        overflow-y: hidden;
+
+        margin-bottom: 14px;
+
         scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
     }
 
     .booking-tabs::-webkit-scrollbar {
@@ -282,46 +331,133 @@
     }
 
     .booking-tab {
+        flex: 0 0 auto;
         min-width: 115px;
-        white-space: nowrap;
+
         font-size: 12px;
         padding: 12px 10px;
     }
 
     #bookingForm {
-        padding: 10px 10px 15px;
+        padding: 10px 8px 15px;
     }
 
     .booking-fields,
     .customer-fields,
     .return-fields {
         grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .return-fields {
+        margin-top: 12px;
+    }
+
+    .customer-fields {
+        margin-top: 12px;
     }
 
     .booking-actions {
         flex-direction: column;
+        gap: 10px;
+        margin-top: 16px;
     }
 
     .booking-submit,
     .booking-whatsapp {
         width: 100%;
+        min-height: 48px;
     }
 
+    .booking-whatsapp {
+        flex: none;
+        padding: 0 20px;
+    }
 }
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
 @media (max-width: 480px) {
 
-    .booking-field input,
-    .booking-field select {
-        height: 46px;
-        font-size: 13px;
+    .booking-box {
+        width: calc(100% - 12px);
+        padding: 5px;
+        border-radius: 12px;
+    }
+
+    .booking-tabs {
+        gap: 4px;
+        padding: 4px;
+        border-radius: 10px;
+    }
+
+    .booking-tab {
+        min-width: 105px;
+        font-size: 11px;
+        padding: 11px 9px;
+        border-radius: 8px;
+    }
+
+    #bookingForm {
+        padding: 8px 6px 12px;
     }
 
     .booking-field label {
         font-size: 12px;
+        margin-bottom: 6px;
     }
 
+    .booking-field input,
+    .booking-field select {
+        height: 46px;
+        padding: 0 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .booking-submit,
+    .booking-whatsapp {
+        min-height: 46px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .booking-status {
+        font-size: 12px;
+    }
 }
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .booking-box {
+        width: calc(100% - 8px);
+    }
+
+    .booking-tab {
+        min-width: 95px;
+        font-size: 10px;
+        padding: 10px 8px;
+    }
+
+    #bookingForm {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .booking-field input,
+    .booking-field select {
+        font-size: 12px;
+    }
+}
+
 
       </style>
 </head>

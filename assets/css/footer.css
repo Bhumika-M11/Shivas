@@ -128,3 +128,491 @@
     color: #bfc7d1;
     font-size: 13px;
 }
+
+/* ==========================================
+   LAPTOP
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .footer-container {
+        width: 92%;
+        margin: 0 auto;
+
+        grid-template-columns:
+            2fr
+            1fr
+            1.2fr
+            1.2fr
+            1.5fr;
+
+        gap: 30px;
+
+        justify-items: center;
+        text-align: center;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .footer-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .locations-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .locations-column ul {
+        column-gap: 25px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-contact {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+    }
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .footer {
+        padding: 50px 0 0;
+    }
+
+    .footer-container {
+        width: 92%;
+        margin: 0 auto;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 35px 25px;
+
+        justify-items: center;
+        text-align: center;
+    }
+
+    /* Brand full width */
+    .footer-brand {
+        grid-column: 1 / -1;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-brand p {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .footer-column ul {
+        text-align: center;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+        font-size: 14px;
+    }
+
+    .locations-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .locations-column ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 20px;
+        row-gap: 8px;
+
+        justify-content: center;
+        text-align: center;
+    }
+
+    .locations-column ul li {
+        text-align: center;
+    }
+
+    .footer-contact {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+        text-align: center;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .footer {
+        padding: 45px 0 0;
+    }
+
+    .footer-container {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 30px 25px;
+
+        justify-items: center;
+        text-align: center;
+    }
+
+    /* Brand full width */
+    .footer-brand {
+        grid-column: 1 / -1;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand img {
+        width: 80px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-brand h2 {
+        font-size: 22px;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* Footer columns */
+    .footer-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+        text-align: center;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 9px;
+    }
+
+    .footer-column ul li a {
+        font-size: 13px;
+    }
+
+    /* Locations */
+    .locations-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .locations-column ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 15px;
+        row-gap: 8px;
+
+        justify-content: center;
+        text-align: center;
+    }
+
+    .locations-column ul li {
+        text-align: center;
+    }
+
+    .locations-column ul li a {
+        font-size: 13px;
+    }
+
+    /* Contact */
+    .footer-contact {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+        align-items: flex-start;
+
+        font-size: 13px;
+        gap: 8px;
+
+        text-align: left;
+    }
+
+    .footer-contact i {
+        min-width: 17px;
+    }
+
+    /* Bottom */
+    .footer-bottom {
+        margin-top: 30px;
+        padding: 16px 12px;
+
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 576px) {
+
+    .footer {
+        padding: 40px 0 0;
+    }
+
+    .footer-container {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        justify-items: center;
+        text-align: center;
+    }
+
+    /* Brand */
+    .footer-brand {
+        grid-column: 1;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand img {
+        width: 75px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-brand h2 {
+        font-size: 21px;
+    }
+
+    .footer-brand p {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    /* Columns */
+    .footer-column {
+        grid-column: 1;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 17px;
+        margin-bottom: 14px;
+    }
+
+    .footer-column ul {
+        text-align: center;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 9px;
+    }
+
+    .footer-column ul li a {
+        font-size: 14px;
+    }
+
+    /* Locations */
+    .locations-column {
+        grid-column: 1;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .locations-column ul {
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 20px;
+        row-gap: 8px;
+
+        justify-items: center;
+        text-align: center;
+    }
+
+    .locations-column ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .locations-column ul li a {
+        font-size: 13px;
+    }
+
+    /* Contact */
+    .footer-contact {
+        grid-column: 1;
+
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+
+        font-size: 13px;
+        line-height: 1.6;
+
+        text-align: left;
+
+        width: fit-content;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Bottom */
+    .footer-bottom {
+        margin-top: 30px;
+        padding: 15px 10px;
+
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+}
+
+
+/* ==========================================
+   EXTRA SMALL PHONES
+========================================== */
+
+@media (max-width: 400px) {
+
+    .footer {
+        padding-top: 35px;
+    }
+
+    .footer-container {
+        width: calc(100% - 24px);
+        gap: 25px;
+    }
+
+    .footer-brand img {
+        width: 70px;
+    }
+
+    .footer-brand h2 {
+        font-size: 20px;
+    }
+
+    .footer-brand p {
+        font-size: 12px;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+    }
+
+    .footer-column ul li a {
+        font-size: 13px;
+    }
+
+    .locations-column ul {
+        column-gap: 12px;
+    }
+
+    .locations-column ul li a {
+        font-size: 12px;
+    }
+
+    .footer-contact p {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .footer-bottom p {
+        font-size: 10px;
+    }
+}

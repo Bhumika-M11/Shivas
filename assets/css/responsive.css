@@ -1218,3 +1218,550 @@ RESPONSIVE DESIGN
     height: 6px;
   }
 }
+
+/* =========================================================
+   FINAL MOBILE / RESPONSIVE OVERRIDES
+   Put this at the VERY END of your CSS
+========================================================= */
+
+/* Prevent the entire website from creating horizontal scroll */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINERS
+========================================================= */
+
+.container {
+    width: min(100% - 32px, 1320px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content,
+.hero-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h1 {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.hero-content p {
+    width: 100%;
+    max-width: 850px;
+    min-width: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   HERO HIGHLIGHTS
+========================================================= */
+
+.hero-highlights {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.hero-highlights > div {
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero-buttons .btn {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   BOOKING BOX
+   IMPORTANT: Remove old grid behavior
+========================================================= */
+
+.booking-box {
+    display: block;
+
+    width: min(100%, 1050px);
+    max-width: 1050px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    transform: none;
+
+    grid-template-columns: none;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BOOKING TABS
+========================================================= */
+
+.booking-tabs {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.booking-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.booking-tab {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BOOKING FORM
+========================================================= */
+
+#bookingForm {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.booking-fields,
+.customer-fields,
+.return-fields {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.booking-field {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.booking-field input,
+.booking-field select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BOOKING ACTIONS
+========================================================= */
+
+.booking-actions {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.booking-submit,
+.booking-whatsapp {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .container {
+        width: min(100% - 32px, 960px);
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(42px, 6vw, 56px);
+    }
+
+    .booking-box {
+        width: calc(100% - 32px);
+        max-width: 1050px;
+
+        display: block;
+
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+
+        margin: 40px auto 0;
+
+        grid-template-columns: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: calc(100% - 24px);
+        max-width: none;
+    }
+
+    /* HERO */
+
+    .hero {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .hero-wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .hero-content h1 {
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: clamp(30px, 8vw, 42px);
+        line-height: 1.15;
+
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 15px;
+        line-height: 1.6;
+
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+
+    /* HERO TAG */
+
+    .tag {
+        display: inline-flex;
+
+        max-width: calc(100% - 20px);
+
+        white-space: normal;
+        text-align: center;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* HERO HIGHLIGHTS */
+
+    .hero-highlights {
+        width: 100%;
+        max-width: 100%;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .hero-highlights > div {
+        max-width: 100%;
+        white-space: nowrap;
+    }
+
+
+    /* HERO BUTTON */
+
+    .hero-buttons {
+        width: 100%;
+        max-width: 100%;
+
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* BOOKING */
+
+    .booking-box {
+        display: block;
+
+        width: calc(100% - 20px);
+        max-width: none;
+
+        margin: 30px auto 0;
+
+        padding: 6px;
+
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        transform: none;
+
+        grid-template-columns: none;
+
+        overflow: hidden;
+    }
+
+    .booking-tabs {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        flex-wrap: nowrap;
+    }
+
+    .booking-tab {
+        flex: 1 0 110px;
+        min-width: 110px;
+
+        white-space: nowrap;
+    }
+
+    #bookingForm {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 10px 8px 15px;
+    }
+
+    .booking-fields,
+    .customer-fields,
+    .return-fields {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        width: 100%;
+        max-width: 100%;
+
+        gap: 12px;
+    }
+
+    .booking-field {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .booking-field input,
+    .booking-field select {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .booking-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .booking-submit,
+    .booking-whatsapp {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .container {
+        width: calc(100% - 20px);
+    }
+
+    .hero-wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .hero-highlights {
+        gap: 6px;
+    }
+
+    .hero-highlights > div {
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+
+    .booking-box {
+        width: calc(100% - 12px);
+        margin-top: 25px;
+    }
+
+    .booking-tab {
+        flex-basis: 100px;
+        min-width: 100px;
+
+        font-size: 11px;
+        padding: 11px 8px;
+    }
+
+    .booking-field input,
+    .booking-field select {
+        height: 46px;
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: calc(100% - 16px);
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .hero-highlights > div {
+        font-size: 10px;
+        padding: 7px 8px;
+    }
+
+    .booking-box {
+        width: calc(100% - 8px);
+    }
+
+    .booking-tab {
+        min-width: 90px;
+        flex-basis: 90px;
+    }
+}
