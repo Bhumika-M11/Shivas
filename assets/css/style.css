@@ -39,7 +39,7 @@ ul {
 }
 
 .container {
-  width: min(1200px, 90%);
+  width: min(120px, 90%);
   margin: auto;
 }
 
@@ -470,7 +470,6 @@ ul {
 
     padding: 9px 17px;
 
-    margin-bottom: 20px;
 
     border-radius: 30px;
 
@@ -576,6 +575,7 @@ ul {
 
     font-weight: 700;
 }
+
 
 
 /* =========================================================
@@ -1649,13 +1649,92 @@ ul {
 
 
 /* =========================================================
+   FORM
+   ========================================================= */
+
+/* Main booking box - transparent */
+.shivas-hero .nava-booking-box {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* All 4 service forms - transparent */
+.shivas-hero .booking-service-form {
+    padding: 20px 22px 19px;
+    box-sizing: border-box;
+
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+/* =========================================================
+   ROUND TRIP
+   ========================================================= */
+
+.shivas-hero .round-trip-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 17px;
+}
+
+.shivas-hero .round-trip-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 7px;
+
+    background: rgba(220, 229, 238, 0.90);
+    color: #2451b3;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.shivas-hero .round-trip-toggle input {
+    display: none;
+}
+
+.shivas-hero .custom-check {
+    width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 3px;
+
+    background: #ffffff;
+    color: #ffffff;
+
+    box-sizing: border-box;
+}
+
+.shivas-hero .custom-check i {
+    font-size: 9px;
+}
+
+.shivas-hero .round-trip-toggle input:checked ~ .custom-check {
+    background: #2864df;
+}
+
+
+/* =========================================================
    FORM LABELS
    ========================================================= */
 
 .shivas-hero .nava-form-group {
     margin-bottom: 12px;
 }
-
 
 .shivas-hero .nava-form-group label {
     display: block;
@@ -1667,9 +1746,7 @@ ul {
     font-family: "Poppins", sans-serif;
 
     font-size: 11px;
-
     line-height: 1.3;
-
     font-weight: 700;
 
     letter-spacing: 0.2px;
@@ -1682,16 +1759,18 @@ ul {
 
 .shivas-hero .location-input,
 .shivas-hero .date-input,
-.shivas-hero .time-input {
+.shivas-hero .time-input,
+.shivas-hero .select-input {
     position: relative;
-
     width: 100%;
 }
 
 
+/* Text / Date / Time / Select */
 .shivas-hero .location-input input,
 .shivas-hero .date-input input,
-.shivas-hero .time-input input {
+.shivas-hero .time-input input,
+.shivas-hero .select-input select {
     width: 100%;
 
     height: 50px;
@@ -1701,29 +1780,30 @@ ul {
     box-sizing: border-box;
 
     border: 1px solid #d6dce2;
-
     border-radius: 7px;
 
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.96);
 
     color: #202733;
 
     font-family: "Poppins", sans-serif;
 
     font-size: 13px;
-
     font-weight: 400;
 
     outline: none;
 
-    transition: border 0.2s ease,
-                box-shadow 0.2s ease;
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
+/* Focus */
 .shivas-hero .location-input input:focus,
 .shivas-hero .date-input input:focus,
-.shivas-hero .time-input input:focus {
+.shivas-hero .time-input input:focus,
+.shivas-hero .select-input select:focus {
     border-color: #2864df;
 
     box-shadow:
@@ -1731,22 +1811,35 @@ ul {
 }
 
 
-.shivas-hero .location-input input::placeholder {
+/* Placeholder */
+.shivas-hero .location-input input::placeholder,
+.shivas-hero .date-input input::placeholder,
+.shivas-hero .time-input input::placeholder {
     color: #9aa4af;
-
     font-size: 12px;
 }
 
 
-/* ---------- INPUT ICONS ---------- */
+/* Select */
+.shivas-hero .select-input select {
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   INPUT ICONS
+   ========================================================= */
 
 .shivas-hero .location-input i,
 .shivas-hero .date-input i,
-.shivas-hero .time-input i {
+.shivas-hero .time-input i,
+.shivas-hero .select-input i {
     position: absolute;
 
     right: 15px;
-
     top: 50%;
 
     transform: translateY(-50%);
@@ -1768,12 +1861,11 @@ ul {
 
     text-align: center;
 
-    color: rgba(255, 255, 255, 0.60);
+    color: rgba(255, 255, 255, 0.75);
 
     font-family: "Poppins", sans-serif;
 
     font-size: 10px;
-
     line-height: 1.4;
 }
 
@@ -1805,7 +1897,6 @@ ul {
     padding: 0 15px;
 
     border: none;
-
     border-radius: 7px;
 
     background:
@@ -1826,9 +1917,7 @@ ul {
     letter-spacing: 0.2px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     gap: 9px;
@@ -1840,11 +1929,9 @@ ul {
         box-shadow 0.2s ease;
 }
 
-
 .shivas-hero .nava-search-btn i {
     font-size: 14px;
 }
-
 
 .shivas-hero .nava-search-btn:hover {
     transform: translateY(-1px);
@@ -1863,25 +1950,23 @@ ul {
 
     padding-top: 11px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
 
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 16px;
 
     flex-wrap: wrap;
 
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.90);
 
     font-family: "Poppins", sans-serif;
 
     font-size: 9px;
 }
-
 
 .shivas-hero .booking-benefits div {
     display: flex;
@@ -1891,92 +1976,15 @@ ul {
     gap: 4px;
 }
 
-
 .shivas-hero .booking-benefits i {
     color: #42d88a;
 
     font-size: 11px;
 }
 
-
 .shivas-hero .booking-benefits div:last-child i {
     color: #63a5ff;
 }
-
-
-/* =========================================================
-   BOTTOM TRUST CARDS
-   ========================================================= */
-
-.shivas-hero .hero-trust-cards {
-    position: absolute;
-
-    z-index: 5;
-
-    left: 50%;
-
-    bottom: 18px;
-
-    transform: translateX(-50%);
-
-    width: min(620px, 90%);
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 14px;
-}
-
-
-.shivas-hero .trust-card {
-    min-height: 48px;
-
-    padding: 0 14px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 7px;
-
-    border-radius: 9px;
-
-    background: rgba(55, 58, 59, 0.58);
-
-    border: 1px solid rgba(255, 255, 255, 0.16);
-
-    backdrop-filter: blur(7px);
-
-    color: #ffffff;
-
-    font-family: "Poppins", sans-serif;
-
-    font-size: 11px;
-
-    font-weight: 600;
-}
-
-
-.shivas-hero .trust-card i {
-    font-size: 14px;
-
-    color: #48df91;
-}
-
-
-.shivas-hero .trust-card:nth-child(2) i {
-    color: #55a5ff;
-}
-
-
-.shivas-hero .trust-card:nth-child(3) i {
-    color: #ffd329;
-}
-
-
 /* =========================================
    SHIVAS HERO BACKGROUND VIDEO
 ========================================= */

@@ -2,35 +2,9 @@
    SHIVAS NAVBAR — NAVA CABS STYLE
    ========================================================= */
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 80px;
-
-    z-index: 1000;
-
-    /* FULL SOLID NAVY */
-    background: #101b3f !important;
-
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
-}
-
 
 /* =========================================================
-   STICKY NAVBAR
-   ========================================================= */
-
-.header.sticky {
-    background: #101b3f !important;
-
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
-}
-
-/* =========================================================
-   EXTENDED NAVBAR HEIGHT
+   HEADER
    ========================================================= */
 
 .header {
@@ -49,100 +23,16 @@
 }
 
 
+/* =========================================================
+   STICKY HEADER
+   ========================================================= */
+
 .header.sticky {
     background: #101b3f !important;
 
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
 }
 
-
-.navbar {
-    width: 100%;
-    max-width: 1900px;
-
-    height: 95px;
-
-    margin: 0 auto;
-    padding: 0 35px;
-
-    display: flex;
-    align-items: center;
-
-    box-sizing: border-box;
-}
-
-
-/* LOGO */
-
-.logo img {
-    width: 90px;
-    height: 68px;
-
-    object-fit: contain;
-}
-
-
-/* NAVIGATION */
-
-.nav-menu {
-    margin-left: 22px;
-}
-
-.nav-menu > ul {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-
-.nav-menu > ul > li > a {
-    height: 95px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #ffffff;
-
-    text-decoration: none;
-    white-space: nowrap;
-
-    font-family: "Poppins", Arial, sans-serif;
-
-    font-size: 20px;
-    font-weight: 600;
-
-    line-height: 1.2;
-}
-
-
-/* BOOK NOW */
-
-.header-book {
-    height: 52px;
-
-    margin-left: auto;
-    padding: 0 30px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #D4AF37;
-    color: #111111;
-
-    border-radius: 50px;
-
-    font-size: 17px;
-    font-weight: 700;
-
-    white-space: nowrap;
-}
 
 /* =========================================================
    NAVBAR CONTAINER
@@ -152,10 +42,9 @@
     width: 100%;
     max-width: 1900px;
 
-    height: 80px;
+    height: 95px;
 
     margin: 0 auto;
-
     padding: 0 35px;
 
     display: flex;
@@ -182,11 +71,10 @@
 }
 
 .logo img {
-    width: 80px;
-    height: 58px;
+    width: 90px;
+    height: 68px;
 
     object-fit: contain;
-
     display: block;
 }
 
@@ -196,7 +84,7 @@
    ========================================================= */
 
 .nav-menu {
-    margin-left: 22px;
+    margin-left: 28px;
 
     flex-shrink: 0;
 }
@@ -205,7 +93,7 @@
     display: flex;
     align-items: center;
 
-    gap: 28px;
+    gap: 24px;
 
     margin: 0;
     padding: 0;
@@ -215,7 +103,7 @@
 
 
 /* =========================================================
-   NAV ITEMS
+   NAVIGATION ITEMS
    ========================================================= */
 
 .nav-menu > ul > li {
@@ -226,37 +114,32 @@
 
 
 /* =========================================================
-   NAV LINKS
+   NAVIGATION LINKS
    ========================================================= */
 
 .nav-menu > ul > li > a {
-
-    height: 80px;
+    height: 95px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    gap: 7px;
+    gap: 2px;
 
     color: #ffffff;
 
     text-decoration: none;
-
     white-space: nowrap;
 
     font-family: "Poppins", Arial, sans-serif;
 
-    /* SAME SIZE STYLE AS NAVA CABS */
-    font-size: 20px;
-
+    font-size: 18px;
     font-weight: 600;
 
     line-height: 1.2;
 
     transition: color 0.25s ease;
 }
-
 
 .nav-menu > ul > li > a:hover {
     color: #D4AF37;
@@ -270,52 +153,45 @@
 .dropdown-toggle i {
     font-size: 13px;
 
-    margin-left: 2px;
+    margin-left: 3px;
 
     transition: transform 0.25s ease;
 }
 
 
 /* =========================================================
-   BOOK NOW
+   BOOK NOW BUTTON
    ========================================================= */
 
 .header-book {
+    height: 42px;
 
-    height: 48px;
+    margin-left: 3px;
+    padding: 0 10px;
 
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
-    margin-left: auto;
-
-    padding: 0 28px;
 
     flex-shrink: 0;
 
     background: #D4AF37;
-
     color: #111111;
 
     border-radius: 50px;
 
     font-family: "Poppins", Arial, sans-serif;
 
-    font-size: 17px;
-
+    font-size: 8px;
     font-weight: 700;
 
     text-decoration: none;
-
     white-space: nowrap;
 
     transition:
         background 0.25s ease,
         transform 0.25s ease;
 }
-
 
 .header-book:hover {
     background: #F2D675;
@@ -329,7 +205,6 @@
    ========================================================= */
 
 .dropdown-menu {
-
     position: absolute;
 
     top: 78px;
@@ -366,18 +241,20 @@
 }
 
 
+/* Dropdown items */
+
 .dropdown-menu li {
     width: 100%;
 }
 
 
-.dropdown-menu li a {
+/* Dropdown links */
 
+.dropdown-menu li a {
     display: flex;
     align-items: center;
 
     width: 100%;
-
     min-height: 42px;
 
     padding: 10px 13px;
@@ -391,15 +268,15 @@
     font-family: "Poppins", Arial, sans-serif;
 
     font-size: 13px;
-
     font-weight: 600;
 
     border-radius: 7px;
 }
 
 
-.dropdown-menu li a i {
+/* Dropdown icons */
 
+.dropdown-menu li a i {
     width: 20px;
 
     margin-right: 7px;
@@ -410,8 +287,9 @@
 }
 
 
-.dropdown-menu li a:hover {
+/* Dropdown hover */
 
+.dropdown-menu li a:hover {
     background: rgba(198, 149, 55, 0.10);
 
     color: #C69537;
@@ -425,7 +303,6 @@
 @media (min-width: 801px) {
 
     .dropdown:hover > .dropdown-menu {
-
         opacity: 1;
 
         visibility: visible;
@@ -436,7 +313,6 @@
     }
 
     .dropdown:hover .dropdown-toggle i {
-
         transform: rotate(180deg);
     }
 }
@@ -453,11 +329,11 @@
     }
 
     .nav-menu {
-        margin-left: 18px;
+        margin-left: 24px;
     }
 
     .nav-menu > ul {
-        gap: 21px;
+        gap: 23px;
     }
 
     .nav-menu > ul > li > a {
@@ -465,24 +341,60 @@
     }
 
     .header-book {
-        padding: 0 23px;
-        font-size: 15px;
+        padding: 0 27px;
+
+        font-size: 17px;
     }
 }
 
 
 /* =========================================================
-   1300px AND BELOW
+   1400px AND BELOW
    ========================================================= */
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
+
+    .navbar {
+        padding: 0 22px;
+    }
+
+    .nav-menu {
+        margin-left: 21px;
+    }
+
+    .nav-menu > ul {
+        gap: 18px;
+    }
+
+    .nav-menu > ul > li > a {
+        font-size: 16px;
+    }
+
+    .header-book {
+        padding: 0 23px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   1200px AND BELOW
+   ========================================================= */
+
+@media (max-width: 1200px) {
 
     .navbar {
         padding: 0 18px;
     }
 
+    .logo img {
+        width: 82px;
+        height: 62px;
+    }
+
     .nav-menu {
-        margin-left: 14px;
+        margin-left: 17px;
     }
 
     .nav-menu > ul {
@@ -494,14 +406,15 @@
     }
 
     .header-book {
-        padding: 0 18px;
-        font-size: 13px;
+        padding: 0 19px;
+
+        font-size: 14px;
     }
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE MENU BUTTON
    ========================================================= */
 
 .menu-btn {
@@ -509,11 +422,16 @@
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 800px) {
 
     .header {
         height: 70px;
     }
+
 
     .navbar {
         height: 70px;
@@ -521,17 +439,25 @@
         padding: 0 14px;
     }
 
+
+    /* LOGO */
+
     .logo img {
         width: 72px;
         height: 52px;
     }
 
+
+    /* BOOK NOW */
+
     .header-book {
         display: none;
     }
 
-    .menu-btn {
 
+    /* MENU BUTTON */
+
+    .menu-btn {
         display: flex;
 
         width: 42px;
@@ -543,6 +469,7 @@
         margin-left: auto;
 
         border: 0;
+
         border-radius: 50%;
 
         background: #f5f5f5;
@@ -554,8 +481,10 @@
         cursor: pointer;
     }
 
-    .nav-menu {
 
+    /* MOBILE NAV */
+
+    .nav-menu {
         position: absolute;
 
         top: 70px;
@@ -570,15 +499,18 @@
 
         display: none;
 
-        box-shadow: 0 15px 30px rgba(0,0,0,.15);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
+
 
     .nav-menu.active {
         display: block;
     }
 
-    .nav-menu > ul {
 
+    /* MOBILE LIST */
+
+    .nav-menu > ul {
         display: block;
 
         width: 100%;
@@ -588,15 +520,19 @@
         box-sizing: border-box;
     }
 
-    .nav-menu > ul > li {
 
+    /* MOBILE ITEMS */
+
+    .nav-menu > ul > li {
         width: 100%;
 
-        border-bottom: 1px solid rgba(255,255,255,.12);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .nav-menu > ul > li > a {
 
+    /* MOBILE LINKS */
+
+    .nav-menu > ul > li > a {
         width: 100%;
 
         height: auto;
@@ -610,12 +546,13 @@
         font-size: 15px;
     }
 
-    .dropdown-menu {
 
+    /* MOBILE DROPDOWN */
+
+    .dropdown-menu {
         position: static;
 
         width: 100%;
-
         min-width: 0;
 
         transform: none !important;
@@ -640,6 +577,7 @@
 
         display: none;
     }
+
 
     .dropdown.open > .dropdown-menu {
         display: block;
