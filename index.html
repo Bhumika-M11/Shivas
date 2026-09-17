@@ -35,431 +35,6 @@
       as="image"
       href="assets/images/logo4.png"
       fetchpriority="high">
-      <style>
-/* =========================================
-   BOOKING BOX
-========================================= */
-
-.booking-box {
-    width: min(100%, 1050px);
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 18px;
-    padding: 8px;
-    box-shadow: 0 25px 70px rgba(17, 23, 59, 0.22);
-    box-sizing: border-box;
-}
-
-.booking-box *,
-.booking-box *::before,
-.booking-box *::after {
-    box-sizing: border-box;
-}
-
-
-/* =========================================
-   BOOKING TABS
-========================================= */
-
-.booking-tabs {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    background: #f4f7f9;
-    border-radius: 13px;
-    margin-bottom: 18px;
-}
-
-.booking-tab {
-    flex: 1 1 0;
-    min-width: 0;
-    border: 0;
-    background: transparent;
-    color: #52606d;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 13px 15px;
-    border-radius: 9px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: 0.25s ease;
-}
-
-.booking-tab:hover {
-    color: #11173B;
-}
-
-.booking-tab.active {
-    background: #11173B;
-    color: #fff;
-    box-shadow: 0 5px 15px rgba(17, 23, 59, 0.18);
-}
-
-
-/* =========================================
-   FORM
-========================================= */
-
-#bookingForm {
-    width: 100%;
-    padding: 12px 18px 18px;
-}
-
-.booking-fields {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-}
-
-
-/* =========================================
-   FIELD
-========================================= */
-
-.booking-field {
-    position: relative;
-    min-width: 0;
-}
-
-.booking-field label {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-bottom: 7px;
-
-    color: #11173B;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.booking-field label i {
-    color: #C69537;
-    font-size: 13px;
-}
-
-.booking-field input,
-.booking-field select {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: 48px;
-
-    border: 1px solid #dce4ea;
-    border-radius: 9px;
-
-    background: #fff;
-
-    padding: 0 14px;
-
-    color: #11173B;
-    font-family: inherit;
-    font-size: 14px;
-
-    outline: none;
-
-    transition: 0.25s ease;
-}
-
-.booking-field input::placeholder {
-    color: #9aa6b2;
-}
-
-.booking-field input:focus,
-.booking-field select:focus {
-    border-color: #C69537;
-    box-shadow: 0 0 0 3px rgba(198, 149, 55, 0.12);
-}
-
-
-/* =========================================
-   RETURN FIELDS
-========================================= */
-
-.return-fields {
-    display: none;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.return-fields.show {
-    display: grid;
-}
-
-
-/* =========================================
-   CUSTOMER FIELDS
-========================================= */
-
-.customer-fields {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-    margin-top: 15px;
-}
-
-
-/* =========================================
-   ACTIONS
-========================================= */
-
-.booking-actions {
-    display: flex;
-    width: 100%;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.booking-submit,
-.booking-whatsapp {
-    min-height: 50px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    border-radius: 9px;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    cursor: pointer;
-    text-decoration: none;
-
-    transition: 0.25s ease;
-}
-
-.booking-submit {
-    flex: 1 1 auto;
-    min-width: 0;
-
-    border: none;
-    background: #11173B;
-    color: #fff;
-}
-
-.booking-submit:hover {
-    background: #10163A;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(17, 23, 59, 0.20);
-}
-
-.booking-whatsapp {
-    flex: 0 0 auto;
-    padding: 0 25px;
-
-    background: #398D6B;
-    color: #fff;
-}
-
-.booking-whatsapp:hover {
-    background: #327c5e;
-    transform: translateY(-2px);
-}
-
-
-/* =========================================
-   STATUS
-========================================= */
-
-.booking-status {
-    margin: 12px 0 0;
-
-    text-align: center;
-
-    color: #398D6B;
-
-    font-size: 13px;
-    font-weight: 600;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .booking-box {
-        width: calc(100% - 24px);
-    }
-
-    #bookingForm {
-        padding: 10px 14px 16px;
-    }
-
-    .booking-fields,
-    .customer-fields,
-    .return-fields {
-        gap: 12px;
-    }
-
-    .booking-whatsapp {
-        padding: 0 20px;
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-    .booking-box {
-        width: calc(100% - 20px);
-        border-radius: 14px;
-        padding: 6px;
-    }
-
-    .booking-tabs {
-        display: flex;
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        margin-bottom: 14px;
-
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .booking-tabs::-webkit-scrollbar {
-        display: none;
-    }
-
-    .booking-tab {
-        flex: 0 0 auto;
-        min-width: 115px;
-
-        font-size: 12px;
-        padding: 12px 10px;
-    }
-
-    #bookingForm {
-        padding: 10px 8px 15px;
-    }
-
-    .booking-fields,
-    .customer-fields,
-    .return-fields {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .return-fields {
-        margin-top: 12px;
-    }
-
-    .customer-fields {
-        margin-top: 12px;
-    }
-
-    .booking-actions {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 16px;
-    }
-
-    .booking-submit,
-    .booking-whatsapp {
-        width: 100%;
-        min-height: 48px;
-    }
-
-    .booking-whatsapp {
-        flex: none;
-        padding: 0 20px;
-    }
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
-
-    .booking-box {
-        width: calc(100% - 12px);
-        padding: 5px;
-        border-radius: 12px;
-    }
-
-    .booking-tabs {
-        gap: 4px;
-        padding: 4px;
-        border-radius: 10px;
-    }
-
-    .booking-tab {
-        min-width: 105px;
-        font-size: 11px;
-        padding: 11px 9px;
-        border-radius: 8px;
-    }
-
-    #bookingForm {
-        padding: 8px 6px 12px;
-    }
-
-    .booking-field label {
-        font-size: 12px;
-        margin-bottom: 6px;
-    }
-
-    .booking-field input,
-    .booking-field select {
-        height: 46px;
-        padding: 0 12px;
-        font-size: 13px;
-        border-radius: 8px;
-    }
-
-    .booking-submit,
-    .booking-whatsapp {
-        min-height: 46px;
-        font-size: 13px;
-        border-radius: 8px;
-    }
-
-    .booking-status {
-        font-size: 12px;
-    }
-}
-
-
-/* =========================================
-   VERY SMALL SCREENS
-========================================= */
-
-@media (max-width: 360px) {
-
-    .booking-box {
-        width: calc(100% - 8px);
-    }
-
-    .booking-tab {
-        min-width: 95px;
-        font-size: 10px;
-        padding: 10px 8px;
-    }
-
-    #bookingForm {
-        padding-left: 4px;
-        padding-right: 4px;
-    }
-
-    .booking-field input,
-    .booking-field select {
-        font-size: 12px;
-    }
-}
-
-
-      </style>
 </head>
 
 <body>
@@ -479,237 +54,181 @@
         </a>
 
         <!-- NAVIGATION -->
-        <nav class="nav-menu" id="navMenu">
-            <ul>
+       <nav class="nav-menu" id="navMenu">
+    <ul>
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="index.html#about">About Us</a>
+        </li>
+
+        <li>
+            <a href="trips.html">Trips</a>
+        </li>
+
+        <li>
+            <a href="packages.html">Packages</a>
+        </li>
+
+        <!-- VEHICLES DIRECTLY IN HEADER -->
+
+        <li>
+            <a href="innova-cabs.html">Innova</a>
+        </li>
+
+        <li>
+            <a href="suv-cabs.html">SUV</a>
+        </li>
+
+        <li>
+            <a href="hycross-cabs.html">Hycross</a>
+        </li>
+
+        <li>
+            <a href="sedan.html">Sedan</a>
+        </li>
+
+        <li>
+            <a href="tempo-traveller.html">Tempo</a>
+        </li>
+
+        <li>
+            <a href="urbania-rental-bangalore.html">Urbania</a>
+        </li>
+
+        <li>
+            <a href="bus-booking-bangalore.html">Buses</a>
+        </li>
+
+        <!-- SERVICES -->
+
+        <li class="dropdown">
+
+            <a href="index.html#services" class="dropdown-toggle">
+                Services
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <ul class="dropdown-menu services-menu">
 
                 <li>
-                    <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                    <a href="index.html#about">About Us</a>
-                </li>
-
-                <li>
-                    <a href="trips.html">Trips</a>
-                </li>
-
-                <li>
-                    <a href="packages.html">Packages</a>
-                </li>
-
-                <!-- VEHICLES DROPDOWN -->
-                <li class="dropdown">
-                    <a href="vehicle-categories.html" class="dropdown-toggle">
-                        Vehicles
-                        <i class="fa-solid fa-chevron-down"></i>
+                    <a href="koramangala.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Koramangala</span>
                     </a>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a href="vehicle-categories.html">
-                                <i class="fa-solid fa-car-side"></i>
-                                Vehicle Categories
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="tempo-traveller.html">
-                                <i class="fa-solid fa-van-shuttle"></i>
-                                Tempo Traveller
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="urbania-rental-bangalore.html">
-                                <i class="fa-solid fa-bus"></i>
-                                Force Urbania
-                            </a>
-                        </li>
-
-                       <li class="dropdown-sub">
-    <a href="javascript:void(0);" class="dropdown-sub-toggle">
-        <i class="fa-solid fa-car"></i>
-        Car Rental
-        <i class="fa-solid fa-chevron-right sub-arrow"></i>
-    </a>
-
-    <ul class="dropdown-sub-menu">
-
-        <li>
-            <a href="innova-cabs.html">
-                <i class="fa-solid fa-car"></i>
-                Innova-cabs
-            </a>
-        </li>
-
-        <li>
-            <a href="suv-cabs.html">
-                <i class="fa-solid fa-car-side"></i>
-                SUV-cabs
-            </a>
-        </li>
-
-        <li>
-            <a href="hycross-cabs.html">
-                <i class="fa-solid fa-car"></i>
-                Hycross-cabs
-            </a>
-        </li>
-
-        <li>
-            <a href="hycross-rental.html">
-                <i class="fa-solid fa-car-side"></i>
-               Hycross-rental
-            </a>
-        </li>
-
-         <li>
-            <a href="sedan.html">
-                <i class="fa-solid fa-car"></i>
-               Sedan
-            </a>
-        </li>
-
-    </ul>
-</li>
-
-                        <li>
-                            <a href="bus-booking-bangalore.html">
-                                <i class="fa-solid fa-bus-simple"></i>
-                                Bus Booking
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
 
-                <!-- SERVICES DROPDOWN -->
-                <li class="dropdown">
-
-    <a href="index.html#services" class="dropdown-toggle">
-        Services
-        <i class="fa-solid fa-chevron-down"></i>
-    </a>
-
-    <ul class="dropdown-menu services-menu">
-
-        <li>
-            <a href="koramangala.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Koramangala</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="indiranagar.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Indiranagar</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="whitefield.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Whitefield</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="electronic-city.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Electronic City</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="hsr-layout.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>HSR Layout</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="bellandur.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Bellandur</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="btm-layout.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>BTM Layout</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="mg-road.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>MG Road</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="jayanagar.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Jayanagar</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="jp-nagar.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>JP Nagar</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="marathahalli.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Marathahalli</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="yelahanka.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Yelahanka</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="banashankari.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Banashankari</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="malleshwaram.html">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Malleshwaram</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="hebbal.html#services">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Hebbal</span>
-            </a>
-        </li>
-
-    </ul>
-</li>
-
+                <li>
+                    <a href="indiranagar.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Indiranagar</span>
+                    </a>
+                </li>
 
                 <li>
-                    <a href="contact.html">Contact</a>
+                    <a href="whitefield.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Whitefield</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="electronic-city.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Electronic City</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hsr-layout.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>HSR Layout</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="bellandur.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Bellandur</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="btm-layout.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>BTM Layout</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="mg-road.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>MG Road</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="jayanagar.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Jayanagar</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="jp-nagar.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>JP Nagar</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="marathahalli.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Marathahalli</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="yelahanka.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Yelahanka</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="banashankari.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Banashankari</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="malleshwaram.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Malleshwaram</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hebbal.html#services">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Hebbal</span>
+                    </a>
                 </li>
 
             </ul>
-        </nav>
+
+        </li>
+
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+
+    </ul>
+</nav>
 
         <!-- BOOK NOW -->
         <a href="form.html" class="header-book">
@@ -727,368 +246,754 @@
     </div>
 </header>
     <!-- ================= HERO ================= -->
-<section class="hero" id="main">
+<section class="shivas-hero">
 
-    <!-- Background Video -->
+    <div class="hero-overlay"></div>
 
-    <div class="hero_vid">
+    <div class="shivas-hero-container">
 
-        <video class="hero_vid__video" autoplay muted loop playsinline preload="metadata">
+        <!-- ================= LEFT HERO CONTENT ================= -->
+        <div class="hero-left">
 
-            <source src="assets/shivas-video.mp4" type="video/mp4">
+            <div class="hero-badge">
+                <i class="fa-solid fa-award"></i>
+                PREMIUM CAR RENTAL SERVICE
+            </div>
 
-        </video>
+            <h1>Shivas Travel Guru</h1>
 
-        <div class="hero_vid__overlay"></div>
+            <h2>Where Every Journey Feels Like Home</h2>
 
-    </div>
-
-    <div class="overlay"></div>
-
-    <div class="container hero-wrapper">
-
-        <!-- Left Content -->
-
-        <div class="hero-content">
-
-            <span class="tag">
-                Explore • Discover • Experience
-            </span>
-
-            <h1>
-                Your Destination for Car Booking,
-                <span>Local Travel & Outstation Journeys.</span>
-            </h1>
-
-            <p>
-                Book reliable airport transfers, local taxis, outstation cabs,
-                Tempo Travellers, Force Urbania, and luxury vehicles with
-                professional drivers across Bengaluru.
+            <p class="hero-description">
+                Safe, reliable, and comfortable cab services for
+                outstation trips, airport transfers, car rentals,
+                and city rides. Travel across Bengaluru, Mysuru
+                and South India with trusted professional drivers.
             </p>
 
-            <div class="hero-highlights">
+            <div class="hero-highlight">
 
-                <div>
-                    ⭐ <strong>4.9/5</strong> Rating
-                </div>
-
-                <div>
-                    🚖 <strong>5000+</strong> Trips
-                </div>
-
-                <div>
-                    ✔ Verified Drivers
-                </div>
-
-            </div>
-
-            <div class="hero-buttons">
-
-                <a href="packages.html" class="btn">
-                    Explore Tours
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- Right Form -->
-
-        <section class="booking-box">
-
-    <div class="booking-tabs">
-        <button class="booking-tab active" data-trip="oneway">
-            One Way
-        </button>
-
-        <button class="booking-tab" data-trip="roundtrip">
-            Round Trip
-        </button>
-
-        <button class="booking-tab" data-trip="local">
-            Local
-        </button>
-
-        <button class="booking-tab" data-trip="airport">
-            Airport Transfer
-        </button>
+    <div class="hero-safe-text">
+        Safe, reliable, and available 24/7.
     </div>
 
-    <form id="bookingForm">
+    <div class="hero-trust-row">
 
-        <input type="hidden" id="tripType" name="tripType" value="One Way">
+        <div class="hero-trust-box">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>No Hidden Fees</span>
+        </div>
 
-        <div class="booking-fields">
+        <div class="hero-trust-box">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Secure Booking</span>
+        </div>
 
-            <!-- PICKUP -->
-            <div class="booking-field">
-                <label for="pickupLocation">
-                    <i class="fa-solid fa-location-dot"></i>
-                    Pickup Location
-                </label>
+        <div class="hero-trust-box">
+            <i class="fa-regular fa-star"></i>
+            <span>Top Rated</span>
+        </div>
 
-                <input
-                    type="text"
-                    id="pickupLocation"
-                    name="pickupLocation"
-                    placeholder="Enter pickup location"
-                    required
-                >
-            </div>
+    </div>
 
-            <!-- DROP -->
-            <div class="booking-field">
-                <label for="dropLocation">
-                    <i class="fa-solid fa-location-crosshairs"></i>
-                    Drop Location
-                </label>
+</div>
 
-                <input
-                    type="text"
-                    id="dropLocation"
-                    name="dropLocation"
-                    placeholder="Enter drop location"
-                    required
-                >
-            </div>
+            
 
-            <!-- DATE -->
-            <div class="booking-field">
-                <label for="travelDate">
-                    <i class="fa-regular fa-calendar"></i>
-                    Travel Date
-                </label>
 
-                <input
-                    type="date"
-                    id="travelDate"
-                    name="travelDate"
-                    required
-                >
-            </div>
+        </div>
 
-            <!-- TIME -->
-            <div class="booking-field">
-                <label for="travelTime">
-                    <i class="fa-regular fa-clock"></i>
-                    Pickup Time
-                </label>
 
-                <input
-                    type="time"
-                    id="travelTime"
-                    name="travelTime"
-                    required
-                >
-            </div>
+        <!-- ================= BOOKING BOX ================= -->
+        <div class="nava-booking-box">
 
-            <!-- PASSENGERS -->
-            <div class="booking-field">
-                <label for="passengers">
-                    <i class="fa-solid fa-users"></i>
-                    Passengers
-                </label>
+            <!-- ================= SERVICE TABS ================= -->
+            <div class="service-tabs">
 
-                <select id="passengers" name="passengers" required>
-                    <option value="">Passengers</option>
-                    <option value="1">1 Passenger</option>
-                    <option value="2">2 Passengers</option>
-                    <option value="3">3 Passengers</option>
-                    <option value="4">4 Passengers</option>
-                    <option value="5">5 Passengers</option>
-                    <option value="6">6 Passengers</option>
-                    <option value="7">7 Passengers</option>
-                    <option value="8">8 Passengers</option>
-                    <option value="9">9 Passengers</option>
-                    <option value="10">10 Passengers</option>
-                    <option value="11">11 Passengers</option>
-                    <option value="12">12 Passengers</option>
-                    <option value="13">13 Passengers</option>
-                    <option value="14">14 Passengers</option>
-                    <option value="15">15 Passengers</option>
-                    <option value="16">16 Passengers</option>
-                    <option value="17">17 Passengers</option>
-                </select>
-            </div>
+                <button type="button"
+                        class="service-tab active"
+                        data-service="outstation">
 
-            <!-- VEHICLE -->
-            <div class="booking-field">
-                <label for="vehicleType">
+                    <i class="fa-regular fa-paper-plane"></i>
+
+                    <strong>OUTSTATION</strong>
+                    <span>CAB</span>
+
+                </button>
+
+
+                <button type="button"
+                        class="service-tab"
+                        data-service="rental">
+
                     <i class="fa-solid fa-car"></i>
-                    Vehicle
-                </label>
 
-                <select id="vehicleType" name="vehicleType" required>
+                    <strong>CAR</strong>
+                    <span>RENTAL</span>
 
-                    <option value="">
-                        Select Vehicle
-                    </option>
-
-                    <option value="Sedan">
-                        Sedan
-                    </option>
-
-                    <option value="SUV">
-                        SUV
-                    </option>
-
-                    <option value="Innova">
-                        Toyota Innova
-                    </option>
-
-                    <option value="Innova Crysta">
-                        Innova Crysta
-                    </option>
-
-                    <option value="Tempo Traveller">
-                        Tempo Traveller
-                    </option>
-
-                    <option value="Force Urbania">
-                        Force Urbania
-                    </option>
-
-                    <option value="Luxury Vehicle">
-                        Luxury Vehicle
-                    </option>
-
-                </select>
-            </div>
-
-        </div>
+                </button>
 
 
-        <!-- ROUND TRIP FIELDS -->
+                <button type="button"
+                        class="service-tab"
+                        data-service="airport">
 
-        <div class="return-fields" id="returnFields">
+                    <i class="fa-solid fa-plane"></i>
 
-            <div class="booking-field">
+                    <strong>AIRPORT</strong>
+                    <span>TAXI</span>
 
-                <label for="returnDate">
-                    <i class="fa-regular fa-calendar"></i>
-                    Return Date
-                </label>
+                </button>
 
-                <input
-                    type="date"
-                    id="returnDate"
-                    name="returnDate"
-                >
+
+                <button type="button"
+                        class="service-tab"
+                        data-service="city">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <strong>CITY</strong>
+                    <span>RIDES</span>
+
+                </button>
 
             </div>
 
-            <div class="booking-field">
 
-                <label for="returnTime">
-                    <i class="fa-regular fa-clock"></i>
-                    Return Time
-                </label>
+            <!-- =================================================
+                 OUTSTATION CAB FORM
+            ================================================== -->
 
-                <input
-                    type="time"
-                    id="returnTime"
-                    name="returnTime"
-                >
+            <form class="booking-service-form active"
+                  id="outstationForm">
 
-            </div>
-
-        </div>
+                <input type="hidden"
+                       name="serviceType"
+                       value="Outstation Cab">
 
 
-        <!-- CUSTOMER DETAILS -->
+                <!-- ROUND TRIP -->
+                <div class="round-trip-row">
 
-        <div class="customer-fields">
+                    <label class="round-trip-toggle">
 
-            <div class="booking-field">
+                        <input type="checkbox"
+                               id="roundTrip">
 
-                <label for="customerName">
-                    <i class="fa-regular fa-user"></i>
-                    Full Name
-                </label>
+                        <span class="custom-check">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
 
-                <input
-                    type="text"
-                    id="customerName"
-                    name="customerName"
-                    placeholder="Your name"
-                    autocomplete="name"
-                    required
-                >
+                        <strong>Round Trip</strong>
 
-            </div>
+                    </label>
 
-            <div class="booking-field">
-
-                <label for="customerPhone">
-                    <i class="fa-solid fa-phone"></i>
-                    Mobile Number
-                </label>
-
-                <input
-                    type="tel"
-                    id="customerPhone"
-                    name="customerPhone"
-                    placeholder="+91 XXXXX XXXXX"
-                    autocomplete="tel"
-                    pattern="[0-9]{10}"
-                    maxlength="10"
-                    required
-                >
-
-            </div>
-
-        </div>
+                </div>
 
 
-        <!-- ACTIONS -->
+                <!-- FROM -->
+                <div class="nava-form-group">
 
-        <div class="booking-actions">
+                    <label>FROM</label>
 
-            <button
-                type="submit"
-                class="booking-submit"
-            >
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search Cabs
-            </button>
+                    <div class="location-input">
 
-            <a
-                href="https://wa.me/919019993283"
-                target="_blank"
-                rel="noopener"
-                class="booking-whatsapp"
-            >
-                <i class="fa-brands fa-whatsapp"></i>
-                WhatsApp
-            </a>
+                        <input type="text"
+                               name="fromLocation"
+                               placeholder="Enter pickup city or address"
+                               required>
 
-        </div>
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                </div>
 
 
-        <p
-            class="booking-status"
-            id="bookingStatus"
-            aria-live="polite"
-        ></p>
+                <!-- TO -->
+                <div class="nava-form-group">
 
-    </form>
+                    <label>TO</label>
 
-            <div class="hero-contact">
+                    <div class="location-input">
 
-                <span><a href="tel:+919019993283">📞 Call Now</a></span>
+                        <input type="text"
+                               name="toLocation"
+                               placeholder="Enter drop city or address"
+                               required>
 
-                <span><a href="https://wa.me/919019993283">💬 WhatsApp</a></span>
+                        <i class="fa-solid fa-location-dot"></i>
 
-                <span>⚡ 5 Min Response</span>
+                    </div>
 
-            </div>
-    </section>
+                </div>
+
+
+                <p class="manual-location-note">
+                    Type your pickup and drop locations manually
+                </p>
+
+
+                <!-- DATES -->
+                <div class="nava-form-row">
+
+                    <div class="nava-form-group">
+
+                        <label>PICK-UP DATE</label>
+
+                        <div class="date-input">
+
+                            <input type="date"
+                                   name="pickupDate"
+                                   required>
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nava-form-group return-date-group">
+
+                        <label>RETURN DATE</label>
+
+                        <div class="date-input">
+
+                            <input type="date"
+                                   name="returnDate">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TIME -->
+                <div class="nava-form-group">
+
+                    <label>PICK-UP TIME</label>
+
+                    <div class="time-input">
+
+                        <input type="time"
+                               name="pickupTime"
+                               required>
+
+                        <i class="fa-regular fa-clock"></i>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit"
+                        class="nava-search-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    SEARCH TAXI
+
+                </button>
+
+
+                <div class="booking-benefits">
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        No hidden fees
+                    </div>
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        Free cancellation
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Secure booking
+                    </div>
+
+                </div>
+
+            </form>
+
+
+
+            <!-- =================================================
+                 CAR RENTAL FORM
+            ================================================== -->
+
+            <form class="booking-service-form"
+                  id="rentalForm">
+
+                <input type="hidden"
+                       name="serviceType"
+                       value="Car Rental">
+
+
+                <div class="nava-form-group">
+
+                    <label>PICK-UP LOCATION</label>
+
+                    <div class="location-input">
+
+                        <input type="text"
+                               name="pickupLocation"
+                               placeholder="Enter pickup city or address"
+                               required>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-group">
+
+                    <label>RENTAL TYPE</label>
+
+                    <div class="select-input">
+
+                        <select name="rentalType" required>
+
+                            <option value="">
+                                Select rental type
+                            </option>
+
+                            <option value="Hourly Rental">
+                                Hourly Rental
+                            </option>
+
+                            <option value="Full Day Rental">
+                                Full Day Rental
+                            </option>
+
+                            <option value="Outstation Rental">
+                                Outstation Rental
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-row">
+
+                    <div class="nava-form-group">
+
+                        <label>PICK-UP DATE</label>
+
+                        <div class="date-input">
+
+                            <input type="date"
+                                   name="pickupDate"
+                                   required>
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nava-form-group">
+
+                        <label>PICK-UP TIME</label>
+
+                        <div class="time-input">
+
+                            <input type="time"
+                                   name="pickupTime"
+                                   required>
+
+                            <i class="fa-regular fa-clock"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-row">
+
+                    <div class="nava-form-group">
+
+                        <label>DROP DATE</label>
+
+                        <div class="date-input">
+
+                            <input type="date"
+                                   name="dropDate">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nava-form-group">
+
+                        <label>DROP TIME</label>
+
+                        <div class="time-input">
+
+                            <input type="time"
+                                   name="dropTime">
+
+                            <i class="fa-regular fa-clock"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit"
+                        class="nava-search-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    SEARCH TAXI
+
+                </button>
+
+
+                <div class="booking-benefits">
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        No hidden fees
+                    </div>
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        Free cancellation
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Secure booking
+                    </div>
+
+                </div>
+
+            </form>
+
+
+
+            <!-- =================================================
+                 AIRPORT TAXI FORM
+            ================================================== -->
+
+            <form class="booking-service-form"
+                  id="airportForm">
+
+                <input type="hidden"
+                       name="serviceType"
+                       value="Airport Taxi">
+
+
+                <div class="nava-form-group">
+
+                    <label>AIRPORT</label>
+
+                    <div class="location-input">
+
+                        <input type="text"
+                               name="airport"
+                               placeholder="Enter airport name"
+                               value="Kempegowda International Airport">
+
+                        <i class="fa-solid fa-plane"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-group">
+
+                    <label>FROM</label>
+
+                    <div class="location-input">
+
+                        <input type="text"
+                               name="fromLocation"
+                               placeholder="Enter pickup location"
+                               required>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-group">
+
+                    <label>TO</label>
+
+                    <div class="location-input">
+
+                        <input type="text"
+                               name="toLocation"
+                               placeholder="Enter destination"
+                               required>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-row">
+
+                    <div class="nava-form-group">
+
+                        <label>PICK-UP DATE</label>
+
+                        <div class="date-input">
+
+                            <input type="date"
+                                   name="pickupDate"
+                                   required>
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nava-form-group">
+
+                        <label>PICK-UP TIME</label>
+
+                        <div class="time-input">
+
+                            <input type="time"
+                                   name="pickupTime"
+                                   required>
+
+                            <i class="fa-regular fa-clock"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit"
+                        class="nava-search-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    SEARCH TAXI
+
+                </button>
+
+
+                <div class="booking-benefits">
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        No hidden fees
+                    </div>
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        Free cancellation
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Secure booking
+                    </div>
+
+                </div>
+
+            </form>
+
+
+
+            <!-- =================================================
+                 CITY RIDES FORM
+            ================================================== -->
+
+            <form class="booking-service-form"
+                  id="cityForm">
+
+                <input type="hidden"
+                       name="serviceType"
+                       value="City Rides">
+
+
+                <div class="nava-form-group">
+
+                    <label>FROM</label>
+
+                    <div class="location-input">
+
+                        <input type="text"
+                               name="fromLocation"
+                               placeholder="Enter pickup location"
+                               required>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-group">
+
+                    <label>TO</label>
+
+                    <div class="location-input">
+
+                        <input type="text"
+                               name="toLocation"
+                               placeholder="Enter drop location"
+                               required>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-row">
+
+                    <div class="nava-form-group">
+
+                        <label>PICK-UP DATE</label>
+
+                        <div class="date-input">
+
+                            <input type="date"
+                                   name="pickupDate"
+                                   required>
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="nava-form-group">
+
+                        <label>PICK-UP TIME</label>
+
+                        <div class="time-input">
+
+                            <input type="time"
+                                   name="pickupTime"
+                                   required>
+
+                            <i class="fa-regular fa-clock"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nava-form-group">
+
+                    <label>VEHICLE TYPE</label>
+
+                    <div class="select-input">
+
+                        <select name="vehicleType" required>
+
+                            <option value="">
+                                Select vehicle
+                            </option>
+
+                            <option value="Sedan">
+                                Sedan
+                            </option>
+
+                            <option value="SUV">
+                                SUV
+                            </option>
+
+                            <option value="Innova Crysta">
+                                Innova Crysta
+                            </option>
+
+                            <option value="Innova Hycross">
+                                Innova Hycross
+                            </option>
+
+                            <option value="Tempo Traveller">
+                                Tempo Traveller
+                            </option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit"
+                        class="nava-search-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    SEARCH TAXI
+
+                </button>
+
+
+                <div class="booking-benefits">
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        No hidden fees
+                    </div>
+
+                    <div>
+                        <i class="fa-regular fa-circle-check"></i>
+                        Free cancellation
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Secure booking
+                    </div>
+
+                </div>
+
+            </form>
 
         </div>
 
     </div>
 
 </section>
+
 <!--==============================
 OUR SERVICES
 ===============================-->
@@ -4519,6 +4424,256 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+});
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ==========================================
+       SERVICE TABS
+    ========================================== */
+
+    const serviceTabs = document.querySelectorAll(".service-tab");
+    const serviceType = document.getElementById("serviceType");
+
+    serviceTabs.forEach(function (tab) {
+
+        tab.addEventListener("click", function () {
+
+            serviceTabs.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            tab.classList.add("active");
+
+            const service = tab.dataset.service;
+
+            if (service === "outstation") {
+                serviceType.value = "Outstation Cab";
+            }
+
+            else if (service === "rental") {
+                serviceType.value = "Car Rental";
+            }
+
+            else if (service === "airport") {
+                serviceType.value = "Airport Taxi";
+            }
+
+            else if (service === "city") {
+                serviceType.value = "City Rides";
+            }
+
+        });
+
+    });
+
+
+    /* ==========================================
+       ROUND TRIP
+    ========================================== */
+
+    const roundTrip = document.getElementById("roundTrip");
+    const returnDateGroup =
+        document.getElementById("returnDateGroup");
+
+    function updateReturnDate() {
+
+        if (roundTrip.checked) {
+
+            returnDateGroup.style.display = "block";
+
+        } else {
+
+            returnDateGroup.style.display = "block";
+
+        }
+
+    }
+
+    roundTrip.addEventListener(
+        "change",
+        updateReturnDate
+    );
+
+
+    /* ==========================================
+       FORM SUBMIT
+    ========================================== */
+
+    const form =
+        document.getElementById(
+            "navaStyleBookingForm"
+        );
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const from =
+            document.getElementById(
+                "fromLocation"
+            ).value.trim();
+
+        const to =
+            document.getElementById(
+                "toLocation"
+            ).value.trim();
+
+        const pickupDate =
+            document.getElementById(
+                "pickupDate"
+            ).value;
+
+        const pickupTime =
+            document.getElementById(
+                "pickupTime"
+            ).value;
+
+        if (!from || !to || !pickupDate || !pickupTime) {
+
+            alert(
+                "Please enter pickup, drop, date and pickup time."
+            );
+
+            return;
+        }
+
+        alert(
+            "Thank you! Your cab booking request has been received."
+        );
+
+    });
+
+});
+</script>
+
+<!-- ================= HERO FORM JAVASCRIPT ================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const tabs = document.querySelectorAll(".service-tab");
+    const forms = document.querySelectorAll(".booking-service-form");
+
+    /* ================= TAB SWITCHING ================= */
+
+    tabs.forEach(tab => {
+
+        tab.addEventListener("click", function () {
+
+            const service = this.dataset.service;
+
+            /* Remove active from tabs */
+            tabs.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            /* Add active to clicked tab */
+            this.classList.add("active");
+
+
+            /* Hide all forms */
+            forms.forEach(form => {
+                form.classList.remove("active");
+            });
+
+
+            /* Show selected form */
+            const selectedForm =
+                document.getElementById(service + "Form");
+
+            if (selectedForm) {
+                selectedForm.classList.add("active");
+            }
+
+        });
+
+    });
+
+
+    /* ================= ROUND TRIP ================= */
+
+    const roundTrip =
+        document.getElementById("roundTrip");
+
+    const returnDateGroup =
+        document.querySelector(".return-date-group");
+
+    const returnDate =
+        document.querySelector(
+            '.return-date-group input[type="date"]'
+        );
+
+
+    if (roundTrip && returnDateGroup) {
+
+        function updateReturnDate() {
+
+            if (roundTrip.checked) {
+
+                returnDateGroup.style.display = "block";
+
+                if (returnDate) {
+                    returnDate.required = true;
+                }
+
+            } else {
+
+                returnDateGroup.style.display = "block";
+
+                if (returnDate) {
+                    returnDate.required = false;
+                }
+
+            }
+
+        }
+
+        roundTrip.addEventListener(
+            "change",
+            updateReturnDate
+        );
+
+        updateReturnDate();
+
+    }
+
+
+    /* ================= FORM SUBMIT ================= */
+
+    forms.forEach(form => {
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const button =
+                this.querySelector(".nava-search-btn");
+
+            if (button) {
+
+                const originalText =
+                    button.innerHTML;
+
+                button.innerHTML =
+                    '<i class="fa-solid fa-spinner fa-spin"></i> SEARCHING...';
+
+                setTimeout(() => {
+
+                    button.innerHTML =
+                        originalText;
+
+                }, 1500);
+
+            }
+
+        });
+
+    });
 
 });
 

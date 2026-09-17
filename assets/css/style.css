@@ -262,274 +262,3829 @@ ul {
 .nav-menu a:hover{
     color:var(--accent);
 }
-/*=========================================
-HERO SECTION
-=========================================*/
+/* =========================================================
+   SHIVAS TRAVEL GURU - NAVA CABS STYLE HERO
+   ========================================================= */
 
 .hero {
-  position: relative;
-  min-height: 100svh;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  color: #fff;
+    position: relative;
+
+    width: 100%;
+    min-height: calc(100vh - 78px);
+
+    margin-top: 78px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background: #080d1c;
 }
 
-.hero-wrapper {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: center;
-  gap: 60px;
-  width: 100%;
-  padding: 140px 0 80px;
-}
 
-.hero_vid::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 180px;
-  background: linear-gradient(transparent, #020817);
-}
+/* =========================================================
+   BACKGROUND VIDEO
+   ========================================================= */
 
 .hero_vid {
-  position: absolute;
-  inset: 0;
-  z-index: -3;
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    overflow: hidden;
 }
+
 
 .hero_vid__video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  will-change: transform;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    transform: translate(-50%, -50%);
+
+    object-fit: cover;
+
+    object-position: center center;
 }
+
+
+/* =========================================================
+   DARK VIDEO OVERLAY
+   ========================================================= */
 
 .hero_vid__overlay {
-  position: absolute;
-  inset: 0;
-}
+    position: absolute;
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(17, 23, 59, 0.75),
-    rgba(17, 23, 59, 0.45),
-    rgba(0, 0, 0, 0.35)
-  );
-  z-index: -2;
-}
-
-/* ---------- Tablets / small laptops ---------- */
-@media (max-width: 1024px) {
-  .hero_vid::after {
-    height: 140px;
-  }
-
-  .overlay {
-    background: linear-gradient(
-      135deg,
-      rgba(17, 23, 59, 0.8),
-      rgba(17, 23, 59, 0.5),
-      rgba(0, 0, 0, 0.4)
-    );
-  }
-}
-
-/* ---------- Mobile / portrait ---------- */
-@media (max-width: 640px) {
-  .hero_vid::after {
-    height: 100px;
-  }
-
-  .hero_vid__video {
-    object-position: center 30%;
-  }
-
-  .overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(17, 23, 59, 0.85),
-      rgba(17, 23, 59, 0.55),
-      rgba(0, 0, 0, 0.4)
-    );
-  }
-  .hero {
-    min-height: 100svh;
-    min-height: 100vh;
-  }
-
-  .hero_vid {
-    position: fixed; /* fixes the "video scrolls away" bug on iOS Safari */
     inset: 0;
-    z-index: -3;
-  }
 
-  .hero_vid__video {
-    object-position: center center; /* remove the 30% shift */
-    min-width: 100vw;
-    min-height: 100vh;
-    min-height: 100svh;
-  }
+    z-index: 1;
 
-  .hero_vid::after {
-    height: 100px;
-  }
-
-  .overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(17, 23, 59, 0.85),
-      rgba(17, 23, 59, 0.55),
-      rgba(0, 0, 0, 0.4)
-    );
-  }
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 10, 25, 0.86) 0%,
+            rgba(5, 12, 28, 0.70) 42%,
+            rgba(4, 10, 20, 0.72) 100%
+        );
 }
 
-/*=========================================
-CONTENT
-=========================================*/
 
-.hero-content {
-  max-width: 650px;
+/* Additional overlay */
+
+.hero > .overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 10, 25, 0.20),
+            rgba(5, 10, 25, 0.25)
+        );
+
+    pointer-events: none;
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 24px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.95rem;
-  font-weight: 500;
-  margin-bottom: 25px;
+
+/* =========================================================
+   SHIVAS TRAVEL GURU
+   NAVA STYLE HERO SECTION
+   CLEAN FINAL CSS
+========================================================= */
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.shivas-hero {
+    position: relative;
+    width: 100%;
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 12, 28, 0.88) 0%,
+            rgba(5, 12, 28, 0.62) 48%,
+            rgba(5, 12, 28, 0.72) 100%
+        ),
+        url("../images/hero-bg.jpg") center center / cover no-repeat;
+
+    color: #ffffff;
 }
 
-.hero-content h1 {
-  font-size: 3.8rem;
-  line-height: 1.15;
-  font-weight: 700;
-  margin-bottom: 20px;
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.shivas-hero .hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 12, 28, 0.20) 0%,
+            rgba(5, 12, 28, 0.05) 50%,
+            rgba(5, 12, 28, 0.20) 100%
+        );
+
+    pointer-events: none;
 }
 
-.hero-content h1 span {
-  color: var(--gold);
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.shivas-hero-container {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1380px;
+
+    margin: 0 auto;
+
+    padding: 75px 35px 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(480px, 0.85fr);
+
+    gap: 65px;
+
+    align-items: center;
+
+    box-sizing: border-box;
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 35px;
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.shivas-hero .hero-left {
+    width: 100%;
+    max-width: 680px;
 }
 
-/*=========================================
-HIGHLIGHTS
-=========================================*/
 
-.hero-highlights {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-bottom: 35px;
+/* =========================================================
+   PREMIUM BADGE
+========================================================= */
+
+.shivas-hero .hero-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 17px;
+
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+
+    background: rgba(25, 100, 150, 0.65);
+
+    border: 1px solid rgba(65, 181, 235, 0.45);
+
+    color: #8fd8ff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
 }
 
-.hero-highlights div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 0.95rem;
-  font-weight: 600;
+
+.shivas-hero .hero-badge i {
+    color: #d4af37;
+    font-size: 15px;
 }
 
-/*=========================================
-BUTTONS
-=========================================*/
 
-.hero-buttons {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.shivas-hero .hero-left h1 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 54px;
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -1.2px;
 }
 
-.hero-buttons .btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 34px;
-  border-radius: 50px;
-  background: #C69537;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.35s;
+
+/* =========================================================
+   BLUE SUB HEADING
+========================================================= */
+
+.shivas-hero .hero-left h2 {
+    margin: 0 0 18px;
+
+    color: #C69537;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 31px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    letter-spacing: -0.3px;
 }
 
-.hero-buttons .btn:hover {
-  transform: translateY(-3px);
-  background: var(--navy);
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.shivas-hero .hero-description {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    font-weight: 400;
 }
 
-.btn-outline {
-  background: transparent !important;
-  border: 2px solid #fff;
+
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
+
+.shivas-hero .hero-highlight {
+    margin-top: 17px;
+
+    color: #39c6f5;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    font-weight: 700;
 }
 
-.btn-outline:hover {
-  background: #fff !important;
-  color: var(--navy) !important;
+
+/* =========================================================
+   BOOKING BOX
+========================================================= */
+
+.shivas-hero .nava-booking-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+
+    justify-self: end;
+
+    background: rgba(19, 24, 28, 0.95);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.42);
 }
 
-.form-btn:hover {
-  background: var(--navy);
+
+/* =========================================================
+   SERVICE TABS
+========================================================= */
+
+.shivas-hero .service-tabs {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+
+    padding: 8px;
+
+    background: #e1e7e9;
+
+    box-sizing: border-box;
 }
+
+
+.shivas-hero .service-tab {
+    min-height: 88px;
+
+    padding: 7px 4px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #29333d;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    transition: all 0.2s ease;
+}
+
+
+.shivas-hero .service-tab i {
+    margin-bottom: 3px;
+
+    font-size: 21px;
+}
+
+
+.shivas-hero .service-tab strong {
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+
+.shivas-hero .service-tab span {
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+}
+
+
+/* ACTIVE TAB */
+
+.shivas-hero .service-tab.active {
+    background: #2864df;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(40, 100, 223, 0.28);
+}
+
+
+.shivas-hero .service-tab:hover:not(.active) {
+    background: rgba(40, 100, 223, 0.10);
+}
+
+
+/* =========================================================
+   ALL BOOKING FORMS
+========================================================= */
+
+.shivas-hero .booking-service-form {
+    display: none;
+
+    padding: 20px 22px 19px;
+
+    box-sizing: border-box;
+}
+
+
+.shivas-hero .booking-service-form.active {
+    display: block;
+}
+
+
+/* =========================================================
+   ROUND TRIP
+========================================================= */
+
+.shivas-hero .round-trip-row {
+    display: flex;
+
+    justify-content: flex-start;
+
+    margin-bottom: 17px;
+}
+
+
+.shivas-hero .round-trip-toggle {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 7px;
+
+    background: #dce5ee;
+
+    color: #2451b3;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.shivas-hero .round-trip-toggle input {
+    display: none;
+}
+
+
+.shivas-hero .custom-check {
+    width: 17px;
+    height: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    color: #ffffff;
+}
+
+
+.shivas-hero .custom-check i {
+    font-size: 9px;
+}
+
+
+.shivas-hero .round-trip-toggle input:checked ~ .custom-check {
+    background: #2864df;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.shivas-hero .nava-form-group {
+    margin-bottom: 12px;
+}
+
+
+.shivas-hero .nava-form-group label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   INPUT WRAPPERS
+========================================================= */
+
+.shivas-hero .location-input,
+.shivas-hero .date-input,
+.shivas-hero .time-input,
+.shivas-hero .select-input {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.shivas-hero .location-input input,
+.shivas-hero .date-input input,
+.shivas-hero .time-input input,
+.shivas-hero .select-input select {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 44px 0 15px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d6dce2;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #202733;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    outline: none;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* SELECT */
+
+.shivas-hero .select-input select {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+
+/* PLACEHOLDER */
+
+.shivas-hero .location-input input::placeholder {
+    color: #9aa4af;
+
+    font-size: 12px;
+}
+
+
+/* FOCUS */
+
+.shivas-hero .location-input input:focus,
+.shivas-hero .date-input input:focus,
+.shivas-hero .time-input input:focus,
+.shivas-hero .select-input select:focus {
+
+    border-color: #2864df;
+
+    box-shadow:
+        0 0 0 2px rgba(40, 100, 223, 0.10);
+}
+
+
+/* =========================================================
+   INPUT ICONS
+========================================================= */
+
+.shivas-hero .location-input i,
+.shivas-hero .date-input i,
+.shivas-hero .time-input i,
+.shivas-hero .select-input i {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8d99a5;
+
+    font-size: 15px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DATE / TIME NATIVE ICON HIDE
+========================================================= */
+
+.shivas-hero input[type="date"]::-webkit-calendar-picker-indicator,
+.shivas-hero input[type="time"]::-webkit-calendar-picker-indicator {
+
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MANUAL LOCATION NOTE
+========================================================= */
+
+.shivas-hero .manual-location-note {
+
+    margin: -1px 0 12px;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.60);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TWO COLUMN FORM
+========================================================= */
+
+.shivas-hero .nava-form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.shivas-hero .nava-search-btn {
+
+    width: 100%;
+
+    height: 53px;
+
+    margin-top: 7px;
+
+    padding: 0 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff7117 0%,
+            #f43c45 100%
+        );
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.shivas-hero .nava-search-btn i {
+    font-size: 14px;
+}
+
+
+.shivas-hero .nava-search-btn:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(244, 60, 69, 0.28);
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.shivas-hero .booking-benefits {
+
+    margin-top: 12px;
+
+    padding-top: 11px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+}
+
+
+.shivas-hero .booking-benefits div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.shivas-hero .booking-benefits i {
+
+    color: #42d88a;
+
+    font-size: 11px;
+}
+
+
+.shivas-hero .booking-benefits div:last-child i {
+
+    color: #63a5ff;
+}
+
+
+/* =========================================================
+   DESKTOP LARGE
+========================================================= */
+
+@media (min-width: 1500px) {
+
+    .shivas-hero-container {
+        max-width: 1450px;
+
+        grid-template-columns:
+            minmax(0, 1.15fr)
+            minmax(500px, 0.85fr);
+
+        gap: 80px;
+    }
+
+    .shivas-hero .hero-left h1 {
+        font-size: 60px;
+    }
+
+    .shivas-hero .hero-left h2 {
+        font-size: 34px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .shivas-hero {
+        min-height: auto;
+    }
+
+
+    .shivas-hero-container {
+
+        grid-template-columns: 1fr;
+
+        padding: 90px 25px 80px;
+
+        gap: 45px;
+    }
+
+
+    .shivas-hero .hero-left {
+
+        max-width: 750px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+
+    .shivas-hero .hero-badge {
+
+        justify-content: center;
+    }
+
+
+    .shivas-hero .hero-description {
+
+        margin: 0 auto;
+    }
+
+
+    .shivas-hero .hero-highlight {
+
+        text-align: center;
+    }
+
+
+    .shivas-hero .nava-booking-box {
+
+        justify-self: center;
+
+        max-width: 560px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .shivas-hero-container {
+
+        padding: 70px 15px 60px;
+
+        gap: 35px;
+    }
+
+
+    .shivas-hero .hero-left h1 {
+
+        font-size: 38px;
+
+        line-height: 1.1;
+    }
+
+
+    .shivas-hero .hero-left h2 {
+
+        font-size: 25px;
+
+        line-height: 1.25;
+    }
+
+
+    .shivas-hero .hero-description {
+
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+
+    .shivas-hero .hero-highlight {
+
+        font-size: 16px;
+    }
+
+
+    .shivas-hero .hero-badge {
+
+        font-size: 10px;
+
+        padding: 8px 13px;
+    }
+
+
+    /* SERVICE TABS */
+
+    .shivas-hero .service-tabs {
+
+        padding: 6px;
+    }
+
+
+    .shivas-hero .service-tab {
+
+        min-height: 72px;
+
+        padding: 5px 2px;
+    }
+
+
+    .shivas-hero .service-tab i {
+
+        font-size: 18px;
+    }
+
+
+    .shivas-hero .service-tab strong {
+
+        font-size: 9px;
+    }
+
+
+    .shivas-hero .service-tab span {
+
+        font-size: 8px;
+    }
+
+
+    /* FORM */
+
+    .shivas-hero .booking-service-form {
+
+        padding: 18px 16px;
+    }
+
+
+    .shivas-hero .nava-form-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+
+    .shivas-hero .location-input input,
+    .shivas-hero .date-input input,
+    .shivas-hero .time-input input,
+    .shivas-hero .select-input select {
+
+        height: 50px;
+
+        font-size: 13px;
+    }
+
+
+    .shivas-hero .nava-search-btn {
+
+        height: 50px;
+
+        font-size: 14px;
+    }
+
+
+    .shivas-hero .booking-benefits {
+
+        gap: 9px;
+
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .shivas-hero .service-tab {
+
+        min-height: 65px;
+    }
+
+
+    .shivas-hero .service-tab strong {
+
+        font-size: 8px;
+    }
+
+
+    .shivas-hero .service-tab span {
+
+        font-size: 7px;
+    }
+
+
+    .shivas-hero .service-tab i {
+
+        font-size: 16px;
+    }
+
+
+    .shivas-hero .hero-left h1 {
+
+        font-size: 34px;
+    }
+
+
+    .shivas-hero .hero-left h2 {
+
+        font-size: 22px;
+    }
+
+}
+
+/* =========================================
+   SHIVAS HERO - TRUST FEATURES
+========================================= */
+
+.hero-highlight {
+    margin-top: 24px;
+}
+
+.hero-safe-text {
+    color: #C69537;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.hero-trust-row {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    width: 100%;
+}
+
+.hero-trust-box {
+    min-width: 145px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+
+    padding: 0 24px;
+
+    background: rgba(35, 35, 35, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    color: #ffffff;
+}
+
+.hero-trust-box i {
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.hero-trust-box:nth-child(1) i {
+    color: #42df82;
+}
+
+.hero-trust-box:nth-child(2) i {
+    color: #5ca8ff;
+}
+
+.hero-trust-box:nth-child(3) i {
+    color: #ffd21c;
+}
+
+.hero-trust-box span {
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .hero-trust-row {
+        gap: 15px;
+    }
+
+    .hero-trust-box {
+        min-width: 0;
+        flex: 1;
+        padding: 0 15px;
+    }
+
+    .hero-trust-box span {
+        font-size: 14px;
+    }
+
+    .hero-trust-box i {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .hero-safe-text {
+        font-size: 16px;
+        margin-bottom: 22px;
+    }
+
+    .hero-trust-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-trust-box {
+        width: 100%;
+        min-height: 62px;
+        height: auto;
+        justify-content: flex-start;
+    }
+
+    .hero-trust-box span {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   SERVICE TABS
+   ========================================================= */
+
+.shivas-hero .service-tabs {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+
+    padding: 8px;
+
+    background: #e1e7e9;
+
+    box-sizing: border-box;
+}
+
+
+.shivas-hero .service-tab {
+    min-height: 88px;
+
+    padding: 7px 4px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #29333d;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    transition: all 0.2s ease;
+}
+
+
+.shivas-hero .service-tab i {
+    margin-bottom: 3px;
+
+    font-size: 21px;
+}
+
+
+.shivas-hero .service-tab strong {
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+
+.shivas-hero .service-tab span {
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+}
+
+
+/* ACTIVE TAB */
+
+.shivas-hero .service-tab.active {
+    background: #2864df;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(40, 100, 223, 0.28);
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.shivas-hero #navaStyleBookingForm {
+    padding: 20px 22px 19px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ROUND TRIP
+   ========================================================= */
+
+.shivas-hero .round-trip-row {
+    display: flex;
+
+    justify-content: flex-start;
+
+    margin-bottom: 17px;
+}
+
+
+.shivas-hero .round-trip-toggle {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 7px;
+
+    background: #dce5ee;
+
+    color: #2451b3;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.shivas-hero .round-trip-toggle input {
+    display: none;
+}
+
+
+.shivas-hero .custom-check {
+    width: 17px;
+    height: 17px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    color: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+.shivas-hero .custom-check i {
+    font-size: 9px;
+}
+
+
+.shivas-hero .round-trip-toggle input:checked ~ .custom-check {
+    background: #2864df;
+}
+
+
+/* =========================================================
+   FORM LABELS
+   ========================================================= */
+
+.shivas-hero .nava-form-group {
+    margin-bottom: 12px;
+}
+
+
+.shivas-hero .nava-form-group label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.shivas-hero .location-input,
+.shivas-hero .date-input,
+.shivas-hero .time-input {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.shivas-hero .location-input input,
+.shivas-hero .date-input input,
+.shivas-hero .time-input input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 44px 0 15px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d6dce2;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #202733;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    outline: none;
+
+    transition: border 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+.shivas-hero .location-input input:focus,
+.shivas-hero .date-input input:focus,
+.shivas-hero .time-input input:focus {
+    border-color: #2864df;
+
+    box-shadow:
+        0 0 0 2px rgba(40, 100, 223, 0.10);
+}
+
+
+.shivas-hero .location-input input::placeholder {
+    color: #9aa4af;
+
+    font-size: 12px;
+}
+
+
+/* ---------- INPUT ICONS ---------- */
+
+.shivas-hero .location-input i,
+.shivas-hero .date-input i,
+.shivas-hero .time-input i {
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8d99a5;
+
+    font-size: 15px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LOCATION NOTE
+   ========================================================= */
+
+.shivas-hero .manual-location-note {
+    margin: -1px 0 12px;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.60);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   DATE ROW
+   ========================================================= */
+
+.shivas-hero .nava-form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   SEARCH TAXI BUTTON
+   ========================================================= */
+
+.shivas-hero .nava-search-btn {
+    width: 100%;
+
+    height: 53px;
+
+    margin-top: 7px;
+
+    padding: 0 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff7117 0%,
+            #f43c45 100%
+        );
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.shivas-hero .nava-search-btn i {
+    font-size: 14px;
+}
+
+
+.shivas-hero .nava-search-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(244, 60, 69, 0.28);
+}
+
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.shivas-hero .booking-benefits {
+    margin-top: 12px;
+
+    padding-top: 11px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 9px;
+}
+
+
+.shivas-hero .booking-benefits div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.shivas-hero .booking-benefits i {
+    color: #42d88a;
+
+    font-size: 11px;
+}
+
+
+.shivas-hero .booking-benefits div:last-child i {
+    color: #63a5ff;
+}
+
+
+/* =========================================================
+   BOTTOM TRUST CARDS
+   ========================================================= */
+
+.shivas-hero .hero-trust-cards {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+
+    bottom: 18px;
+
+    transform: translateX(-50%);
+
+    width: min(620px, 90%);
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+.shivas-hero .trust-card {
+    min-height: 48px;
+
+    padding: 0 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 9px;
+
+    background: rgba(55, 58, 59, 0.58);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    backdrop-filter: blur(7px);
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.shivas-hero .trust-card i {
+    font-size: 14px;
+
+    color: #48df91;
+}
+
+
+.shivas-hero .trust-card:nth-child(2) i {
+    color: #55a5ff;
+}
+
+
+.shivas-hero .trust-card:nth-child(3) i {
+    color: #ffd329;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+    .shivas-hero-container {
+        max-width: 1500px;
+
+        grid-template-columns:
+            minmax(0, 1.15fr)
+            520px;
+
+        column-gap: 100px;
+    }
+
+    .shivas-hero .hero-left h1 {
+        font-size: 58px;
+    }
+
+    .shivas-hero .hero-left h2 {
+        font-size: 33px;
+    }
+
+    .shivas-hero .hero-description {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .shivas-hero {
+        margin-top: 112px;
+
+        min-height: auto;
+    }
+
+    .shivas-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 60px 25px 100px;
+    }
+
+    .shivas-hero .hero-left {
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    .shivas-hero .hero-badge {
+        justify-content: center;
+    }
+
+    .shivas-hero .hero-description {
+        margin: 0 auto;
+    }
+
+    .shivas-hero .hero-highlight {
+        text-align: center;
+    }
+
+    .shivas-hero .nava-booking-box {
+        width: 100%;
+
+        max-width: 520px;
+
+        justify-self: center;
+    }
+
+    .shivas-hero .hero-trust-cards {
+        bottom: 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .shivas-hero {
+        margin-top: 90px;
+    }
+
+    .shivas-hero-container {
+        padding: 45px 15px 90px;
+
+        gap: 32px;
+    }
+
+    .shivas-hero .hero-left h1 {
+        font-size: 36px;
+
+        line-height: 1.12;
+
+        letter-spacing: -0.5px;
+    }
+
+    .shivas-hero .hero-left h2 {
+        font-size: 23px;
+
+        line-height: 1.3;
+    }
+
+    .shivas-hero .hero-description {
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+    .shivas-hero .hero-highlight {
+        font-size: 15px;
+    }
+
+    .shivas-hero .hero-badge {
+        font-size: 10px;
+
+        padding: 8px 13px;
+    }
+
+    /* TABS */
+
+    .shivas-hero .service-tabs {
+        padding: 5px;
+    }
+
+    .shivas-hero .service-tab {
+        min-height: 70px;
+    }
+
+    .shivas-hero .service-tab i {
+        font-size: 17px;
+    }
+
+    .shivas-hero .service-tab strong {
+        font-size: 8px;
+    }
+
+    .shivas-hero .service-tab span {
+        font-size: 8px;
+    }
+
+    /* FORM */
+
+    .shivas-hero #navaStyleBookingForm {
+        padding: 16px 14px;
+    }
+
+    .shivas-hero .nava-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .shivas-hero .location-input input,
+    .shivas-hero .date-input input,
+    .shivas-hero .time-input input {
+        height: 48px;
+
+        font-size: 12px;
+    }
+
+    .shivas-hero .nava-search-btn {
+        height: 50px;
+
+        font-size: 14px;
+    }
+
+    /* TRUST CARDS */
+
+    .shivas-hero .hero-trust-cards {
+        position: relative;
+
+        left: auto;
+
+        bottom: auto;
+
+        transform: none;
+
+        width: calc(100% - 30px);
+
+        margin: -65px auto 20px;
+
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .shivas-hero .trust-card {
+        min-height: 44px;
+    }
+}
+
+/* =========================================================
+   SERVICE TABS
+========================================================= */
+
+.service-tabs {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background: #dce6e8;
+
+    padding: 16px;
+}
+
+
+.service-tab {
+
+    min-height: 115px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #26313d;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    border-radius: 14px;
+
+    font-family: "Poppins", sans-serif;
+
+    transition: all 0.25s ease;
+}
+
+
+.service-tab i {
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+
+.service-tab strong {
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.service-tab span {
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ACTIVE TAB */
+
+.service-tab.active {
+
+    background: #2864df;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(40,100,223,0.35);
+}
+
+
+.service-tab:hover:not(.active) {
+
+    background: rgba(40,100,223,0.10);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#navaStyleBookingForm {
+
+    padding: 25px 28px 24px;
+}
+
+
+/* ROUND TRIP */
+
+.round-trip-row {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 22px;
+}
+
+
+.round-trip-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    background: #dce5ee;
+
+    color: #234aab;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+}
+
+
+.round-trip-toggle input {
+
+    display: none;
+}
+
+
+.custom-check {
+
+    width: 20px;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #ffffff;
+}
+
+
+.round-trip-toggle input:checked
+~ .custom-check {
+
+    background: #2864df;
+}
+
+
+.custom-check i {
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.nava-form-group {
+
+    margin-bottom: 15px;
+}
+
+
+.nava-form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* LOCATION */
+
+.location-input,
+.date-input,
+.time-input {
+
+    position: relative;
+}
+
+
+.location-input input,
+.date-input input,
+.time-input input {
+
+    width: 100%;
+
+    height: 64px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d7dce3;
+
+    border-radius: 10px;
+
+    padding: 0 55px 0 20px;
+
+    background: #ffffff;
+
+    color: #202733;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+.location-input input::placeholder {
+
+    color: #9ca6b4;
+}
+
+
+.location-input i,
+.date-input i,
+.time-input i {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9ba6b4;
+
+    font-size: 18px;
+
+    pointer-events: none;
+}
+
+
+/* NOTE */
+
+.manual-location-note {
+
+    margin: -2px 0 16px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.70);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TWO COLUMN FORM
+========================================================= */
+
+.nava-form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* RETURN DATE */
+
+.return-date-group {
+
+    display: block;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.nava-search-btn {
+
+    width: 100%;
+
+    height: 64px;
+
+    margin-top: 10px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff7117,
+            #f43c45
+        );
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.nava-search-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(244,60,69,0.3);
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.booking-benefits {
+
+    margin-top: 18px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 24px;
+
+    flex-wrap: wrap;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+}
+
+
+.booking-benefits div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.booking-benefits i {
+
+    color: #3fd48a;
+
+    font-size: 16px;
+}
+
+
+.booking-benefits div:last-child i {
+
+    color: #63a5ff;
+}
+
+
+/* =========================================================
+   BOTTOM TRUST CARDS
+========================================================= */
+
+.hero-trust-cards {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    width: min(720px, 90%);
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.trust-card {
+
+    min-height: 64px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(80,80,80,0.60);
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.trust-card i {
+
+    font-size: 25px;
+
+    color: #48df91;
+}
+
+
+.trust-card:nth-child(2) i {
+
+    color: #55a5ff;
+}
+
+
+.trust-card:nth-child(3) i {
+
+    color: #ffd329;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .shivas-hero-container {
+
+        grid-template-columns: 1fr;
+
+        padding: 120px 25px 150px;
+    }
+
+
+    .hero-left {
+
+        max-width: 850px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+
+    .hero-badge {
+
+        justify-content: center;
+    }
+
+
+    .hero-description {
+
+        margin: auto;
+    }
+
+
+    .hero-highlight {
+
+        text-align: center;
+    }
+
+
+    .nava-booking-box {
+
+        justify-self: center;
+
+        max-width: 650px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .shivas-hero {
+
+        min-height: auto;
+    }
+
+
+    .shivas-hero-container {
+
+        padding: 100px 15px 130px;
+
+        gap: 35px;
+    }
+
+
+    .hero-left h1 {
+
+        font-size: 42px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-left h2 {
+
+        font-size: 28px;
+    }
+
+
+    .hero-description {
+
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+
+    .hero-highlight {
+
+        font-size: 18px;
+    }
+
+
+    .hero-badge {
+
+        font-size: 13px;
+
+        padding: 10px 16px;
+    }
+
+
+    .service-tabs {
+
+        padding: 8px;
+    }
+
+
+    .service-tab {
+
+        min-height: 80px;
+
+        padding: 5px;
+    }
+
+
+    .service-tab i {
+
+        font-size: 20px;
+    }
+
+
+    .service-tab strong {
+
+        font-size: 11px;
+    }
+
+
+    .service-tab span {
+
+        font-size: 10px;
+    }
+
+
+    #navaStyleBookingForm {
+
+        padding: 18px 16px;
+    }
+
+
+    .nava-form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .location-input input,
+    .date-input input,
+    .time-input input {
+
+        height: 55px;
+
+        font-size: 14px;
+    }
+
+
+    .hero-trust-cards {
+
+        position: relative;
+
+        left: auto;
+
+        bottom: auto;
+
+        transform: none;
+
+        width: calc(100% - 30px);
+
+        margin: -100px auto 20px;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+}/* =========================================================
+   SHIVAS TRAVEL GURU
+   NAVA STYLE HERO SECTION
+========================================================= */
+
+.shivas-hero {
+    position: relative;
+    min-height: 760px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.62),
+            rgba(0, 0, 0, 0.68)
+        ),
+        url("../images/hero-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+}
+
+
+/* DARK OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.48) 45%,
+            rgba(0, 0, 0, 0.58) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* MAIN CONTAINER */
+
+.shivas-hero-container {
+
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1450px;
+
+    margin: 0 auto;
+
+    padding: 120px 35px 130px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(500px, 0.95fr);
+
+    gap: 50px;
+
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.hero-left {
+
+    max-width: 780px;
+}
+
+
+/* BADGE */
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 24px;
+
+    margin-bottom: 30px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(14, 83, 120, 0.72);
+
+    border: 1px solid rgba(67, 179, 234, 0.55);
+
+    color: #8fc8ff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+.hero-badge i {
+
+    color: #d4af37;
+
+    font-size: 22px;
+}
+
+
+/* MAIN HEADING */
+
+.hero-left h1 {
+
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(52px, 5vw, 78px);
+
+    line-height: 1.02;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+}
+
+
+/* SUB HEADING */
+
+.hero-left h2 {
+
+    margin: 0 0 24px;
+
+    color: #36b8f4;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(30px, 3vw, 48px);
+
+    line-height: 1.15;
+
+    font-weight: 600;
+}
+
+
+/* DESCRIPTION */
+
+.hero-description {
+
+    max-width: 780px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.88);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    font-weight: 400;
+}
+
+
+/* HIGHLIGHT */
+
+.hero-highlight {
+
+    margin-top: 20px;
+
+    color: #37c8f5;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   RIGHT BOOKING BOX
+========================================================= */
+
+.nava-booking-box {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 620px;
+
+    justify-self: end;
+
+    background:
+        rgba(32, 35, 34, 0.92);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.45);
+
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+
+/* =========================================================
+   SERVICE TABS
+========================================================= */
+
+.service-tabs {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background: #dce6e8;
+
+    padding: 16px;
+}
+
+
+.service-tab {
+
+    min-height: 115px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #26313d;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    border-radius: 14px;
+
+    font-family: "Poppins", sans-serif;
+
+    transition: all 0.25s ease;
+}
+
+
+.service-tab i {
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+
+.service-tab strong {
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
+.service-tab span {
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* ACTIVE TAB */
+
+.service-tab.active {
+
+    background: #2864df;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(40,100,223,0.35);
+}
+
+
+.service-tab:hover:not(.active) {
+
+    background: rgba(40,100,223,0.10);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#navaStyleBookingForm {
+
+    padding: 25px 28px 24px;
+}
+
+
+/* ROUND TRIP */
+
+.round-trip-row {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 22px;
+}
+
+
+.round-trip-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    background: #dce5ee;
+
+    color: #234aab;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+}
+
+
+.round-trip-toggle input {
+
+    display: none;
+}
+
+
+.custom-check {
+
+    width: 20px;
+
+    height: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 4px;
+
+    background: #ffffff;
+
+    color: #ffffff;
+}
+
+
+.round-trip-toggle input:checked
+~ .custom-check {
+
+    background: #2864df;
+}
+
+
+.custom-check i {
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.nava-form-group {
+
+    margin-bottom: 15px;
+}
+
+
+.nava-form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* LOCATION */
+
+.location-input,
+.date-input,
+.time-input {
+
+    position: relative;
+}
+
+
+.location-input input,
+.date-input input,
+.time-input input {
+
+    width: 100%;
+
+    height: 64px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d7dce3;
+
+    border-radius: 10px;
+
+    padding: 0 55px 0 20px;
+
+    background: #ffffff;
+
+    color: #202733;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+.location-input input::placeholder {
+
+    color: #9ca6b4;
+}
+
+
+.location-input i,
+.date-input i,
+.time-input i {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9ba6b4;
+
+    font-size: 18px;
+
+    pointer-events: none;
+}
+
+
+/* NOTE */
+
+.manual-location-note {
+
+    margin: -2px 0 16px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.70);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TWO COLUMN FORM
+========================================================= */
+
+.nava-form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* RETURN DATE */
+
+.return-date-group {
+
+    display: block;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.nava-search-btn {
+
+    width: 100%;
+
+    height: 64px;
+
+    margin-top: 10px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff7117,
+            #f43c45
+        );
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.nava-search-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(244,60,69,0.3);
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.booking-benefits {
+
+    margin-top: 18px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 24px;
+
+    flex-wrap: wrap;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+}
+
+
+.booking-benefits div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.booking-benefits i {
+
+    color: #3fd48a;
+
+    font-size: 16px;
+}
+
+
+.booking-benefits div:last-child i {
+
+    color: #63a5ff;
+}
+
+
+/* =========================================================
+   BOTTOM TRUST CARDS
+========================================================= */
+
+.hero-trust-cards {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    width: min(720px, 90%);
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.trust-card {
+
+    min-height: 64px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(80,80,80,0.60);
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.trust-card i {
+
+    font-size: 25px;
+
+    color: #48df91;
+}
+
+
+.trust-card:nth-child(2) i {
+
+    color: #55a5ff;
+}
+
+
+.trust-card:nth-child(3) i {
+
+    color: #ffd329;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .shivas-hero-container {
+
+        grid-template-columns: 1fr;
+
+        padding: 120px 25px 150px;
+    }
+
+
+    .hero-left {
+
+        max-width: 850px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+
+    .hero-badge {
+
+        justify-content: center;
+    }
+
+
+    .hero-description {
+
+        margin: auto;
+    }
+
+
+    .hero-highlight {
+
+        text-align: center;
+    }
+
+
+    .nava-booking-box {
+
+        justify-self: center;
+
+        max-width: 650px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .shivas-hero {
+
+        min-height: auto;
+    }
+
+
+    .shivas-hero-container {
+
+        padding: 100px 15px 130px;
+
+        gap: 35px;
+    }
+
+
+    .hero-left h1 {
+
+        font-size: 42px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-left h2 {
+
+        font-size: 28px;
+    }
+
+
+    .hero-description {
+
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+
+    .hero-highlight {
+
+        font-size: 18px;
+    }
+
+
+    .hero-badge {
+
+        font-size: 13px;
+
+        padding: 10px 16px;
+    }
+
+
+    .service-tabs {
+
+        padding: 8px;
+    }
+
+
+    .service-tab {
+
+        min-height: 80px;
+
+        padding: 5px;
+    }
+
+
+    .service-tab i {
+
+        font-size: 20px;
+    }
+
+
+    .service-tab strong {
+
+        font-size: 11px;
+    }
+
+
+    .service-tab span {
+
+        font-size: 10px;
+    }
+
+
+    #navaStyleBookingForm {
+
+        padding: 18px 16px;
+    }
+
+
+    .nava-form-row {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .location-input input,
+    .date-input input,
+    .time-input input {
+
+        height: 55px;
+
+        font-size: 14px;
+    }
+
+
+    .hero-trust-cards {
+
+        position: relative;
+
+        left: auto;
+
+        bottom: auto;
+
+        transform: none;
+
+        width: calc(100% - 30px);
+
+        margin: -100px auto 20px;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+}
+
+/* =========================================================
+   CONTACT BAR
+   ========================================================= */
 
 .hero-contact {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2px;
-  font-size: 0.9rem;
-  color: #000;
-  font-weight: 600;
+    min-height: 48px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    font-family: "Poppins", Arial, sans-serif;
+
+    font-size: 11px;
 }
+
+
+.hero-contact span {
+    white-space: nowrap;
+}
+
 
 .hero-contact a {
-  color: black;
+    color: #ffffff;
+
+    text-decoration: none;
 }
 
-/*=========================================
-ANIMATION
-=========================================*/
 
-.hero-content {
-  animation: fadeUp 0.9s ease forwards;
+/* =========================================================
+   BOOKING STATUS
+   ========================================================= */
+
+.booking-status {
+    margin: 12px 0 0;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 12px;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* =========================================================
+   DESKTOP LARGE
+   ========================================================= */
+
+@media (min-width: 1500px) {
+
+    .hero-wrapper {
+        max-width: 1600px;
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+        gap: 55px;
+    }
+
+    .booking-box {
+        max-width: 650px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .hero-wrapper {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(450px, 0.78fr);
+
+        gap: 30px;
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+    }
+
+
+    .hero-content h1 {
+        font-size: clamp(46px, 5vw, 68px);
+    }
+
+
+    .hero-content > p {
+        font-size: 16px;
+    }
+
+
+    .booking-box {
+        max-width: 580px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        min-height: auto;
+
+        margin-top: 78px;
+    }
+
+
+    .hero-wrapper {
+        grid-template-columns: 1fr;
+
+        padding-top: 50px;
+
+        padding-bottom: 50px;
+    }
+
+
+    .hero-content {
+        max-width: 850px;
+
+        text-align: center;
+
+        margin: 0 auto;
+    }
+
+
+    .hero-content .tag {
+        margin-bottom: 22px;
+    }
+
+
+    .hero-content h1 {
+        max-width: 850px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .hero-content > p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .hero-highlights {
+        justify-content: center;
+    }
+
+
+    .hero-buttons {
+        text-align: center;
+    }
+
+
+    .booking-box {
+        max-width: 700px;
+
+        margin: 15px auto 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        margin-top: 70px;
+    }
+
+
+    .hero-wrapper {
+        padding: 35px 15px 45px;
+
+        gap: 25px;
+    }
+
+
+    .hero-content .tag {
+        padding: 9px 18px;
+
+        font-size: 12px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 38px;
+
+        line-height: 1.10;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-content > p {
+        margin-top: 18px;
+
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    .hero-highlights {
+        gap: 8px;
+    }
+
+
+    .hero-highlights > div {
+        min-height: 36px;
+
+        padding: 7px 12px;
+
+        font-size: 11px;
+    }
+
+
+    .booking-box {
+        border-radius: 16px;
+    }
+
+
+    .booking-tabs {
+        min-height: 65px;
+
+        padding: 8px;
+    }
+
+
+    .booking-tab {
+        height: 48px;
+
+        padding: 0 5px;
+
+        font-size: 10px;
+    }
+
+
+    #bookingForm {
+        padding: 20px 16px 16px;
+    }
+
+
+    .booking-fields {
+        grid-template-columns: 1fr;
+
+        row-gap: 14px;
+    }
+
+
+    .return-fields,
+    .customer-fields {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .booking-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero-contact {
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 12px;
+
+        gap: 7px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+
+    .hero-content .tag {
+        font-size: 11px;
+
+        padding: 8px 14px;
+    }
+
+
+    .booking-tabs {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+
+    .booking-tab {
+        font-size: 9px;
+    }
+
+
+    .booking-field label {
+        font-size: 12px;
+    }
+
+
+    .booking-field input,
+    .booking-field select {
+        height: 52px;
+
+        font-size: 13px;
+    }
 }
 
 /*=========================================
