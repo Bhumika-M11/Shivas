@@ -270,9 +270,14 @@
             <h2>Where Every Journey Feels Like Home</h2>
 
             <p class="hero-description">
-                Safe, reliable, and comfortable cab services for outstation trips,
-                airport transfers, car rentals, and city rides. Travel across Bengaluru,
-                Mysuru and South India with trusted professional drivers.
+                Safe, reliable, and comfortable cab services in Bengaluru
+                for outstation trips, airport transfers, local city rides,
+                and car rentals.
+
+                Book reliable cab services in Bengaluru for airport taxi,
+                outstation cabs, local city rides, and car rentals. Enjoy safe 
+                and comfortable travel from Bengaluru to Mysuru, Karnataka, and 
+                popular destinations across South India with professional drivers.
             </p>
 
             <div class="hero-highlight">
@@ -4086,8 +4091,8 @@ FOOTER
 
             <p>
                 <i class="fa-solid fa-phone"></i>
-                <a href="tel:+917080780999">
-                    +91 70807 80999
+                <a href="tel:+917090780999">
+                    +91 70907 80999
                 </a>
             </p>
 
@@ -4114,16 +4119,17 @@ FOOTER
 
 </footer>
 
-<!-- Back to Top -->
 
-<a href="#" class="back-top">
-    <i class="fas fa-arrow-up"></i>
-</a>
 
 <!-- WhatsApp -->
 
 <a href="https://wa.me/919019993283" class="whatsapp">
     <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:+919019993283" class="floating-call" aria-label="Call Shivas Travel Guru">
+    <i class="fa-solid fa-phone"></i>
 </a>
 
 <!-- Loader -->
@@ -4678,6 +4684,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dateInputs = document.querySelectorAll('input[type="date"]');
+    const timeInputs = document.querySelectorAll('input[type="time"]');
+
+    [...dateInputs, ...timeInputs].forEach(function (input) {
+
+        input.addEventListener("click", function () {
+
+            if (typeof input.showPicker === "function") {
+                input.showPicker();
+            }
+
+        });
+
+    });
+
+});
 </script>
 
 </body>
