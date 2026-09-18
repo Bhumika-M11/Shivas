@@ -142,7 +142,7 @@
 }
 
 .nav-menu > ul > li > a:hover {
-    color: #D4AF37;
+    color: #C69537;
 }
 
 
@@ -175,7 +175,7 @@
 
     flex-shrink: 0;
 
-    background: #D4AF37;
+    background: #C69537;
     color: #111111;
 
     border-radius: 50px;
@@ -194,7 +194,7 @@
 }
 
 .header-book:hover {
-    background: #F2D675;
+    background: #C69537;
 
     transform: translateY(-1px);
 }

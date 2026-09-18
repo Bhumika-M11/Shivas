@@ -323,121 +323,6 @@ section {
     }
 }
 
-
-/* ============ 3. HEADER & NAV ============ */
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    transition: .4s;
-}
-
-.header.sticky {
-    background: rgba(17, 23, 59, .96);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(17, 23, 59, .20);
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-decoration: none;
-    flex-shrink: 0;
-}
-
-.logo-icon {
-    width: 80px;
-    height: 55px;
-}
-
-.logo-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: .3s;
-}
-
-.logo:hover img {
-    transform: scale(1.05);
-}
-
-.nav-menu ul {
-    display: flex;
-    gap: 35px;
-}
-
-.nav-menu ul li a {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 12px 20px;
-    text-decoration: none;
-}
-
-.nav-menu a {
-    color: var(--white);
-    font-weight: 500;
-    position: relative;
-    transition: .3s;
-}
-
-.nav-menu a::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gold);
-    transition: .4s;
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
-}
-
-.nav-menu a:hover {
-    color: var(--gold);
-}
-
-.navbar .btn {
-    background: linear-gradient(
-        135deg,
-        var(--gold),
-        #B17F2E
-    );
-    color: var(--white);
-    padding: 14px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: .4s;
-    box-shadow: 0 15px 35px rgba(198, 149, 55, .30);
-}
-
-.navbar .btn:hover {
-    transform: translateY(-5px);
-}
-
-.menu-btn {
-    display: none;
-    color: var(--white);
-    font-size: 28px;
-    cursor: pointer;
-}
-
-
 /* ============ 4. HERO ============ */
 
 .hero {
@@ -1772,104 +1657,6 @@ section {
 }
 
 
-/* ============ 17. FOOTER ============ */
-
-.footer {
-    background: var(--dark-navy);
-    color: rgba(255, 255, 255, .8);
-    padding: 70px 0 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr repeat(5, 1fr);
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.footer-about h2 {
-    color: var(--white);
-    font-size: 22px;
-    margin-bottom: 16px;
-}
-
-.footer-about p {
-    font-size: 14.5px;
-    margin-bottom: 22px;
-}
-
-.footer-col h3 {
-    color: var(--white);
-    font-size: 17px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-col h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 34px;
-    height: 3px;
-    border-radius: 3px;
-    background: var(--gold);
-}
-
-.footer-col ul li {
-    margin-bottom: 6px;
-}
-
-.footer-col ul a {
-    color: rgba(255, 255, 255, .75);
-    font-size: 14.5px;
-    transition:
-        color var(--transition),
-        padding-left var(--transition);
-}
-
-.footer-col ul a:hover {
-    color: var(--gold);
-    padding-left: 6px;
-}
-
-.footer-contact p {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 14px;
-    font-size: 14.5px;
-}
-
-.footer-contact i {
-    color: var(--teal);
-    margin-top: 3px;
-}
-
-.footer-contact a {
-    color: rgba(255, 255, 255, .75);
-    transition: color var(--transition);
-}
-
-.footer-contact a:hover {
-    color: var(--gold);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    margin-top: 50px;
-    padding: 22px 0;
-    text-align: center;
-    color: rgba(255, 255, 255, .65);
-    font-size: 14px;
-}
-
-.footer-sep {
-    color: var(--teal);
-    margin: 0 8px;
-}
-
-
 /* ============ 18. FLOATING BUTTONS ============ */
 
 .back-top {
@@ -1964,9 +1751,6 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 
 
@@ -1984,31 +1768,6 @@ section {
         justify-self: stretch;
         max-width: none;
         margin-top: 12px;
-    }
-
-    .navbar .btn {
-        display: none;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 74px;
-        left: -100%;
-        width: 100%;
-        background: var(--navy);
-        padding: 30px 5%;
-        transition: left .4s ease;
-        box-shadow: 0 20px 40px rgba(17, 23, 59, .25);
-    }
-
-    .nav-menu.open {
-        left: 0;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 22px;
     }
 
     .direction-grid {
@@ -2095,11 +1854,6 @@ section {
 
     .booking-wrap {
         padding: 24px 20px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
     }
 
     .direction-block {

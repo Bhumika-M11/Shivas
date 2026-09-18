@@ -994,8 +994,8 @@ ul {
     background:
         linear-gradient(
             90deg,
-            #ff7117 0%,
-            #f43c45 100%
+            #C69537 0%,
+            #C69537 100%
         );
 
     color: #ffffff;
@@ -1034,7 +1034,7 @@ ul {
     transform: translateY(-1px);
 
     box-shadow:
-        0 8px 20px rgba(244, 60, 69, 0.28);
+        0 8px 20px rgba(236, 180, 27, 0.28);
 }
 
 
@@ -1902,8 +1902,8 @@ ul {
     background:
         linear-gradient(
             90deg,
-            #ff7117 0%,
-            #f43c45 100%
+            #C69537 0%,
+            #C69537 100%
         );
 
     color: #ffffff;
