@@ -80,72 +80,6 @@ img {
 
 
 /* =========================
-   HEADER / NAVBAR OVERRIDES
-   ========================= */
-
-.header {
-    background: rgba(17, 23, 59, 0.97);
-    border-bottom: 1px solid rgba(198, 149, 55, 0.25);
-    box-shadow: 0 8px 30px rgba(17, 23, 59, 0.18);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    backdrop-filter: blur(14px);
-}
-
-.navbar {
-    min-height: 76px;
-}
-
-.logo img {
-    object-fit: contain;
-}
-
-.nav-menu ul {
-    list-style: none;
-}
-
-.nav-menu > ul > li > a {
-    color: var(--white);
-    font-weight: 500;
-}
-
-.nav-menu > ul > li > a:hover,
-.nav-menu > ul > li > a.active {
-    color: var(--gold);
-}
-
-.dropdown-menu {
-    background: var(--navy);
-    border: 1px solid rgba(198, 149, 55, 0.25);
-    box-shadow: var(--shadow);
-    border-radius: 12px;
-}
-
-.dropdown-menu li a {
-    color: var(--white);
-}
-
-.dropdown-menu li a:hover {
-    background: rgba(57, 141, 107, 0.15);
-    color: var(--gold);
-}
-
-.header-book {
-    background: linear-gradient(135deg, var(--gold), #B68129);
-    color: var(--white);
-    border-radius: 10px;
-    font-weight: 700;
-    box-shadow: 0 8px 22px rgba(198, 149, 55, 0.25);
-}
-
-.header-book:hover {
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(198, 149, 55, 0.35);
-}
-
-/* =========================
    BUTTONS
    ========================= */
 
@@ -1525,95 +1459,6 @@ img {
 }
 
 /* =========================
-   FOOTER
-   ========================= */
-
-.footer {
-    background: #0C102C;
-    color: rgba(255,255,255,.7);
-    border-top: 1px solid rgba(198,149,55,.18);
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1.1fr 1.4fr;
-    gap: 35px;
-    padding: 75px 0 50px;
-}
-
-.footer h2,
-.footer h3 {
-    color: var(--white);
-}
-
-.footer h2 {
-    font-family: "Playfair Display", serif;
-    margin-bottom: 15px;
-}
-
-.footer h3 {
-    font-size: 1rem;
-    margin-bottom: 18px;
-}
-
-.footer p {
-    font-size: .85rem;
-    line-height: 1.8;
-}
-
-.footer-about p {
-    max-width: 300px;
-}
-
-.footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer li {
-    margin-bottom: 9px;
-}
-
-.footer a {
-    color: rgba(255,255,255,.65);
-    text-decoration: none;
-    font-size: .84rem;
-}
-
-.footer a:hover {
-    color: var(--gold);
-}
-
-.footer-contact p {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 13px;
-}
-
-.footer-contact p > i {
-    color: var(--gold);
-    margin-top: 4px;
-}
-
-.footer-contact a {
-    color: rgba(255,255,255,.72);
-}
-
-.footer-bottom {
-    padding: 22px 0;
-    border-top: 1px solid rgba(255,255,255,.08);
-    text-align: center;
-}
-
-.footer-bottom p {
-    margin: 0;
-    color: rgba(255,255,255,.45);
-}
-
-
-/* =========================
    BACK TO TOP
    ========================= */
 
@@ -1695,9 +1540,6 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 
@@ -1861,10 +1703,6 @@ img {
         width: 100%;
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px 20px;
-    }
 }
 
 
@@ -1884,14 +1722,6 @@ img {
 
     .service-grid {
         grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-about p {
-        max-width: none;
     }
 
     .whatsapp-float {

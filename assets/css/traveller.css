@@ -14,20 +14,42 @@
 }
 
 :root {
+    --navy: #11173B;
+    --dark-navy: #10163A;
+
+    --gold: #C69537;
+    --gold-light: #D4C4A0;
+
+    --teal: #398D6B;
+
+    --bg: #EEF1FA;
+    --light-bg: #F6F7FB;
+
+    --white: #FFFFFF;
+
+    --text: #11173B;
+    --muted: #718096;
+
     --primary: #11173B;
-    --primary-dark: #081C2D;
     --secondary: #398D6B;
-    --accent: #FFB703;
-    --accent-2: #FF8C00;
-    --bg: #F8FAFC;
-    --white: #ffffff;
-    --text: #334155;
-    --muted: #64748B;
-    --line: #E2E8F0;
-    --shadow-sm: 0 8px 24px rgba(17, 23, 59, .08);
-    --shadow-lg: 0 24px 55px rgba(17, 23, 59, .16);
+    --accent: #C69537;
+
+    --gray: #718096;
+
+    --glass: rgba(17, 23, 59, 0.15);
+
+    --shadow: 0 20px 50px rgba(17, 23, 59, 0.15);
+
+    /* Compatibility variables used throughout the stylesheet */
+    --primary-dark: #10163A;
+    --accent-2: #D4C4A0;
+    --line: #D9DFEC;
+
+    --shadow-sm: 0 8px 24px rgba(17, 23, 59, 0.08);
+    --shadow-lg: 0 24px 55px rgba(17, 23, 59, 0.16);
+
     --radius: 18px;
-    --transition: .35s cubic-bezier(.4, 0, .2, 1);
+    --transition: 0.4s;
 }
 
 html {
@@ -75,12 +97,12 @@ textarea {
 }
 
 :focus-visible {
-    outline: 3px solid rgba(255, 183, 3, .7);
+    outline: 3px solid rgba(198, 149, 55, 0.65);
     outline-offset: 2px;
 }
 
 ::selection {
-    background: var(--secondary);
+    background: var(--teal);
     color: var(--white);
 }
 
@@ -105,6 +127,7 @@ main {
     overflow: clip;
 }
 
+
 /* ============ 2. SHARED ELEMENTS ============ */
 
 .section-head {
@@ -121,8 +144,10 @@ main {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--secondary);
-    background: rgba(0, 184, 148, .1);
+
+    color: var(--teal);
+    background: rgba(57, 141, 107, 0.10);
+
     padding: 8px 18px;
     border-radius: 40px;
     margin-bottom: 16px;
@@ -133,13 +158,13 @@ main {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--secondary);
+    background: var(--teal);
 }
 
 .section-head h2 {
     font-size: clamp(28px, 4.5vw, 42px);
     line-height: 1.2;
-    color: var(--primary);
+    color: var(--navy);
     font-weight: 700;
     margin-bottom: 16px;
 }
@@ -153,7 +178,9 @@ section {
     padding: 80px 0;
 }
 
-/* Buttons */
+
+/* ============ BUTTONS ============ */
+
 .btn,
 .btn-wa,
 .btn-call {
@@ -167,41 +194,62 @@ section {
     font-size: 15px;
     position: relative;
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
     white-space: nowrap;
 }
 
 .btn {
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        #B4822D
+    );
+
     color: var(--white);
-    box-shadow: 0 15px 35px rgba(255, 183, 3, .35);
+
+    box-shadow:
+        0 15px 35px rgba(198, 149, 55, 0.30);
 }
 
 .btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(255, 183, 3, .45);
+
+    box-shadow:
+        0 20px 40px rgba(198, 149, 55, 0.40);
 }
 
 .btn-wa {
     background: #25D366;
     color: var(--white);
-    box-shadow: 0 15px 35px rgba(37, 211, 102, .35);
+
+    box-shadow:
+        0 15px 35px rgba(37, 211, 102, 0.30);
 }
 
 .btn-wa:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(37, 211, 102, .45);
+
+    box-shadow:
+        0 20px 40px rgba(37, 211, 102, 0.40);
 }
 
 .btn-call {
     background: var(--white);
-    color: var(--primary);
-    box-shadow: 0 15px 35px rgba(17, 23, 59, .2);
+    color: var(--navy);
+
+    box-shadow:
+        0 15px 35px rgba(17, 23, 59, 0.18);
 }
 
 .btn-call:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(17, 23, 59, .28);
+
+    box-shadow:
+        0 20px 40px rgba(17, 23, 59, 0.25);
 }
 
 .btn-lg {
@@ -213,47 +261,63 @@ section {
     width: 100%;
 }
 
+
+/* Category / pricing buttons */
+
 .btn-price,
 .btn-route {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+
     padding: 12px 28px;
     border-radius: 50px;
+
     font-weight: 600;
     font-size: 14px;
+
     position: relative;
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .btn-price {
-    background: var(--primary);
+    background: var(--navy);
     color: var(--white);
 }
 
 .btn-price:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(17, 23, 59, .35);
+
+    box-shadow:
+        0 15px 30px rgba(17, 23, 59, 0.30);
 }
 
 .btn-route {
-    background: var(--secondary);
+    background: var(--teal);
     color: var(--white);
 }
 
 .btn-route:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 184, 148, .35);
+
+    box-shadow:
+        0 15px 30px rgba(57, 141, 107, 0.30);
 }
+
+
+/* Ripple */
 
 .ripple-ink {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, .45);
+    background: rgba(255, 255, 255, 0.45);
     transform: scale(0);
-    animation: ripple .65s linear;
+    animation: ripple 0.65s linear;
     pointer-events: none;
 }
 
@@ -264,11 +328,16 @@ section {
     }
 }
 
-/* Scroll reveal */
+
+/* ============ SCROLL REVEAL ============ */
+
 .reveal {
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity .7s ease, transform .7s ease;
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
 .reveal.visible {
@@ -284,52 +353,16 @@ section {
     }
 }
 
-/*==========================
- HEADER
-===========================*/
-
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    transition:.4s;
-}
-
-.nav-menu a{
-    color:#fff;
-    font-weight:500;
-    position:relative;
-    transition:.3s;
-}
-
-.nav-menu a::after{
-    content:"";
-    position:absolute;
-    bottom:-8px;
-    left:0;
-    width:0;
-    height:2px;
-    background:var(--accent);
-    transition:.4s;
-}
-
-.nav-menu a:hover::after{
-    width:100%;
-}
-
-.nav-menu a:hover{
-    color:var(--accent);
-}
 
 /* ============ 4. HERO ============ */
 
 .hero-traveller {
     position: relative;
     min-height: 92vh;
+
     display: flex;
     align-items: center;
+
     padding: 150px 0 90px;
     overflow: hidden;
 }
@@ -337,23 +370,31 @@ section {
 .hero-traveller-bg {
     position: absolute;
     inset: 0;
+
     background-size: cover;
     background-position: center;
-    background-image: url('../images/vehicles/traveller.png');
+
+    background-image:
+        url('../images/vehicles/traveller.png');
 }
 
 .hero-traveller-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(100deg,
-            rgba(8, 28, 45, .95) 0%,
-            rgba(17, 23, 59, .88) 45%,
-            rgba(17, 23, 59, .6) 100%);
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(16, 22, 58, 0.96) 0%,
+            rgba(17, 23, 59, 0.90) 45%,
+            rgba(17, 23, 59, 0.62) 100%
+        );
 }
 
 .hero-traveller-content {
     position: relative;
     z-index: 2;
+
     color: var(--white);
     max-width: 800px;
 }
@@ -367,8 +408,9 @@ section {
     flex-wrap: wrap;
     align-items: center;
     gap: 6px;
+
     font-size: 13px;
-    color: rgba(255, 255, 255, .8);
+    color: rgba(255, 255, 255, 0.80);
 }
 
 .breadcrumb li {
@@ -379,12 +421,12 @@ section {
 
 .breadcrumb li:not(:last-child)::after {
     content: "/";
-    color: rgba(255, 255, 255, .45);
+    color: rgba(255, 255, 255, 0.45);
     margin-left: 6px;
 }
 
 .breadcrumb a {
-    color: var(--accent);
+    color: var(--gold);
     font-weight: 500;
 }
 
@@ -392,13 +434,17 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(0, 184, 148, .18);
-    border: 1px solid rgba(0, 184, 148, .4);
-    color: #7fffd4;
+
+    background: rgba(57, 141, 107, 0.18);
+    border: 1px solid rgba(57, 141, 107, 0.45);
+
+    color: #9DD7BC;
+
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
+
     padding: 8px 18px;
     border-radius: 40px;
     margin-bottom: 22px;
@@ -412,12 +458,12 @@ section {
 }
 
 .hero-traveller-content h1 .accent {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 .hero-traveller-content > p {
     font-size: 17px;
-    color: rgba(255, 255, 255, .88);
+    color: rgba(255, 255, 255, 0.88);
     max-width: 660px;
     margin-bottom: 32px;
 }
@@ -439,12 +485,13 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: rgba(255, 255, 255, .9);
+
+    color: rgba(255, 255, 255, 0.90);
     font-size: 14px;
 }
 
 .trust-badges i {
-    color: var(--accent);
+    color: var(--gold);
     font-size: 18px;
 }
 
@@ -453,6 +500,7 @@ section {
     color: var(--white);
     font-size: 15px;
 }
+
 
 /* ============ 6. WHY CHOOSE ============ */
 
@@ -467,36 +515,54 @@ section {
 }
 
 .why-card {
-    background: var(--bg);
+    background: var(--light-bg);
     border: 1px solid var(--line);
     border-radius: var(--radius);
+
     padding: 34px 26px;
     text-align: center;
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
 }
 
 .why-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+    border-color: var(--teal);
 }
 
 .why-icon {
     width: 66px;
     height: 66px;
+
     margin: 0 auto 18px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 18px;
-    background: linear-gradient(135deg, var(--primary), #125a8f);
-    color: var(--accent);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--dark-navy)
+        );
+
+    color: var(--gold);
+
     font-size: 26px;
-    box-shadow: 0 12px 25px rgba(17, 23, 59, .25);
+
+    box-shadow:
+        0 12px 25px rgba(17, 23, 59, 0.20);
 }
 
 .why-card h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 19px;
     margin-bottom: 10px;
 }
@@ -505,6 +571,7 @@ section {
     color: var(--muted);
     font-size: 15px;
 }
+
 
 /* ============ 7. VEHICLE OVERVIEW ============ */
 
@@ -521,14 +588,19 @@ section {
 .overview-card {
     background: var(--white);
     border-radius: var(--radius);
+
     box-shadow: var(--shadow-sm);
+
     overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .overview-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
 }
 
 .overview-img {
@@ -541,7 +613,8 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .6s ease;
+
+    transition: transform 0.6s ease;
 }
 
 .overview-card:hover .overview-img img {
@@ -552,15 +625,27 @@ section {
     position: absolute;
     top: 14px;
     left: 14px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #B4822D
+        );
+
     color: var(--white);
+
     font-size: 12px;
     font-weight: 700;
+
     text-transform: uppercase;
     letter-spacing: 1px;
+
     padding: 6px 14px;
     border-radius: 30px;
-    box-shadow: 0 8px 20px rgba(255, 183, 3, .4);
+
+    box-shadow:
+        0 8px 20px rgba(198, 149, 55, 0.30);
 }
 
 .overview-body {
@@ -568,7 +653,7 @@ section {
 }
 
 .overview-body h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 21px;
     margin-bottom: 10px;
 }
@@ -582,6 +667,7 @@ section {
 .overview-features {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 8px 14px;
     margin-bottom: 22px;
 }
@@ -590,12 +676,13 @@ section {
     display: flex;
     align-items: center;
     gap: 8px;
+
     font-size: 13.5px;
     color: var(--text);
 }
 
 .overview-features i {
-    color: var(--secondary);
+    color: var(--teal);
     font-size: 14px;
 }
 
@@ -609,6 +696,7 @@ section {
     flex: 1;
 }
 
+
 /* ============ 8. COMPARE TABLE ============ */
 
 .compare-section {
@@ -617,6 +705,7 @@ section {
 
 .compare-wrap {
     overflow-x: auto;
+
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
 }
@@ -624,8 +713,10 @@ section {
 .compare-table {
     width: 100%;
     min-width: 680px;
+
     border-collapse: collapse;
     background: var(--white);
+
     font-size: 15px;
 }
 
@@ -633,35 +724,40 @@ section {
 .compare-table td {
     padding: 18px 20px;
     text-align: center;
+
     border-bottom: 1px solid var(--line);
 }
 
 .compare-table thead th {
-    background: var(--primary);
+    background: var(--navy);
     color: var(--white);
+
     font-weight: 600;
     font-size: 16px;
 }
 
 .compare-table thead th:first-child {
     text-align: left;
-    background: var(--primary-dark);
+    background: var(--dark-navy);
 }
 
 .compare-table tbody th {
     text-align: left;
-    color: var(--primary);
+
+    color: var(--navy);
     font-weight: 600;
-    background: var(--bg);
+
+    background: var(--light-bg);
 }
 
 .compare-table tbody tr:hover td {
-    background: #f0fdfa;
+    background: #F0F6F3;
 }
 
 .compare-table td i {
-    color: var(--secondary);
+    color: var(--teal);
 }
+
 
 /* ============ 9. SEATING CONFIGURATIONS ============ */
 
@@ -678,40 +774,52 @@ section {
 .seating-card {
     background: var(--white);
     border-radius: var(--radius);
+
     box-shadow: var(--shadow-sm);
+
     padding: 34px 26px;
     text-align: center;
+
     border: 2px solid transparent;
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
 }
 
 .seating-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+    border-color: var(--teal);
 }
 
 .seating-icon {
     width: 72px;
     height: 72px;
+
     margin: 0 auto 18px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 50%;
-    background: rgba(0, 184, 148, .12);
-    color: var(--secondary);
+
+    background: rgba(57, 141, 107, 0.12);
+    color: var(--teal);
+
     font-size: 30px;
 }
 
 .seating-card h3 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: 20px;
     margin-bottom: 6px;
 }
 
 .seating-sub {
-    color: var(--secondary);
+    color: var(--teal);
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 16px;
@@ -725,9 +833,12 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
+
     padding: 8px 0;
+
     font-size: 14px;
     color: var(--text);
+
     border-bottom: 1px dashed var(--line);
 }
 
@@ -736,10 +847,11 @@ section {
 }
 
 .seating-card ul i {
-    color: var(--secondary);
+    color: var(--teal);
 }
 
-/* ============ 10. USE-CASE SECTIONS (Corporate/Airport/Wedding/etc.) ============ */
+
+/* ============ 10. USE-CASE SECTIONS ============ */
 
 .use-section {
     background: var(--bg);
@@ -752,13 +864,15 @@ section {
 .use-grid {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
+
     gap: 50px;
     align-items: center;
 }
 
 .use-content h2 {
-    color: var(--primary);
+    color: var(--navy);
     font-size: clamp(26px, 4vw, 38px);
+
     line-height: 1.2;
     margin-bottom: 16px;
 }
@@ -771,6 +885,7 @@ section {
 .use-points {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
     gap: 14px;
     margin-bottom: 30px;
 }
@@ -779,34 +894,43 @@ section {
     display: flex;
     align-items: center;
     gap: 12px;
+
     background: var(--white);
+
     border: 1px solid var(--line);
     border-radius: 12px;
+
     padding: 14px 16px;
+
     font-size: 14px;
     font-weight: 500;
-    color: var(--primary);
-    transition: border-color var(--transition), transform var(--transition);
+
+    color: var(--navy);
+
+    transition:
+        border-color var(--transition),
+        transform var(--transition);
 }
 
 .use-alt .use-points li {
-    background: var(--bg);
+    background: var(--light-bg);
 }
 
 .use-points li:hover {
-    border-color: var(--secondary);
+    border-color: var(--teal);
     transform: translateX(4px);
 }
 
 .use-points i {
-    color: var(--secondary);
+    color: var(--teal);
     font-size: 18px;
 }
 
 .use-img {
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+
+    box-shadow: var(--shadow);
 }
 
 .use-img img {
@@ -815,10 +939,466 @@ section {
     object-fit: cover;
 }
 
+
+/* CTA buttons */
+
 .use-cta {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+}
+
+
+/* =========================================================
+   11. BUS CATEGORIES
+========================================================= */
+
+.lux-category-section {
+    background: var(--bg);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.category-card {
+    background: var(--white);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+
+    border-color: var(--gold);
+}
+
+.category-img {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.category-img img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.category-card:hover .category-img img {
+    transform: scale(1.06);
+}
+
+.category-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    padding: 7px 16px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            #B4822D
+        );
+
+    color: var(--white);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 8px 20px rgba(198, 149, 55, 0.30);
+}
+
+.category-seats {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    background: rgba(17, 23, 59, 0.88);
+
+    color: var(--white);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    backdrop-filter: blur(8px);
+}
+
+.category-seats i {
+    color: var(--gold);
+}
+
+.category-body {
+    padding: 28px;
+}
+
+.category-body h3 {
+    color: var(--navy);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.category-body > p {
+    color: var(--muted);
+    font-size: 14.5px;
+    margin-bottom: 20px;
+}
+
+.category-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px 14px;
+
+    margin-bottom: 24px;
+}
+
+.category-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text);
+    font-size: 13.5px;
+}
+
+.category-features i {
+    color: var(--teal);
+    font-size: 13px;
+}
+
+.category-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-actions .btn-price,
+.category-actions .btn-route {
+    flex: 1;
+}
+
+
+/* =========================================================
+   12. WHY / USE CASE CARDS
+========================================================= */
+
+.why-section {
+    background: var(--white);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.why-card {
+    background: var(--light-bg);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+
+    padding: 34px 26px;
+
+    text-align: center;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+
+    border-color: var(--gold);
+}
+
+.why-icon {
+    width: 66px;
+    height: 66px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--dark-navy)
+        );
+
+    color: var(--gold);
+
+    font-size: 26px;
+
+    box-shadow:
+        0 12px 25px rgba(17, 23, 59, 0.20);
+}
+
+.why-card h3 {
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   13. CTA
+========================================================= */
+
+.cta-section {
+    background: var(--bg);
+}
+
+.cta-box {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--dark-navy)
+        );
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 70px 40px;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+.cta-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -160px;
+    right: -100px;
+
+    background: rgba(198, 149, 55, 0.14);
+
+    border-radius: 50%;
+}
+
+.cta-box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    bottom: -150px;
+    left: -80px;
+
+    background: rgba(57, 141, 107, 0.14);
+
+    border-radius: 50%;
+}
+
+.cta-box h2 {
+    position: relative;
+    z-index: 2;
+
+    font-size: clamp(28px, 4.5vw, 42px);
+
+    line-height: 1.2;
+
+    margin-bottom: 16px;
+}
+
+.cta-box p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 16px;
+}
+
+.cta-actions {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .why-grid,
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .overview-grid,
+    .seating-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    .use-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-grid,
+    .seating-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 640px) {
+
+    section {
+        padding: 65px 0;
+    }
+
+    .container {
+        width: min(92%, 1200px);
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-features {
+        grid-template-columns: 1fr;
+    }
+
+    .category-img {
+        height: 240px;
+    }
+
+    .category-body {
+        padding: 22px;
+    }
+
+    .category-actions {
+        flex-direction: column;
+    }
+
+    .category-actions .btn-price,
+    .category-actions .btn-route {
+        width: 100%;
+    }
+
+    .use-points {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions .btn-lg,
+    .cta-actions .btn-lg {
+        width: 100%;
+    }
+
+    .trust-badges {
+        gap: 14px;
+    }
+
+    .cta-box {
+        padding: 50px 24px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hero-traveller-content h1 {
+        font-size: 30px;
+    }
+
+    .section-head {
+        margin-bottom: 35px;
+    }
+
+    .category-img {
+        height: 210px;
+    }
+
+    .category-body h3 {
+        font-size: 19px;
+    }
+
+    .cta-box {
+        padding: 45px 20px;
+    }
 }
 
 /* ============ 11. DESTINATIONS ============ */
@@ -1363,99 +1943,6 @@ section {
     display: block;
 }
 
-/* ============ 18. FOOTER ============ */
-
-.footer {
-    background: var(--primary-dark);
-    color: rgba(255, 255, 255, .8);
-    padding: 70px 0 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns:2fr repeat(5,1fr);
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.footer-about h2 {
-    color: var(--white);
-    font-size: 22px;
-    margin-bottom: 16px;
-}
-
-.footer-about p {
-    font-size: 14.5px;
-    margin-bottom: 22px;
-}
-
-.footer-col h3 {
-    color: var(--white);
-    font-size: 17px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-col h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 34px;
-    height: 3px;
-    border-radius: 3px;
-    background: var(--accent);
-}
-
-.footer-col ul li {
-    margin-bottom: 6px;
-}
-
-.footer-col ul a {
-    color: rgba(255, 255, 255, .75);
-    font-size: 14.5px;
-    transition: color var(--transition), padding-left var(--transition);
-}
-
-.footer-col ul a:hover {
-    color: var(--accent);
-    padding-left: 6px;
-}
-
-.footer-contact p {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 14px;
-    font-size: 14.5px;
-}
-
-.footer-contact i {
-    color: var(--secondary);
-    margin-top: 3px;
-}
-
-.footer-contact a {
-    color: rgba(255, 255, 255, .75);
-    transition: color var(--transition);
-}
-
-.footer-contact a:hover {
-    color: var(--accent);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    padding: 22px 0;
-    text-align: center;
-    font-size: 14px;
-}
-
-.footer-sep {
-    color: var(--secondary);
-    margin: 0 8px;
-}
-
 /* ============ 19. FLOATING BUTTONS ============ */
 
 .back-top {
@@ -1543,9 +2030,6 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 
     .overview-grid,
     .pricing-grid {
@@ -1564,33 +2048,6 @@ section {
 @media (max-width: 991px) {
     .menu-btn {
         display: flex;
-    }
-
-    .navbar .btn {
-        display: none;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 74px;
-        left: 0;
-        width: 100%;
-        background: var(--primary);
-        padding: 30px 5%;
-        transform: translateX(-105%);
-        transition: transform .4s ease;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
-        will-change: transform;
-    }
-
-    .nav-menu.open {
-        transform: translateX(0);
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 22px;
     }
 
     .use-grid,
@@ -1635,11 +2092,6 @@ section {
 
     .booking-panel {
         padding: 22px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
     }
 
     .use-points li {
