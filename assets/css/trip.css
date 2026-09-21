@@ -432,56 +432,58 @@ ul{
   FLOATING BUTTONS
 =========================================================*/
 
-.back-top,
-.whatsapp{
-    position:fixed;
-
-    right:25px;
-
-    width:55px;
-
-    height:55px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#fff;
-
-    font-size:22px;
-
-    z-index:999;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
-    will-change:transform;
+.floating-call {
+    position: fixed;
+    left: 20px;
+    bottom: 90px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #2a89f5;
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
 }
 
-.back-top{
-    bottom:100px;
-
-    background:#11173B;
+.floating-call:hover {
+    transform: translateY(-4px);
+    background: #2a89f5;
+    color: #111;
 }
 
-.whatsapp{
-    bottom:30px;
+/* Floating Buttons */
 
-    background:#25D366;
+.whatsapp {
+  position: fixed;
+  left: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
-.back-top:hover,
-.whatsapp:hover{
-    transform:translateY(-6px);
 
-    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+.whatsapp {
+  bottom: 30px;
+  background: #25d366;
+}
+
+.whatsapp:hover {
+  transform: translateY(-6px);
 }
 
 
