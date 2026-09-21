@@ -386,25 +386,6 @@ section {
 }
 
 
-/* ============ 6. HEADER ============ */
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    transition:
-        background 0.4s ease,
-        box-shadow 0.4s ease,
-        backdrop-filter 0.4s ease;
-}
-
-.header.sticky {
-    background: rgba(16, 22, 58, 0.96);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
 
 
 /* ============ 7. NAVIGATION BUTTON ============ */
@@ -1598,9 +1579,6 @@ opacity: .8;
 grid-template-columns: repeat(2, 1fr);
 }
 
-.footer-grid {
-    grid-template-columns: 1fr 1fr;
-}
 
 .fleet-grid,
 .pricing-grid {
@@ -1681,10 +1659,6 @@ grid-template-columns: 1fr;
     padding: 34px 22px;
 }
 
-.footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
 
 .use-points li {
     padding: 12px;

@@ -66,26 +66,6 @@ ul{
 
 }
 
-/*==========================
- HEADER
-===========================*/
-
-.header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    transition:.4s;
-    background:rgba(17,23,59,.96);
-}
-
-.header.sticky{
-    background:rgba(17,23,59,.96);
-    backdrop-filter:blur(15px);
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
 
 /*==========================
  BUTTON
@@ -438,10 +418,6 @@ RESPONSIVE
         width:92%;
     }
 
-    header{
-        padding:18px 0;
-    }
-
         .navbar {
         flex-wrap: wrap;
         position: relative;
@@ -578,10 +554,6 @@ RESPONSIVE
         width:94%;
     }
 
-    header{
-        padding:15px 0;
-    }
-
     .logo img{
         width:100px;
     }
@@ -655,121 +627,5 @@ RESPONSIVE
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
-    }
-}
-
-/*==============================
-FOOTER
-==============================*/
-
-.footer{
-    background:#081C2D;
-    color:#fff;
-    padding: 70px 0 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns:2fr repeat(5,1fr);
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.footer-about h2 {
-    color: var(--white);
-    font-size: 22px;
-    margin-bottom: 16px;
-}
-
-.footer-about p {
-    font-size: 14.5px;
-    margin-bottom: 22px;
-}
-
-.footer-col h3 {
-    color: var(--white);
-    font-size: 17px;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-col h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 34px;
-    height: 3px;
-    border-radius: 3px;
-    background: var(--accent);
-}
-
-.footer-col ul li {
-    margin-bottom: 6px;
-}
-
-.footer-col ul a {
-    color: rgba(255, 255, 255, .75);
-    font-size: 14.5px;
-    transition: color var(--transition), padding-left var(--transition);
-}
-
-.footer-col ul a:hover {
-    color: var(--accent);
-    padding-left: 6px;
-}
-
-.footer-contact p {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 14px;
-    font-size: 14.5px;
-}
-
-.footer-contact i {
-    color: var(--secondary);
-    margin-top: 3px;
-}
-
-.footer-contact a {
-    color: rgba(255, 255, 255, .75);
-    transition: color var(--transition);
-}
-
-.footer-contact a:hover {
-    color: var(--accent);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    padding: 22px 0;
-    text-align: center;
-    font-size: 14px;
-}
-
-.footer-sep {
-    color: var(--secondary);
-    margin: 0 8px;
-}
-
-.footer-bottom{
-    border-top:1px solid rgba(255,255,255,.1);
-    margin-top:50px;
-    padding-top:20px;
-    text-align:center;
-    color:#bbb;
-}
-
-@media (max-width: 991px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 640px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
     }
 }

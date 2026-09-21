@@ -4239,39 +4239,6 @@ RESPONSIVE
     font-size: 18px;
   }
 
-  .footer {
-    padding: 55px 0 0;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-  .footer-about {
-    grid-column: 1/-1;
-  }
-
-  .footer-about h2 {
-    font-size: 24px;
-  }
-
-  .footer-about p {
-    max-width: 100%;
-  }
-
-  .footer-col h3 {
-    font-size: 18px;
-  }
-
-  .footer-col ul a {
-    font-size: 15px;
-  }
-
-  .footer-contact p {
-    font-size: 15px;
-  }
-
   .slider-nav {
     margin-top: 20px;
   }
@@ -5267,39 +5234,6 @@ CTA SECTION
     padding: 20px;
   }
 
-  .footer {
-    padding: 50px 0 0;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .footer-about,
-  .footer-col,
-  .footer-contact {
-    text-align: left;
-  }
-
-  .footer-about h2 {
-    font-size: 22px;
-  }
-
-  .footer-col h3 {
-    font-size: 18px;
-  }
-
-  .footer-contact p {
-    align-items: flex-start;
-  }
-
-  .footer-bottom {
-    margin-top: 35px;
-    padding: 18px 0;
-    font-size: 13px;
-  }
-
   .review-card {
     padding: 30px 20px;
   }
@@ -5437,47 +5371,6 @@ CTA SECTION
     flex-shrink: 0;
   }
 
-  .footer {
-    padding: 40px 0 0;
-  }
-
-  .footer-about h2 {
-    font-size: 20px;
-  }
-
-  .footer-about p {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .footer-col h3 {
-    font-size: 17px;
-    margin-bottom: 16px;
-  }
-
-  .footer-col ul li {
-    margin-bottom: 10px;
-  }
-
-  .footer-col ul a {
-    font-size: 14px;
-  }
-
-  .footer-contact p {
-    font-size: 14px;
-    gap: 10px;
-  }
-
-  .footer-contact i {
-    margin-top: 4px;
-  }
-
-  .footer-bottom {
-    margin-top: 30px;
-    padding: 16px 0;
-    font-size: 12px;
-  }
-
   .vehicle-image-slider {
     height: 180px;
     border-radius: 16px 16px 0 0;
@@ -5506,122 +5399,6 @@ CTA SECTION
     font-size: 15px;
   }
 }
-
-/*==============================
-FOOTER
-==============================*/
-
-.footer {
-  background: #081c2d;
-  color: #fff;
-  padding: 70px 0 0;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr repeat(5, 1fr);
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.footer-about h2 {
-  color: var(--white);
-  font-size: 22px;
-  margin-bottom: 16px;
-}
-
-.footer-about p {
-  font-size: 14.5px;
-  margin-bottom: 22px;
-}
-
-.footer-col h3 {
-  color: var(--white);
-  font-size: 17px;
-  margin-bottom: 20px;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-.footer-col h3::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 34px;
-  height: 3px;
-  border-radius: 3px;
-  background: var(--accent);
-}
-
-.footer-col ul li {
-  margin-bottom: 6px;
-}
-
-.footer-col ul a {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 14.5px;
-  transition:
-    color var(--transition),
-    padding-left var(--transition);
-}
-
-.footer-col ul a:hover {
-  color: var(--accent);
-  padding-left: 6px;
-}
-
-.footer-contact p {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 14px;
-  font-size: 14.5px;
-}
-
-.footer-contact i {
-  color: var(--secondary);
-  margin-top: 3px;
-}
-
-.footer-contact a {
-  color: rgba(255, 255, 255, 0.75);
-  transition: color var(--transition);
-}
-
-.footer-contact a:hover {
-  color: var(--accent);
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 22px 0;
-  text-align: center;
-  font-size: 14px;
-}
-
-.footer-sep {
-  color: var(--secondary);
-  margin: 0 8px;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 50px;
-  padding-top: 20px;
-  text-align: center;
-  color: #bbb;
-}
-/*=====================================
-Large Laptop (1400px)
-=====================================*/
-
-@media (max-width: 1400px) {
-  .footer-grid {
-    grid-template-columns: 2fr repeat(5, 1fr);
-    gap: 18px;
-  }
-}
-
 /*=====================================
 Laptop (1200px)
 =====================================*/
@@ -5659,27 +5436,6 @@ Laptop (1200px)
 
   .area-text {
     font-size: 20px;
-  }
-
-  .footer {
-    padding: 60px 0 0;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-  }
-
-  .footer-about {
-    grid-column: 1/-1;
-  }
-
-  .footer-about p {
-    max-width: 650px;
-  }
-
-  .footer-col h3 {
-    font-size: 18px;
   }
 }
 

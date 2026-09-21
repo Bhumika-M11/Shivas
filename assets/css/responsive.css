@@ -99,35 +99,11 @@ RESPONSIVE DESIGN
   .area-text {
     font-size: 20px;
   }
-
-  .footer {
-    padding: 60px 0 0;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
-  }
-
-  .footer-about {
-    grid-column: 1 / -1;
-  }
-
-  .footer-about p {
-    max-width: 650px;
-  }
-
-  .footer-col h3 {
-    font-size: 18px;
-  }
 }
 
 /* Tablet */
 
 @media (max-width: 992px) {
-  .header {
-    padding: 0;
-  }
 
   .navbar {
     padding: 18px 0;
@@ -261,35 +237,6 @@ RESPONSIVE DESIGN
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-  .footer-about {
-    grid-column: 1 / -1;
-  }
-
-  .footer-about h2 {
-    font-size: 24px;
-  }
-
-  .footer-about p {
-    max-width: 100%;
-  }
-
-  .footer-col h3 {
-    font-size: 18px;
-  }
-
-  .footer-col ul a {
-    font-size: 15px;
-  }
-
-  .footer-contact p {
-    font-size: 15px;
-  }
-
   .about {
     padding: 90px 0;
   }
@@ -383,10 +330,6 @@ RESPONSIVE DESIGN
 
   .area-text {
     font-size: 18px;
-  }
-
-  .footer {
-    padding: 55px 0 0;
   }
 
   .slider-nav {
@@ -641,11 +584,6 @@ RESPONSIVE DESIGN
     padding: 14px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
   .social-icons {
     justify-content: center;
   }
@@ -681,40 +619,6 @@ RESPONSIVE DESIGN
 
   .vehicle-content {
     padding: 20px;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 50px 0 0;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .footer-about,
-  .footer-col,
-  .footer-contact {
-    text-align: left;
-  }
-
-  .footer-about h2 {
-    font-size: 22px;
-  }
-
-  .footer-col h3 {
-    font-size: 18px;
-  }
-
-  .footer-contact p {
-    align-items: flex-start;
-  }
-
-  .footer-bottom {
-    margin-top: 35px;
-    padding: 18px 0;
-    font-size: 13px;
   }
 
   /* Reviews */
@@ -1035,49 +939,6 @@ RESPONSIVE DESIGN
     margin-top: 35px;
     font-size: 16px;
   }
-
-  /* Footer */
-  .footer {
-    padding: 40px 0 0;
-  }
-
-  .footer-about h2 {
-    font-size: 20px;
-  }
-
-  .footer-about p {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .footer-col h3 {
-    font-size: 17px;
-    margin-bottom: 16px;
-  }
-
-  .footer-col ul li {
-    margin-bottom: 10px;
-  }
-
-  .footer-col ul a {
-    font-size: 14px;
-  }
-
-  .footer-contact p {
-    font-size: 14px;
-    gap: 10px;
-  }
-
-  .footer-contact i {
-    margin-top: 4px;
-  }
-
-  .footer-bottom {
-    margin-top: 30px;
-    padding: 16px 0;
-    font-size: 12px;
-  }
-
   /* Vehicle image slider */
   .vehicle-image-slider {
     height: 180px;
