@@ -1,5 +1,5 @@
 /* =========================================================
-   NAVACABS COMMON CSS
+   COMMON CSS
    Used by all 5 vehicle/service pages
 ========================================================= */
 
@@ -1476,8 +1476,7 @@ button {
     }
 
     .hero {
-        padding:
-            55px 0 65px;
+                padding: 125px 0 55px;
     }
 
     .hero h1 {

@@ -447,12 +447,558 @@
             gap:10px;
             flex-wrap:wrap;
         }
+
+        /* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* ---------- Large Tablet / Small Laptop ---------- */
+
+@media (max-width: 1100px){
+
+    .hero{
+        min-height:480px;
+    }
+
+    .hero-content{
+        padding:65px 0;
+        max-width:680px;
+    }
+
+    .booking-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .booking-grid .btn{
+        width:100%;
+    }
+
+    .vehicle-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cta-box{
+        padding:45px;
+    }
+
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px){
+
+    .hero{
+        min-height:450px;
+        background-position:center;
+    }
+
+    .hero-content{
+        padding:55px 0;
+        max-width:620px;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:-1.5px;
+    }
+
+    .hero p{
+        font-size:15px;
+        max-width:560px;
+        margin-bottom:24px;
+    }
+
+    .breadcrumb{
+        margin-bottom:18px;
+    }
+
+    .hero-label{
+        margin-bottom:14px;
+    }
+
+    /* Booking */
+
+    .booking-wrap{
+        margin-top:-35px;
+    }
+
+    .booking-box{
+        padding:20px;
+    }
+
+    .booking-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    /* Fleet */
+
+    .fleet-section{
+        padding:65px 0 55px;
+    }
+
+    .section-heading{
+        margin-bottom:30px;
+    }
+
+    .filters{
+        margin-bottom:28px;
+    }
+
+    .vehicle-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:18px;
+    }
+
+    .vehicle-image{
+        height:210px;
+    }
+
+    .vehicle-body{
+        padding:18px;
+    }
+
+    /* Why */
+
+    .why-section{
+        padding:60px 0;
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    /* CTA */
+
+    .cta-section{
+        padding:60px 0;
+    }
+
+    .cta-box{
+        padding:40px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:25px;
+    }
+
+    .cta-actions{
+        width:100%;
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px){
+
+    /* Hero */
+
+    .hero{
+        min-height:420px;
+        align-items:center;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(8,13,24,.94),
+                rgba(8,13,24,.70)
+            ),
+            url("assets/images/vehicles/Crysta.jpg") center/cover no-repeat;
+    }
+
+    .hero-content{
+        padding:45px 0;
+        max-width:100%;
+    }
+
+    .breadcrumb{
+        font-size:12px;
+        gap:7px;
+        margin-bottom:15px;
+    }
+
+    .hero-label{
+        font-size:10px;
+        padding:7px 12px;
+        margin-bottom:13px;
+    }
+
+    .hero h1{
+        font-size:clamp(32px,9vw,44px);
+        line-height:1.12;
+        letter-spacing:-1px;
+        margin-bottom:15px;
+    }
+
+    .hero p{
+        font-size:14px;
+        line-height:1.6;
+        margin-bottom:22px;
+    }
+
+    .hero-actions{
+        gap:8px;
+    }
+
+    .hero-actions .btn{
+        padding:11px 18px;
+        font-size:12px;
+    }
+
+
+    /* Booking */
+
+    .booking-wrap{
+        margin-top:-25px;
+    }
+
+    .booking-box{
+        padding:16px;
+        border-radius:13px;
+    }
+
+    .booking-title{
+        font-size:15px;
+        margin-bottom:13px;
+    }
+
+    .booking-grid{
+        grid-template-columns:1fr;
+        gap:9px;
+    }
+
+    .field{
+        min-height:48px;
+        padding:0 12px;
+    }
+
+    .field input,
+    .field select{
+        font-size:12px;
+    }
+
+
+    /* Fleet */
+
+    .fleet-section{
+        padding:50px 0 45px;
+    }
+
+    .section-heading{
+        margin-bottom:25px;
+    }
+
+    .eyebrow{
+        font-size:11px;
+        margin-bottom:7px;
+    }
+
+    .section-heading h2{
+        font-size:30px;
+        margin-bottom:9px;
+    }
+
+    .section-heading p{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .filters{
+        gap:7px;
+        margin-bottom:22px;
+    }
+
+    .filter-btn{
+        padding:8px 13px;
+        font-size:11px;
+    }
+
+    .vehicle-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .vehicle-image{
+        height:220px;
+    }
+
+    .vehicle-body{
+        padding:17px;
+    }
+
+    .vehicle-body h3{
+        font-size:19px;
+    }
+
+    .vehicle-description{
+        font-size:12px;
+        min-height:auto;
+        margin-bottom:13px;
+    }
+
+    .vehicle-meta{
+        padding:12px 0;
+        margin-bottom:14px;
+    }
+
+    .vehicle-meta span{
+        font-size:11px;
+    }
+
+    .price strong{
+        font-size:17px;
+    }
+
+    .card-btn{
+        min-height:38px;
+        padding:0 11px;
+        font-size:10px;
+    }
+
+
+    /* Why */
+
+    .why-section{
+        padding:50px 0;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .why-card{
+        padding:20px;
+    }
+
+    .why-icon{
+        width:43px;
+        height:43px;
+        margin-bottom:13px;
+    }
+
+    .why-card h3{
+        font-size:16px;
+    }
+
+    .why-card p{
+        font-size:12px;
+        line-height:1.6;
+    }
+
+
+    /* CTA */
+
+    .cta-section{
+        padding:45px 0;
+    }
+
+    .cta-box{
+        padding:30px 22px;
+        border-radius:17px;
+        gap:22px;
+    }
+
+    .cta-box h2{
+        font-size:28px;
+    }
+
+    .cta-box p{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .cta-actions{
+        width:100%;
+    }
+
+    .cta-actions .btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width: 576px){
+
+    .hero{
+        min-height:400px;
+    }
+
+    .hero-content{
+        padding:38px 0;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+        text-align:center;
+    }
+
+
+    /* Booking */
+
+    .booking-wrap{
+        margin-top:-20px;
+    }
+
+    .booking-box{
+        padding:14px;
+    }
+
+    .booking-title{
+        font-size:14px;
+    }
+
+
+    /* Fleet */
+
+    .fleet-section{
+        padding:42px 0 38px;
+    }
+
+    .section-heading h2{
+        font-size:27px;
+    }
+
+    .filters{
+        justify-content:flex-start;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:5px;
+        scrollbar-width:none;
+    }
+
+    .filters::-webkit-scrollbar{
+        display:none;
+    }
+
+    .filter-btn{
+        flex-shrink:0;
+        white-space:nowrap;
+    }
+
+    .vehicle-image{
+        height:200px;
+    }
+
+    .vehicle-body{
+        padding:15px;
+    }
+
+    .vehicle-bottom{
+        align-items:flex-start;
+    }
+
+    .card-actions{
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .card-btn{
+        width:100%;
+        min-width:75px;
+    }
+
+
+    /* Why */
+
+    .why-section{
+        padding:42px 0;
+    }
+
+
+    /* CTA */
+
+    .cta-section{
+        padding:38px 0;
+    }
+
+    .cta-box{
+        padding:25px 18px;
+    }
+
+    .cta-box h2{
+        font-size:25px;
+    }
+
+}
+
+
+/* ---------- Extra Small ---------- */
+
+@media (max-width: 400px){
+
+    .hero{
+        min-height:380px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:12px;
+    }
+
+    .hero-label{
+        font-size:9px;
+    }
+
+    .booking-box{
+        padding:12px;
+    }
+
+    .vehicle-image{
+        height:180px;
+    }
+
+    .vehicle-meta{
+        grid-template-columns:1fr;
+    }
+
+    .vehicle-bottom{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .card-actions{
+        width:100%;
+        flex-direction:row;
+    }
+
+    .card-btn{
+        flex:1;
+    }
+
+    .cta-box h2{
+        font-size:23px;
+    }
+
+}
+
     
     </style>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/cab.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
 

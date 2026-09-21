@@ -78,7 +78,6 @@ img {
     display: block;
 }
 
-
 /* =========================
    BUTTONS
    ========================= */
@@ -1599,7 +1598,7 @@ img {
     }
 
     .hero-loc-content {
-        padding: 55px 0 65px;
+        padding: 125px 0 55px;
     }
 
     .hero-loc h1 {
