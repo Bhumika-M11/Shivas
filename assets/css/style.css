@@ -390,7 +390,7 @@ ul {
             rgba(5, 12, 28, 0.62) 48%,
             rgba(5, 12, 28, 0.72) 100%
         ),
-        url("../images/hero-bg.jpg") center center / cover no-repeat;
+        url("../images/hero1.jpeg") center center / cover no-repeat;
 
     color: #ffffff;
 }

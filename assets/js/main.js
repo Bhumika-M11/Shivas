@@ -287,23 +287,3 @@ window.addEventListener("load", () => {
     if (loader) loader.classList.add("hide");
 
 });
-
-/* Back To Top */
-
-const backTop = document.querySelector(".back-top");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 500){
-
-        backTop.style.opacity = "1";
-        backTop.style.visibility = "visible";
-
-    }else{
-
-        backTop.style.opacity = "0";
-        backTop.style.visibility = "hidden";
-
-    }
-
-});

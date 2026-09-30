@@ -680,35 +680,83 @@ FOOTER
 
 </footer>
 
-
 <script>
-
-const scriptURL="https://script.google.com/macros/s/AKfycbwPUOKRHEEibFGUDzMpO86cnJtaevdNpQvM-r6zjyBgAEjIhMYrlEAD_XFD-kQMo1Xw/exec";
 
 const form = document.getElementById("heroForm");
 const status = document.getElementById("result");
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
+
     e.preventDefault();
 
-    status.innerHTML = "Submitting...";
+    // Get form values
+    const name = form.querySelector('[name="name"]').value.trim();
+    const phone = form.querySelector('[name="phone"]').value.trim();
+    const pickup = form.querySelector('[name="pickup"]').value.trim();
+    const drop = form.querySelector('[name="drop"]').value.trim();
+    const date = form.querySelector('[name="date"]').value;
+    const time = form.querySelector('[name="time"]').value;
+    const vehicle = form.querySelector('[name="vehicle"]').value;
+    const triptype = form.querySelector('[name="triptype"]').value;
+    const message = form.querySelector('[name="message"]').value.trim();
 
-    fetch(scriptURL, {
-        method: "POST",
-        body: new FormData(form),
-        mode: "no-cors"
-    })
-    .then(() => {
-        status.innerHTML = "✅ Enquiry Submitted Successfully";
-        form.reset();
-    })
-    .catch(error => {
-        console.error(error);
-        status.innerHTML = "❌ " + error.message;
-    });
+    // Basic validation
+    if (!name || !phone || !pickup || !date || !time || !vehicle) {
+
+        status.innerHTML = "❌ Please fill in all required fields.";
+        status.style.color = "#d32f2f";
+
+        return;
+    }
+
+    // WhatsApp message
+    const whatsappMessage = `
+ NEW TRAVEL ENQUIRY
+━━━━━━━━━━━━━━━━━━
+
+ Customer Details
+Name: ${name}
+Mobile: ${phone}
+
+Trip Details
+Pickup: ${pickup}
+Drop: ${drop || "Not specified"}
+
+Date: ${date}
+ Time: ${time}
+
+Vehicle: ${vehicle}
+Trip Type: ${triptype || "Not specified"}
+
+Requirements
+${message || "No additional requirements"}
+
+━━━━━━━━━━━━━━━━━━
+Sent from Shivas Travel Guru Website
+`;
+
+    // WhatsApp number
+    const whatsappNumber = "919019993283";
+
+    // Encode message
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    // Show success message
+    status.innerHTML = "✅ Opening WhatsApp...";
+    status.style.color = "#168c45";
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
 });
 
 </script>
+
+
     <script src="assets/js/navbar.js" defer></script>
 <script src="assets/js/contact.js" defer></script>
 <!-- ===========================

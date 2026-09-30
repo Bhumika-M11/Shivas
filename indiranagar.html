@@ -37,8 +37,8 @@
     </noscript>
 
     <!-- Page Styles -->
+     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/banashankari.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/footer.css">
@@ -774,10 +774,10 @@
                     <p>Get a customized quote based on vehicle, distance, trip duration and travel date.</p>
                 </div>
                 <div class="pricing-grid">
-                    <div class="price-card"><span class="price-tag">Cab Rental</span><h3>Sedan / SUV / Innova</h3><p class="price-desc">Local & outstation cab services</p><ul><li><i class="fa-solid fa-check"></i> Professional Driver Included</li><li><i class="fa-solid fa-check"></i> Fuel Included</li><li><i class="fa-solid fa-check"></i> Transparent Per-KM Pricing</li><li><i class="fa-solid fa-check"></i> Toll &amp; Parking billed as per usage</li></ul><a href="form.html" class="btn btn-primary">Get Quote</a></div>
-                    <div class="price-card"><span class="price-tag">Traveller Rental</span><h3>9 / 12 / 16 Seater</h3><p class="price-desc">Group travel with comfort</p><ul><li><i class="fa-solid fa-check"></i> Professional Driver Included</li><li><i class="fa-solid fa-check"></i> AC Available</li><li><i class="fa-solid fa-check"></i> Ample Luggage Space</li><li><i class="fa-solid fa-check"></i> Driver Bata &amp; Night Charges Applicable</li></ul><a href="form.html" class="btn btn-primary">Get Quote</a></div>
-                    <div class="price-card"><span class="price-tag">Urbania Rental</span><h3>13 / 16 / 17 Seater</h3><p class="price-desc">Premium group travel solution</p><ul><li><i class="fa-solid fa-check"></i> Professional Driver Included</li><li><i class="fa-solid fa-check"></i> Dual AC & Charging Ports</li><li><i class="fa-solid fa-check"></i> LED Entertainment System</li><li><i class="fa-solid fa-check"></i> Pushback Reclining Seats</li></ul><a href="form.html" class="btn btn-primary">Get Quote</a></div>
-                    <div class="price-card"><span class="price-tag">Luxury Car Rental</span><h3>Luxury Sedan / SUV</h3><p class="price-desc">Premium vehicles for VIP travel</p><ul><li><i class="fa-solid fa-check"></i> Premium Vehicle Included</li><li><i class="fa-solid fa-check"></i> Professional Chauffeur</li><li><i class="fa-solid fa-check"></i> Leather Interiors</li><li><i class="fa-solid fa-check"></i> Flexible Booking Options</li></ul><a href="form.html" class="btn btn-gold">Get Quote</a></div>
+                    <div class="price-card"><h3>Sedan / SUV / Innova</h3><p class="price-desc">Local & outstation cab services</p><ul><li><i class="fa-solid fa-check"></i> Professional Driver Included</li><li><i class="fa-solid fa-check"></i> Fuel Included</li><li><i class="fa-solid fa-check"></i> Transparent Per-KM Pricing</li><li><i class="fa-solid fa-check"></i> Toll &amp; Parking billed as per usage</li></ul><a href="form.html" class="btn btn-primary">Get Quote</a></div>
+                    <div class="price-card"><h3>9 / 12 / 16 Seater</h3><p class="price-desc">Group travel with comfort</p><ul><li><i class="fa-solid fa-check"></i> Professional Driver Included</li><li><i class="fa-solid fa-check"></i> AC Available</li><li><i class="fa-solid fa-check"></i> Ample Luggage Space</li><li><i class="fa-solid fa-check"></i> Driver Bata &amp; Night Charges Applicable</li></ul><a href="form.html" class="btn btn-primary">Get Quote</a></div>
+                    <div class="price-card"><h3>13 / 16 / 17 Seater</h3><p class="price-desc">Premium group travel solution</p><ul><li><i class="fa-solid fa-check"></i> Professional Driver Included</li><li><i class="fa-solid fa-check"></i> Dual AC & Charging Ports</li><li><i class="fa-solid fa-check"></i> LED Entertainment System</li><li><i class="fa-solid fa-check"></i> Pushback Reclining Seats</li></ul><a href="form.html" class="btn btn-primary">Get Quote</a></div>
+                    <div class="price-card"><h3>Luxury Sedan / SUV</h3><p class="price-desc">Premium vehicles for VIP travel</p><ul><li><i class="fa-solid fa-check"></i> Premium Vehicle Included</li><li><i class="fa-solid fa-check"></i> Professional Chauffeur</li><li><i class="fa-solid fa-check"></i> Leather Interiors</li><li><i class="fa-solid fa-check"></i> Flexible Booking Options</li></ul><a href="form.html" class="btn btn-gold">Get Quote</a></div>
                 </div>
                 <p class="pricing-note"><i class="fa-solid fa-circle-info"></i> Final pricing depends on vehicle type, distance, trip duration, travel date, tolls and seasonal demand. Call <a href="tel:+919019993283">+91 90199 93283</a> for an exact quotation.</p>
             </div>
@@ -998,24 +998,7 @@ FOOTER
                 if (!isOpen) item.classList.add('open');
             });
         });
-        const backTop = document.getElementById('backTop');
-        window.addEventListener('scroll', () => {
-            backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        const bookingForm = document.getElementById('bookingForm');
-        if (bookingForm) {
-            bookingForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const result = document.getElementById('bookingResult');
-                result.innerHTML = '<p style="color:var(--teal);margin-top:15px;font-weight:600;">Thank you! Your quote request has been sent. We will contact you shortly.</p>';
-                bookingForm.reset();
-            });
-        }
     </script>
-    <!-- ===========================
-CAR RENTAL SUBMENU
-=========================== -->
 
 <script>
 

@@ -37,8 +37,8 @@
     </noscript>
 
     <!-- Page Styles -->
+     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/banashankari.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/footer.css">
@@ -1364,28 +1364,131 @@ FOOTER
             });
         });
 
-        // Back to top
-        const backTop = document.getElementById('backTop');
-        window.addEventListener('scroll', () => {
-            backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
 
-        // Form submission
-        const bookingForm = document.getElementById('bookingForm');
-        if (bookingForm) {
-            bookingForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const result = document.getElementById('bookingResult');
-                result.innerHTML = '<p style="color:var(--teal);margin-top:15px;font-weight:600;">Thank you! Your quote request has been sent. We will contact you shortly.</p>';
-                bookingForm.reset();
+<script>
+
+const bookingForm = document.getElementById("bookingForm");
+
+if (bookingForm) {
+
+    bookingForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const result = document.getElementById("bookingResult");
+
+        // Get form values
+        const name = document.getElementById("bname").value.trim();
+        const phone = document.getElementById("bphone").value.trim();
+        const pickup = document.getElementById("bpickup").value.trim();
+        const drop = document.getElementById("bdrop").value.trim();
+        const date = document.getElementById("bdate").value;
+        const time = document.getElementById("btime").value;
+        const passengers = document.getElementById("bpassengers").value;
+        const vehicle = document.getElementById("bvehicle").value;
+        const triptype = document.getElementById("btriptype").value;
+        const message = document.getElementById("bmessage").value.trim();
+
+
+        // WhatsApp number
+        // India country code +91
+        const whatsappNumber = "919019993283";
+
+
+        // Format date
+        let formattedDate = "Not specified";
+
+        if (date) {
+            const dateObject = new Date(date + "T00:00:00");
+
+            formattedDate = dateObject.toLocaleDateString("en-IN", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
             });
         }
-    </script>
-    <!-- ===========================
-CAR RENTAL SUBMENU
-=========================== -->
 
+
+        // Format time
+        let formattedTime = "Not specified";
+
+        if (time) {
+
+            const [hours, minutes] = time.split(":");
+
+            const timeObject = new Date();
+
+            timeObject.setHours(hours, minutes);
+
+            formattedTime = timeObject.toLocaleTimeString("en-IN", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true
+            });
+        }
+
+
+        // Create WhatsApp message
+        const whatsappMessage = `NEW BOOKING ENQUIRY
+━━━━━━━━━━━━━━━━━━━━
+LOCATION: YELAHANKA
+
+CUSTOMER DETAILS
+
+Name: ${name}
+Mobile: ${phone}
+
+TRAVEL DETAILS
+
+Pickup: ${pickup}
+Drop: ${drop}
+
+ Travel Date: ${formattedDate}
+ Travel Time: ${formattedTime}
+
+ Passengers: ${passengers}
+ Vehicle: ${vehicle}
+ Trip Type: ${triptype}
+
+SPECIAL REQUIREMENTS
+
+${message || "No special requirements"}
+
+━━━━━━━━━━━━━━━━━━━━
+
+Enquiry from Shivas Travel Guru Website
+
+Please contact the customer for quotation and confirmation.`;
+
+
+        // Create WhatsApp URL
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(whatsappMessage);
+
+
+        // Show status
+        result.innerHTML =
+            '<p style="color:#168c45;margin-top:15px;font-weight:600;">✅ Opening WhatsApp...</p>';
+
+
+        // Open WhatsApp
+        window.open(whatsappURL, "_blank");
+
+
+        // Reset form after opening WhatsApp
+        setTimeout(function () {
+            bookingForm.reset();
+        }, 500);
+
+    });
+
+}
+
+</script>
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {

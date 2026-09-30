@@ -4699,6 +4699,264 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // ============================================
+    // YOUR WHATSAPP NUMBER
+    // ============================================
+    const whatsappNumber = "919019993283";
+
+
+    // ============================================
+    // OUTSTATION CAB
+    // ============================================
+    document.getElementById("outstationForm").addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const form = this;
+
+        const roundTrip = document.getElementById("roundTrip").checked;
+
+        const from = form.querySelector('[name="fromLocation"]').value.trim();
+        const to = form.querySelector('[name="toLocation"]').value.trim();
+        const pickupDate = form.querySelector('[name="pickupDate"]').value;
+        const pickupTime = form.querySelector('[name="pickupTime"]').value;
+        const returnDate = form.querySelector('[name="returnDate"]').value;
+
+
+        let whatsappMessage =
+            "Hello, I would like to book a cab.%0A%0A" +
+
+            " NEW OUTSTATION CAB BOOKING%0A%0A" +
+
+            "Round Trip: " +
+            encodeURIComponent(roundTrip ? "Yes" : "No") + "%0A" +
+
+            "From: " +
+            encodeURIComponent(from) + "%0A" +
+
+            "To: " +
+            encodeURIComponent(to) + "%0A" +
+
+            "Pickup Date: " +
+            encodeURIComponent(pickupDate) + "%0A" +
+
+            "Pickup Time: " +
+            encodeURIComponent(pickupTime) + "%0A";
+
+
+        if (roundTrip) {
+
+            whatsappMessage +=
+                "Return Date: " +
+                encodeURIComponent(returnDate || "Not provided") +
+                "%0A";
+        }
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            whatsappMessage;
+
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+
+
+    // ============================================
+    // CAR RENTAL
+    // ============================================
+    document.getElementById("rentalForm").addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const form = this;
+
+        const pickupLocation =
+            form.querySelector('[name="pickupLocation"]').value.trim();
+
+        const rentalType =
+            form.querySelector('[name="rentalType"]').value;
+
+        const pickupDate =
+            form.querySelector('[name="pickupDate"]').value;
+
+        const pickupTime =
+            form.querySelector('[name="pickupTime"]').value;
+
+        const dropDate =
+            form.querySelector('[name="dropDate"]').value;
+
+        const dropTime =
+            form.querySelector('[name="dropTime"]').value;
+
+
+        const whatsappMessage =
+
+            "Hello, I would like to book a car rental.%0A%0A" +
+
+            " NEW CAR RENTAL BOOKING%0A%0A" +
+
+            "Pickup Location: " +
+            encodeURIComponent(pickupLocation) + "%0A" +
+
+            "Rental Type: " +
+            encodeURIComponent(rentalType) + "%0A" +
+
+            "Pickup Date: " +
+            encodeURIComponent(pickupDate) + "%0A" +
+
+            "Pickup Time: " +
+            encodeURIComponent(pickupTime) + "%0A" +
+
+            "Drop Date: " +
+            encodeURIComponent(dropDate || "Not provided") + "%0A" +
+
+            "Drop Time: " +
+            encodeURIComponent(dropTime || "Not provided") + "%0A";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            whatsappMessage;
+
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+
+
+    // ============================================
+    // AIRPORT TAXI
+    // ============================================
+    document.getElementById("airportForm").addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const form = this;
+
+        const airport =
+            form.querySelector('[name="airport"]').value.trim();
+
+        const from =
+            form.querySelector('[name="fromLocation"]').value.trim();
+
+        const to =
+            form.querySelector('[name="toLocation"]').value.trim();
+
+        const pickupDate =
+            form.querySelector('[name="pickupDate"]').value;
+
+        const pickupTime =
+            form.querySelector('[name="pickupTime"]').value;
+
+
+        const whatsappMessage =
+
+            "Hello, I would like to book an airport taxi.%0A%0A" +
+
+            " NEW AIRPORT TAXI BOOKING%0A%0A" +
+
+            "Airport: " +
+            encodeURIComponent(airport) + "%0A" +
+
+            "From: " +
+            encodeURIComponent(from) + "%0A" +
+
+            "To: " +
+            encodeURIComponent(to) + "%0A" +
+
+            "Pickup Date: " +
+            encodeURIComponent(pickupDate) + "%0A" +
+
+            "Pickup Time: " +
+            encodeURIComponent(pickupTime) + "%0A";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            whatsappMessage;
+
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+
+
+    // ============================================
+    // CITY RIDES
+    // ============================================
+    document.getElementById("cityForm").addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const form = this;
+
+        const from =
+            form.querySelector('[name="fromLocation"]').value.trim();
+
+        const to =
+            form.querySelector('[name="toLocation"]').value.trim();
+
+        const pickupDate =
+            form.querySelector('[name="pickupDate"]').value;
+
+        const pickupTime =
+            form.querySelector('[name="pickupTime"]').value;
+
+        const vehicleType =
+            form.querySelector('[name="vehicleType"]').value;
+
+
+        const whatsappMessage =
+
+            "Hello, I would like to book a city ride.%0A%0A" +
+
+            " NEW CITY RIDE BOOKING*%0A%0A" +
+
+            "From: " +
+            encodeURIComponent(from) + "%0A" +
+
+            "To: " +
+            encodeURIComponent(to) + "%0A" +
+
+            "Pickup Date: " +
+            encodeURIComponent(pickupDate) + "%0A" +
+
+            "Pickup Time: " +
+            encodeURIComponent(pickupTime) + "%0A" +
+
+            "Vehicle Type: " +
+            encodeURIComponent(vehicleType) + "%0A";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            whatsappMessage;
+
+
+        window.open(whatsappURL, "_blank");
+
+    });
+
+});
+</script>
+
+
 </body>
 
 </html>

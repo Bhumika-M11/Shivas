@@ -37,8 +37,8 @@
     </noscript>
 
     <!-- Page Styles -->
+     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/banashankari.css">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/footer.css">
@@ -1393,27 +1393,65 @@ FOOTER
             });
         });
 
-        // Back to top
-        const backTop = document.getElementById('backTop');
-        window.addEventListener('scroll', () => {
-            backTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-        // Form submission
-        const bookingForm = document.getElementById('bookingForm');
-        if (bookingForm) {
-            bookingForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const result = document.getElementById('bookingResult');
-                result.innerHTML = '<p style="color:var(--teal);margin-top:15px;font-weight:600;">Thank you! Your quote request has been sent. We will contact you shortly.</p>';
-                bookingForm.reset();
-            });
-        }
     </script>
-    <!-- ===========================
-CAR RENTAL SUBMENU
-=========================== -->
+<script>
+const bookingForm = document.getElementById('bookingForm');
+
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('bname').value.trim();
+        const phone = document.getElementById('bphone').value.trim();
+        const pickup = document.getElementById('bpickup').value.trim();
+        const drop = document.getElementById('bdrop').value.trim();
+        const date = document.getElementById('bdate').value;
+        const time = document.getElementById('btime').value;
+        const passengers = document.getElementById('bpassengers').value;
+        const vehicle = document.getElementById('bvehicle').value;
+        const tripType = document.getElementById('btriptype').value;
+        const message = document.getElementById('bmessage').value.trim();
+
+        const whatsappMessage = `
+New Booking Enquiry - Shivas Travel Guru
+
+Customer Details
+Name: ${name}
+Phone: ${phone}
+
+Trip Details
+Pickup: ${pickup}
+Drop: ${drop}
+Travel Date: ${date}
+Travel Time: ${time}
+
+ Passengers: ${passengers}
+ Vehicle: ${vehicle}
+ Trip Type: ${tripType}
+
+Special Requirements
+${message || 'None'}
+
+Please provide the quotation and availability.
+
+Thank you!
+        `.trim();
+
+        const whatsappNumber = "919019993283";
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(whatsappMessage);
+
+        window.open(whatsappURL, "_blank");
+
+        document.getElementById('bookingResult').innerHTML =
+            '<p style="color:var(--teal);margin-top:15px;font-weight:600;">Opening WhatsApp...</p>';
+    });
+}
+</script>
 
 <script>
 
