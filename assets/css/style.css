@@ -5417,8 +5417,7 @@ Laptop (1200px)
   }
 
   .vehicle-slider {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    grid-template-columns: 1;
   }
 
   .vehicle-card {
