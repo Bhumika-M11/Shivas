@@ -5,218 +5,156 @@
     <!-- Homepage -->
     <url>
         <loc>https://shivastravelguru.com/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
     </url>
 
     <!-- Trips -->
     <url>
         <loc>https://shivastravelguru.com/trips.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- Packages -->
     <url>
         <loc>https://shivastravelguru.com/packages.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- Contact -->
     <url>
         <loc>https://shivastravelguru.com/contact.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- SUV -->
     <url>
         <loc>https://shivastravelguru.com/suv-cabs.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- Innova  -->
     <url>
         <loc>https://shivastravelguru.com/innova-cabs.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- Hycross -->
     <url>
         <loc>https://shivastravelguru.com/hycross-cabs.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- Sedan -->
     <url>
         <loc>https://shivastravelguru.com/sedan.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- tempo-traveller -->
     <url>
         <loc>https://shivastravelguru.com/tempo-traveller.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- urbania-rental-bangalore -->
     <url>
         <loc>https://shivastravelguru.com/urbania-rental-bangalore.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- bus-booking-bangalore -->
     <url>
         <loc>https://shivastravelguru.com/bus-booking-bangalore.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- bangalore-mysore -->
     <url>
         <loc>https://shivastravelguru.com/bangalore-mysore.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- vehicle-categories -->
     <url>
         <loc>https://shivastravelguru.com/vehicle-categories.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- cab-rentals -->
     <url>
         <loc>https://shivastravelguru.com/cab-rentals.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- traveller-rentals -->
     <url>
         <loc>https://shivastravelguru.com/traveller-rentals.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- luxury-rentals -->
     <url>
         <loc>https://shivastravelguru.com/luxury-rentals.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- banashankari -->
     <url>
         <loc>https://shivastravelguru.com/banashankari.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- koramangala -->
     <url>
         <loc>https://shivastravelguru.com/koramangala.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- mg-road -->
     <url>
         <loc>https://shivastravelguru.com/mg-road.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- marathahalli -->
     <url>
         <loc>https://shivastravelguru.com/marathahalli.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- malleshwaram -->
     <url>
         <loc>https://shivastravelguru.com/malleshwaram.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- whitefield -->
     <url>
         <loc>https://shivastravelguru.com/whitefield.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- yelahanka -->
     <url>
         <loc>https://shivastravelguru.com/yelahanka.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- jp-nagar -->
     <url>
         <loc>https://shivastravelguru.com/jp-nagar.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- jayanagar -->
     <url>
         <loc>https://shivastravelguru.com/jayanagar.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- indiranagar -->
     <url>
         <loc>https://shivastravelguru.com/indiranagar.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- hsr-layout -->
     <url>
         <loc>https://shivastravelguru.com/hsr-layout.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- hebbal -->
     <url>
         <loc>https://shivastravelguru.com/hebbal.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- electronic-city -->
     <url>
         <loc>https://shivastravelguru.com/electronic-city.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- btm-layout -->
     <url>
         <loc>https://shivastravelguru.com/btm-layout.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- bellandur -->
     <url>
         <loc>https://shivastravelguru.com/bellandur.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
 </urlset>
