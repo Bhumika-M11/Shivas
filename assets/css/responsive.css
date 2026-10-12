@@ -113,10 +113,6 @@ RESPONSIVE DESIGN
     font-size: 24px;
   }
 
-  .menu-btn {
-    display: block;
-  }
-
   .nav-menu {
     position: fixed;
     top: 80px;

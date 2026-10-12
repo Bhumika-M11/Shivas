@@ -1,289 +1,407 @@
-// ===============================
-// Sticky Header
-// ===============================
+"use strict";
 
-const header = document.querySelector(".header");
+document.addEventListener("DOMContentLoaded", () => {
 
-window.addEventListener("scroll", () => {
+    // ==========================================
+    // STICKY HEADER
+    // ==========================================
 
-    if (window.scrollY > 50) {
-        header.classList.add("sticky");
-    } else {
-        header.classList.remove("sticky");
+    const header = document.querySelector(".header");
+
+    function updateStickyHeader() {
+        if (!header) return;
+
+        header.classList.toggle("sticky", window.scrollY > 50);
     }
 
-});
+    updateStickyHeader();
 
-// ===============================
-// Mobile Menu
-// ===============================
+    window.addEventListener("scroll", updateStickyHeader, {
+        passive: true
+    });
 
-const menuBtn = document.querySelector(".menu-btn");
-const navMenu = document.querySelector(".nav-menu");
-const menuIcon = document.querySelector(".menu-btn i");
 
-menuBtn?.addEventListener("click", () => {
+    // ==========================================
+    // MOBILE NAVIGATION
+    // ==========================================
 
-    navMenu.classList.toggle("active");
+    const menuBtn = document.querySelector(".menu-btn");
+    const navMenu = document.querySelector(".nav-menu");
+    const menuIcon = menuBtn?.querySelector("i");
 
-    if (navMenu.classList.contains("active")) {
-        menuIcon.classList.remove("fa-bars");
-        menuIcon.classList.add("fa-xmark");
-    } else {
-        menuIcon.classList.remove("fa-xmark");
-        menuIcon.classList.add("fa-bars");
-    }
-
-});
-
-// Close menu after clicking a link
-
-document.querySelectorAll(".nav-menu a").forEach(link => {
-
-    link.addEventListener("click", () => {
+    function closeMobileMenu() {
+        if (!navMenu || !menuBtn) return;
 
         navMenu.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Open navigation menu");
 
-        menuIcon.classList.remove("fa-xmark");
-        menuIcon.classList.add("fa-bars");
+        if (menuIcon) {
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+        }
+    }
+
+    function toggleMobileMenu() {
+        if (!navMenu || !menuBtn) return;
+
+        const isOpen = navMenu.classList.toggle("active");
+
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+        menuBtn.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        if (menuIcon) {
+            menuIcon.classList.toggle("fa-bars", !isOpen);
+            menuIcon.classList.toggle("fa-xmark", isOpen);
+        }
+    }
+
+    menuBtn?.addEventListener("click", toggleMobileMenu);
+
+    navMenu?.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMobileMenu);
+    });
+
+    // Close menu when clicking outside it.
+    document.addEventListener("click", event => {
+        if (!navMenu || !menuBtn) return;
+
+        if (
+            navMenu.classList.contains("active") &&
+            !navMenu.contains(event.target) &&
+            !menuBtn.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu when switching to desktop width.
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 992) {
+            closeMobileMenu();
+        }
+    });
+
+
+    // ==========================================
+    // DROPDOWN NAVIGATION ON MOBILE
+    // ==========================================
+
+    document.querySelectorAll(".dropdown").forEach(dropdown => {
+
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        const submenu = dropdown.querySelector(".dropdown-menu");
+
+        if (!toggle || !submenu) return;
+
+        toggle.setAttribute("aria-haspopup", "true");
+        toggle.setAttribute("aria-expanded", "false");
+
+        toggle.addEventListener("click", event => {
+
+            // Only use click-to-expand behavior on mobile/tablet.
+            if (window.innerWidth > 992) return;
+
+            event.preventDefault();
+
+            const isOpen = dropdown.classList.toggle("open");
+
+            toggle.setAttribute("aria-expanded", String(isOpen));
+
+        });
 
     });
 
-});
 
-// ===============================
-// Hero Background Slider
-// ===============================
+    // ==========================================
+    // HERO BACKGROUND SLIDER
+    // ==========================================
 
-const slides = document.querySelectorAll(".slide");
+    const slides = Array.from(document.querySelectorAll(".slide"));
 
-let currentSlide = 0;
-let heroInterval = null;
+    let currentSlide = Math.max(
+        0,
+        slides.findIndex(slide => slide.classList.contains("active"))
+    );
 
-function showSlide(index){
+    let heroInterval = null;
 
-    if (!slides.length) return;
+    function showSlide(index) {
+        if (!slides.length) return;
 
-    const i = (index + slides.length) % slides.length;
+        currentSlide = ((index % slides.length) + slides.length) % slides.length;
 
-    slides.forEach((s, j) => s.classList.toggle("active", j === i));
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === currentSlide);
+        });
+    }
 
-    currentSlide = i;
+    function nextSlide() {
+        if (slides.length < 2) return;
+        showSlide(currentSlide + 1);
+    }
 
-}
+    function stopHeroSlider() {
+        if (heroInterval !== null) {
+            clearInterval(heroInterval);
+            heroInterval = null;
+        }
+    }
 
-function nextSlide(){
-
-    if (!slides.length) return;
-    showSlide(currentSlide + 1);
-
-}
-
-function startHeroSlider(){
-
-    stopHeroSlider();
-
-    if (slides.length) heroInterval = setInterval(nextSlide, 5000);
-
-}
-
-function stopHeroSlider(){
-
-    if (heroInterval) { clearInterval(heroInterval); heroInterval = null; }
-
-}
-
-startHeroSlider();
-
-document.addEventListener("visibilitychange",()=>{
-
-    if(document.hidden){
-
+    function startHeroSlider() {
         stopHeroSlider();
 
-    }else{
+        if (slides.length < 2 || document.hidden) return;
 
+        heroInterval = setInterval(nextSlide, 5000);
+    }
+
+    if (slides.length) {
+        showSlide(currentSlide);
         startHeroSlider();
+    }
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            stopHeroSlider();
+        } else {
+            startHeroSlider();
+        }
+    });
+
+
+    // ==========================================
+    // SMOOTH SCROLL
+    // ==========================================
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+        anchor.addEventListener("click", event => {
+
+            const href = anchor.getAttribute("href");
+
+            if (!href || href === "#") return;
+
+            let target;
+
+            try {
+                target = document.querySelector(href);
+            } catch {
+                return;
+            }
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            const headerHeight = header
+                ? header.getBoundingClientRect().height
+                : 0;
+
+            const targetTop =
+                target.getBoundingClientRect().top +
+                window.scrollY -
+                headerHeight -
+                12;
+
+            window.scrollTo({
+                top: Math.max(0, targetTop),
+                behavior: "smooth"
+            });
+
+        });
+
+    });
+
+
+    // ==========================================
+    // ACTIVE NAVIGATION
+    // ==========================================
+
+    const sections = document.querySelectorAll("main section[id], section[id]");
+    const navLinks = document.querySelectorAll(".nav-menu a");
+
+    function updateActiveNavigation() {
+
+        if (!sections.length || !navLinks.length) return;
+
+        let currentId = "";
+
+        const scrollPosition = window.scrollY + 160;
+
+        sections.forEach(section => {
+            if (scrollPosition >= section.offsetTop) {
+                currentId = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            const href = link.getAttribute("href");
+
+            if (href === "#" + currentId) {
+                link.classList.add("active");
+            }
+
+        });
 
     }
 
-});
+    window.addEventListener("scroll", updateActiveNavigation, {
+        passive: true
+    });
 
-// ===============================
-// Smooth Scroll
-// ===============================
+    updateActiveNavigation();
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
-    anchor.addEventListener("click",function(e){
+    // ==========================================
+    // HERO TEXT ANIMATION
+    // ==========================================
 
-        const href = this.getAttribute("href");
+    function revealHero() {
+        const heroContent = document.querySelector(".hero-content");
 
-        if (!href || href === "#") return;
+        if (heroContent) {
+            heroContent.classList.add("loaded");
+        }
+    }
 
-        const target = document.querySelector(href);
+    if (document.readyState === "complete") {
+        revealHero();
+    } else {
+        window.addEventListener("load", revealHero, { once: true });
+    }
 
-        if(target){
 
-            e.preventDefault();
+    // ==========================================
+    // SERVICE CARD REVEAL ANIMATION
+    // ==========================================
 
-            target.scrollIntoView({
+    const serviceCards = document.querySelectorAll(".service-card");
 
-                behavior:"smooth"
+    if ("IntersectionObserver" in window && serviceCards.length) {
+
+        const serviceObserver = new IntersectionObserver((entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
 
             });
 
-        }
+        }, {
+            threshold: 0.12
+        });
 
-    });
+        serviceCards.forEach(card => {
+            card.classList.add("reveal-card");
+            serviceObserver.observe(card);
+        });
 
-});
+    } else {
+        serviceCards.forEach(card => {
+            card.classList.add("visible");
+        });
+    }
 
-// ===============================
-// Active Navigation
-// ===============================
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-menu a");
+    // ==========================================
+    // ANIMATED COUNTERS
+    // ==========================================
 
-window.addEventListener("scroll", () => {
+    const counters = document.querySelectorAll(".counter");
+    const statsSection = document.querySelector(".stats");
 
-    let current = "";
+    let countersStarted = false;
 
-    sections.forEach(section => {
+    function animateCounter(counter) {
 
-        const sectionTop = section.offsetTop - 150;
+        const target = Number(counter.dataset.target);
 
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
+        if (!Number.isFinite(target) || target < 0) return;
 
-    });
+        const duration = 1400;
+        const startTime = performance.now();
 
-    navLinks.forEach(link => {
+        function updateCounter(now) {
 
-        link.classList.remove("active");
+            const progress = Math.min((now - startTime) / duration, 1);
+            const value = Math.floor(target * progress);
 
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-
-    });
-
-});
-
-// ===============================
-// Hero Text Animation
-// ===============================
-
-window.addEventListener("load",()=>{
-
-    var heroContent = document.querySelector(".hero-content");
-    if (heroContent) heroContent.classList.add("loaded");
-
-});
-
-// Service Cards Animation
-
-const serviceCards = document.querySelectorAll(".service-card");
-
-const serviceObserver = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
-
-}
-
-});
-
-});
-
-serviceCards.forEach(card=>{
-
-card.style.opacity="0";
-
-card.style.transform="translateY(40px)";
-
-card.style.transition=".8s ease";
-
-serviceObserver.observe(card);
-
-});
-
-// ===============================
-// Animated Counter
-// ===============================
-
-const counters = document.querySelectorAll(".counter");
-
-const speed = 200;
-
-const startCounter = () => {
-
-    counters.forEach(counter => {
-
-        const target = +counter.dataset.target;
-
-        const update = () => {
-
-            const count = +counter.innerText;
-
-            const increment = target / speed;
-
-            if (count < target) {
-
-                counter.innerText = Math.ceil(count + increment);
-
-                requestAnimationFrame(update);
-
+            if (target >= 1000) {
+                counter.textContent =
+                    (value / 1000).toFixed(value >= 10000 ? 0 : 1)
+                    .replace(/\.0$/, "") + "K+";
             } else {
-
-                if (target >= 1000) {
-
-                    counter.innerText = (target / 1000) + "K+";
-
-                } else {
-
-                    counter.innerText = target + "+";
-
-                }
-
+                counter.textContent = value + (progress === 1 ? "+" : "");
             }
 
-        };
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
 
-        update();
+        }
 
-    });
+        requestAnimationFrame(updateCounter);
+    }
 
-};
+    function startCounters() {
 
-const statsSection = document.querySelector(".stats");
+        if (countersStarted) return;
 
-const observer = new IntersectionObserver((entries) => {
+        countersStarted = true;
 
-    if (entries[0].isIntersecting) {
+        counters.forEach(animateCounter);
+    }
 
-        startCounter();
+    if (statsSection && counters.length) {
 
-        observer.disconnect();
+        if ("IntersectionObserver" in window) {
+
+            const statsObserver = new IntersectionObserver(entries => {
+
+                if (entries[0]?.isIntersecting) {
+                    startCounters();
+                    statsObserver.disconnect();
+                }
+
+            }, {
+                threshold: 0.2
+            });
+
+            statsObserver.observe(statsSection);
+
+        } else {
+            startCounters();
+        }
 
     }
 
-});
 
-observer.observe(statsSection);
+    // ==========================================
+    // PAGE LOADER
+    // ==========================================
 
-/* Loader */
+    function hideLoader() {
+        const loader = document.querySelector(".loader");
 
-window.addEventListener("load", () => {
+        if (loader) {
+            loader.classList.add("hide");
+        }
+    }
 
-    var loader = document.querySelector(".loader");
-    if (loader) loader.classList.add("hide");
+    if (document.readyState === "complete") {
+        hideLoader();
+    } else {
+        window.addEventListener("load", hideLoader, { once: true });
+    }
 
 });
