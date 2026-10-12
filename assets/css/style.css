@@ -3881,6 +3881,315 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 12px;
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Keep the header above the hero */
+header,
+.navbar {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* Prevent navigation from covering hero content */
+.hero {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Desktop hero layout */
+.hero-wrapper {
+    width: min(1200px, calc(100% - 40px));
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 70px 0 60px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 36px;
+}
+
+.hero-content,
+.hero-form {
+    width: 100%;
+    min-width: 0;
+}
+
+.hero-content h1 {
+    font-size: clamp(36px, 4.5vw, 62px);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+.hero-content p {
+    max-width: 650px;
+    margin: 0 0 24px;
+    line-height: 1.7;
+}
+
+.hero-form {
+    max-width: 520px;
+    margin-inline: auto;
+}
+
+/* Keep form controls inside their container */
+.hero-form input,
+.hero-form select,
+.hero-form textarea,
+.hero-form button {
+    max-width: 100%;
+}
+
+.hero-form input,
+.hero-form select,
+.hero-form textarea {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Do not hide every button on tablets */
+@media (max-width: 992px) {
+    .hero-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 45px 0 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-form {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .form-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Only hide the menu button's unrelated desktop navigation
+       if your own navigation implementation requires it.
+       Do not use a global .btn { display:none; } rule. */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .hero {
+        min-height: 0;
+        height: auto;
+    }
+
+    .hero-wrapper {
+        width: calc(100% - 24px);
+        padding: 28px 0 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(29px, 7.5vw, 40px);
+        line-height: 1.16;
+        margin-bottom: 14px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.65;
+        margin: 0 auto 20px;
+    }
+
+    .hero-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .hero-highlights > div {
+        max-width: 100%;
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        display: inline-flex;
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .hero-form {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 15px;
+        border-radius: 16px;
+    }
+
+    .hero-form h3 {
+        font-size: 21px;
+    }
+
+    .hero-form p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .hero-form input,
+    .hero-form select {
+        height: 46px;
+        font-size: 14px;
+    }
+
+    .hero-form button {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .hero-contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Booking box, if used instead of hero-form */
+    .booking-box {
+        position: relative;
+        inset: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 24px auto 0;
+        display: block;
+        min-width: 0;
+    }
+
+    .booking-tabs {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .booking-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .booking-tab {
+        flex: 0 0 auto;
+        min-width: 90px;
+    }
+
+    #bookingForm,
+    .booking-fields,
+    .customer-fields,
+    .return-fields {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .booking-fields,
+    .customer-fields,
+    .return-fields {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .booking-field {
+        min-width: 0;
+    }
+
+    .booking-field input,
+    .booking-field select {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    .hero-wrapper {
+        width: calc(100% - 20px);
+        padding-top: 22px;
+        padding-bottom: 28px;
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .hero-form {
+        padding: 17px 12px;
+    }
+
+    .hero-form input,
+    .hero-form select {
+        font-size: 13px;
+    }
+}
+
 
 /* =========================================================
    DESKTOP LARGE
